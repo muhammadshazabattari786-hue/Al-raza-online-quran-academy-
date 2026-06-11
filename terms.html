@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms & Conditions - Al Raza Online Quran Academy</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #f0f8f5 0%, #e0f2e9 100%);
+            line-height: 1.8;
+            color: #2e7d32;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        /* Header + Menu */
+        .navbar {
+            background: linear-gradient(135deg, #2e7d32 0%, #1b5e20 100%);
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .logo {
+            font-size: 1.3em;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .menu-icon {
+            font-size: 1.8em;
+            cursor: pointer;
+            padding: 5px 10px;
+        }
+        
+        /* Dropdown Menu - Ye naya add kiya */
+        .dropdown {
+            display: none;
+            position: absolute;
+            top: 60px;
+            right: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+            min-width: 180px;
+            overflow: hidden;
+        }
+        
+        .dropdown.show {
+            display: block;
+            animation: slideDown 0.3s ease;
+        }
+        
+        @keyframes slideDown {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .dropdown a {
+            display: block;
+            padding: 14px 20px;
+            color: #2e7d32;
+            text-decoration: none;
+            font-weight: 600;
+            border-bottom: 1px solid #e0e0e0;
+            transition: 0.2s;
+        }
+        
+        .dropdown a:hover {
+            background: #e8f5e9;
+        }
+        
+        .dropdown a:last-child {
+            border-bottom: none;
+        }
+        
+        /* Main Content with side margin */
+        .container {
+            max-width: 900px;
+            width: 95%;
+            margin: 30px auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(46, 125, 50, 0.15);
+            overflow: hidden;
+            flex: 1;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #2e7d32 0%, #1b5e20 100%);
+            color: white;
+            padding: 40px 30px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        
+        /* Section background changed - Halka blue */
+        .section {
+            padding: 35px 40px;
+            border-bottom: 1px solid #e0e0e0;
+            background: #f8fbfd; /* Halka blue background */
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: all 0.6s ease;
+        }
+        
+        /* Scroll animation - kabhi left kabhi right */
+        .section.show {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        .section:nth-child(even) {
+            transform: translateX(50px);
+            background: #f5fbf8; /* Halka green background */
+        }
+        
+        .section:last-child {
+            border-bottom: none;
+        }
+        
+        .section h2 {
+            color: #1b5e20;
+            font-size: 1.6em;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .section .icon {
+            font-size: 1.3em;
+        }
+        
+        .section p {
+            font-size: 1.05em;
+            margin-bottom: 12px;
+            color: #424242;
+        }
+        
+        .section strong {
+            color: #2e7d32;
+            font-weight: 600;
+        }
+        
+        /* Footer with date */
+        .footer {
+            background: #1b5e20;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: auto;
+        }
+        
+        .footer p {
+            margin: 5px 0;
+            font-size: 0.95em;
+        }
+        
+        @media (max-width: 768px) {
+            .section {
+                padding: 25px 20px;
+            }
+            .header h1 {
+                font-size: 1.8em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Top Menu with Logo + 3 Lines + Dropdown -->
+    <nav class="navbar">
+        <div class="logo">📖 Al Raza Academy</div>
+        <div class="menu-icon" onclick="toggleMenu()">☰</div>
+        <div class="dropdown" id="menuDropdown">
+            <a href="index.html">🏠 Home</a>
+            <a href="fees.html">💰 Fees</a>
+            <a href="terms.html">📜 Terms</a>
+            <a href="register.html">📝 Register</a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="header">
+            <h1>📜 Terms & Conditions</h1>
+            <p class="subtitle">Al Raza Online Quran Academy</p>
+        </div>
+
+        <div class="section">
+            <h2><span class="icon">🔒</span>Privacy Policy</h2>
+            <p>We'd like to assure and guarantee that all students' information is totally secured and secret with <strong>NO share of a third party.</strong></p>
+            <br>
+            <p>Any info we require from students is just for your study program success and to improve our services to match the best with your requirements and expectations.</p>
+            <br>
+            <p>The students data will be only used for <strong>educational purposes.</strong></p>
+        </div>
+
+        <div class="section">
+            <h2><span class="icon">📚</span>Your Classes</h2>
+            <p>1. Your classes will start on the day of your choice according to your suitable timing.</p>
+            <br>
+            <p>2. Each week we will have <strong>5 classes</strong> from Sunday to Thursday.</p>
+            <br>
+            <p>3. Each session will last <strong>20 to 30 minutes</strong>.</p>
+        </div>
+
+        <div class="section">
+            <h2><span class="icon">⏰</span>Attendance & Absence Rules</h2>
+            <p>1. To maintain the weekly schedule and to complete your goals, you should attend classes at your specified times.</p>
+            <br>
+            <p>2. If you will not attend classes at your schedule time, <strong>please notify us 4 hours before the session</strong> to reschedule it.</p>
+            <br>
+            <p>3. If you are absent from the session without notifying us, you will lose the session.</p>
+        </div>
+
+        <div class="section">
+            <h2><span class="icon">🔄</span>Rescheduling</h2>
+            <p>1. Your time is very important and valuable to us. So <strong>please be committed</strong> to your scheduled time.</p>
+            <br>
+            <p>2. In case you need to reschedule your class, <strong>please inform us 4 hours before</strong> your session.</p>
+        </div>
+
+        <div class="section">
+            <h2><span class="icon">💳</span>Payment & Charges</h2>
+            <p>1. The class schedule will be fixed when you pay for the month in advance.</p>
+            <br>
+            <p>2. Please inform us if you have any changes in your time or payment method.</p>
+        </div>
+
+        <div class="section">
+            <h2><span class="icon">💻</span>Technology Requirements</h2>
+            <p>1. Please ensure you have a <strong>strong and reliable internet connection</strong>.</p>
+            <br>
+            <p>2. You will need a laptop, tablet, or smartphone with a camera and microphone for your online sessions.</p>
+        </div>
+    </div>
+
+    <!-- Footer with Date -->
+    <footer class="footer">
+        <p>© 2026 Al Raza Online Quran Academy. All Rights Reserved.</p>
+        <p>Last Updated: 08 April 2026</p>
+    </footer>
+
+    <!-- JavaScript for Menu + Scroll Animation -->
+    <script>
+        // 1. Menu toggle function
+        function toggleMenu() {
+            document.getElementById('menuDropdown').classList.toggle('show');
+        }
+        
+        // Menu bahar click karein to band ho jaye
+        window.onclick = function(event) {
+            if (!event.target.matches('.menu-icon')) {
+                var dropdown = document.getElementById('menuDropdown');
+                if (dropdown.classList.contains('show')) {
+                    dropdown.classList.remove('show');
+                }
+            }
+        }
+        
+        // 3. Scroll animation - sections left/right se aayein
+        const sections = document.querySelectorAll('.section');
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('show');
+                }
+            });
+        }, { threshold: 0.2 });
+        
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+  </html>

@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Why Choose Al Raza Academy? 10 Reasons - Al Raza Academy</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Poppins',sans-serif;background:linear-gradient(135deg,#0a0a0a 0%,#1a1a1a 100%);color:#fff;line-height:1.9;overflow-x:hidden}
+nav{background:rgba(17,17,17,0.95);backdrop-filter:blur(10px);padding:20px 0;position:sticky;top:0;z-index:100;border-bottom:3px solid #FFD700;box-shadow:0 5px 30px rgba(255,215,0,0.2)}
+.nav-container{max-width:1300px;margin:auto;padding:0 5%;display:flex;justify-content:space-between;align-items:center}
+.logo{display:flex;align-items:center;gap:15px}
+.logo img{height:65px;width:65px;border-radius:50%;border:3px solid #FFD700;object-fit:cover;box-shadow:0 0 20px rgba(255,215,0,0.4)}
+.logo-text{color:#FFD700;font-size:28px;font-weight:800;letter-spacing:1px}
+.hamburger{display:flex;flex-direction:column;cursor:pointer;gap:5px}
+.hamburger span{width:30px;height:3px;background:#FFD700;border-radius:2px;transition:0.3s}
+.dropdown{display:none;position:absolute;top:90px;right:5%;background:#1a1a1a;border:2px solid #FFD700;border-radius:15px;min-width:260px;box-shadow:0 15px 50px rgba(255,215,0,0.4);z-index:200;overflow:hidden}
+.dropdown.show{display:block;animation:slideDown 0.4s ease}
+@keyframes slideDown{from{opacity:0;transform:translateY(-15px)}to{opacity:1;transform:translateY(0)}}
+.dropdown a{display:block;padding:15px 22px;color:#FFD700;text-decoration:none;font-size:16px;font-weight:600;border-bottom:1px solid #333;transition:0.3s}
+.dropdown a:hover{background:#FFD700;color:#000;padding-left:28px}
+.container{max-width:950px;margin:60px auto;padding:0 5%}
+.header-section{text-align:center;margin-bottom:50px;padding-bottom:35px;border-bottom:2px solid #333}
+.line1{font-size:48px;color:#FFD700;font-weight:800;margin-bottom:15px;line-height:1.3}
+.line2{font-size:20px;color:#aaa;font-weight:400;margin-bottom:20px}
+.line3{display:flex;justify-content:center;gap:25px;flex-wrap:wrap;font-size:15px;color:#FFD700;font-weight:600}
+.line3 span{display:flex;align-items:center;gap:6px}
+.blog-detail-img{width:100%;height:420px;border-radius:30px;overflow:hidden;margin-bottom:45px;border:3px solid #FFD700;box-shadow:0 15px 40px rgba(255,215,0,0.2)}
+.blog-detail-img img{width:100%;height:100%;object-fit:cover}
+.blog-content h2{font-size:34px;color:#FFD700;margin-top:60px;margin-bottom:25px;font-weight:700;border-left:5px solid #FFD700;padding-left:15px}
+.blog-content p{font-size:18px;color:#ddd;line-height:2.1;margin-bottom:22px;text-align:justify}
+.blog-content ul{margin:25px 0 25px 35px;color:#ddd}
+.blog-content ul li{font-size:18px;line-height:2.1;margin-bottom:14px}
+.ayah-box{background:linear-gradient(145deg,#1a1a1a,#222);border:2px solid #FFD700;border-radius:20px;padding:35px;margin:40px 0;box-shadow:0 10px 30px rgba(255,215,0,0.15)}
+.arabic-text{font-family:'Amiri',serif;font-size:32px;color:#FFD700;text-align:right;direction:rtl;line-height:2.5;margin-bottom:20px;font-weight:700}
+.translation{font-size:17px;color:#ccc;font-style:italic;text-align:left;line-height:2;border-top:1px solid #444;padding-top:20px}
+.reference{color:#FFA500;font-size:14px;font-weight:600;margin-top:10px}
+.hadith-box{background:linear-gradient(145deg,#222,#2a2a2a);border-left:6px solid #FFD700;border-radius:15px;padding:30px;margin:35px 0}
+.hadith-text{font-size:18px;color:#FFD700;font-weight:600;margin-bottom:15px}
+.hadith-translation{font-size:17px;color:#ddd;line-height:2.1}
+.animate-left{opacity:0;transform:translateX(-120px);transition:all 0.9s ease}
+.animate-right{opacity:0;transform:translateX(120px);transition:all 0.9s ease}
+.animate-left.show, .animate-right.show{opacity:1;transform:translateX(0)}
+@media(max-width:768px){.line1{font-size:32px}.line2{font-size:16px}.line3{font-size:13px;gap:15px}.blog-detail-img{height:260px}.container{padding:0 4%}.arabic-text{font-size:24px}}
+</style>
+</head>
+<body>
+
+<!-- MENU SECTION -->
+<nav>
+<div class="nav-container">
+<div class="logo">
+<img src="logo.png" alt="Al Raza Academy Logo">
+<span class="logo-text">Al Raza Academy</span>
+</div>
+<div class="hamburger" onclick="toggleMenu()">
+<span></span>
+<span></span>
+<span></span>
+</div>
+<div class="dropdown" id="menu">
+<a href="index.html">🏠 Home</a>
+<a href="about.html">ℹ️ About Us</a>
+<a href="teachers.html">👨‍🏫 Our Teacher's</a>
+<a href="how-it-works.html">⚙️ How it Works</a>
+<a href="terms.html">📜 Terms & Condition</a>
+<a href="contact.html">📞 Contact Us</a>
+<a href="courses.html">📚 Courses</a>
+<a href="fees.html">💰 Study Plan & Fees</a>
+<a href="blogs.html">📝 Blogs</a>
+</div>
+</div>
+</nav>
+
+<div class="container">
+
+<!-- 3-LINE HEADING SECTION -->
+<div class="header-section animate-left">
+<div class="line1">Why Choose Al Raza Academy?</div>
+<div class="line2">10 Powerful Reasons Why 5000+ Students Trust Us for Online Quran Learning Worldwide</div>
+<div class="line3">
+<span>📅 April 2026</span>
+<span>⏱️ 12 Min Read</span>
+<span>📚 About Us</span>
+<span>✍️ Al Raza Academy</span>
+</div>
+</div>
+
+<!-- Blog Image -->
+<div class="blog-detail-img animate-right">
+<img src="img/blog5.jpg" alt="Why Choose Al Raza Academy">
+</div>
+
+<!-- Blog Content Start -->
+<div class="blog-content">
+
+<h2 class="animate-left">Introduction: Your Search for Best Quran Academy Ends Here</h2>
+<p class="animate-right">With hundreds of online Quran academies available today, choosing the right one feels overwhelming. Every academy claims "best teachers", "lowest fees", "flexible timing". But as a parent or student, you need proof, not promises. You need an academy that delivers results, respects your time, and treats your child like their own.</p>
+
+<p class="animate-left">At Al Raza Online Quran Academy, we don't just teach Quran – we build relationships. Over 5000 students from 40+ countries including USA, UK, Canada, Australia, Saudi Arabia, and UAE have trusted us with their Quran journey. In this detailed guide, we share 10 real reasons backed by student testimonials and 8 years of experience that make us different from every other academy.</p>
+
+<div class="ayah-box animate-right">
+<div class="arabic-text">وَقُل رَّبِّ زِدْنِي عِلْمًا</div>
+<div class="translation">"And say, My Lord, increase me in knowledge."</div>
+<div class="reference">Surah Taha, Ayah 114</div>
+</div>
+
+<p class="animate-left">Whether you are looking for Hifz program, Tajweed classes, Quran for kids, or adult Quran reading – these 10 reasons will show you exactly why Al Raza Academy is the smartest choice for your family in 2026.</p>
+
+<h2 class="animate-right">Reason 1: Ijazah-Certified Teachers with 10+ Years Experience</h2>
+<p class="animate-left">Most academies hire fresh graduates. We hire only teachers who have Ijazah – authorization with chain of transmission back to Prophet Muhammad (PBUH). Every teacher has minimum 10 years teaching experience and has taught 200+ students successfully. They are experts in Makharij, Tajweed, Tafseer, and child psychology.</p>
+
+<p class="animate-right">Before assignment, each teacher undergoes 3-month training in our teaching methodology. We test their patience, communication skills, and ability to explain complex rules simply. If a teacher cannot make a 5-year-old understand "Qalqalah", they don't teach at Al Raza. This strict quality control is why our students never complain about teacher quality.</p>
+
+<h2 class="animate-left">Reason 2: 100% One-to-One Classes - No Group Classes Ever</h2>
+<p class="animate-right">In group classes, shy students hide, weak students get ignored, and fast students get bored. Our 100% one-to-one model means the teacher's full 30 minutes attention is only on you or your child. Questions are answered immediately, mistakes are corrected instantly, and pace adjusts to your learning speed.</p>
+
+<p class="animate-left">Parents tell us: "In local madrasa my son was scared to ask questions. Here he talks to teacher like a friend." This personal connection builds confidence and love for Quran. Plus, parents can sit nearby and monitor every class live – complete transparency.</p>
+
+<h2 class="animate-right">Reason 3: Flexible Timing 24/7 - Class When YOU Want</h2>
+<p class="animate-left">We have teachers available from 6AM to 11PM EST, 7 days a week. Morning person? Book 7AM class. Night owl? Book 10PM class. Weekend only? No problem. Working professional with irregular shifts? We create custom schedule for you.</p>
+
+<p class="animate-right">Rescheduling is free with 2-hour notice. If your child is sick, if you have guests, if internet is down – just message teacher and class moves to next available slot. No penalties, no wasted fees. Compare this to local madrasas where missing 3 classes means you fall behind permanently.</p>
+
+<h2 class="animate-left">Reason 4: Affordable Fees + Country-Based Pricing</h2>
+<p class="animate-right">Quality education should not be luxury. Our fees start at $2 per class with monthly packages from $49-$99 depending on your country. Students in Pakistan, India, Bangladesh pay less. Students in USA, UK, Canada pay slightly more. This fairness ensures everyone gets access.</p>
+
+<p class="animate-left">No registration fees. No hidden charges. No "certificate fees" later. What you see is what you pay. Plus 3 FREE trial classes so you test teacher quality before paying single dollar. We offer sibling discounts, referral rewards, and annual package savings up to 30%.</p><h2 class="animate-right">Reason 5: Free Trial + No Commitment Policy</h2>
+<p class="animate-left">We are confident in our service, so we give 3 FREE trial classes with no credit card required. Attend 3 classes, meet teacher, check teaching style, verify timing. Only if you are 100% satisfied, then pay for month. If not satisfied, walk away – no questions asked.</p>
+
+<p class="animate-right">Unlike other academies that lock you into 6-month contracts, we work month-to-month. Cancel anytime with 7-day notice. This freedom shows our confidence. Students who feel trapped learn poorly. Students who choose freely learn with passion.</p>
+
+<h2 class="animate-left">Reason 6: Technology + Personal Touch Combined</h2>
+<p class="animate-right">We use Zoom/Skype for HD video classes, digital whiteboard for writing Arabic, screen sharing for Mushaf, and voice recording for correction. But technology never replaces personal care. Teachers send daily WhatsApp updates, weekly progress reports, and monthly parent meetings.</p>
+
+<p class="animate-left">Every student's progress is tracked in our system. Teacher knows exactly which page student memorized, which Tajweed rule needs work, and what was last mistake. This data-driven approach prevents students from repeating same errors for months.</p>
+
+<h2 class="animate-right">Reason 7: Courses for Every Age & Level</h2>
+<p class="animate-left">Whether you are 4-year-old starting with Noorani Qaida, 15-year-old doing Hifz, 35-year-old professional learning Quran with translation, or 60-year-old retiree starting fresh – we have specialized course for you. One academy, complete solution for whole family.</p>
+
+<p class="animate-right">Our courses include: Noorani Qaida, Quran with Tajweed, Hifz Program, Quran with Translation & Tafseer, Arabic Language, Islamic Studies for Kids, Dua & Sunnah learning. All taught by specialist teachers for that subject. No teacher teaches everything – experts teach their expertise.</p>
+
+<div class="hadith-box animate-right">
+<div class="hadith-text">Hadith: Teaching with Wisdom</div>
+<div class="hadith-translation">The Prophet (PBUH) said: "Make things easy and do not make them difficult. Give glad tidings and do not repel people." This is our teaching philosophy at Al Raza Academy.</div>
+</div>
+
+<h2 class="animate-left">Reason 8: 85% Completion Rate vs Industry 30%</h2>
+<p class="animate-right">Industry average: Only 3 out of 10 students complete Hifz or finish Tajweed course. Our completion rate: 8.5 out of 10 students complete their course. Why? Because we solve the 3 biggest reasons students quit: 1) Bad teacher, 2) Boring method, 3) Inflexible timing.</p>
+
+<p class="animate-left">We track every student weekly. If attendance drops, teacher calls parent. If student is bored, we change teaching method. If student is struggling, we slow down and give extra support. No student is left behind at Al Raza Academy.</p>
+
+<h2 class="animate-right">Real Student Results & Testimonials</h2>
+<p class="animate-left">Maria from USA: "My daughter hated Quran class before. Now she asks for extra class. Teacher uses stories and games." Ahmed from UK: "I completed Hifz at age 38 while working full-time job. Teacher adjusted timing around my night shifts." Fatima from Canada: "3 academies failed me. Al Raza teachers fixed my pronunciation in 2 months."</p>
+
+<p class="animate-right">These are not fake reviews. You can talk to any of our 5000+ students directly. We connect new parents with existing parents so you get honest feedback before joining. Transparency is our policy.</p><h2 class="animate-left">Reason 9: Safety, Privacy & Child Protection</h2>
+<p class="animate-right">All classes are one-to-one, recorded for quality, and parents must be present in house. Teachers are background-verified and female teachers assigned for girls. We never share student data with third parties. Our platform uses encrypted connection.</p>
+
+<p class="animate-left">Unlike YouTube or public group classes, your child is in safe, controlled environment. No inappropriate ads, no random people, no distractions. Just teacher, student, and Quran. Parents have full control and visibility at all times.</p>
+
+<h2 class="animate-right">Reason 10: Global Community + Continuous Support</h2>
+<p class="animate-left">When you join Al Raza, you join family of 5000+ students worldwide. We organize online competitions, completion ceremonies, Ramadan programs, and student meetups. Students motivate each other and celebrate milestones together.</p>
+
+<p class="animate-right">Even after course completion, our support continues. Hafiz students get free revision classes. Parents get parenting tips. Alumni network helps with job references and Islamic education guidance. We are with you for life, not just for monthly fee.</p>
+
+<h2 class="animate-left">Conclusion: The Decision is Clear</h2>
+<p class="animate-right">Choosing Quran academy is choosing who will teach Allah's words to you or your child. This decision affects your Akhirah. At Al Raza Academy, we take this responsibility seriously. Every teacher, every class, every student matters to us.</p>
+
+<p class="animate-left">Don't decide based on this blog alone. Take 3 FREE trial classes. Meet teacher. Check teaching style. Talk to other parents. Then decide. We are confident that once you experience Al Raza difference, you will never look at other academies again.</p>
+
+<p class="animate-right" style="text-align:center; margin-top:40px; font-size:20px; color:#FFD700; font-weight:700;">"The best investment is investment in Quran education" – Book your 3 FREE trial classes now!</p>
+
+</div>
+
+<!-- Join Now Form -->
+<div class="join-section animate-left" id="join-form" style="background:linear-gradient(145deg,#1a1a1a,#222);border:3px solid #FFD700;border-radius:30px;padding:50px;margin:80px 0;box-shadow:0 20px 50px rgba(255,215,0,0.2)">
+<h2 class="join-title" style="text-align:center;font-size:38px;color:#FFD700;font-weight:800;margin-bottom:15px">🎁 Start 3 FREE Trial Classes Today</h2>
+<p class="join-subtitle" style="text-align:center;color:#aaa;font-size:17px;margin-bottom:40px">Experience all 10 reasons yourself. No payment, no commitment required!</p>
+
+<form onsubmit="alert('Thank you! Our admission team will contact you within 4 hours to schedule your 3 free trial classes.'); return false;">
+<div class="form-group" style="margin-bottom:25px">
+<label style="display:block;color:#FFD700;font-weight:600;margin-bottom:10px;font-size:16px">Full Name *</label>
+<input type="text" placeholder="Enter your full name" required style="width:100%;padding:16px;border-radius:12px;border:2px solid #444;background:#0a0a0a;color:#fff;font-size:16px">
+</div>
+
+<div class="form-group" style="margin-bottom:25px">
+<label style="display:block;color:#FFD700;font-weight:600;margin-bottom:10px;font-size:16px">Email Address *</label>
+<input type="email" placeholder="your.email@example.com" required style="width:100%;padding:16px;border-radius:12px;border:2px solid #444;background:#0a0a0a;color:#fff;font-size:16px">
+</div>
+
+<div class="form-group" style="margin-bottom:25px">
+<label style="display:block;color:#FFD700;font-weight:600;margin-bottom:10px;font-size:16px">WhatsApp Number *</label>
+<input type="tel" placeholder="+1 234 567 8900" required style="width:100%;padding:16px;border-radius:12px;border:2px solid #444;background:#0a0a0a;color:#fff;font-size:16px">
+</div>
+
+<div class="form-group" style="margin-bottom:25px">
+<label style="display:block;color:#FFD700;font-weight:600;margin-bottom:10px;font-size:16px">Course Interested In</label>
+<select style="width:100%;padding:16px;border-radius:12px;border:2px solid #444;background:#0a0a0a;color:#fff;font-size:16px">
+<option>Quran with Tajweed</option>
+<option>Hifz Program</option>
+<option>Noorani Qaida for Kids</option>
+<option>Quran with Translation</option>
+<option>Arabic Language</option>
+</select>
+</div>
+
+<button type="submit" style="width:100%;background:linear-gradient(135deg,#FFD700,#FFA500);color:#000;padding:18px;border-radius:15px;border:none;font-weight:800;font-size:18px;cursor:pointer">🚀 Book My 3 FREE Trial Classes Now</button>
+</form>
+</div>
+
+<!-- BOTTOM NEXT BLOG SECTION -->
+<div class="next-blog-section animate-left" style="margin-top:80px;padding:50px;background:linear-gradient(145deg,#1a1a1a,#222);border-radius:30px;border:3px solid #FFD700">
+<h2 style="text-align:center;font-size:36px;color:#FFD700;font-weight:800;margin-bottom:40px">📚 Continue Reading More Blogs</h2>
+
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:30px">
+  
+<!-- Previous Blog Card -->
+<div style="background:#0a0a0a;border:2px solid #444;border-radius:20px;padding:25px;text-align:center;transition:0.3s">
+<h3 style="color:#aaa;font-size:18px;margin-bottom:15px">← Previous Blog</h3>
+<h4 style="color:#FFD700;font-size:20px;margin-bottom:15px">Complete Hifz Program</h4>
+<p style="color:#ccc;font-size:14px;margin-bottom:20px">Become Hafiz-e-Quran in 2-3 years</p>
+<a href="blog4.html" style="display:inline-block;background:#2a2a2a;color:#FFD700;padding:12px 25px;border-radius:10px;text-decoration:none;font-weight:700;border:2px solid #FFD700">Read Previous</a>
+</div>
+
+<!-- Next Blog Card -->
+<div style="background:linear-gradient(135deg,#FFD700,#FFA500);border-radius:20px;padding:25px;text-align:center;box-shadow:0 10px 30px rgba(255,215,0,0.4)">
+<h3 style="color:#000;font-size:18px;margin-bottom:15px;font-weight:700">Next Blog →</h3>
+<h4 style="color:#000;font-size:22px;margin-bottom:15px;font-weight:800">Affordable Quran Learning Packages</h4>
+<p style="color:#333;font-size:15px;margin-bottom:20px;font-weight:600">Country-wise fees & payment plans</p>
+<a href="blog6.html" style="display:inline-block;background:#000;color:#FFD700;padding:14px 30px;border-radius:12px;text-decoration:none;font-weight:800;font-size:16px">Read Next Blog</a>
+</div>
+
+</div>
+</div>
+
+</div>
+
+<footer style="text-align:center;padding:50px 5%;background:#111;margin-top:100px;border-top:3px solid #FFD700">
+<p style="color:#FFD700;font-weight:600;font-size:18px">© 2026 Al Raza Online Quran Academy | All Rights Reserved | Contact: muhammadshazabattari786@gmail.com</p>
+</footer>
+
+<script>
+function toggleMenu() {
+document.getElementById('menu').classList.toggle('show');
+}
+window.addEventListener('click', function(e) {
+if (!e.target.closest('.nav-container')) {
+document.getElementById('menu').classList.remove('show');
+}
+});
+
+const observer = new IntersectionObserver((entries) => {
+entries.forEach(entry => {
+if (entry.isIntersecting) {
+entry.target.classList.add('show');
+}
+});
+}, { threshold: 0.15 });
+
+document.querySelectorAll('.animate-left, .animate-right').forEach(el => {
+observer.observe(el);
+});
+</script>
+
+</body>
+</html>

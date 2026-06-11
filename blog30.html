@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Death & Akhirah - Life After Death - Grave to Jannah Journey - Al Raza Academy</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Poppins',sans-serif;background:linear-gradient(135deg,#0a0a0a 0%,#1a1a1a 100%);color:#fff;line-height:1.9;overflow-x:hidden}
+nav{background:rgba(17,17,17,0.95);backdrop-filter:blur(10px);padding:20px 0;position:sticky;top:0;z-index:100;border-bottom:3px solid #FFD700;box-shadow:0 5px 30px rgba(255,215,0,0.2)}
+.nav-container{max-width:1300px;margin:auto;padding:0 5%;display:flex;justify-content:space-between;align-items:center}
+.logo{display:flex;align-items:center;gap:15px}
+.logo img{height:65px;width:65px;border-radius:50%;border:3px solid #FFD700;object-fit:cover;box-shadow:0 0 20px rgba(255,215,0,0.4)}
+.logo-text{color:#FFD700;font-size:28px;font-weight:800;letter-spacing:1px}
+.hamburger{display:flex;flex-direction:column;cursor:pointer;gap:5px}
+.hamburger span{width:30px;height:3px;background:#FFD700;border-radius:2px;transition:0.3s}
+.dropdown{display:none;position:absolute;top:90px;right:5%;background:#1a1a1a;border:2px solid #FFD700;border-radius:15px;min-width:260px;box-shadow:0 15px 50px rgba(255,215,0,0.4);z-index:200;overflow:hidden}
+.dropdown.show{display:block;animation:slideDown 0.4s ease}
+@keyframes slideDown{from{opacity:0;transform:translateY(-15px)}to{opacity:1;transform:translateY(0)}}
+.dropdown a{display:block;padding:15px 22px;color:#FFD700;text-decoration:none;font-size:16px;font-weight:600;border-bottom:1px solid #333;transition:0.3s}
+.dropdown a:hover{background:#FFD700;color:#000;padding-left:28px}
+.container{max-width:950px;margin:60px auto;padding:0 5%}
+.header-section{text-align:center;margin-bottom:50px;padding-bottom:35px;border-bottom:2px solid #333}
+.line1{font-size:48px;color:#FFD700;font-weight:800;margin-bottom:15px;line-height:1.3}
+.line2{font-size:20px;color:#aaa;font-weight:400;margin-bottom:20px}
+.line3{display:flex;justify-content:center;gap:25px;flex-wrap:wrap;font-size:15px;color:#FFD700;font-weight:600}
+.line3 span{display:flex;align-items:center;gap:6px}
+.blog-detail-img{width:100%;height:420px;border-radius:30px;overflow:hidden;margin-bottom:45px;border:3px solid #FFD700;box-shadow:0 15px 40px rgba(255,215,0,0.2)}
+.blog-detail-img img{width:100%;height:100%;object-fit:cover}
+.blog-content h2{font-size:34px;color:#FFD700;margin-top:60px;margin-bottom:25px;font-weight:700;border-left:5px solid #FFD700;padding-left:15px}
+.blog-content p{font-size:18px;color:#ddd;line-height:2.1;margin-bottom:22px;text-align:justify}
+.stage-box{background:linear-gradient(145deg,#1a1a1a,#222);border-left:6px solid #FFD700;border-radius:15px;padding:30px;margin:35px 0}
+.stage-number{background:linear-gradient(135deg,#FFD700,#FFA500);color:#000;width:50px;height:50px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-weight:800;font-size:22px;margin-bottom:15px}
+.ayah-box{background:linear-gradient(145deg,#1a1a1a,#222);border:2px solid #FFD700;border-radius:20px;padding:35px;margin:40px 0;box-shadow:0 10px 30px rgba(255,215,0,0.15)}
+.arabic-text{font-family:'Amiri',serif;font-size:32px;color:#FFD700;text-align:right;direction:rtl;line-height:2.5;margin-bottom:20px;font-weight:700}
+.translation{font-size:17px;color:#ccc;font-style:italic;text-align:left;line-height:2;border-top:1px solid #444;padding-top:20px}
+.reference{color:#FFA500;font-size:14px;font-weight:600;margin-top:10px}
+.warning-box{background:linear-gradient(145deg,#2a0000,#3a0000);border-left:6px solid #ff4444;border-radius:15px;padding:30px;margin:35px 0}
+.warning-title{color:#ff6666;font-size:22px;font-weight:700;margin-bottom:15px}
+.jannah-box{background:linear-gradient(145deg,#1a2a1a,#2a3a2a);border-left:6px solid #4CAF50;border-radius:15px;padding:30px;margin:35px 0}
+.animate-left{opacity:0;transform:translateX(-120px);transition:all 0.9s ease}
+.animate-right{opacity:0;transform:translateX(120px);transition:all 0.9s ease}
+.animate-left.show,.animate-right.show{opacity:1;transform:translateX(0)}
+@media(max-width:768px){.line1{font-size:32px}.line2{font-size:16px}.line3{font-size:13px;gap:15px}.blog-detail-img{height:260px}.container{padding:0 4%}.arabic-text{font-size:24px}}
+</style>
+</head>
+<body>
+
+<!-- MENU SECTION -->
+<nav>
+<div class="nav-container">
+<div class="logo">
+<img src="logo.png" alt="Al Raza Academy Logo">
+<span class="logo-text">Al Raza Academy</span>
+</div>
+<div class="hamburger" onclick="toggleMenu()">
+<span></span>
+<span></span>
+<span></span>
+</div>
+<div class="dropdown" id="menu">
+<a href="index.html">🏠 Home</a>
+<a href="about.html">ℹ️ About Us</a>
+<a href="teachers.html">👨‍🏫 Our Teacher's</a>
+<a href="how-it-works.html">⚙️ How it Works</a>
+<a href="terms.html">📜 Terms & Condition</a>
+<a href="contact.html">📞 Contact Us</a>
+<a href="courses.html">📚 Courses</a>
+<a href="fees.html">💰 Study Plan & Fees</a>
+<a href="blogs.html">📝 Blogs</a>
+</div>
+</div>
+</nav>
+
+<div class="container">
+
+<!-- 3-LINE HEADING SECTION -->
+<div class="header-section animate-left">
+<div class="line1">Death & Akhirah - Life After Death</div>
+<div class="line2">Grave to Jannah Journey - Prepare Before Last Breath</div>
+<div class="line3">
+<span>📅 April 2026</span>
+<span>⏱️ 22 Min Read</span>
+<span>📚 Akhirah</span>
+<span>✍️ Al Raza Academy</span>
+</div>
+</div>
+
+<!-- Blog Image -->
+<div class="blog-detail-img animate-right">
+<img src="img/blog30.jpg" alt="Death Akhirah">
+</div>
+
+<!-- Blog Content Start -->
+<div class="blog-content">
+
+<h2 class="animate-left">Introduction: Death - The Reality Everyone Avoids</h2>
+<p class="animate-right">Allah says: "Every soul will taste death." Aal-Imran 185. Prophet (PBUH) said: "Remember often the destroyer of pleasures – death." Tirmidhi. We plan for retirement at 60, but death can come at 20, 30, today.</p>
+
+<p class="animate-left">This is final blog of 30. We learned Salah, Fasting, Zakat, Hajj, Dhikr, Sabr, Tawakkul. But all is useless if we don't prepare for Akhirah. Life is exam hall, death is paper submission, grave is result waiting room, Qiyamah is result day.</p>
+
+<p class="animate-right">This article takes you on journey: Last breath → Grave → Qiyamah → Jannah/Jahannam. Read with open heart. Maybe this blog changes your life before Angel of Death comes.</p>
+
+<div class="ayah-box animate-left">
+<div class="arabic-text">كُلُّ نَفْسٍ ذَائِقَةُ الْمَوْتِ ثُمَّ إِلَيْنَا تُرْجَعُونَ</div>
+<div class="translation">"Every soul will taste death. Then to Us you will be returned."</div>
+<div class="reference">Surah Al-Ankabut, Ayah 57</div>
+</div>
+
+<p class="animate-right">Death is not end – it's transfer from Dunya class to Akhirah class. Let's see 10 stages after death.</p>
+
+<div class="stage-box animate-left">
+<div class="stage-number">1</div>
+<h2 style="margin-top:0;display:inline;margin-left:15px">Stage 1: Sakaratul Maut - Pangs of Death</h2>
+<p>Quran: "And the intoxication of death comes in truth." Qaf 19. Even Prophet (PBUH) felt pain, said "La ilaha illAllah, indeed death has pangs". Bukhari. For believer = sins wiped. For sinner = punishment starts.</p>
+<p><strong>Signs:</strong> Angel of Death comes. Believer sees angels of mercy with white face. Sinner sees angels of punishment with black face. Last words decide fate – that's why say La ilaha illAllah daily so it comes naturally.</p>
+</div>
+
+<div class="stage-box animate-right">
+<div class="stage-number">2</div>
+<h2 style="margin-top:0;display:inline;margin-left:15px">Stage 2: Barzakh - Life in Grave</h2>
+<p>Between death and Qiyamah = Barzakh. Grave is either garden of Jannah or pit of Hell. Hadith: "Grave is first stage of Akhirah. If easy, next stages easy. If hard, next harder." Tirmidhi.</p>
+<p><strong>Believer's grave:</strong> Expanded 70x70 arms, filled with light, door to Jannah opens, fragrance comes. Sleeps like bridegroom waiting wedding. <strong>Sinner's grave:</strong> Squeezed until ribs crack, snakes, scorpions, fire. Asks "When is Qiyamah?" hoping punishment ends.</p>
+</div>
+
+<div class="stage-box animate-left">
+<div class="stage-number">3</div>
+<h2 style="margin-top:0;display:inline;margin-left:15px">Stage 3: Munkar Nakir - 3 Questions</h2>
+<p>Two angels with blue-black faces come. Ask: 1. Man Rabbuk? Who is your Lord? 2. Ma dinuk? What is your religion? 3. Ma hadha ar-rajul? Who is this man sent to you? Prophet Muhammad.</p>
+<p><strong>Answer:</strong> Only those who lived Islam can say "My Lord Allah, my Deen Islam, my Prophet Muhammad". Others stutter "I heard people saying...". Then hammer hits 70x. May Allah make our tongue firm.</p>
+</div>
+
+<div class="stage-box animate-right">
+<div class="stage-number">4</div>
+<h2 style="margin-top:0;display:inline;margin-left:15px">Stage 4: Soor - Trumpet Blow</h2>
+<p>Angel Israfil has trumpet at mouth since creation, waiting command. First blow = everyone dies except Allah wills. Second blow = everyone resurrected. 40 years between blows – only Allah knows.</p>
+<p><strong>Scene:</strong> Graves split, people rise dust on head like drunk. First to rise = Prophet Muhammad. We will follow him InshaAllah if we followed Sunnah.</p>
+</div><div class="stage-box animate-left">
+<div class="stage-number">5</div>
+<h2 style="margin-top:0;display:inline;margin-left:15px">Stage 5: Hashr - Gathering</h2>
+<p>All humans from Adam to last person gathered barefoot, naked, uncircumcised on plain land. Sun brought close 1 mile. People drown in sweat according to deeds. Some ankle deep, some neck deep.</p>
+<p><strong>Shade:</strong> Only 7 types get shade of Arsh: Just ruler, youth worshipped Allah, heart attached to Masjid, etc. Others suffer. That's why do good now.</p>
+</div>
+
+<div class="stage-box animate-right">
+<div class="stage-number">6</div>
+<h2 style="margin-top:0;display:inline;margin-left:15px">Stage 6: Hisab - Accountability</h2>
+<p>Every deed weighed on scales. Smallest atom good/bad seen. Book of deeds given in right hand = success. Left hand/behind back = failure. Allah shows video of your life – you cannot deny.</p>
+<div class="warning-box">
+<div class="warning-title">⚠️ Danger: Debts Not Forgiven</div>
+<p>Shahid dies martyr, all sins forgiven except debt. Hadith Muslim. Borrow money and die without paying = stuck. Pay debts now. Also rights of people – backbiting, cheating – need forgiveness from person, not just Allah.</p>
+</div>
+</div>
+
+<div class="stage-box animate-left">
+<div class="stage-number">7</div>
+<h2 style="margin-top:0;display:inline;margin-left:15px">Stage 7: Siraat - Bridge Over Hell</h2>
+<p>Bridge thinner than hair, sharper than sword over Hell. Everyone must cross. Believers with light run like lightning, wind, horse. Hypocrites fall into Hell. Mother, father, friend – no one helps. "Nafsi Nafsi" – myself.</p>
+<p><strong>Speed depends on:</strong> Salah, Zakat, good character. Those who helped people in Dunya, Allah helps them cross fast.</p>
+</div>
+
+<div class="stage-box animate-right">
+<div class="stage-number">8</div>
+<h2 style="margin-top:0;display:inline;margin-left:15px">Stage 8: Hawd - Pond of Kauthar</h2>
+<p>Prophet's pond, whiter than milk, sweeter than honey. Whoever drinks once never thirsty again. Believers drink, Prophet recognizes by wudu marks glowing on face/hands/feet.</p>
+<p><strong>Innovators:</strong> Those who changed Deen after Prophet will be driven away. Prophet will say "My Ummah!" Angels reply "You don't know what they innovated after you."</p>
+</div><div class="jannah-box animate-left">
+<h2 style="margin-top:0;color:#4CAF50">Stage 9-10: Jannah vs Jahannam - Final Destination</h2>
+<p><strong>Jahannam:</strong> 7 gates, each for different sinners. Food = Zaqqum tree, drink = boiling water + pus. Skin burns, replaced new skin to feel pain again. Worst punishment = separation from Allah's vision.</p>
+<p><strong>Jannah:</strong> 8 gates, 100 levels. Rivers of milk, honey, wine, water. Fruits as you wish. "What no eye seen, no ear heard, no heart imagined." Bukhari. Highest = Firdaws, under Arsh. Greatest blessing = seeing Allah's face.</p>
+</div>
+
+<h2 class="animate-right">7 Things to Prepare Before Death</h2>
+<p class="animate-left">1. <strong>Tawbah now:</strong> Don't delay. Death no appointment. 2. <strong>Pay debts:</strong> Financial + rights of people. 3. <strong>Write will:</strong> Islamic inheritance. 4. <strong>Learn Kalima:</strong> Last words must be La ilaha illAllah. 5. <strong>Sadaqah Jariyah:</strong> Build well, teach Quran – reward after death. 6. <strong>Righteous children:</strong> They will make dua for you. 7. <strong>Love for Allah:</strong> Die with heart attached to Allah, not Dunya.</p>
+
+<h2 class="animate-right">Final Advice: Live Like Traveler</h2>
+<p class="animate-left">Prophet advised Ibn Umar: "Be in this world like stranger or traveler." Bukhari. Traveler doesn't buy furniture for hotel room. We are travelers to Akhirah. Dunya hotel – use it, don't love it.</p>
+<p class="animate-left">30 blogs complete. From basics to Akhirah. Now choose: Will you be among those who say "Ya Allah send me back to do good"? Or among those Allah says "Welcome O peaceful soul, enter My Jannah"?</p>
+
+<div class="ayah-box animate-right">
+<div class="arabic-text">يَا أَيَّتُهَا النَّفْسُ الْمُطْمَئِنَّةُ ارْجِعِي إِلَى رَبِّكِ رَاضِيَةً مَّرْضِيَّةً</div>
+<div class="translation">"O reassured soul, return to your Lord, well-pleased and pleasing."</div>
+<div class="reference">Surah Al-Fajr, Ayah 27-28</div>
+</div>
+
+<p class="animate-left" style="text-align:center; margin-top:40px; font-size:22px; color:#FFD700; font-weight:800;">"Death is appointment we all must keep" – Prepare today, not tomorrow!</p>
+
+</div>
+
+<!-- Join Now Form -->
+<div class="join-section animate-left" id="join-form" style="background:linear-gradient(145deg,#1a1a1a,#222);border:3px solid #FFD700;border-radius:30px;padding:50px;margin:80px 0;box-shadow:0 20px 50px rgba(255,215,0,0.2)">
+<h2 class="join-title" style="text-align:center;font-size:38px;color:#FFD700;font-weight:800;margin-bottom:15px">⚰️ Free Akhirah Reminder + Will Template</h2>
+<p class="join-subtitle" style="text-align:center;color:#aaa;font-size:17px;margin-bottom:40px">Get death reminder wallpaper + Islamic will template + daily Akhirah reminder to prepare before it's too late!</p>
+
+<form onsubmit="alert('Inna lillahi wa inna ilayhi rajiun. Akhirah reminder + Islamic will template + daily death reminder will be sent to your WhatsApp. May Allah grant us good ending!'); return false;">
+<div class="form-group" style="margin-bottom:25px">
+<label style="display:block;color:#FFD700;font-weight:600;margin-bottom:10px;font-size:16px">Full Name *</label>
+<input type="text" placeholder="Enter your full name" required style="width:100%;padding:16px;border-radius:12px;border:2px solid #444;background:#0a0a0a;color:#fff;font-size:16px">
+</div>
+
+<div class="form-group" style="margin-bottom:25px">
+<label style="display:block;color:#FFD700;font-weight:600;margin-bottom:10px;font-size:16px">WhatsApp Number *</label>
+<input type="tel" placeholder="+1 234 567 8900" required style="width:100%;padding:16px;border-radius:12px;border:2px solid #444;background:#0a0a0a;color:#fff;font-size:16px">
+</div>
+
+<div class="form-group" style="margin-bottom:25px">
+<label style="display:block;color:#FFD700;font-weight:600;margin-bottom:10px;font-size:16px">Main Goal After Reading</label>
+<select style="width:100%;padding:16px;border-radius:12px;border:2px solid #444;background:#0a0a0a;color:#fff;font-size:16px">
+<option>Make sincere Tawbah now</option>
+<option>Pay all debts immediately</option>
+<option>Start Sadaqah Jariyah</option>
+<option>Fix Salah 5 times daily</option>
+<option>Seek forgiveness from people</option>
+</select>
+</div>
+
+<button type="submit" style="width:100%;background:linear-gradient(135deg,#FFD700,#FFA500);color:#000;padding:18px;border-radius:15px;border:none;font-weight:800;font-size:18px;cursor:pointer">⚰️ Get Akhirah Reminder Free</button>
+</form>
+</div>
+
+<!-- BOTTOM NEXT BLOG SECTION - BACK TO BLOG1 -->
+<div class="next-blog-section animate-left" style="margin-top:80px;padding:50px;background:linear-gradient(145deg,#1a1a1a,#222);border-radius:30px;border:3px solid #FFD700">
+<h2 style="text-align:center;font-size:36px;color:#FFD700;font-weight:800;margin-bottom:40px">📚 Complete 30 Blogs Series</h2>
+
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:30px">
+
+<!-- Previous Blog Card -->
+<div style="background:#0a0a0a;border:2px solid #444;border-radius:20px;padding:25px;text-align:center;transition:0.3s">
+<h3 style="color:#aaa;font-size:18px;margin-bottom:15px">← Previous Blog 29</h3>
+<h4 style="color:#FFD700;font-size:20px;margin-bottom:15px">Patience - Sabr in Islam</h4>
+<p style="color:#ccc;font-size:14px;margin-bottom:20px">Inna lillahi wa inna ilayhi raji'un</p>
+<a href="blog29.html" style="display:inline-block;background:#2a2a2a;color:#FFD700;padding:12px 25px;border-radius:10px;text-decoration:none;font-weight:700;border:2px solid #FFD700">Read Previous</a>
+</div>
+
+<!-- Restart Series Card -->
+<div style="background:linear-gradient(135deg,#FFD700,#FFA500);border-radius:20px;padding:25px;text-align:center;box-shadow:0 10px 30px rgba(255,215,0,0.4)">
+<h3 style="color:#000;font-size:18px;margin-bottom:15px;font-weight:700">🔄 Restart Series</h3>
+<h4 style="color:#000;font-size:22px;margin-bottom:15px;font-weight:800">5 Pillars of Islam Explained</h4>
+<p style="color:#333;font-size:15px;margin-bottom:20px;font-weight:600">Start from beginning blog1</p>
+<a href="blog1.html" style="display:inline-block;background:#000;color:#FFD700;padding:14px 30px;border-radius:12px;text-decoration:none;font-weight:800;font-size:16px">Read Blog 1 Again</a>
+</div>
+
+</div>
+
+<p style="text-align:center;color:#aaa;margin-top:30px;font-size:16px">🎉 Alhamdulillah 30/30 Blogs Complete! Share with others for Sadaqah Jariyah</p>
+</div>
+
+</div>
+
+<footer style="text-align:center;padding:50px 5%;background:#111;margin-top:100px;border-top:3px solid #FFD700">
+<p style="color:#FFD700;font-weight:600;font-size:18px">© 2026 Al Raza Online Quran Academy | All Rights Reserved | Contact: muhammadshazabattari786@gmail.com</p>
+</footer>
+
+<script>
+function toggleMenu() {
+document.getElementById('menu').classList.toggle('show');
+}
+window.addEventListener('click', function(e) {
+if (!e.target.closest('.nav-container')) {
+document.getElementById('menu').classList.remove('show');
+}
+});
+
+const observer = new IntersectionObserver((entries) => {
+entries.forEach(entry => {
+if (entry.isIntersecting) {
+entry.target.classList.add('show');
+}
+});
+}, { threshold: 0.15 });
+
+document.querySelectorAll('.animate-left,.animate-right').forEach(el => {
+observer.observe(el);
+});
+</script>
+
+</body>
+</html>

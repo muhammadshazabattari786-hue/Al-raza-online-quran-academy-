@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Morning & Evening Azkar - Fortress of Muslim Daily - Al Raza Academy</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Poppins',sans-serif;background:linear-gradient(135deg,#0a0a0a 0%,#1a1a1a 100%);color:#fff;line-height:1.9;overflow-x:hidden}
+nav{background:rgba(17,17,17,0.95);backdrop-filter:blur(10px);padding:20px 0;position:sticky;top:0;z-index:100;border-bottom:3px solid #FFD700;box-shadow:0 5px 30px rgba(255,215,0,0.2)}
+.nav-container{max-width:1300px;margin:auto;padding:0 5%;display:flex;justify-content:space-between;align-items:center}
+.logo{display:flex;align-items:center;gap:15px}
+.logo img{height:65px;width:65px;border-radius:50%;border:3px solid #FFD700;object-fit:cover;box-shadow:0 0 20px rgba(255,215,0,0.4)}
+.logo-text{color:#FFD700;font-size:28px;font-weight:800;letter-spacing:1px}
+.hamburger{display:flex;flex-direction:column;cursor:pointer;gap:5px}
+.hamburger span{width:30px;height:3px;background:#FFD700;border-radius:2px;transition:0.3s}
+.dropdown{display:none;position:absolute;top:90px;right:5%;background:#1a1a1a;border:2px solid #FFD700;border-radius:15px;min-width:260px;box-shadow:0 15px 50px rgba(255,215,0,0.4);z-index:200;overflow:hidden}
+.dropdown.show{display:block;animation:slideDown 0.4s ease}
+@keyframes slideDown{from{opacity:0;transform:translateY(-15px)}to{opacity:1;transform:translateY(0)}}
+.dropdown a{display:block;padding:15px 22px;color:#FFD700;text-decoration:none;font-size:16px;font-weight:600;border-bottom:1px solid #333;transition:0.3s}
+.dropdown a:hover{background:#FFD700;color:#000;padding-left:28px}
+.container{max-width:950px;margin:60px auto;padding:0 5%}
+.header-section{text-align:center;margin-bottom:50px;padding-bottom:35px;border-bottom:2px solid #333}
+.line1{font-size:48px;color:#FFD700;font-weight:800;margin-bottom:15px;line-height:1.3}
+.line2{font-size:20px;color:#aaa;font-weight:400;margin-bottom:20px}
+.line3{display:flex;justify-content:center;gap:25px;flex-wrap:wrap;font-size:15px;color:#FFD700;font-weight:600}
+.line3 span{display:flex;align-items:center;gap:6px}
+.blog-detail-img{width:100%;height:420px;border-radius:30px;overflow:hidden;margin-bottom:45px;border:3px solid #FFD700;box-shadow:0 15px 40px rgba(255,215,0,0.2)}
+.blog-detail-img img{width:100%;height:100%;object-fit:cover}
+.blog-content h2{font-size:34px;color:#FFD700;margin-top:60px;margin-bottom:25px;font-weight:700;border-left:5px solid #FFD700;padding-left:15px}
+.blog-content p{font-size:18px;color:#ddd;line-height:2.1;margin-bottom:22px;text-align:justify}
+.zikr-box{background:linear-gradient(145deg,#1a1a1a,#222);border-left:6px solid #FFD700;border-radius:15px;padding:30px;margin:35px 0}
+.zikr-number{background:linear-gradient(135deg,#FFD700,#FFA500);color:#000;width:50px;height:50px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-weight:800;font-size:22px;margin-bottom:15px}
+.arabic-zikr{font-family:'Amiri',serif;font-size:28px;color:#FFD700;text-align:right;direction:rtl;line-height:2.5;margin-bottom:15px;font-weight:700}
+.transliteration{font-size:16px;color:#FFA500;margin-bottom:12px;font-style:italic}
+.translation{font-size:17px;color:#ccc;margin-bottom:15px;line-height:2}
+.benefit{color:#aaa;font-size:15px;border-top:1px solid #444;padding-top:12px;margin-top:12px}
+.ayah-box{background:linear-gradient(145deg,#1a1a1a,#222);border:2px solid #FFD700;border-radius:20px;padding:35px;margin:40px 0;box-shadow:0 10px 30px rgba(255,215,0,0.15)}
+.arabic-text{font-family:'Amiri',serif;font-size:32px;color:#FFD700;text-align:right;direction:rtl;line-height:2.5;margin-bottom:20px;font-weight:700}
+.ref-translation{font-size:17px;color:#ccc;font-style:italic;text-align:left;line-height:2;border-top:1px solid #444;padding-top:20px}
+.reference{color:#FFA500;font-size:14px;font-weight:600;margin-top:10px}
+.animate-left{opacity:0;transform:translateX(-120px);transition:all 0.9s ease}
+.animate-right{opacity:0;transform:translateX(120px);transition:all 0.9s ease}
+.animate-left.show,.animate-right.show{opacity:1;transform:translateX(0)}
+@media(max-width:768px){.line1{font-size:32px}.line2{font-size:16px}.line3{font-size:13px;gap:15px}.blog-detail-img{height:260px}.container{padding:0 4%}.arabic-text{font-size:24px}.arabic-zikr{font-size:22px}}
+</style>
+</head>
+<body>
+
+<!-- MENU SECTION -->
+<nav>
+<div class="nav-container">
+<div class="logo">
+<img src="logo.png" alt="Al Raza Academy Logo">
+<span class="logo-text">Al Raza Academy</span>
+</div>
+<div class="hamburger" onclick="toggleMenu()">
+<span></span>
+<span></span>
+<span></span>
+</div>
+<div class="dropdown" id="menu">
+<a href="index.html">🏠 Home</a>
+<a href="about.html">ℹ️ About Us</a>
+<a href="teachers.html">👨‍🏫 Our Teacher's</a>
+<a href="how-it-works.html">⚙️ How it Works</a>
+<a href="terms.html">📜 Terms & Condition</a>
+<a href="contact.html">📞 Contact Us</a>
+<a href="courses.html">📚 Courses</a>
+<a href="fees.html">💰 Study Plan & Fees</a>
+<a href="blogs.html">📝 Blogs</a>
+</div>
+</div>
+</nav>
+
+<div class="container">
+
+<!-- 3-LINE HEADING SECTION -->
+<div class="header-section animate-left">
+<div class="line1">Morning & Evening Azkar</div>
+<div class="line2">Fortress of Muslim - 15 Essential Daily Supplications for Protection</div>
+<div class="line3">
+<span>📅 April 2026</span>
+<span>⏱️ 17 Min Read</span>
+<span>📚 Hisnul Muslim</span>
+<span>✍️ Al Raza Academy</span>
+</div>
+</div>
+
+<!-- Blog Image -->
+<div class="blog-detail-img animate-right">
+<img src="img/blog20.jpg" alt="Morning Evening Azkar">
+</div>
+
+<!-- Blog Content Start -->
+<div class="blog-content">
+
+<h2 class="animate-left">Introduction: Your Daily Spiritual Armor</h2>
+<p class="animate-right">You lock car, lock home, install CCTV for physical security. But what about spiritual security? Shaytan, evil eye, jinn, anxiety, stress – these attack daily. Prophet Muhammad (PBUH) gave us "Hisnul Muslim" – Fortress of Muslim through specific Azkar morning and evening.</p>
+
+<p class="animate-left">Just 10 minutes after Fajr and Maghrib, and you are under Allah's protection for 12 hours. Sahaba never missed these Azkar even in battle. This article covers 15 most essential Azkar with Arabic, transliteration, meaning, and benefit. Print this and keep near prayer mat.</p>
+
+<div class="ayah-box animate-right">
+<div class="arabic-text">فَاذْكُرُونِي أَذْكُرْكُمْ وَاشْكُرُوا لِي وَلَا تَكْفُرُونِ</div>
+<div class="ref-translation">"So remember Me; I will remember you. And be grateful to Me and do not deny Me."</div>
+<div class="reference">Surah Al-Baqarah, Ayah 152</div>
+</div>
+
+<p class="animate-left">Allah promises: You remember Me morning/evening, I remember you and protect you. Deal is clear. Let's start with morning Azkar.</p>
+
+<div class="zikr-box animate-left">
+<div class="zikr-number">1</div>
+<h2 style="margin-top:0;display:inline;margin-left:15px">Azkar 1: Ayatul Kursi - Verse of Throne</h2>
+<div class="arabic-zikr">اللَّهُ لَا إِلَٰهَ إِلَّا هُوَ الْحَيُّ الْقَيُّومُ...</div>
+<div class="transliteration">Allahu la ilaha illa Huwal-Hayyul-Qayyum...</div>
+<div class="translation">Allah - there is no god except Him, the Ever-Living, the Sustainer...</div>
+<div class="benefit">🛡️ Benefit: Recite after Fajr + Maghrib + before sleep. Protection from Shaytan till next prayer. No harm can reach you.</div>
+</div>
+
+<div class="zikr-box animate-right">
+<div class="zikr-number">2</div>
+<h2 style="margin-top:0;display:inline;margin-left:15px">Azkar 2: Last 3 Quls - Surah Ikhlas, Falaq, Nas</h2>
+<div class="arabic-zikr">قُلْ هُوَ اللَّهُ أَحَدٌ... قُلْ أَعُوذُ بِرَبِّ الْفَلَقِ... قُلْ أَعُوذُ بِرَبِّ النَّاسِ</div>
+<div class="transliteration">Qul Huwallahu Ahad... Qul a'udhu birabbil-falaq... Qul a'udhu birabbin-nas</div>
+<div class="translation">Say, He is Allah, One... Say, I seek refuge in Lord of dawn... Say, I seek refuge in Lord of mankind</div>
+<div class="benefit">🛡️ Benefit: Recite 3 times morning/evening. Blow on hands and wipe body. Protection from magic, evil eye, jinn, all harm.</div>
+</div>
+
+<div class="zikr-box animate-left">
+<div class="zikr-number">3</div>
+<h2 style="margin-top:0;display:inline;margin-left:15px">Azkar 3: Sayyidul Istighfar - Master of Forgiveness</h2>
+<div class="arabic-zikr">اللَّهُمَّ أَنْتَ رَبِّي لَا إِلَهَ إِلَّا أَنْتَ خَلَقْتَنِي...</div>
+<div class="transliteration">Allahumma anta rabbi la ilaha illa anta khalaqtani...</div>
+<div class="translation">O Allah, You are my Lord, there is no god but You, You created me...</div>
+<div class="benefit">🛡️ Benefit: If die morning/evening after reciting, Jannah guaranteed. Best dua for forgiveness.</div>
+</div>
+
+<div class="zikr-box animate-right">
+<div class="zikr-number">4</div>
+<h2 style="margin-top:0;display:inline;margin-left:15px">Azkar 4: 4 Times - Razi'tu Billahi Rabba</h2>
+<div class="arabic-zikr">رَضِيتُ بِاللَّهِ رَبًّا وَبِالْإِسْلَامِ دِينًا وَبِمُحَمَّدٍ نَبِيًّا</div>
+<div class="transliteration">Radheetu billahi rabban wa bil-islami deenan wa bi Muhammadin nabiyya</div>
+<div class="translation">I am pleased with Allah as Lord, Islam as religion, Muhammad as Prophet</div>
+<div class="benefit">🛡️ Benefit: 3 times morning/evening. Allah promises to make you pleased on Qiyamah. Strengthens Iman.</div>
+</div>
+
+<div class="zikr-box animate-left">
+<div class="zikr-number">5</div>
+<h2 style="margin-top:0;display:inline;margin-left:15px">Azkar 5: Hasbiyallahu - Allah is Sufficient</h2>
+<div class="arabic-zikr">حَسْبِيَ اللَّهُ لَا إِلَهَ إِلَّا هُوَ عَلَيْهِ تَوَكَّلْتُ</div>
+<div class="transliteration">Hasbiyallahu la ilaha illa Huwa alayhi tawakkaltu</div>
+<div class="translation">Allah is sufficient for me, there is no god but Him, upon Him I rely</div>
+<div class="benefit">🛡️ Benefit: 7 times morning/evening. Allah takes care of all your worries, stress, needs for that day.</div>
+</div>
+
+<div class="zikr-box animate-right">
+<div class="zikr-number">6</div>
+<h2 style="margin-top:0;display:inline;margin-left:15px">Azkar 6: 100 Times - SubhanAllahi wa bihamdihi</h2>
+<div class="arabic-zikr">سُبْحَانَ اللَّهِ وَبِحَمْدِهِ</div>
+<div class="transliteration">SubhanAllahi wa bihamdihi</div>
+<div class="translation">Glory be to Allah and praise Him</div>
+<div class="benefit">🛡️ Benefit: 100 times morning/evening. Sins forgiven even if like foam of sea. Light on tongue, heavy on scales.</div>
+</div><div class="zikr-box animate-left">
+<div class="zikr-number">7</div>
+<h2 style="margin-top:0;display:inline;margin-left:15px">Azkar 7: 10 Times - La ilaha illAllah</h2>
+<div class="arabic-zikr">لَا إِلَهَ إِلَّا اللَّهُ وَحْدَهُ لَا شَرِيكَ لَهُ</div>
+<div class="transliteration">La ilaha illAllahu wahdahu la shareeka lah</div>
+<div class="translation">There is no god but Allah alone, no partner has He</div>
+<div class="benefit">🛡️ Benefit: 10 times morning/evening. Equivalent to freeing 4 slaves, 10 good deeds written, 10 sins erased, protected from Shaytan whole day.</div>
+</div>
+
+<div class="zikr-box animate-right">
+<div class="zikr-number">8</div>
+<h2 style="margin-top:0;display:inline;margin-left:15px">Azkar 8: 3 Times - Allahumma inni as'alukal-afiyah</h2>
+<div class="arabic-zikr">اللَّهُمَّ إِنِّي أَسْأَلُكَ الْعَافِيَةَ فِي الدُّنْيَا وَالْآخِرَةِ</div>
+<div class="transliteration">Allahumma inni as'alukal-'afiyata fid-dunya wal-akhirah</div>
+<div class="translation">O Allah, I ask You for well-being in this world and Hereafter</div>
+<div class="benefit">🛡️ Benefit: 3 times morning/evening. 'Afiyah = protection from all illness, calamity, fitnah. Best comprehensive dua.</div>
+</div>
+
+<div class="zikr-box animate-left">
+<div class="zikr-number">9</div>
+<h2 style="margin-top:0;display:inline;margin-left:15px">Azkar 9: Morning Dua - Asbahna wa asbahal mulk</h2>
+<div class="arabic-zikr">أَصْبَحْنَا وَأَصْبَحَ الْمُلْكُ لِلَّهِ</div>
+<div class="transliteration">Asbahna wa asbahal-mulku lillah</div>
+<div class="translation">We have reached morning and dominion belongs to Allah</div>
+<div class="benefit">🛡️ Benefit: Morning only. Acknowledges Allah's control. Start day with Tawheed consciousness.</div>
+</div>
+
+<div class="zikr-box animate-right">
+<div class="zikr-number">10</div>
+<h2 style="margin-top:0;display:inline;margin-left:15px">Azkar 10: Evening Dua - Amsayna wa amsal mulk</h2>
+<div class="arabic-zikr">أَمْسَيْنَا وَأَمْسَى الْمُلْكُ لِلَّهِ</div>
+<div class="transliteration">Amsayna wa amsal-mulku lillah</div>
+<div class="translation">We have reached evening and dominion belongs to Allah</div>
+<div class="benefit">🛡️ Benefit: Evening only. End day remembering Allah owns everything. Protection through night.</div>
+</div>
+
+<div class="zikr-box animate-left">
+<div class="zikr-number">11</div>
+<h2 style="margin-top:0;display:inline;margin-left:15px">Azkar 11: Protection Dua - A'udhu bikalimatillah</h2>
+<div class="arabic-zikr">أَعُوذُ بِكَلِمَاتِ اللَّهِ التَّامَّاتِ مِنْ شَرِّ مَا خَلَقَ</div>
+<div class="transliteration">A'udhu bikalimatillahit-tammati min sharri ma khalaq</div>
+<div class="translation">I seek refuge in Allah's perfect words from evil of what He created</div>
+<div class="benefit">🛡️ Benefit: 3 times evening. No poison, no sting, no harm will affect you that night. Powerful protection.</div>
+</div>
+
+<div class="zikr-box animate-right">
+<div class="zikr-number">12</div>
+<h2 style="margin-top:0;display:inline;margin-left:15px">Azkar 12: 3 Times - Bismillahil-ladhi la yadurr</h2>
+<div class="arabic-zikr">بِسْمِ اللَّهِ الَّذِي لَا يَضُرُّ مَعَ اسْمِهِ شَيْءٌ</div>
+<div class="transliteration">Bismillahil-ladhi la yadurru ma'asmihi shay'un</div>
+<div class="translation">In name of Allah with whose name nothing harms in earth or heaven</div>
+<div class="benefit">🛡️ Benefit: 3 times morning/evening. Complete protection from sudden calamity, accident, illness whole day/night.</div>
+</div><div class="zikr-box animate-left">
+<div class="zikr-number">13</div>
+<h2 style="margin-top:0;display:inline;margin-left:15px">Azkar 13: Morning - Allahumma bika asbahna</h2>
+<div class="arabic-zikr">اللَّهُمَّ بِكَ أَصْبَحْنَا وَبِكَ أَمْسَيْنَا</div>
+<div class="transliteration">Allahumma bika asbahna wa bika amsayna</div>
+<div class="translation">O Allah, by You we reach morning and by You we reach evening</div>
+<div class="benefit">🛡️ Benefit: Morning. Hand over control of day to Allah. Live day knowing He is managing everything.</div>
+</div>
+
+<div class="zikr-box animate-right">
+<div class="zikr-number">14</div>
+<h2 style="margin-top:0;display:inline;margin-left:15px">Azkar 14: Evening - Allahumma bika amsayna</h2>
+<div class="arabic-zikr">اللَّهُمَّ بِكَ أَمْسَيْنَا وَبِكَ أَصْبَحْنَا</div>
+<div class="transliteration">Allahumma bika amsayna wa bika asbahna</div>
+<div class="translation">O Allah, by You we reach evening and by You we reach morning</div>
+<div class="benefit">🛡️ Benefit: Evening. Trust Allah with night. Sleep peacefully knowing He guards you.</div>
+</div>
+
+<div class="zikr-box animate-left">
+<div class="zikr-number">15</div>
+<h2 style="margin-top:0;display:inline;margin-left:15px">Azkar 15: 33x SubhanAllah, 33x Alhamdulillah, 34x Allahu Akbar</h2>
+<div class="arabic-zikr">سُبْحَانَ اللَّهِ ٣، الْحَمْدُ لِلَّهِ ٣، اللَّهُ أَكْبَرُ ٣٤</div>
+<div class="transliteration">SubhanAllah 33x, Alhamdulillah 33x, Allahu Akbar 34x</div>
+<div class="translation">Glory be to Allah, All praise to Allah, Allah is Greatest</div>
+<div class="benefit">🛡️ Benefit: After every prayer + morning/evening. Fatima (RA) was taught this by Prophet. Gives strength for whole day, no fatigue.</div>
+</div>
+
+<h2 class="animate-right">Perfect Timing: When to Recite</h2>
+<p class="animate-left"><strong>Morning Azkar:</strong> After Fajr till sunrise. Best time: 10 min after Fajr while sitting on prayer mat.</p>
+<p class="animate-right"><strong>Evening Azkar:</strong> After Asr till Maghrib. Best time: 10 min before Maghrib.</p>
+<p class="animate-left"><strong>Total time:</strong> 10 minutes only. 5 min morning + 5 min evening = 24 hour protection.</p>
+
+<h2 class="animate-right">30-Day Chart Method for Consistency</h2>
+<p class="animate-left">Print this list. Tick daily after Fajr + Maghrib. After 30 ticks, habit forms. Our academy sends daily WhatsApp reminder with tick box. 500+ students using it, 90% consistency rate.</p>
+
+<h2 class="animate-right">Conclusion: Don't Leave Home Without Your Armor</h2>
+<p class="animate-left">Soldier never goes to battlefield without armor. You face Shaytan, stress, evil eye daily – Azkar is your armor. 15 Azkar, 10 minutes, lifetime protection.</p>
+<p class="animate-right">Start tomorrow Fajr. Read only Ayatul Kursi + 3 Quls + Sayyidul Istighfar. 3 minutes. Add one more each week. After 2 months you know all 15 by heart.</p>
+
+<p class="animate-left" style="text-align:center; margin-top:40px; font-size:20px; color:#FFD700; font-weight:700;">"Morning + Evening Azkar = Allah's personal security" – Download free printable chart!</p>
+
+</div>
+
+<!-- Join Now Form -->
+<div class="join-section animate-left" id="join-form" style="background:linear-gradient(145deg,#1a1a1a,#222);border:3px solid #FFD700;border-radius:30px;padding:50px;margin:80px 0;box-shadow:0 20px 50px rgba(255,215,0,0.2)">
+<h2 class="join-title" style="text-align:center;font-size:38px;color:#FFD700;font-weight:800;margin-bottom:15px">📋 Free Azkar Chart + Daily Reminder</h2>
+<p class="join-subtitle" style="text-align:center;color:#aaa;font-size:17px;margin-bottom:40px">Printable morning/evening Azkar card + daily WhatsApp reminder at Fajr + Maghrib time!</p>
+
+<form onsubmit="alert('Alhamdulillah! Morning/Evening Azkar chart PDF + daily reminders will be sent to your WhatsApp. Start from tomorrow Fajr!'); return false;">
+<div class="form-group" style="margin-bottom:25px">
+<label style="display:block;color:#FFD700;font-weight:600;margin-bottom:10px;font-size:16px">Full Name *</label>
+<input type="text" placeholder="Enter your full name" required style="width:100%;padding:16px;border-radius:12px;border:2px solid #444;background:#0a0a0a;color:#fff;font-size:16px">
+</div>
+
+<div class="form-group" style="margin-bottom:25px">
+<label style="display:block;color:#FFD700;font-weight:600;margin-bottom:10px;font-size:16px">WhatsApp Number *</label>
+<input type="tel" placeholder="+1 234 567 8900" required style="width:100%;padding:16px;border-radius:12px;border:2px solid #444;background:#0a0a0a;color:#fff;font-size:16px">
+</div>
+
+<div class="form-group" style="margin-bottom:25px">
+<label style="display:block;color:#FFD700;font-weight:600;margin-bottom:10px;font-size:16px">Your Time Zone</label>
+<select style="width:100%;padding:16px;border-radius:12px;border:2px solid #444;background:#0a0a0a;color:#fff;font-size:16px">
+<option>EST - USA East Coast</option>
+<option>GST - UK/Greenwich</option>
+<option>PST - Canada West</option>
+<option>PKT - Pakistan</option>
+<option>GST - UAE/Dubai</option>
+</select>
+</div>
+
+<button type="submit" style="width:100%;background:linear-gradient(135deg,#FFD700,#FFA500);color:#000;padding:18px;border-radius:15px;border:none;font-weight:800;font-size:18px;cursor:pointer">📥 Send Me Free Azkar Chart Now</button>
+</form>
+</div>
+
+<!-- BOTTOM NEXT BLOG SECTION -->
+<div class="next-blog-section animate-left" style="margin-top:80px;padding:50px;background:linear-gradient(145deg,#1a1a1a,#222);border-radius:30px;border:3px solid #FFD700">
+<h2 style="text-align:center;font-size:36px;color:#FFD700;font-weight:800;margin-bottom:40px">📚 Continue Reading More Blogs</h2>
+
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:30px">
+
+<!-- Previous Blog Card -->
+<div style="background:#0a0a0a;border:2px solid #444;border-radius:20px;padding:25px;text-align:center;transition:0.3s">
+<h3 style="color:#aaa;font-size:18px;margin-bottom:15px">← Previous Blog</h3>
+<h4 style="color:#FFD700;font-size:20px;margin-bottom:15px">Power of Bismillah in Daily Life</h4>
+<p style="color:#ccc;font-size:14px;margin-bottom:20px">19 letters, infinite barakah</p>
+<a href="blog19.html" style="display:inline-block;background:#2a2a2a;color:#FFD700;padding:12px 25px;border-radius:10px;text-decoration:none;font-weight:700;border:2px solid #FFD700">Read Previous</a>
+</div>
+
+<!-- Next Blog Card -->
+<div style="background:linear-gradient(135deg,#FFD700,#FFA500);border-radius:20px;padding:25px;text-align:center;box-shadow:0 10px 30px rgba(255,215,0,0.4)">
+<h3 style="color:#000;font-size:18px;margin-bottom:15px;font-weight:700">Next Blog →</h3>
+<h4 style="color:#000;font-size:22px;margin-bottom:15px;font-weight:800">Importance of Salah for Muslims</h4>
+<p style="color:#333;font-size:15px;margin-bottom:20px;font-weight:600">5 times prayer - key to Jannah</p>
+<a href="blog21.html" style="display:inline-block;background:#000;color:#FFD700;padding:14px 30px;border-radius:12px;text-decoration:none;font-weight:800;font-size:16px">Read Next Blog</a>
+</div>
+
+</div>
+</div>
+
+</div>
+
+<footer style="text-align:center;padding:50px 5%;background:#111;margin-top:100px;border-top:3px solid #FFD700">
+<p style="color:#FFD700;font-weight:600;font-size:18px">© 2026 Al Raza Online Quran Academy | All Rights Reserved | Contact: muhammadshazabattari786@gmail.com</p>
+</footer>
+
+<script>
+function toggleMenu() {
+document.getElementById('menu').classList.toggle('show');
+}
+window.addEventListener('click', function(e) {
+if (!e.target.closest('.nav-container')) {
+document.getElementById('menu').classList.remove('show');
+}
+});
+
+const observer = new IntersectionObserver((entries) => {
+entries.forEach(entry => {
+if (entry.isIntersecting) {
+entry.target.classList.add('show');
+}
+});
+}, { threshold: 0.15 });
+
+document.querySelectorAll('.animate-left,.animate-right').forEach(el => {
+observer.observe(el);
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Patience - Sabr in Islam - Inna lillahi wa inna ilayhi raji'un - Al Raza Academy</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Poppins',sans-serif;background:linear-gradient(135deg,#0a0a0a 0%,#1a1a1a 100%);color:#fff;line-height:1.9;overflow-x:hidden}
+nav{background:rgba(17,17,17,0.95);backdrop-filter:blur(10px);padding:20px 0;position:sticky;top:0;z-index:100;border-bottom:3px solid #FFD700;box-shadow:0 5px 30px rgba(255,215,0,0.2)}
+.nav-container{max-width:1300px;margin:auto;padding:0 5%;display:flex;justify-content:space-between;align-items:center}
+.logo{display:flex;align-items:center;gap:15px}
+.logo img{height:65px;width:65px;border-radius:50%;border:3px solid #FFD700;object-fit:cover;box-shadow:0 0 20px rgba(255,215,0,0.4)}
+.logo-text{color:#FFD700;font-size:28px;font-weight:800;letter-spacing:1px}
+.hamburger{display:flex;flex-direction:column;cursor:pointer;gap:5px}
+.hamburger span{width:30px;height:3px;background:#FFD700;border-radius:2px;transition:0.3s}
+.dropdown{display:none;position:absolute;top:90px;right:5%;background:#1a1a1a;border:2px solid #FFD700;border-radius:15px;min-width:260px;box-shadow:0 15px 50px rgba(255,215,0,0.4);z-index:200;overflow:hidden}
+.dropdown.show{display:block;animation:slideDown 0.4s ease}
+@keyframes slideDown{from{opacity:0;transform:translateY(-15px)}to{opacity:1;transform:translateY(0)}}
+.dropdown a{display:block;padding:15px 22px;color:#FFD700;text-decoration:none;font-size:16px;font-weight:600;border-bottom:1px solid #333;transition:0.3s}
+.dropdown a:hover{background:#FFD700;color:#000;padding-left:28px}
+.container{max-width:950px;margin:60px auto;padding:0 5%}
+.header-section{text-align:center;margin-bottom:50px;padding-bottom:35px;border-bottom:2px solid #333}
+.line1{font-size:48px;color:#FFD700;font-weight:800;margin-bottom:15px;line-height:1.3}
+.line2{font-size:20px;color:#aaa;font-weight:400;margin-bottom:20px}
+.line3{display:flex;justify-content:center;gap:25px;flex-wrap:wrap;font-size:15px;color:#FFD700;font-weight:600}
+.line3 span{display:flex;align-items:center;gap:6px}
+.blog-detail-img{width:100%;height:420px;border-radius:30px;overflow:hidden;margin-bottom:45px;border:3px solid #FFD700;box-shadow:0 15px 40px rgba(255,215,0,0.2)}
+.blog-detail-img img{width:100%;height:100%;object-fit:cover}
+.blog-content h2{font-size:34px;color:#FFD700;margin-top:60px;margin-bottom:25px;font-weight:700;border-left:5px solid #FFD700;padding-left:15px}
+.blog-content p{font-size:18px;color:#ddd;line-height:2.1;margin-bottom:22px;text-align:justify}
+.sabr-box{background:linear-gradient(145deg,#1a1a1a,#222);border-left:6px solid #FFD700;border-radius:15px;padding:30px;margin:35px 0}
+.sabr-number{background:linear-gradient(135deg,#FFD700,#FFA500);color:#000;width:50px;height:50px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-weight:800;font-size:22px;margin-bottom:15px}
+.ayah-box{background:linear-gradient(145deg,#1a1a1a,#222);border:2px solid #FFD700;border-radius:20px;padding:35px;margin:40px 0;box-shadow:0 10px 30px rgba(255,215,0,0.15)}
+.arabic-text{font-family:'Amiri',serif;font-size:32px;color:#FFD700;text-align:right;direction:rtl;line-height:2.5;margin-bottom:20px;font-weight:700}
+.translation{font-size:17px;color:#ccc;font-style:italic;text-align:left;line-height:2;border-top:1px solid #444;padding-top:20px}
+.reference{color:#FFA500;font-size:14px;font-weight:600;margin-top:10px}
+.hadith-box{background:linear-gradient(145deg,#222,#2a2a2a);border-left:6px solid #FFD700;border-radius:15px;padding:30px;margin:35px 0}
+.hadith-text{font-size:18px;color:#FFD700;font-weight:600;margin-bottom:15px}
+.hadith-translation{font-size:17px;color:#ddd;line-height:2.1}
+.reward-box{background:linear-gradient(145deg,#1a2a1a,#2a3a2a);border-left:6px solid #4CAF50;border-radius:15px;padding:25px;margin:30px 0}
+.animate-left{opacity:0;transform:translateX(-120px);transition:all 0.9s ease}
+.animate-right{opacity:0;transform:translateX(120px);transition:all 0.9s ease}
+.animate-left.show,.animate-right.show{opacity:1;transform:translateX(0)}
+@media(max-width:768px){.line1{font-size:32px}.line2{font-size:16px}.line3{font-size:13px;gap:15px}.blog-detail-img{height:260px}.container{padding:0 4%}.arabic-text{font-size:24px}}
+</style>
+</head>
+<body>
+
+<!-- MENU SECTION -->
+<nav>
+<div class="nav-container">
+<div class="logo">
+<img src="logo.png" alt="Al Raza Academy Logo">
+<span class="logo-text">Al Raza Academy</span>
+</div>
+<div class="hamburger" onclick="toggleMenu()">
+<span></span>
+<span></span>
+<span></span>
+</div>
+<div class="dropdown" id="menu">
+<a href="index.html">🏠 Home</a>
+<a href="about.html">ℹ️ About Us</a>
+<a href="teachers.html">👨‍🏫 Our Teacher's</a>
+<a href="how-it-works.html">⚙️ How it Works</a>
+<a href="terms.html">📜 Terms & Condition</a>
+<a href="contact.html">📞 Contact Us</a>
+<a href="courses.html">📚 Courses</a>
+<a href="fees.html">💰 Study Plan & Fees</a>
+<a href="blogs.html">📝 Blogs</a>
+</div>
+</div>
+</nav>
+
+<div class="container">
+
+<!-- 3-LINE HEADING SECTION -->
+<div class="header-section animate-left">
+<div class="line1">Patience - Sabr in Islam</div>
+<div class="line2">Inna lillahi wa inna ilayhi raji'un - Key to Jannah</div>
+<div class="line3">
+<span>📅 April 2026</span>
+<span>⏱️ 17 Min Read</span>
+<span>📚 Sabr</span>
+<span>✍️ Al Raza Academy</span>
+</div>
+</div>
+
+<!-- Blog Image -->
+<div class="blog-detail-img animate-right">
+<img src="img/blog29.jpg" alt="Patience Sabr">
+</div>
+
+<!-- Blog Content Start -->
+<div class="blog-content">
+
+<h2 class="animate-left">Introduction: Sabr - Half of Iman</h2>
+<p class="animate-right">Allah mentions "Sabr" 90+ times in Quran. "O you who have believed, seek help through patience and prayer." Baqarah 153. Prophet (PBUH) said: "Patience is light" and "No gift better than patience." Bukhari, Muslim.</p>
+
+<p class="animate-left">Sabr = Restraining tongue from complaining, heart from anger, limbs from haram. 3 types: Patience on obedience, patience from sin, patience on calamity. Without Sabr, Salah feels heavy, sins feel sweet, trials break you.</p>
+
+<p class="animate-right">This article covers 3 types of Sabr, unlimited reward, Prophet Ayyub example, and 7 ways to build patience. If you master Sabr, you master life.</p>
+
+<div class="ayah-box animate-left">
+<div class="arabic-text">إِنَّمَا يُوَفَّى الصَّابِرُونَ أَجْرَهُم بِغَيْرِ حِسَابٍ</div>
+<div class="translation">"Indeed, the patient will be given their reward without account."</div>
+<div class="reference">Surah Az-Zumar, Ayah 10</div>
+</div>
+
+<p class="animate-right">Other deeds have limit: Salah 10x, Sadaqah 700x. But Sabr? Allah says "without account" – unlimited, no calculator. That's why Sabr is most beloved deed to Allah.</p>
+
+<div class="sabr-box animate-left">
+<div class="sabr-number">1</div>
+<h2 style="margin-top:0;display:inline;margin-left:15px">Type 1: Sabr on Obedience - Waking for Fajr</h2>
+<p>Waking at 5AM for Fajr when bed is warm = Sabr. Fasting 16 hours = Sabr. Praying 20 rakah Tarawih when legs hurt = Sabr. Controlling eyes when phone shows haram = Sabr.</p>
+<p><strong>Reward:</strong> Every second of obedience Sabr = Jannah rank. Hadith: "Wudu in hardship, walking to Masjid, waiting prayer after prayer – that is Ribat, that is Ribat." Muslim.</p>
+</div>
+
+<div class="sabr-box animate-right">
+<div class="sabr-number">2</div>
+<h2 style="margin-top:0;display:inline;margin-left:15px">Type 2: Sabr from Sin - Saying "No" to Haram</h2>
+<p>Girl messages you late night – you block = Sabr. Job offers bribe – you refuse = Sabr. Friend offers cigarette – you walk away = Sabr. Eyes see haram on street – you lower gaze = Sabr.</p>
+<div class="hadith-box">
+<div class="hadith-text">Hadith: 7 People Under Allah's Shade</div>
+<div class="hadith-translation">One is "man invited by beautiful woman but says I fear Allah". That's Sabr from sin = Arsh shade on Qiyamah.</div>
+</div>
+</div>
+
+<div class="sabr-box animate-left">
+<div class="sabr-number">3</div>
+<h2 style="margin-top:0;display:inline;margin-left:15px">Type 3: Sabr on Calamity - Inna lillahi...</h2>
+<p>Death, illness, job loss, divorce, exam fail – first moment reaction is real Sabr. Prophet said: "True Sabr is at first strike of calamity." Bukhari. After 1 week crying is normal, but first second matters.</p>
+<div class="reward-box">
+<p><strong>Magic words:</strong> "Inna lillahi wa inna ilayhi raji'un" – We belong to Allah and to Him we return. Say this + "Allahumma ajirni fi musibati" – Allah gives better replacement.</p>
+</div>
+</div><div class="sabr-box animate-right">
+<h2 style="margin-top:0;color:#FFD700">Story: Prophet Ayyub (AS) - 18 Years Sabr</h2>
+<p>Allah tested Ayyub: Lost all wealth, all children died, body covered in painful disease for 18 years. People left him. Wife stayed, served him. One day she said "Ask Allah to cure". Ayyub said: "Allah gave me 70 years health, I am shy to ask for cure before equal time of patience."</p>
+<p><strong>Result:</strong> Allah cured him, returned wealth double, gave children double. Quran calls him "patient, excellent servant". Sad 44. Your 2-year problem is nothing vs 18 years. Learn Sabr from him.</p>
+</div>
+
+<h2 class="animate-left">7 Ways to Build Patience Today</h2>
+<p class="animate-right">1. <strong>Remember reward:</strong> "Without account" – visualize unlimited Hasanat bank. 2. <strong>Make dua:</strong> "Allahumma alhimni sabran" – O Allah inspire me patience. 3. <strong>Compare:</strong> Your problem vs Ayyub, vs Gaza children, vs cancer patient. Be grateful. 4. <strong>Say Alhamdulillah:</strong> On good and bad. 5. <strong>Read Quran:</strong> Especially Surah Yusuf – full story of Sabr. 6. <strong>Keep company:</strong> Sit with patient people, not complainers. 7. <strong>Know this is test:</strong> Allah tests those He loves. Hadith Tirmidhi.</p>
+
+<div class="reward-box animate-left">
+<h2 style="margin-top:0;color:#4CAF50">5 Rewards of Sabr No One Tells You</h2>
+<p>1. <strong>Allah is with you:</strong> "Indeed Allah is with the patient." Baqarah 153. 2. <strong>Sins wiped:</strong> Every pain, thorn, sadness = expiation. 3. <strong>Rank raised:</strong> Patience = shortcut to high Jannah. 4. <strong>Victory:</strong> "Victory comes with patience." Hadith. 5. <strong>Love of Allah:</strong> "Allah loves the patient." Aal-Imran 146.</p>
+</div><h2 class="animate-right">What Breaks Sabr - 4 Things to Avoid</h2>
+<p class="animate-left">1. <strong>Complaining to people:</strong> "My life is ruined" on Facebook = Sabr lost. Complain to Allah only – like Yaqub (AS) "I complain of my grief to Allah only". 2. <strong>Slapping face/tearing clothes:</strong> Prophet said not from us. 3. <strong>Impatience in dua:</strong> "I made dua 100x, nothing". Give up = no Sabr. 4. <strong>Despair:</strong> "Allah forgot me". No – delay is Allah's wisdom.</p>
+
+<h2 class="animate-right">Dua of Patience from Quran</h2>
+<div class="ayah-box animate-left">
+<div class="arabic-text">رَبَّنَا أَفْرِغْ عَلَيْنَا صَبْرًا وَثَبِّتْ أَقْدَامَنَا</div>
+<div class="translation">"Our Lord, pour upon us patience and plant firmly our feet."</div>
+<div class="reference">Surah Al-Baqarah, Ayah 250</div>
+</div>
+<p class="animate-right">Taleut's army made this dua before battle. Say it in Sajdah when problem hits. Allah will pour patience like rain.</p>
+
+<h2 class="animate-left">30-Day Sabr Challenge</h2>
+<p class="animate-right">Day 1-10: When angry, stay silent 10 seconds + Astaghfirullah. Day 11-20: When problem hits, first words = Inna lillahi. Day 21-30: Thank Allah for 1 "bad" thing daily. After 30 days, Sabr becomes habit.</p>
+
+<h2 class="animate-right">Conclusion: Sabr is Not Weakness, It's Power</h2>
+<p class="animate-left">World says "Be strong, fight back". Islam says "Be patient, Allah fights for you". Sabr doesn't mean don't cry – Prophet cried at son's death. Sabr means don't say what angers Allah.</p>
+<p class="animate-left">Next time trial hits, smile and say "Ya Allah, give me Sabr + reward without account". That one sentence can take you to Firdaws. Patience is bitter now, but its fruit is sweeter than honey in Jannah.</p>
+
+<p class="animate-right" style="text-align:center; margin-top:40px; font-size:20px; color:#FFD700; font-weight:700;">"Indeed Allah is with the patient" – Practice Sabr today!</p>
+
+</div>
+
+<!-- Join Now Form -->
+<div class="join-section animate-left" id="join-form" style="background:linear-gradient(145deg,#1a1a1a,#222);border:3px solid #FFD700;border-radius:30px;padding:50px;margin:80px 0;box-shadow:0 20px 50px rgba(255,215,0,0.2)">
+<h2 class="join-title" style="text-align:center;font-size:38px;color:#FFD700;font-weight:800;margin-bottom:15px">🌙 Free Sabr Reminder + Dua Booklet</h2>
+<p class="join-subtitle" style="text-align:center;color:#aaa;font-size:17px;margin-bottom:40px">Get "Inna lillahi" wallpaper + daily Sabr reminder + 30-day challenge tracker on WhatsApp!</p>
+
+<form onsubmit="alert('As-Saboor! Sabr reminder wallpaper + Inna lillahi dua audio + 30-day challenge tracker will be sent to your WhatsApp. Allah will grant you patience!'); return false;">
+<div class="form-group" style="margin-bottom:25px">
+<label style="display:block;color:#FFD700;font-weight:600;margin-bottom:10px;font-size:16px">Full Name *</label>
+<input type="text" placeholder="Enter your full name" required style="width:100%;padding:16px;border-radius:12px;border:2px solid #444;background:#0a0a0a;color:#fff;font-size:16px">
+</div>
+
+<div class="form-group" style="margin-bottom:25px">
+<label style="display:block;color:#FFD700;font-weight:600;margin-bottom:10px;font-size:16px">WhatsApp Number *</label>
+<input type="tel" placeholder="+1 234 567 8900" required style="width:100%;padding:16px;border-radius:12px;border:2px solid #444;background:#0a0a0a;color:#fff;font-size:16px">
+</div>
+
+<div class="form-group" style="margin-bottom:25px">
+<label style="display:block;color:#FFD700;font-weight:600;margin-bottom:10px;font-size:16px">Current Trial</label>
+<select style="width:100%;padding:16px;border-radius:12px;border:2px solid #444;background:#0a0a0a;color:#fff;font-size:16px">
+<option>Health/Illness test</option>
+<option>Financial/job loss</option>
+<option>Family/Relationship trial</option>
+<option>General stress/anxiety</option>
+<option>Alhamdulillah no major trial</option>
+</select>
+</div>
+
+<button type="submit" style="width:100%;background:linear-gradient(135deg,#FFD700,#FFA500);color:#000;padding:18px;border-radius:15px;border:none;font-weight:800;font-size:18px;cursor:pointer">🌙 Get Sabr Reminder Free</button>
+</form>
+</div>
+
+<!-- BOTTOM NEXT BLOG SECTION -->
+<div class="next-blog-section animate-left" style="margin-top:80px;padding:50px;background:linear-gradient(145deg,#1a1a1a,#222);border-radius:30px;border:3px solid #FFD700">
+<h2 style="text-align:center;font-size:36px;color:#FFD700;font-weight:800;margin-bottom:40px">📚 Continue Reading More Blogs</h2>
+
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:30px">
+
+<!-- Previous Blog Card -->
+<div style="background:#0a0a0a;border:2px solid #444;border-radius:20px;padding:25px;text-align:center;transition:0.3s">
+<h3 style="color:#aaa;font-size:18px;margin-bottom:15px">← Previous Blog</h3>
+<h4 style="color:#FFD700;font-size:20px;margin-bottom:15px">Tawakkul - Trust in Allah</h4>
+<p style="color:#ccc;font-size:14px;margin-bottom:20px">Tie camel + trust</p>
+<a href="blog28.html" style="display:inline-block;background:#2a2a2a;color:#FFD700;padding:12px 25px;border-radius:10px;text-decoration:none;font-weight:700;border:2px solid #FFD700">Read Previous</a>
+</div>
+
+<!-- Next Blog Card -->
+<div style="background:linear-gradient(135deg,#FFD700,#FFA500);border-radius:20px;padding:25px;text-align:center;box-shadow:0 10px 30px rgba(255,215,0,0.4)">
+<h3 style="color:#000;font-size:18px;margin-bottom:15px;font-weight:700">Next Blog →</h3>
+<h4 style="color:#000;font-size:22px;margin-bottom:15px;font-weight:800">Death & Akhirah - Life After Death</h4>
+<p style="color:#333;font-size:15px;margin-bottom:20px;font-weight:600">Grave to Jannah journey</p>
+<a href="blog30.html" style="display:inline-block;background:#000;color:#FFD700;padding:14px 30px;border-radius:12px;text-decoration:none;font-weight:800;font-size:16px">Read Next Blog</a>
+</div>
+
+</div>
+</div>
+
+</div>
+
+<footer style="text-align:center;padding:50px 5%;background:#111;margin-top:100px;border-top:3px solid #FFD700">
+<p style="color:#FFD700;font-weight:600;font-size:18px">© 2026 Al Raza Online Quran Academy | All Rights Reserved | Contact: muhammadshazabattari786@gmail.com</p>
+</footer>
+
+<script>
+function toggleMenu() {
+document.getElementById('menu').classList.toggle('show');
+}
+window.addEventListener('click', function(e) {
+if (!e.target.closest('.nav-container')) {
+document.getElementById('menu').classList.remove('show');
+}
+});
+
+const observer = new IntersectionObserver((entries) => {
+entries.forEach(entry => {
+if (entry.isIntersecting) {
+entry.target.classList.add('show');
+}
+});
+}, { threshold: 0.15 });
+
+document.querySelectorAll('.animate-left,.animate-right').forEach(el => {
+observer.observe(el);
+});
+</script>
+
+</body>
+</html>

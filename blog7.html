@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How Online Quran Classes Work - Step by Step Guide - Al Raza Academy</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Poppins',sans-serif;background:linear-gradient(135deg,#0a0a0a 0%,#1a1a1a 100%);color:#fff;line-height:1.9;overflow-x:hidden}
+nav{background:rgba(17,17,17,0.95);backdrop-filter:blur(10px);padding:20px 0;position:sticky;top:0;z-index:100;border-bottom:3px solid #FFD700;box-shadow:0 5px 30px rgba(255,215,0,0.2)}
+.nav-container{max-width:1300px;margin:auto;padding:0 5%;display:flex;justify-content:space-between;align-items:center}
+.logo{display:flex;align-items:center;gap:15px}
+.logo img{height:65px;width:65px;border-radius:50%;border:3px solid #FFD700;object-fit:cover;box-shadow:0 0 20px rgba(255,215,0,0.4)}
+.logo-text{color:#FFD700;font-size:28px;font-weight:800;letter-spacing:1px}
+.hamburger{display:flex;flex-direction:column;cursor:pointer;gap:5px}
+.hamburger span{width:30px;height:3px;background:#FFD700;border-radius:2px;transition:0.3s}
+.dropdown{display:none;position:absolute;top:90px;right:5%;background:#1a1a1a;border:2px solid #FFD700;border-radius:15px;min-width:260px;box-shadow:0 15px 50px rgba(255,215,0,0.4);z-index:200;overflow:hidden}
+.dropdown.show{display:block;animation:slideDown 0.4s ease}
+@keyframes slideDown{from{opacity:0;transform:translateY(-15px)}to{opacity:1;transform:translateY(0)}}
+.dropdown a{display:block;padding:15px 22px;color:#FFD700;text-decoration:none;font-size:16px;font-weight:600;border-bottom:1px solid #333;transition:0.3s}
+.dropdown a:hover{background:#FFD700;color:#000;padding-left:28px}
+.container{max-width:950px;margin:60px auto;padding:0 5%}
+.header-section{text-align:center;margin-bottom:50px;padding-bottom:35px;border-bottom:2px solid #333}
+.line1{font-size:48px;color:#FFD700;font-weight:800;margin-bottom:15px;line-height:1.3}
+.line2{font-size:20px;color:#aaa;font-weight:400;margin-bottom:20px}
+.line3{display:flex;justify-content:center;gap:25px;flex-wrap:wrap;font-size:15px;color:#FFD700;font-weight:600}
+.line3 span{display:flex;align-items:center;gap:6px}
+.blog-detail-img{width:100%;height:420px;border-radius:30px;overflow:hidden;margin-bottom:45px;border:3px solid #FFD700;box-shadow:0 15px 40px rgba(255,215,0,0.2)}
+.blog-detail-img img{width:100%;height:100%;object-fit:cover}
+.blog-content h2{font-size:34px;color:#FFD700;margin-top:60px;margin-bottom:25px;font-weight:700;border-left:5px solid #FFD700;padding-left:15px}
+.blog-content p{font-size:18px;color:#ddd;line-height:2.1;margin-bottom:22px;text-align:justify}
+.step-box{background:linear-gradient(145deg,#1a1a1a,#222);border-left:6px solid #FFD700;border-radius:15px;padding:30px;margin:35px 0}
+.step-number{background:linear-gradient(135deg,#FFD700,#FFA500);color:#000;width:50px;height:50px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-weight:800;font-size:22px;margin-bottom:15px}
+.ayah-box{background:linear-gradient(145deg,#1a1a1a,#222);border:2px solid #FFD700;border-radius:20px;padding:35px;margin:40px 0;box-shadow:0 10px 30px rgba(255,215,0,0.15)}
+.arabic-text{font-family:'Amiri',serif;font-size:32px;color:#FFD700;text-align:right;direction:rtl;line-height:2.5;margin-bottom:20px;font-weight:700}
+.translation{font-size:17px;color:#ccc;font-style:italic;text-align:left;line-height:2;border-top:1px solid #444;padding-top:20px}
+.reference{color:#FFA500;font-size:14px;font-weight:600;margin-top:10px}
+.animate-left{opacity:0;transform:translateX(-120px);transition:all 0.9s ease}
+.animate-right{opacity:0;transform:translateX(120px);transition:all 0.9s ease}
+.animate-left.show, .animate-right.show{opacity:1;transform:translateX(0)}
+@media(max-width:768px){.line1{font-size:32px}.line2{font-size:16px}.line3{font-size:13px;gap:15px}.blog-detail-img{height:260px}.container{padding:0 4%}.arabic-text{font-size:24px}}
+</style>
+</head>
+<body>
+
+<!-- MENU SECTION -->
+<nav>
+<div class="nav-container">
+<div class="logo">
+<img src="logo.png" alt="Al Raza Academy Logo">
+<span class="logo-text">Al Raza Academy</span>
+</div>
+<div class="hamburger" onclick="toggleMenu()">
+<span></span>
+<span></span>
+<span></span>
+</div>
+<div class="dropdown" id="menu">
+<a href="index.html">🏠 Home</a>
+<a href="about.html">ℹ️ About Us</a>
+<a href="teachers.html">👨‍🏫 Our Teacher's</a>
+<a href="how-it-works.html">⚙️ How it Works</a>
+<a href="terms.html">📜 Terms & Condition</a>
+<a href="contact.html">📞 Contact Us</a>
+<a href="courses.html">📚 Courses</a>
+<a href="fees.html">💰 Study Plan & Fees</a>
+<a href="blogs.html">📝 Blogs</a>
+</div>
+</div>
+</nav>
+
+<div class="container">
+
+<!-- 3-LINE HEADING SECTION -->
+<div class="header-section animate-left">
+<div class="line1">How Online Quran Classes Work</div>
+<div class="line2">Complete Step-by-Step Guide From Registration to Graduation - Start Learning Today</div>
+<div class="line3">
+<span>📅 April 2026</span>
+<span>⏱️ 13 Min Read</span>
+<span>📚 How It Works</span>
+<span>✍️ Al Raza Academy</span>
+</div>
+</div>
+
+<!-- Blog Image -->
+<div class="blog-detail-img animate-right">
+<img src="img/blog7.jpg" alt="How Online Quran Classes Work">
+</div>
+
+<!-- Blog Content Start -->
+<div class="blog-content">
+
+<h2 class="animate-left">Introduction: Online Quran Learning Made Simple</h2>
+<p class="animate-right">Many parents and adults hesitate to join online Quran classes thinking "I am not tech-savvy", "How will teacher correct pronunciation online?", "What if internet disconnects?". At Al Raza Online Quran Academy, we made the entire process so simple that even 60-year-old grandparents learn successfully from home.</p>
+
+<p class="animate-left">Over 5000 students from USA, UK, Canada, Australia and 40+ countries have completed their Quran journey with us. This step-by-step guide shows exactly what happens from the moment you fill the form to the day you graduate as Hafiz or complete Tajweed course. No confusion, no technical jargon – just simple steps anyone can follow.</p>
+
+<div class="ayah-box animate-right">
+<div class="arabic-text">وَقُل رَّبِّ اشْرَحْ لِي صَدْرِي وَيَسِّرْ لِي أَمْرِي</div>
+<div class="translation">"And say, My Lord, expand for me my breast and ease for me my task."</div>
+<div class="reference">Surah Taha, Ayah 25-26</div>
+</div>
+
+<p class="animate-left">Total time from registration to first class: 4-6 hours only. Let's walk through all 8 steps together.</p>
+
+<div class="step-box animate-left">
+<div class="step-number">1</div>
+<h2 style="margin-top:0;display:inline;margin-left:15px">Step 1: Free Registration - Takes 2 Minutes</h2>
+<p>Visit alrazaacademy.com and click "Book Free Trial". Fill simple form: Name, WhatsApp number, Country, Course interested in, Preferred timing. That's it. No credit card, no payment, no documents needed at this stage.</p>
+<p><strong>What happens next:</strong> Within 30 minutes, our admission counselor contacts you on WhatsApp. They ask 3 questions: 1) Current Quran level, 2) Age of student, 3) Any specific requirements like female teacher only. Based on answers, they suggest best course and teacher.</p>
+</div>
+
+<div class="step-box animate-right">
+<div class="step-number">2</div>
+<h2 style="margin-top:0;display:inline;margin-left:15px">Step 2: Free Assessment Class - 30 Minutes</h2>
+<p>We schedule your first FREE trial class within 6-12 hours. Teacher sends Zoom/Skype link on WhatsApp. Click link at class time – no software download needed, works directly in browser.</p>
+<p><strong>What happens in class:</strong> Teacher introduces themselves, tests your current level by asking you to read few verses, identifies your strengths and weaknesses, explains teaching method. For kids, teacher uses games and stories to make child comfortable. Parents can sit nearby and observe everything.</p>
+<p><strong>After class:</strong> Teacher sends WhatsApp message: "Student can read Arabic but needs work on Makharij. Recommended: 3 months Tajweed course before Hifz." You get honest assessment, no sales pressure.</p>
+</div>
+
+<div class="step-box animate-left">
+<div class="step-number">3</div>
+<h2 style="margin-top:0;display:inline;margin-left:15px">Step 3: Choose Package + Get 2 More Free Classes</h2>
+<p>After assessment, if you like teacher and method, choose from 4 packages: Basic Tajweed $79/month, Hifz $129/month, Kids $69/month, Advanced $89/month. Country-based pricing applies. Pay online via PayPal, card, or bank transfer.</p>
+<p><strong>Special offer:</strong> Even after payment, you get 2 more FREE classes. If you don't like teacher or timing, cancel anytime and get full refund. We are confident you won't cancel after experiencing 3 classes.</p>
+<p><strong>What you get immediately:</strong> Student ID, teacher WhatsApp number, class schedule, digital Mushaf access, and learning materials sent to email. Everything ready before first paid class.</p>
+</div><div class="step-box animate-right">
+<div class="step-number">4</div>
+<h2 style="margin-top:0;display:inline;margin-left:15px">Step 4: Technology Setup - 5 Minutes Only</h2>
+<p>You need only 3 things: 1) Smartphone, laptop or tablet with camera, 2) Internet 2MB speed or higher, 3) Quiet room. That's it. No expensive equipment, no special software.</p>
+<p><strong>Before first class:</strong> Teacher does 5-minute test call to check audio/video quality. Shows you how to share screen, use digital whiteboard, and mute/unmute. If internet is weak, teacher suggests solutions like switching to audio-only mode.</p>
+<p><strong>Backup plan:</strong> If Zoom disconnects, teacher immediately calls on WhatsApp and continues class via voice call. No class time wasted. We record all classes so you can review if you missed anything due to technical issue.</p>
+</div>
+
+<div class="step-box animate-left">
+<div class="step-number">5</div>
+<h2 style="margin-top:0;display:inline;margin-left:15px">Step 5: Daily Class Flow - 30 Minutes Structure</h2>
+<p>Every class follows same proven structure so students know what to expect:</p>
+<p><strong>Minutes 0-5:</strong> Warm-up + Revision. Teacher asks "What did we learn yesterday?" Student recites previous lesson. Teacher corrects mistakes gently.</p>
+<p><strong>Minutes 5-20:</strong> New Lesson. Teacher explains new concept using digital whiteboard. Shows mouth position for Makharij, writes Arabic letters, plays audio of Qari for listening practice.</p>
+<p><strong>Minutes 20-28:</strong> Practice Time. Student reads new lesson 3-5 times while teacher corrects pronunciation. For kids, this includes games and reward stars.</p>
+<p><strong>Minutes 28-30:</strong> Homework + Feedback. Teacher assigns 10-minute homework and sends summary on WhatsApp: "Today Ali learned letter Saa. Practice 10 times before next class."</p>
+</div>
+
+<div class="step-box animate-right">
+<div class="step-number">6</div>
+<h2 style="margin-top:0;display:inline;margin-left:15px">Step 6: Parent Monitoring + Progress Tracking</h2>
+<p>Parents have full transparency. You can sit next to child during class and watch live. After every class, teacher sends 2-line WhatsApp update: "Ayesha memorized Surah Ikhlas, needs practice on Tajweed rule Madd. Next class Tuesday 5PM."</p>
+<p><strong>Monthly Progress Report:</strong> At month end, you get detailed PDF report showing: Total pages completed, Tajweed rules mastered, attendance percentage, areas needing improvement, next month's target. No guessing – you see exact progress.</p>
+<p><strong>Parent-Teacher Meeting:</strong> Every 30 days, 15-minute call with teacher to discuss child's performance, adjust learning plan, and answer your questions. We treat parents as partners, not just fee payers.</p>
+</div><div class="step-box animate-left">
+<div class="step-number">7</div>
+<h2 style="margin-top:0;display:inline;margin-left:15px">Step 7: Revision + Testing System</h2>
+<p>Memorization without revision is waste. Our 5-level revision system: Level 1: Daily revision of yesterday's lesson. Level 2: Weekly revision of last 5 lessons. Level 3: Monthly revision of entire Juz. Level 4: Quarterly full revision. Level 5: Final revision before exam.</p>
+<p><strong>Monthly Test:</strong> Last class of month is test day. Student recites entire month's work to teacher. If 90% correct, student gets certificate + reward. If below 90%, teacher creates extra revision plan without extra fees. No student is left behind.</p>
+<p><strong>Flexible rescheduling:</strong> Sick? Guests at home? Internet down? Message teacher 2 hours before and class moves to next slot. No penalties, no "missed class" fees. Life happens, we understand.</p>
+</div>
+
+<div class="step-box animate-right">
+<div class="step-number">8</div>
+<h2 style="margin-top:0;display:inline;margin-left:15px">Step 8: Graduation + Ijazah Certificate</h2>
+<p>When student completes course – whether 6-month Tajweed or 3-year Hifz – we organize online graduation ceremony. Student recites last 10 pages live on Zoom. Parents, relatives, other students join as audience.</p>
+<p><strong>Ijazah Certificate:</strong> Official certificate signed by qualified scholar with chain of transmission back to Prophet Muhammad (PBUH). Digital copy sent same day, physical copy mailed worldwide within 2 weeks.</p>
+<p><strong>After graduation support:</strong> Hafiz students get free revision classes monthly to maintain memorization. All students join alumni WhatsApp group for continued learning, Islamic reminders, and community support. You never graduate from our family.</p>
+</div>
+
+<h2 class="animate-left">Common Questions About Online Classes</h2>
+<p class="animate-right"><strong>Q: What if my child gets bored staring at screen?</strong> A: Classes are interactive, not lectures. Teacher uses games, stories, drawing, questions every 2 minutes. Kids actually prefer online because they get 100% teacher attention vs group class where they get 2 minutes.</p>
+
+<p class="animate-left"><strong>Q: Can teacher correct pronunciation properly online?</strong> A: Yes. HD camera shows mouth position clearly. Teacher uses mouth diagrams, asks student to show tongue position on camera, and records student's voice for comparison. Many parents say online correction is better than in-person because teacher can replay recording.</p>
+
+<p class="animate-right"><strong>Q: What age can start online classes?</strong> A: Age 4+ for kids. For adults, no upper age limit. We have students aged 65+ learning successfully. If you can use WhatsApp, you can attend online class.</p>
+
+<h2 class="animate-left">Conclusion: Your Journey Starts in 4 Hours</h2>
+<p class="animate-right">From now to first class = 4-6 hours only. Fill form now, get WhatsApp call in 30 minutes, attend assessment today, start regular classes tomorrow. In 3 months you will be reading Quran with Tajweed. In 3 years you can become Hafiz.</p>
+
+<p class="animate-left">The hardest part is clicking "Book Free Trial". After that, we handle everything. Teacher guides you, admin supports you, technology works for you. You just focus on learning Allah's words.</p>
+
+<p class="animate-right" style="text-align:center; margin-top:40px; font-size:20px; color:#FFD700; font-weight:700;">"Ease is from Allah" – Book your free assessment class now and see how simple it is!</p>
+
+</div>
+
+<!-- Join Now Form -->
+<div class="join-section animate-left" id="join-form" style="background:linear-gradient(145deg,#1a1a1a,#222);border:3px solid #FFD700;border-radius:30px;padding:50px;margin:80px 0;box-shadow:0 20px 50px rgba(255,215,0,0.2)">
+<h2 class="join-title" style="text-align:center;font-size:38px;color:#FFD700;font-weight:800;margin-bottom:15px">🎁 Book Your Free Assessment Class Now</h2>
+<p class="join-subtitle" style="text-align:center;color:#aaa;font-size:17px;margin-bottom:40px">Experience full process yourself. 30-minute demo class, no payment required!</p>
+
+<form onsubmit="alert('Thank you! Our admission team will WhatsApp you within 30 minutes to schedule your free assessment class.'); return false;">
+<div class="form-group" style="margin-bottom:25px">
+<label style="display:block;color:#FFD700;font-weight:600;margin-bottom:10px;font-size:16px">Full Name *</label>
+<input type="text" placeholder="Enter your full name" required style="width:100%;padding:16px;border-radius:12px;border:2px solid #444;background:#0a0a0a;color:#fff;font-size:16px">
+</div>
+
+<div class="form-group" style="margin-bottom:25px">
+<label style="display:block;color:#FFD700;font-weight:600;margin-bottom:10px;font-size:16px">WhatsApp Number *</label>
+<input type="tel" placeholder="+1 234 567 8900" required style="width:100%;padding:16px;border-radius:12px;border:2px solid #444;background:#0a0a0a;color:#fff;font-size:16px">
+</div>
+
+<div class="form-group" style="margin-bottom:25px">
+<label style="display:block;color:#FFD700;font-weight:600;margin-bottom:10px;font-size:16px">Student Age</label>
+<select style="width:100%;padding:16px;border-radius:12px;border:2px solid #444;background:#0a0a0a;color:#fff;font-size:16px">
+<option>4-7 years</option>
+<option>8-12 years</option>
+<option>13-17 years</option>
+<option>18+ years Adult</option>
+</select>
+</div>
+
+<div class="form-group" style="margin-bottom:25px">
+<label style="display:block;color:#FFD700;font-weight:600;margin-bottom:10px;font-size:16px">Preferred Class Time</label>
+<select style="width:100%;padding:16px;border-radius:12px;border:2px solid #444;background:#0a0a0a;color:#fff;font-size:16px">
+<option>Morning 8AM-12PM</option>
+<option>Afternoon 12PM-4PM</option>
+<option>Evening 4PM-8PM</option>
+<option>Night 8PM-11PM</option>
+</select>
+</div>
+
+<button type="submit" style="width:100%;background:linear-gradient(135deg,#FFD700,#FFA500);color:#000;padding:18px;border-radius:15px;border:none;font-weight:800;font-size:18px;cursor:pointer">🚀 Book Free Assessment Now - 30 Min Only</button>
+</form>
+</div>
+
+<!-- BOTTOM NEXT BLOG SECTION -->
+<div class="next-blog-section animate-left" style="margin-top:80px;padding:50px;background:linear-gradient(145deg,#1a1a1a,#222);border-radius:30px;border:3px solid #FFD700">
+<h2 style="text-align:center;font-size:36px;color:#FFD700;font-weight:800;margin-bottom:40px">📚 Continue Reading More Blogs</h2>
+
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:30px">
+  
+<!-- Previous Blog Card -->
+<div style="background:#0a0a0a;border:2px solid #444;border-radius:20px;padding:25px;text-align:center;transition:0.3s">
+<h3 style="color:#aaa;font-size:18px;margin-bottom:15px">← Previous Blog</h3>
+<h4 style="color:#FFD700;font-size:20px;margin-bottom:15px">Affordable Quran Learning Packages</h4>
+<p style="color:#ccc;font-size:14px;margin-bottom:20px">Country-wise fees & payment plans</p>
+<a href="blog6.html" style="display:inline-block;background:#2a2a2a;color:#FFD700;padding:12px 25px;border-radius:10px;text-decoration:none;font-weight:700;border:2px solid #FFD700">Read Previous</a>
+</div>
+
+<!-- Next Blog Card -->
+<div style="background:linear-gradient(135deg,#FFD700,#FFA500);border-radius:20px;padding:25px;text-align:center;box-shadow:0 10px 30px rgba(255,215,0,0.4)">
+<h3 style="color:#000;font-size:18px;margin-bottom:15px;font-weight:700">Next Blog →</h3>
+<h4 style="color:#000;font-size:22px;margin-bottom:15px;font-weight:800">Success Stories of Our Students</h4>
+<p style="color:#333;font-size:15px;margin-bottom:20px;font-weight:600">Real results from USA, UK, Canada students</p>
+<a href="blog8.html" style="display:inline-block;background:#000;color:#FFD700;padding:14px 30px;border-radius:12px;text-decoration:none;font-weight:800;font-size:16px">Read Next Blog</a>
+</div>
+
+</div>
+</div>
+
+</div>
+
+<footer style="text-align:center;padding:50px 5%;background:#111;margin-top:100px;border-top:3px solid #FFD700">
+<p style="color:#FFD700;font-weight:600;font-size:18px">© 2026 Al Raza Online Quran Academy | All Rights Reserved | Contact: muhammadshazabattari786@gmail.com</p>
+</footer>
+
+<script>
+function toggleMenu() {
+document.getElementById('menu').classList.toggle('show');
+}
+window.addEventListener('click', function(e) {
+if (!e.target.closest('.nav-container')) {
+document.getElementById('menu').classList.remove('show');
+}
+});
+
+const observer = new IntersectionObserver((entries) => {
+entries.forEach(entry => {
+if (entry.isIntersecting) {
+entry.target.classList.add('show');
+}
+});
+}, { threshold: 0.15 });
+
+document.querySelectorAll('.animate-left, .animate-right').forEach(el => {
+observer.observe(el);
+});
+</script>
+
+</body>
+</html>

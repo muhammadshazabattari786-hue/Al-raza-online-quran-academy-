@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hajj & Umrah - Journey to Allah - 5th Pillar Complete Guide - Al Raza Academy</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Poppins',sans-serif;background:linear-gradient(135deg,#0a0a0a 0%,#1a1a1a 100%);color:#fff;line-height:1.9;overflow-x:hidden}
+nav{background:rgba(17,17,17,0.95);backdrop-filter:blur(10px);padding:20px 0;position:sticky;top:0;z-index:100;border-bottom:3px solid #FFD700;box-shadow:0 5px 30px rgba(255,215,0,0.2)}
+.nav-container{max-width:1300px;margin:auto;padding:0 5%;display:flex;justify-content:space-between;align-items:center}
+.logo{display:flex;align-items:center;gap:15px}
+.logo img{height:65px;width:65px;border-radius:50%;border:3px solid #FFD700;object-fit:cover;box-shadow:0 0 20px rgba(255,215,0,0.4)}
+.logo-text{color:#FFD700;font-size:28px;font-weight:800;letter-spacing:1px}
+.hamburger{display:flex;flex-direction:column;cursor:pointer;gap:5px}
+.hamburger span{width:30px;height:3px;background:#FFD700;border-radius:2px;transition:0.3s}
+.dropdown{display:none;position:absolute;top:90px;right:5%;background:#1a1a1a;border:2px solid #FFD700;border-radius:15px;min-width:260px;box-shadow:0 15px 50px rgba(255,215,0,0.4);z-index:200;overflow:hidden}
+.dropdown.show{display:block;animation:slideDown 0.4s ease}
+@keyframes slideDown{from{opacity:0;transform:translateY(-15px)}to{opacity:1;transform:translateY(0)}}
+.dropdown a{display:block;padding:15px 22px;color:#FFD700;text-decoration:none;font-size:16px;font-weight:600;border-bottom:1px solid #333;transition:0.3s}
+.dropdown a:hover{background:#FFD700;color:#000;padding-left:28px}
+.container{max-width:950px;margin:60px auto;padding:0 5%}
+.header-section{text-align:center;margin-bottom:50px;padding-bottom:35px;border-bottom:2px solid #333}
+.line1{font-size:48px;color:#FFD700;font-weight:800;margin-bottom:15px;line-height:1.3}
+.line2{font-size:20px;color:#aaa;font-weight:400;margin-bottom:20px}
+.line3{display:flex;justify-content:center;gap:25px;flex-wrap:wrap;font-size:15px;color:#FFD700;font-weight:600}
+.line3 span{display:flex;align-items:center;gap:6px}
+.blog-detail-img{width:100%;height:420px;border-radius:30px;overflow:hidden;margin-bottom:45px;border:3px solid #FFD700;box-shadow:0 15px 40px rgba(255,215,0,0.2)}
+.blog-detail-img img{width:100%;height:100%;object-fit:cover}
+.blog-content h2{font-size:34px;color:#FFD700;margin-top:60px;margin-bottom:25px;font-weight:700;border-left:5px solid #FFD700;padding-left:15px}
+.blog-content p{font-size:18px;color:#ddd;line-height:2.1;margin-bottom:22px;text-align:justify}
+.point-box{background:linear-gradient(145deg,#1a1a1a,#222);border-left:6px solid #FFD700;border-radius:15px;padding:30px;margin:35px 0}
+.point-number{background:linear-gradient(135deg,#FFD700,#FFA500);color:#000;width:50px;height:50px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-weight:800;font-size:22px;margin-bottom:15px}
+.ayah-box{background:linear-gradient(145deg,#1a1a1a,#222);border:2px solid #FFD700;border-radius:20px;padding:35px;margin:40px 0;box-shadow:0 10px 30px rgba(255,215,0,0.15)}
+.arabic-text{font-family:'Amiri',serif;font-size:32px;color:#FFD700;text-align:right;direction:rtl;line-height:2.5;margin-bottom:20px;font-weight:700}
+.translation{font-size:17px;color:#ccc;font-style:italic;text-align:left;line-height:2;border-top:1px solid #444;padding-top:20px}
+.reference{color:#FFA500;font-size:14px;font-weight:600;margin-top:10px}
+.hadith-box{background:linear-gradient(145deg,#222,#2a2a2a);border-left:6px solid #FFD700;border-radius:15px;padding:30px;margin:35px 0}
+.hadith-text{font-size:18px;color:#FFD700;font-weight:600;margin-bottom:15px}
+.hadith-translation{font-size:17px;color:#ddd;line-height:2.1}
+.umrah-box{background:linear-gradient(145deg,#1a1a1a,#222);border:2px solid #FFA500;border-radius:15px;padding:25px;margin:30px 0}
+.animate-left{opacity:0;transform:translateX(-120px);transition:all 0.9s ease}
+.animate-right{opacity:0;transform:translateX(120px);transition:all 0.9s ease}
+.animate-left.show,.animate-right.show{opacity:1;transform:translateX(0)}
+@media(max-width:768px){.line1{font-size:32px}.line2{font-size:16px}.line3{font-size:13px;gap:15px}.blog-detail-img{height:260px}.container{padding:0 4%}.arabic-text{font-size:24px}}
+</style>
+</head>
+<body>
+
+<!-- MENU SECTION -->
+<nav>
+<div class="nav-container">
+<div class="logo">
+<img src="logo.png" alt="Al Raza Academy Logo">
+<span class="logo-text">Al Raza Academy</span>
+</div>
+<div class="hamburger" onclick="toggleMenu()">
+<span></span>
+<span></span>
+<span></span>
+</div>
+<div class="dropdown" id="menu">
+<a href="index.html">🏠 Home</a>
+<a href="about.html">ℹ️ About Us</a>
+<a href="teachers.html">👨‍🏫 Our Teacher's</a>
+<a href="how-it-works.html">⚙️ How it Works</a>
+<a href="terms.html">📜 Terms & Condition</a>
+<a href="contact.html">📞 Contact Us</a>
+<a href="courses.html">📚 Courses</a>
+<a href="fees.html">💰 Study Plan & Fees</a>
+<a href="blogs.html">📝 Blogs</a>
+</div>
+</div>
+</nav>
+
+<div class="container">
+
+<!-- 3-LINE HEADING SECTION -->
+<div class="header-section animate-left">
+<div class="line1">Hajj & Umrah - Journey to Allah</div>
+<div class="line2">5th Pillar Complete Guide - Once in Lifetime Obligation</div>
+<div class="line3">
+<span>📅 April 2026</span>
+<span>⏱️ 20 Min Read</span>
+<span>📚 Hajj Umrah</span>
+<span>✍️ Al Raza Academy</span>
+</div>
+</div>
+
+<!-- Blog Image -->
+<div class="blog-detail-img animate-right">
+<img src="img/blog27.jpg" alt="Hajj Umrah Journey">
+</div>
+
+<!-- Blog Content Start -->
+<div class="blog-content">
+
+<h2 class="animate-left">Introduction: Hajj - Pillar of Once Lifetime</h2>
+<p class="animate-right">Allah says: "Pilgrimage to the House is duty upon mankind for the sake of Allah, upon whoever is able to find a way." Surah Aal-Imran 97. Prophet (PBUH) said: "Islam is built on 5 pillars... and Hajj to House for who can afford journey." Bukhari.</p>
+
+<p class="animate-left">Hajj is 5th pillar but only once in lifetime if you have physical + financial ability. Umrah is Sunnah, can do anytime. 2 million Muslims gather yearly in Arafat wearing same white Ihram – no king, no poor, all equal before Allah. Most spiritual journey of life.</p>
+
+<p class="animate-right">This article explains Hajj vs Umrah, conditions, 5 main steps of Hajj, 10 benefits, and how to prepare. Even if you cannot go now, read to increase longing and make dua.</p>
+
+<div class="ayah-box animate-left">
+<div class="arabic-text">وَأَتِمُّوا الْحَجَّ وَالْعُمْرَةَ لِلَّهِ</div>
+<div class="translation">"And complete Hajj and Umrah for Allah."</div>
+<div class="reference">Surah Al-Baqarah, Ayah 196</div>
+</div>
+
+<p class="animate-right">Allah commands to "complete" – don't start and leave. Hajj has rules. Let's understand basics first.</p>
+
+<div class="point-box animate-left">
+<div class="point-number">1</div>
+<h2 style="margin-top:0;display:inline;margin-left:15px">Point 1: Hajj vs Umrah - Key Differences</h2>
+<p><strong>Hajj:</strong> 5-6 days in Dhul Hijjah 8-13. Obligatory once. Includes Arafat, Muzdalifah, Mina, Rami, Qurbani. <strong>Umrah:</strong> 2-3 hours anytime. Sunnah. Only Ihram, Tawaf 7 rounds, Sa'i 7 rounds, shave/cut hair. No Arafat, no Mina.</p>
+<p><strong>Reward:</strong> Hajj Mabroor = no reward except Jannah. Umrah to Umrah = expiation for sins between them. Both wipe sins like newborn.</p>
+</div>
+
+<div class="point-box animate-right">
+<div class="point-number">2</div>
+<h2 style="margin-top:0;display:inline;margin-left:15px">Point 2: Who Must Do Hajj - 5 Conditions</h2>
+<p>1. <strong>Muslim</strong> 2. <strong>Baligh</strong> adult 3. <strong>Sane</strong> 4. <strong>Free</strong> not slave 5. <strong>Istita'ah</strong> – physical + financial ability. If $8,000-$10,000 for package + family expenses while away, Hajj obligatory.</p>
+<p><strong>Women:</strong> Need Mahram husband/father/brother/son. Without Mahram, Hajj not obligatory. Can do Umrah with Mahram anytime.</p>
+</div>
+
+<div class="point-box animate-left">
+<div class="point-number">3</div>
+<h2 style="margin-top:0;display:inline;margin-left:15px">Point 3: 5 Main Steps of Hajj - Simplified</h2>
+<p><strong>Day 8:</strong> Enter Ihram, go Mina, stay night. <strong>Day 9 Arafat:</strong> Most important day. Stand, cry, make dua from Zuhr to Maghrib. Allah forgives millions. <strong>Night 9:</strong> Muzdalifah, collect pebbles. <strong>Day 10 Eid:</strong> Rami Jamarat, Qurbani, shave, Tawaf Ifadah. <strong>Day 11-13:</strong> Stay Mina, Rami 3 days.</p>
+<p><strong>Secret:</strong> Arafat is Hajj. Prophet said "Al-Hajju Arafah". If you miss Arafat, Hajj invalid. All other steps can be made up.</p>
+</div>
+
+<div class="point-box animate-right">
+<div class="point-number">4</div>
+<h2 style="margin-top:0;display:inline;margin-left:15px">Point 4: Ihram - Dress of Equality</h2>
+<p>Men: 2 white unstitched cloths. Women: Simple dress covering all except face+hands. No perfume, no cutting hair/nails, no marital relations. Why? To remember death – we all buried in white cloth. To kill ego – no designer clothes, no status.</p>
+<p><strong>Feeling:</strong> When 2 million wear same dress, color/race/rich/poor differences vanish. Only "Labbaik Allahumma Labbaik" – Here I am O Allah.</p>
+</div><div class="point-box animate-left">
+<div class="point-number">5</div>
+<h2 style="margin-top:0;display:inline;margin-left:15px">Point 5: Tawaf - Circling House of Allah</h2>
+<p>7 rounds anti-clockwise around Kaaba. Start at Black Stone, say Bismillah Allahu Akbar. First 3 rounds men walk fast, last 4 normal. Why circling? Like angels circling Arsh, like electrons circling nucleus – everything in universe circles Allah.</p>
+<p><strong>Dua:</strong> No fixed dua. Talk to Allah in your language. "Rabbi, forgive me, guide me, give me Jannah". Each step = sins forgiven + rank raised.</p>
+</div>
+
+<div class="point-box animate-right">
+<div class="point-number">6</div>
+<h2 style="margin-top:0;display:inline;margin-left:15px">Point 6: Sa'i - Running Between Safa-Marwah</h2>
+<p>7 rounds between two hills. Remembers Hajar (AS) running for water for baby Ismail. Allah made Zamzam spring from Ismail's feet. Lesson: When you run for Allah, Allah creates rivers for you.</p>
+<p><strong>Dua at Safa/Marwah:</strong> "La ilaha illAllahu wahdahu la shareeka lah..." 3 times. Make dua facing Kaaba. Struggle of mother rewarded eternally.</p>
+</div>
+
+<div class="point-box animate-left">
+<div class="point-number">7</div>
+<h2 style="margin-top:0;display:inline;margin-left:15px">Point 7: Arafat - Day of Forgiveness</h2>
+<div class="hadith-box">
+<div class="hadith-text">Hadith: Day of Arafat</div>
+<div class="hadith-translation">Prophet (PBUH) said: "There is no day on which Allah frees more people from Hell than Day of Arafat." Muslim. Allah boasts to angels about pilgrims.</div>
+</div>
+<p><strong>Strategy:</strong> From Zuhr to Maghrib, don't talk, don't eat much. Just dua. Dua list ready: Parents, kids, hidayah, Jannah, forgiveness. Cry even if no tears. Allah sees heart.</p>
+</div>
+
+<div class="point-box animate-right">
+<div class="point-number">8</div>
+<h2 style="margin-top:0;display:inline;margin-left:15px">Point 8: Hajj Mabroor - Accepted Hajj Reward</h2>
+<p>Hadith: "Hajj Mabroor has no reward except Paradise." Bukhari, Muslim. Sign of accepted Hajj: After returning, person becomes more pious, more humble, leaves sins. If same after Hajj, check intention.</p>
+<p><strong>3 things make Hajj Mabroor:</strong> 1. Halal money spent 2. No arguing/fighting 3. Perfect obedience to rules. Avoid selfie, shopping, fighting for place in Tawaf.</p>
+</div><div class="umrah-box animate-left">
+<h2 style="color:#FFD700;margin-top:0">Quick Umrah Guide - 4 Steps Only</h2>
+<p><strong>1. Ihram:</strong> From Jeddah airport or home. Intention "Labbaik Umrah". <strong>2. Tawaf:</strong> 7 rounds Kaaba. <strong>3. Sa'i:</strong> 7 rounds Safa-Marwah. <strong>4. Halq/Taqseer:</strong> Men shave/cut hair, women cut 1 inch. Umrah complete. Total 2-3 hours.</p>
+<p><strong>Best time:</strong> Ramadan Umrah = reward of Hajj with Prophet. But crowded + expensive. Off-season Umrah = peaceful, cheaper.</p>
+</div>
+
+<h2 class="animate-right">10 Benefits of Hajj & Umrah</h2>
+<p class="animate-left">1. <strong>Sins wiped:</strong> Like newborn baby. 2. <strong>Dua accepted:</strong> Pilgrim's dua not rejected. 3. <strong>Guests of Allah:</strong> Hadith: "Pilgrims are guests of Allah". 4. <strong>Reward x100,000:</strong> 1 prayer in Haram = 100,000 prayers. 5. <strong>Unity:</strong> Ummah comes together. 6. <strong>Patience training:</strong> Crowd teaches Sabr. 7. <strong>Gratitude:</strong> See simplicity, value blessings. 8. <strong>Death reminder:</strong> Ihram = kafan. 9. <strong>Barakah in wealth:</strong> Spending in Allah's path returns multiplied. 10. <strong>Protection:</strong> Dies in Haram = dies Shaheed.</p>
+
+<h2 class="animate-left">5 Mistakes to Avoid</h2>
+<p class="animate-right">1. <strong>Wrong intention:</strong> "For status/photo" ruins reward. 2. <strong>Arguing:</strong> Prophet said avoid Rafath, Fusooq, Jidal. 3. <strong>Missing Arafat:</strong> Most critical. 4. <strong>Rushing rituals:</strong> Take time, feel spirituality. 5. <strong>Backbiting after return:</strong> "Haji became rude". Don't waste reward.</p>
+
+<h2 class="animate-right">How to Prepare If You Can't Go Yet</h2>
+<p class="animate-left">1. <strong>Save money:</strong> $100 monthly = $6,000 in 5 years. 2. <strong>Learn Manasik:</strong> Watch videos, read book. 3. <strong>Make dua:</strong> "Allahumma arzuqni Hajj" daily. 4. <strong>Reduce sins:</strong> Hajj requires halal money + pure heart. 5. <strong>Send others:</strong> Sponsor poor person Hajj = you get same reward.</p>
+
+<h2 class="animate-left">Conclusion: Make Intention Today</h2>
+<p class="animate-right">If Allah called you to His House, you are chosen among billions. Start saving, start learning. Even if you die before going but had sincere intention, Allah will give reward of Hajj. Hadith: "Actions are by intentions".</p>
+<p class="animate-left">Say now: "Ya Allah, write Hajj for me before death." That dua itself is worship. One day you will stand in Arafat crying, and say "Alhamdulillah I made intention years ago."</p>
+
+<p class="animate-right" style="text-align:center; margin-top:40px; font-size:20px; color:#FFD700; font-weight:700;">"Labbaik Allahumma Labbaik" – Make intention for Hajj today!</p>
+
+</div>
+
+<!-- Join Now Form -->
+<div class="join-section animate-left" id="join-form" style="background:linear-gradient(145deg,#1a1a1a,#222);border:3px solid #FFD700;border-radius:30px;padding:50px;margin:80px 0;box-shadow:0 20px 50px rgba(255,215,0,0.2)">
+<h2 class="join-title" style="text-align:center;font-size:38px;color:#FFD700;font-weight:800;margin-bottom:15px">🕋 Free Hajj Umrah Guide PDF</h2>
+<p class="join-subtitle" style="text-align:center;color:#aaa;font-size:17px;margin-bottom:40px">Get complete step-by-step Hajj Umrah guide + dua booklet + packing checklist + saving plan on WhatsApp!</p>
+
+<form onsubmit="alert('Labbaik! Complete Hajj Umrah guide PDF + dua list + 5-year saving plan will be sent to your WhatsApp. May Allah call you to His House soon!'); return false;">
+<div class="form-group" style="margin-bottom:25px">
+<label style="display:block;color:#FFD700;font-weight:600;margin-bottom:10px;font-size:16px">Full Name *</label>
+<input type="text" placeholder="Enter your full name" required style="width:100%;padding:16px;border-radius:12px;border:2px solid #444;background:#0a0a0a;color:#fff;font-size:16px">
+</div>
+
+<div class="form-group" style="margin-bottom:25px">
+<label style="display:block;color:#FFD700;font-weight:600;margin-bottom:10px;font-size:16px">WhatsApp Number *</label>
+<input type="tel" placeholder="+1 234 567 8900" required style="width:100%;padding:16px;border-radius:12px;border:2px solid #444;background:#0a0a0a;color:#fff;font-size:16px">
+</div>
+
+<div class="form-group" style="margin-bottom:25px">
+<label style="display:block;color:#FFD700;font-weight:600;margin-bottom:10px;font-size:16px">Planning For</label>
+<select style="width:100%;padding:16px;border-radius:12px;border:2px solid #444;background:#0a0a0a;color:#fff;font-size:16px">
+<option>Hajj - Once lifetime</option>
+<option>Umrah - This year InshaAllah</option>
+<option>Both Hajj + Umrah</option>
+<option>Just learning for future</option>
+</select>
+</div>
+
+<button type="submit" style="width:100%;background:linear-gradient(135deg,#FFD700,#FFA500);color:#000;padding:18px;border-radius:15px;border:none;font-weight:800;font-size:18px;cursor:pointer">🕋 Get Free Hajj Guide PDF</button>
+</form>
+</div>
+
+<!-- BOTTOM NEXT BLOG SECTION -->
+<div class="next-blog-section animate-left" style="margin-top:80px;padding:50px;background:linear-gradient(145deg,#1a1a1a,#222);border-radius:30px;border:3px solid #FFD700">
+<h2 style="text-align:center;font-size:36px;color:#FFD700;font-weight:800;margin-bottom:40px">📚 Continue Reading More Blogs</h2>
+
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:30px">
+
+<!-- Previous Blog Card -->
+<div style="background:#0a0a0a;border:2px solid #444;border-radius:20px;padding:25px;text-align:center;transition:0.3s">
+<h3 style="color:#aaa;font-size:18px;margin-bottom:15px">← Previous Blog</h3>
+<h4 style="color:#FFD700;font-size:20px;margin-bottom:15px">Zakat - Purification of Wealth</h4>
+<p style="color:#ccc;font-size:14px;margin-bottom:20px">2.5% purifies 100%</p>
+<a href="blog26.html" style="display:inline-block;background:#2a2a2a;color:#FFD700;padding:12px 25px;border-radius:10px;text-decoration:none;font-weight:700;border:2px solid #FFD700">Read Previous</a>
+</div>
+
+<!-- Next Blog Card -->
+<div style="background:linear-gradient(135deg,#FFD700,#FFA500);border-radius:20px;padding:25px;text-align:center;box-shadow:0 10px 30px rgba(255,215,0,0.4)">
+<h3 style="color:#000;font-size:18px;margin-bottom:15px;font-weight:700">Next Blog →</h3>
+<h4 style="color:#000;font-size:22px;margin-bottom:15px;font-weight:800">Tawakkul - Trust in Allah</h4>
+<p style="color:#333;font-size:15px;margin-bottom:20px;font-weight:600">Tie camel + trust Allah</p>
+<a href="blog28.html" style="display:inline-block;background:#000;color:#FFD700;padding:14px 30px;border-radius:12px;text-decoration:none;font-weight:800;font-size:16px">Read Next Blog</a>
+</div>
+
+</div>
+</div>
+
+</div>
+
+<footer style="text-align:center;padding:50px 5%;background:#111;margin-top:100px;border-top:3px solid #FFD700">
+<p style="color:#FFD700;font-weight:600;font-size:18px">© 2026 Al Raza Online Quran Academy | All Rights Reserved | Contact: muhammadshazabattari786@gmail.com</p>
+</footer>
+
+<script>
+function toggleMenu() {
+document.getElementById('menu').classList.toggle('show');
+}
+window.addEventListener('click', function(e) {
+if (!e.target.closest('.nav-container')) {
+document.getElementById('menu').classList.remove('show');
+}
+});
+
+const observer = new IntersectionObserver((entries) => {
+entries.forEach(entry => {
+if (entry.isIntersecting) {
+entry.target.classList.add('show');
+}
+});
+}, { threshold: 0.15 });
+
+document.querySelectorAll('.animate-left,.animate-right').forEach(el => {
+observer.observe(el);
+});
+</script>
+
+</body>
+</html>

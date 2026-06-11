@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Affordable Quran Learning Packages - Al Raza Academy</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Poppins',sans-serif;background:linear-gradient(135deg,#0a0a0a 0%,#1a1a1a 100%);color:#fff;line-height:1.9;overflow-x:hidden}
+nav{background:rgba(17,17,17,0.95);backdrop-filter:blur(10px);padding:20px 0;position:sticky;top:0;z-index:100;border-bottom:3px solid #FFD700;box-shadow:0 5px 30px rgba(255,215,0,0.2)}
+.nav-container{max-width:1300px;margin:auto;padding:0 5%;display:flex;justify-content:space-between;align-items:center}
+.logo{display:flex;align-items:center;gap:15px}
+.logo img{height:65px;width:65px;border-radius:50%;border:3px solid #FFD700;object-fit:cover;box-shadow:0 0 20px rgba(255,215,0,0.4)}
+.logo-text{color:#FFD700;font-size:28px;font-weight:800;letter-spacing:1px}
+.hamburger{display:flex;flex-direction:column;cursor:pointer;gap:5px}
+.hamburger span{width:30px;height:3px;background:#FFD700;border-radius:2px;transition:0.3s}
+.dropdown{display:none;position:absolute;top:90px;right:5%;background:#1a1a1a;border:2px solid #FFD700;border-radius:15px;min-width:260px;box-shadow:0 15px 50px rgba(255,215,0,0.4);z-index:200;overflow:hidden}
+.dropdown.show{display:block;animation:slideDown 0.4s ease}
+@keyframes slideDown{from{opacity:0;transform:translateY(-15px)}to{opacity:1;transform:translateY(0)}}
+.dropdown a{display:block;padding:15px 22px;color:#FFD700;text-decoration:none;font-size:16px;font-weight:600;border-bottom:1px solid #333;transition:0.3s}
+.dropdown a:hover{background:#FFD700;color:#000;padding-left:28px}
+.container{max-width:950px;margin:60px auto;padding:0 5%}
+.header-section{text-align:center;margin-bottom:50px;padding-bottom:35px;border-bottom:2px solid #333}
+.line1{font-size:48px;color:#FFD700;font-weight:800;margin-bottom:15px;line-height:1.3}
+.line2{font-size:20px;color:#aaa;font-weight:400;margin-bottom:20px}
+.line3{display:flex;justify-content:center;gap:25px;flex-wrap:wrap;font-size:15px;color:#FFD700;font-weight:600}
+.line3 span{display:flex;align-items:center;gap:6px}
+.blog-detail-img{width:100%;height:420px;border-radius:30px;overflow:hidden;margin-bottom:45px;border:3px solid #FFD700;box-shadow:0 15px 40px rgba(255,215,0,0.2)}
+.blog-detail-img img{width:100%;height:100%;object-fit:cover}
+.blog-content h2{font-size:34px;color:#FFD700;margin-top:60px;margin-bottom:25px;font-weight:700;border-left:5px solid #FFD700;padding-left:15px}
+.blog-content p{font-size:18px;color:#ddd;line-height:2.1;margin-bottom:22px;text-align:justify}
+.blog-content ul{margin:25px 0 25px 35px;color:#ddd}
+.blog-content ul li{font-size:18px;line-height:2.1;margin-bottom:14px}
+.price-table{width:100%;border-collapse:collapse;margin:40px 0;background:linear-gradient(145deg,#1a1a1a,#222);border-radius:20px;overflow:hidden;border:2px solid #FFD700}
+.price-table th{background:linear-gradient(135deg,#FFD700,#FFA500);color:#000;padding:18px;font-size:18px;font-weight:800;text-align:left}
+.price-table td{padding:16px 18px;border-bottom:1px solid #333;color:#ddd;font-size:17px}
+.price-table tr:hover{background:rgba(255,215,0,0.05)}
+.highlight-price{color:#FFD700;font-weight:800;font-size:20px}
+.ayah-box{background:linear-gradient(145deg,#1a1a1a,#222);border:2px solid #FFD700;border-radius:20px;padding:35px;margin:40px 0;box-shadow:0 10px 30px rgba(255,215,0,0.15)}
+.arabic-text{font-family:'Amiri',serif;font-size:32px;color:#FFD700;text-align:right;direction:rtl;line-height:2.5;margin-bottom:20px;font-weight:700}
+.translation{font-size:17px;color:#ccc;font-style:italic;text-align:left;line-height:2;border-top:1px solid #444;padding-top:20px}
+.reference{color:#FFA500;font-size:14px;font-weight:600;margin-top:10px}
+.animate-left{opacity:0;transform:translateX(-120px);transition:all 0.9s ease}
+.animate-right{opacity:0;transform:translateX(120px);transition:all 0.9s ease}
+.animate-left.show, .animate-right.show{opacity:1;transform:translateX(0)}
+@media(max-width:768px){.line1{font-size:32px}.line2{font-size:16px}.line3{font-size:13px;gap:15px}.blog-detail-img{height:260px}.container{padding:0 4%}.arabic-text{font-size:24px}.price-table{font-size:14px}.price-table th,.price-table td{padding:12px}}
+</style>
+</head>
+<body>
+
+<!-- MENU SECTION -->
+<nav>
+<div class="nav-container">
+<div class="logo">
+<img src="logo.png" alt="Al Raza Academy Logo">
+<span class="logo-text">Al Raza Academy</span>
+</div>
+<div class="hamburger" onclick="toggleMenu()">
+<span></span>
+<span></span>
+<span></span>
+</div>
+<div class="dropdown" id="menu">
+<a href="index.html">🏠 Home</a>
+<a href="about.html">ℹ️ About Us</a>
+<a href="teachers.html">👨‍🏫 Our Teacher's</a>
+<a href="how-it-works.html">⚙️ How it Works</a>
+<a href="terms.html">📜 Terms & Condition</a>
+<a href="contact.html">📞 Contact Us</a>
+<a href="courses.html">📚 Courses</a>
+<a href="fees.html">💰 Study Plan & Fees</a>
+<a href="blogs.html">📝 Blogs</a>
+</div>
+</div>
+</nav>
+
+<div class="container">
+
+<!-- 3-LINE HEADING SECTION -->
+<div class="header-section animate-left">
+<div class="line1">Affordable Quran Learning Packages</div>
+<div class="line2">Country-Wise Fees & Payment Plans Starting from $2 Per Class Only</div>
+<div class="line3">
+<span>📅 April 2026</span>
+<span>⏱️ 14 Min Read</span>
+<span>📚 Fees & Pricing</span>
+<span>✍️ Al Raza Academy</span>
+</div>
+</div>
+
+<!-- Blog Image -->
+<div class="blog-detail-img animate-right">
+<img src="img/blog6.jpg" alt="Quran Learning Fees">
+</div>
+
+<!-- Blog Content Start -->
+<div class="blog-content">
+
+<h2 class="animate-left">Introduction: Quality Quran Education Should Be Affordable</h2>
+<p class="animate-right">The Prophet Muhammad (Peace Be Upon Him) said: "The best among you are those who learn the Quran and teach it." Learning Quran is a right, not a luxury. Yet many families avoid Quran classes thinking "private tutors charge $40-50 per hour, we cannot afford it."</p>
+
+<p class="animate-left">At Al Raza Online Quran Academy, we broke this myth. We offer world-class Ijazah-certified teachers, one-to-one classes, and flexible timing at fees starting from just $2 per class. We believe every Muslim deserves access to authentic Quran education regardless of financial situation. That is why we created country-based pricing – fair fees based on purchasing power of each country.</p>
+
+<div class="ayah-box animate-right">
+<div class="arabic-text">وَمَا تُنفِقُوا مِن شَيْءٍ فِي سَبِيلِ اللَّهِ يُوَفَّ إِلَيْكُمْ</div>
+<div class="translation">"And whatever you spend in the way of Allah will be fully repaid to you."</div>
+<div class="reference">Surah Al-Anfal, Ayah 60</div>
+</div>
+
+<p class="animate-left">This complete guide shows exact fees for USA, UK, Canada, Australia, Saudi Arabia, UAE, Pakistan, India, Bangladesh and other countries. Plus we explain our 3 FREE trial class policy, sibling discounts, and payment plans so you can budget easily without financial stress.</p>
+
+<h2 class="animate-right">Package 1: Basic Quran Reading with Tajweed</h2>
+<p class="animate-left">Perfect for beginners and adults who want to read Quran correctly. Includes: 30-minute one-to-one class, 5 days per week, Noorani Qaida + Quran reading, Tajweed rules, daily homework, monthly progress report.</p>
+
+<table class="price-table animate-left">
+<tr><th>Country</th><th>Monthly Fee</th><th>Per Class</th><th>Classes/Month</th></tr>
+<tr><td>USA, Canada</td><td class="highlight-price">$79</td><td>$3.95</td><td>20 Classes</td></tr>
+<tr><td>UK, Australia</td><td class="highlight-price">£69 / AU$99</td><td>£3.45 / AU$4.95</td><td>20 Classes</td></tr>
+<tr><td>Saudi Arabia, UAE</td><td class="highlight-price">299 SAR / 289 AED</td><td>15 SAR / 14 AED</td><td>20 Classes</td></tr>
+<tr><td>Pakistan</td><td class="highlight-price">4,999 PKR</td><td>250 PKR</td><td>20 Classes</td></tr>
+<tr><td>India, Bangladesh</td><td class="highlight-price">₹2,999 / 3,499 BDT</td><td>₹150 / 175 BDT</td><td>20 Classes</td></tr>
+</table>
+
+<p class="animate-right">Save 20% with annual package: USA students pay $759/year instead of $948. Includes free certificate + Ijazah assessment at end.</p>
+
+<h2 class="animate-left">Package 2: Hifz Program - Complete Memorization</h2>
+<p class="animate-right">For students aiming to become Hafiz-e-Quran. Includes: 45-minute one-to-one class, 6 days per week, 1 page new + revision system, daily testing, weekly parent updates, completion certificate with Ijazah.</p>
+
+<table class="price-table animate-right">
+<tr><th>Country</th><th>Monthly Fee</th><th>Per Class</th><th>Classes/Month</th></tr>
+<tr><td>USA, Canada</td><td class="highlight-price">$129</td><td>$5.37</td><td>24 Classes</td></tr>
+<tr><td>UK, Australia</td><td class="highlight-price">£109 / AU$159</td><td>£4.54 / AU$6.62</td><td>24 Classes</td></tr>
+<tr><td>Saudi Arabia, UAE</td><td class="highlight-price">449 SAR / 429 AED</td><td>19 SAR / 18 AED</td><td>24 Classes</td></tr>
+<tr><td>Pakistan</td><td class="highlight-price">7,999 PKR</td><td>333 PKR</td><td>24 Classes</td></tr>
+<tr><td>India, Bangladesh</td><td class="highlight-price">₹4,799 / 5,599 BDT</td><td>₹200 / 233 BDT</td><td>24 Classes</td></tr>
+</table>
+<h2 class="animate-right">Package 3: Quran for Kids - Fun Interactive Learning</h2>
+<p class="animate-left">Special program for ages 4-16. Includes: 30-minute one-to-one class, 5 days per week, kid-friendly teacher, games + stories + rewards, Noorani Qaida, short surah memorization, parent monitoring allowed.</p>
+
+<table class="price-table animate-left">
+<tr><th>Country</th><th>Monthly Fee</th><th>Per Class</th><th>Classes/Month</th></tr>
+<tr><td>USA, Canada</td><td class="highlight-price">$69</td><td>$3.45</td><td>20 Classes</td></tr>
+<tr><td>UK, Australia</td><td class="highlight-price">£59 / AU$89</td><td>£2.95 / AU$4.45</td><td>20 Classes</td></tr>
+<tr><td>Saudi Arabia, UAE</td><td class="highlight-price">249 SAR / 239 AED</td><td>12 SAR / 12 AED</td><td>20 Classes</td></tr>
+<tr><td>Pakistan</td><td class="highlight-price">3,999 PKR</td><td>200 PKR</td><td>20 Classes</td></tr>
+<tr><td>India, Bangladesh</td><td class="highlight-price">₹2,499 / 2,999 BDT</td><td>₹125 / 150 BDT</td><td>20 Classes</td></tr>
+</table>
+
+<p class="animate-right">Sibling Discount: 2nd child 25% off, 3rd child 50% off. Family of 3 kids in USA pays $69 + $51.75 + $34.50 = $155.25/month instead of $207. Save $51 monthly.</p>
+
+<h2 class="animate-left">Package 4: Advanced Courses - Tafseer + Arabic</h2>
+<p class="animate-right">For students who completed Quran reading. Includes: 45-minute class, 3 days per week, Quran translation + Tafseer, Arabic grammar, Islamic studies. Perfect for adults seeking deeper understanding.</p>
+
+<table class="price-table animate-right">
+<tr><th>Country</th><th>Monthly Fee</th><th>Per Class</th><th>Classes/Month</th></tr>
+<tr><td>USA, Canada</td><td class="highlight-price">$89</td><td>$7.41</td><td>12 Classes</td></tr>
+<tr><td>UK, Australia</td><td class="highlight-price">£79 / AU$119</td><td>£6.58 / AU$9.91</td><td>12 Classes</td></tr>
+<tr><td>Pakistan</td><td class="highlight-price">5,499 PKR</td><td>458 PKR</td><td>12 Classes</td></tr>
+</table>
+
+<h2 class="animate-left">Payment Plans & Discounts</h2>
+<p class="animate-right"><strong>3 FREE Trial Classes:</strong> Every new student gets 3 completely free classes with no credit card required. Test teacher quality, check timing, verify teaching method. Pay only after you are satisfied.</p>
+
+<p class="animate-left"><strong>Monthly Payment:</strong> Pay month-to-month. Cancel anytime with 7-day notice. No contracts, no lock-in period. We earn your trust monthly, not through contracts.</p>
+
+<p class="animate-right"><strong>Annual Payment - Save 20%:</strong> Pay for 12 months upfront and get 2 months free. USA Basic package: $79 x 12 = $948, but annual price is only $759. Save $189 per year.</p>
+
+<p class="animate-left"><strong>Installment Plan:</strong> Cannot pay full month? Split payment into 2 installments. Pay 50% at start, 50% after 15 days. No extra fees, no interest. We understand cash flow issues.</p>
+
+<p class="animate-right"><strong>Referral Reward:</strong> Refer friend and get 1 month free when they complete 3 months. Your friend also gets $10 discount on first month. Win-win for both.</p>
+<p class="animate-left">Average Hifz completion: 2.5-3 years. Total investment USA: $3,870 for becoming Hafiz. Compare to local madrasas charging $5000-8000 + boarding costs.</p><h2 class="animate-right">Al Raza vs Local Tutors vs Other Academies</h2>
+<table class="price-table animate-left">
+<tr><th>Feature</th><th>Local Tutor</th><th>Other Online Academy</th><th>Al Raza Academy</th></tr>
+<tr><td>Teacher Quality</td><td>Varies</td><td>Mixed</td><td>Ijazah-Certified Only</td></tr>
+<tr><td>Class Type</td><td>One-to-One</td><td>Group + One-to-One</td><td>100% One-to-One</td></tr>
+<tr><td>Timing Flexibility</td><td>Limited</td><td>Moderate</td><td>24/7, Reschedule Free</td></tr>
+<tr><td>Monthly Fee USA</td><td>$300-500</td><td>$99-149</td><td class="highlight-price">$69-129</td></tr>
+<tr><td>Free Trial</td><td>No</td><td>1 Class</td><td class="highlight-price">3 Classes</td></tr>
+<tr><td>Parent Monitoring</td><td>Yes</td><td>Sometimes</td><td class="highlight-price">Always Allowed</td></tr>
+<tr><td>Completion Rate</td><td>40%</td><td>30%</td><td class="highlight-price">85%</td></tr>
+</table>
+
+<p class="animate-right">Local tutors charge 4x more with no guarantee. Other academies have group classes where your child gets 3 minutes attention. Al Raza gives 30 minutes 100% attention at lowest price with highest completion rate.</p>
+
+<h2 class="animate-left">Frequently Asked Questions About Fees</h2>
+<p class="animate-right"><strong>Q: Are there any hidden fees?</strong> A: No. Fee you see is final fee. No registration, no certificate, no exam fees later.</p>
+
+<p class="animate-left"><strong>Q: What if I miss classes?</strong> A: Reschedule free with 2-hour notice. Missed classes can be made up same week. Fees are per month, not per class attended.</p>
+
+<p class="animate-right"><strong>Q: Do you offer scholarship for low-income families?</strong> A: Yes. We provide 30-50% scholarship for deserving students. Contact admin with income proof. No student is turned away due to money.</p>
+
+<p class="animate-left"><strong>Q: Payment methods accepted?</strong> A: PayPal, Credit/Debit Card, Bank Transfer, Wise, EasyPaisa, JazzCash. All secure payment gateways.</p>
+
+<h2 class="animate-right">Conclusion: Invest in Akhirah, Not Just Dunya</h2>
+<p class="animate-left">Spending $79/month on Quran education is investing in your child's Akhirah. Compare to $100/month on Netflix, $150 on gaming, $200 on eating out. Quran education brings Barakah in Rizq that multiplies your income manifold.</p>
+
+<p class="animate-right">Don't let money stop you from starting. Begin with 3 FREE trial classes. See results first. Then decide if value matches price. We are confident you will say: "This is the best investment I made for my family."</p>
+
+<p class="animate-left" style="text-align:center; margin-top:40px; font-size:20px; color:#FFD700; font-weight:700;">"Affordable doesn't mean low quality" – Start with 3 FREE classes now!</p>
+
+</div>
+
+<!-- Join Now Form -->
+<div class="join-section animate-left" id="join-form" style="background:linear-gradient(145deg,#1a1a1a,#222);border:3px solid #FFD700;border-radius:30px;padding:50px;margin:80px 0;box-shadow:0 20px 50px rgba(255,215,0,0.2)">
+<h2 class="join-title" style="text-align:center;font-size:38px;color:#FFD700;font-weight:800;margin-bottom:15px">🎁 Get Your Country's Exact Fee Quote</h2>
+<p class="join-subtitle" style="text-align:center;color:#aaa;font-size:17px;margin-bottom:40px">Tell us your country + course. We will send exact fees + discount options in 2 hours!</p>
+
+<form onsubmit="alert('Thank you! Our fee specialist will send you exact package details and payment plan for your country within 2 hours.'); return false;">
+<div class="form-group" style="margin-bottom:25px">
+<label style="display:block;color:#FFD700;font-weight:600;margin-bottom:10px;font-size:16px">Full Name *</label>
+<input type="text" placeholder="Enter your full name" required style="width:100%;padding:16px;border-radius:12px;border:2px solid #444;background:#0a0a0a;color:#fff;font-size:16px">
+</div>
+
+<div class="form-group" style="margin-bottom:25px">
+<label style="display:block;color:#FFD700;font-weight:600;margin-bottom:10px;font-size:16px">Country *</label>
+<select required style="width:100%;padding:16px;border-radius:12px;border:2px solid #444;background:#0a0a0a;color:#fff;font-size:16px">
+<option value="">Select Your Country</option>
+<option>USA</option>
+<option>Canada</option>
+<option>UK</option>
+<option>Australia</option>
+<option>Saudi Arabia</option>
+<option>UAE</option>
+<option>Pakistan</option>
+<option>India</option>
+<option>Bangladesh</option>
+<option>Other</option>
+</select>
+</div>
+
+<div class="form-group" style="margin-bottom:25px">
+<label style="display:block;color:#FFD700;font-weight:600;margin-bottom:10px;font-size:16px">WhatsApp Number *</label>
+<input type="tel" placeholder="+1 234 567 8900" required style="width:100%;padding:16px;border-radius:12px;border:2px solid #444;background:#0a0a0a;color:#fff;font-size:16px">
+</div>
+
+<div class="form-group" style="margin-bottom:25px">
+<label style="display:block;color:#FFD700;font-weight:600;margin-bottom:10px;font-size:16px">Course Interested In</label>
+<select style="width:100%;padding:16px;border-radius:12px;border:2px solid #444;background:#0a0a0a;color:#fff;font-size:16px">
+<option>Quran with Tajweed</option>
+<option>Hifz Program</option>
+<option>Quran for Kids</option>
+<option>Quran with Tafseer</option>
+</select>
+</div>
+
+<button type="submit" style="width:100%;background:linear-gradient(135deg,#FFD700,#FFA500);color:#000;padding:18px;border-radius:15px;border:none;font-weight:800;font-size:18px;cursor:pointer">🚀 Get Exact Fee Quote Now</button>
+</form>
+</div>
+
+<!-- BOTTOM NEXT BLOG SECTION -->
+<div class="next-blog-section animate-left" style="margin-top:80px;padding:50px;background:linear-gradient(145deg,#1a1a1a,#222);border-radius:30px;border:3px solid #FFD700">
+<h2 style="text-align:center;font-size:36px;color:#FFD700;font-weight:800;margin-bottom:40px">📚 Continue Reading More Blogs</h2>
+
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:30px">
+  
+<!-- Previous Blog Card -->
+<div style="background:#0a0a0a;border:2px solid #444;border-radius:20px;padding:25px;text-align:center;transition:0.3s">
+<h3 style="color:#aaa;font-size:18px;margin-bottom:15px">← Previous Blog</h3>
+<h4 style="color:#FFD700;font-size:20px;margin-bottom:15px">Why Choose Al Raza Academy?</h4>
+<p style="color:#ccc;font-size:14px;margin-bottom:20px">10 reasons students trust us worldwide</p>
+<a href="blog5.html" style="display:inline-block;background:#2a2a2a;color:#FFD700;padding:12px 25px;border-radius:10px;text-decoration:none;font-weight:700;border:2px solid #FFD700">Read Previous</a>
+</div>
+
+<!-- Next Blog Card -->
+<div style="background:linear-gradient(135deg,#FFD700,#FFA500);border-radius:20px;padding:25px;text-align:center;box-shadow:0 10px 30px rgba(255,215,0,0.4)">
+<h3 style="color:#000;font-size:18px;margin-bottom:15px;font-weight:700">Next Blog →</h3>
+<h4 style="color:#000;font-size:22px;margin-bottom:15px;font-weight:800">How Online Quran Classes Work</h4>
+<p style="color:#333;font-size:15px;margin-bottom:20px;font-weight:600">Step by step guide from registration to graduation</p>
+<a href="blog7.html" style="display:inline-block;background:#000;color:#FFD700;padding:14px 30px;border-radius:12px;text-decoration:none;font-weight:800;font-size:16px">Read Next Blog</a>
+</div>
+
+</div>
+</div>
+
+</div>
+
+<footer style="text-align:center;padding:50px 5%;background:#111;margin-top:100px;border-top:3px solid #FFD700">
+<p style="color:#FFD700;font-weight:600;font-size:18px">© 2026 Al Raza Online Quran Academy | All Rights Reserved | Contact: muhammadshazabattari786@gmail.com</p>
+</footer>
+
+<script>
+function toggleMenu() {
+document.getElementById('menu').classList.toggle('show');
+}
+window.addEventListener('click', function(e) {
+if (!e.target.closest('.nav-container')) {
+document.getElementById('menu').classList.remove('show');
+}
+});
+
+const observer = new IntersectionObserver((entries) => {
+entries.forEach(entry => {
+if (entry.isIntersecting) {
+entry.target.classList.add('show');
+}
+});
+}, { threshold: 0.15 });
+
+document.querySelectorAll('.animate-left, .animate-right').forEach(el => {
+observer.observe(el);
+});
+</script>
+
+</body>
+</html>

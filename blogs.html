@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Islamic Blogs - Al Raza Academy</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Poppins',sans-serif;background:linear-gradient(135deg,#0a0a0a 0%,#1a1a1a 100%);color:#fff;line-height:1.8;overflow-x:hidden}
+nav{background:rgba(17,17,17,0.95);backdrop-filter:blur(10px);padding:20px 0;position:sticky;top:0;z-index:100;border-bottom:3px solid #FFD700;box-shadow:0 5px 30px rgba(255,215,0,0.2)}
+.nav-container{max-width:1300px;margin:auto;padding:0 5%;display:flex;justify-content:space-between;align-items:center}
+.logo{display:flex;align-items:center;gap:15px}
+.logo img{height:65px;width:65px;border-radius:50%;border:3px solid #FFD700;object-fit:cover;box-shadow:0 0 20px rgba(255,215,0,0.4)}
+.logo-text{color:#FFD700;font-size:28px;font-weight:800;letter-spacing:1px}
+.hamburger{display:flex;flex-direction:column;cursor:pointer;gap:5px}
+.hamburger span{width:30px;height:3px;background:#FFD700;border-radius:2px;transition:0.3s}
+.dropdown{display:none;position:absolute;top:90px;right:5%;background:#1a1a1a;border:2px solid #FFD700;border-radius:15px;min-width:260px;box-shadow:0 15px 50px rgba(255,215,0,0.4);z-index:200;overflow:hidden}
+.dropdown.show{display:block;animation:slideDown 0.4s ease}
+@keyframes slideDown{from{opacity:0;transform:translateY(-15px)}to{opacity:1;transform:translateY(0)}}
+.dropdown a{display:block;padding:15px 22px;color:#FFD700;text-decoration:none;font-size:16px;font-weight:600;border-bottom:1px solid #333;transition:0.3s}
+.dropdown a:hover{background:#FFD700;color:#000;padding-left:28px}
+.container{max-width:1300px;margin:70px auto;padding:0 5%}
+.page-header{text-align:center;margin-bottom:70px}
+.page-title{font-size:52px;color:#FFD700;font-weight:800;margin-bottom:15px;text-shadow:0 0 30px rgba(255,215,0,0.5)}
+.page-subtitle{font-size:18px;color:#aaa;font-weight:400}
+.blogs-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(350px,1fr));gap:40px;margin-bottom:100px}
+.blog-card{background:linear-gradient(145deg,#1a1a1a,#222);border-radius:30px;overflow:hidden;border:2px solid #FFD700;transition:0.4s;box-shadow:0 10px 30px rgba(0,0,0,0.5)}
+.blog-card:hover{transform:translateY(-12px);box-shadow:0 20px 50px rgba(255,215,0,0.35);border-color:#FFA500}
+.blog-img{width:100%;height:240px;overflow:hidden;position:relative}
+.blog-img img{width:100%;height:100%;object-fit:cover;transition:0.5s}
+.blog-card:hover .blog-img img{transform:scale(1.15)}
+.blog-img::after{content:'';position:absolute;bottom:0;left:0;right:0;height:80px;background:linear-gradient(transparent,rgba(0,0,0,0.7))}
+.blog-content{padding:28px}
+.blog-heading{font-size:24px;color:#FFD700;font-weight:700;margin-bottom:15px;line-height:1.4;min-height:65px}
+.blog-hiding{color:#ccc;font-size:16px;line-height:1.8;margin-bottom:20px;min-height:60px}
+.blog-joining{background:rgba(255,215,0,0.1);padding:14px;border-radius:12px;margin-bottom:20px;border-left:4px solid #FFD700}
+.blog-joining p{color:#FFD700;font-size:14px;font-weight:600;margin:0;display:flex;align-items:center;gap:8px}
+.detail-btn{display:block;width:100%;background:linear-gradient(135deg,#FFD700,#FFA500);color:#000;text-align:center;padding:16px;border-radius:14px;text-decoration:none;font-weight:800;font-size:17px;border:2px solid #FFD700;transition:0.3s;letter-spacing:0.5px}
+.detail-btn:hover{transform:scale(1.05);box-shadow:0 8px 25px rgba(255,215,0,0.5);background:linear-gradient(135deg,#FFA500,#FFD700)}
+.animate-left{opacity:0;transform:translateX(-120px);transition:all 0.9s ease}
+.animate-right{opacity:0;transform:translateX(120px);transition:all 0.9s ease}
+.animate-left.show, .animate-right.show{opacity:1;transform:translateX(0)}
+footer{text-align:center;padding:50px 5%;background:#111;margin-top:100px;border-top:3px solid #FFD700}
+footer p{color:#FFD700;font-weight:600;font-size:18px;letter-spacing:0.5px}
+@media(max-width:768px){.page-title{font-size:38px}.blogs-grid{grid-template-columns:1fr;gap:30px}.container{padding:0 4%}.blog-heading{font-size:21px}}
+</style>
+</head>
+<body>
+
+<nav>
+<div class="nav-container">
+<div class="logo">
+<img src="logo.png" alt="Al Raza Academy Logo">
+<span class="logo-text">Al Raza Academy</span>
+</div>
+<div class="hamburger" onclick="toggleMenu()">
+<span></span>
+<span></span>
+<span></span>
+</div>
+<div class="dropdown" id="menu">
+<a href="index.html">🏠 Home</a>
+<a href="about.html">ℹ️ About Us</a>
+<a href="teachers.html">👨‍🏫 Our Teacher's</a>
+<a href="how-it-works.html">⚙️ How it Works</a>
+<a href="terms.html">📜 Terms & Condition</a>
+<a href="contact.html">📞 Contact Us</a>
+<a href="courses.html">📚 Courses</a>
+<a href="fees.html">💰 Study Plan & Fees</a>
+<a href="blogs.html">📝 Blogs</a>
+</div>
+</div>
+</nav>
+
+<div class="container">
+<div class="page-header animate-left">
+<h1 class="page-title">Islamic Knowledge Blogs</h1>
+<p class="page-subtitle">Discover Wisdom from Quran & Sunnah - Click Detail to Read Full Article</p>
+</div>
+
+<div class="blogs-grid">
+
+<!-- BLOG 1 --> <div class="blog-card animate-left"><div class="blog-img"><img src="img/blog1.jpg" alt="Quran Benefits"></div><div class="blog-content"><h3 class="blog-heading">7 Amazing Benefits of Learning Quran That Will Transform Your Life</h3><div class="blog-hiding">Explore how learning Quran brings peace, blessings, and success in both worlds. A complete guide for every Muslim.</div><div class="blog-joining"><p>📚 Free Trial Class | Join 5000+ Students Worldwide</p></div><a href="blog1.html" class="detail-btn">📖 Read Full Detail</a></div></div>
+
+<!-- BLOG 2 --> <div class="blog-card animate-right"><div class="blog-img"><img src="img/blog2.jpg" alt="Tajweed Rules"></div><div class="blog-content"><h3 class="blog-heading">Complete Guide to Tajweed Rules - Learn Perfect Quran Recitation</h3><div class="blog-hiding">Master the art of Tajweed with step-by-step rules. Pronounce every Arabic letter correctly like native speakers.</div><div class="blog-joining"><p>👨‍🏫 Certified Teachers | One-to-One Classes Available</p></div><a href="blog2.html" class="detail-btn">📖 Read Full Detail</a></div></div>
+
+<!-- BLOG 3 --> <div class="blog-card animate-left"><div class="blog-img"><img src="img/blog3.jpg" alt="Kids Quran"></div><div class="blog-content"><h3 class="blog-heading">Best Online Quran Classes for Kids - Interactive & Fun Learning</h3><div class="blog-hiding">Specially designed Quran program for children aged 4+. Learn with games, stories, and certified kid-friendly teachers.</div><div class="blog-joining"><p>🎁 Special Kids Discount | Parent Can Monitor Live Class</p></div><a href="blog3.html" class="detail-btn">📖 Read Full Detail</a></div></div>
+
+<!-- BLOG 4 --> <div class="blog-card animate-right"><div class="blog-img"><img src="img/blog4.jpg" alt="Hifz Course"></div><div class="blog-content"><h3 class="blog-heading">Complete Hifz Program - Become Hafiz-e-Quran with Expert Guidance</h3><div class="blog-hiding">Structured Hifz program with daily revision plans. Memorize full Quran with proven techniques and daily tests.</div><div class="blog-joining"><p>🏆 100+ Students Completed Hifz | Daily Progress Reports</p></div><a href="blog4.html" class="detail-btn">📖 Read Full Detail</a></div></div>
+
+<!-- BLOG 5 --> <div class="blog-card animate-left"><div class="blog-img"><img src="img/blog5.jpg" alt="Noorani Qaida"></div><div class="blog-content"><h3 class="blog-heading">Noorani Qaida Course - Foundation for Perfect Quran Reading</h3><div class="blog-hiding">Start from zero and build strong foundation. Learn Arabic letters, Harakat, and basic Tajweed rules step by step.</div><div class="blog-joining"><p>📝 Perfect for Beginners | Learn at Your Own Pace</p></div><a href="blog5.html" class="detail-btn">📖 Read Full Detail</a></div></div>
+
+<!-- BLOG 6 --> <div class="blog-card animate-right"><div class="blog-img"><img src="img/blog6.jpg" alt="Islamic Manners"></div><div class="blog-content"><h3 class="blog-heading">Essential Islamic Manners Every Muslim Should Learn Today</h3><div class="blog-hiding">Learn Akhlaq and Adab from Quran and Sunnah. Build strong character with authentic Islamic teachings and examples.</div><div class="blog-joining"><p>🌟 Character Building | Learn with Practical Examples</p></div><a href="blog6.html" class="detail-btn">📖 Read Full Detail</a></div></div>
+
+<!-- BLOG 7 --> <div class="blog-card animate-left"><div class="blog-img"><img src="img/blog7.jpg" alt="Five Pillars"></div><div class="blog-content"><h3 class="blog-heading">Five Pillars of Islam Explained with Quranic Evidence</h3><div class="blog-hiding">Complete explanation of Shahadah, Salah, Zakat, Sawm, and Hajj with authentic Quranic verses and Hadith references.</div><div class="blog-joining"><p>📖 Quranic References | Authentic Hadith Included</p></div><a href="blog7.html" class="detail-btn">📖 Read Full Detail</a></div></div>
+
+<!-- BLOG 8 --> <div class="blog-card animate-right"><div class="blog-img"><img src="img/blog8.jpg" alt="Dua for Success"></div><div class="blog-content"><h3 class="blog-heading">Powerful Duas from Quran for Success and Barakah in Life</h3><div class="blog-hiding">Collection of authentic duas from Quran with Arabic text, English translation, and proper method of recitation.</div><div class="blog-joining"><p>🤲 Daily Dua Routine | With Audio Pronunciation</p></div><a href="blog8.html" class="detail-btn">📖 Read Full Detail</a></div></div>
+
+<!-- BLOG 9 --> <div class="blog-card animate-left"><div class="blog-img"><img src="img/blog9.jpg" alt="Prophet Stories"></div><div class="blog-content"><h3 class="blog-heading">Inspiring Stories of Prophets from Quran for Modern Life</h3><div class="blog-hiding">Learn life lessons from stories of Prophet Adam, Nuh, Ibrahim, Musa, and Isa (Peace be upon them all).</div><div class="blog-joining"><p>📚 Story-Based Learning | Life Lessons Included</p></div><a href="blog9.html" class="detail-btn">📖 Read Full Detail</a></div></div>
+
+<!-- BLOG 10 --> <div class="blog-card animate-right"><div class="blog-img"><img src="img/blog10.jpg" alt="Ramadan Guide"></div><div class="blog-content"><h3 class="blog-heading">Complete Ramadan Guide - Maximize Your Spiritual Rewards</h3><div class="blog-hiding">30-day Ramadan plan with Quran reading schedule, dua list, and tips to get maximum blessings this Ramadan.</div><div class="blog-joining"><p>🌙 Free Ramadan Planner | Daily Reminders Available</p></div><a href="blog10.html" class="detail-btn">📖 Read Full Detail</a></div></div><!-- BLOG 11 --> <div class="blog-card animate-left"><div class="blog-img"><img src="img/blog11.jpg" alt="Surah Mulk"></div><div class="blog-content"><h3 class="blog-heading">Benefits of Surah Al-Mulk - Protection from Punishment of Grave</h3><div class="blog-hiding">Discover virtues of Surah Mulk with authentic Hadith. Learn to recite daily for protection and forgiveness from Allah.</div><div class="blog-joining"><p>🛡️ Night Protection | Learn Correct Recitation</p></div><a href="blog11.html" class="detail-btn">📖 Read Full Detail</a></div></div>
+
+<!-- BLOG 12 --> <div class="blog-card animate-right"><div class="blog-img"><img src="img/blog12.jpg" alt="Wudu Guide"></div><div class="blog-content"><h3 class="blog-heading">Step by Step Wudu Guide with Sunnah and Common Mistakes</h3><div class="blog-hiding">Learn proper method of Wudu according to Sunnah. Avoid common mistakes that invalidate your purification.</div><div class="blog-joining"><p>💧 Video Tutorial | Step-by-Step Instructions</p></div><a href="blog12.html" class="detail-btn">📖 Read Full Detail</a></div></div>
+
+<!-- BLOG 13 --> <div class="blog-card animate-left"><div class="blog-img"><img src="img/blog13.jpg" alt="Salah Timing"></div><div class="blog-content"><h3 class="blog-heading">Importance of Salah - Why Muslims Must Pray Five Times Daily</h3><div class="blog-hiding">Understand spiritual and mental benefits of Salah. Learn how regular prayer transforms your daily life and mindset.</div><div class="blog-joining"><p>⏰ Prayer Timings | Learn with Concentration</p></div><a href="blog13.html" class="detail-btn">📖 Read Full Detail</a></div></div>
+
+<!-- BLOG 14 --> <div class="blog-card animate-right"><div class="blog-img"><img src="img/blog14.jpg" alt="Quran Translation"></div><div class="blog-content"><h3 class="blog-heading">Why Every Muslim Should Understand Quran Translation</h3><div class="blog-hiding">Reading Quran with translation brings deeper connection with Allah. Learn how Tafseer changes your perspective on life.</div><div class="blog-joining"><p>📖 Word-by-Word Translation | Easy Explanation</p></div><a href="blog14.html" class="detail-btn">📖 Read Full Detail</a></div></div>
+
+<!-- BLOG 15 --> <div class="blog-card animate-left"><div class="blog-img"><img src="img/blog15.jpg" alt="Parents Rights"></div><div class="blog-content"><h3 class="blog-heading">Rights of Parents in Islam - Commands from Quran and Hadith</h3><div class="blog-hiding">Learn Islamic teachings about serving parents. Discover rewards for respecting mother and father in this life and hereafter.</div><div class="blog-joining"><p>❤️ Family Values | Islamic Parenting Tips</p></div><a href="blog15.html" class="detail-btn">📖 Read Full Detail</a></div></div>
+
+<!-- BLOG 16 --> <div class="blog-card animate-right"><div class="blog-img"><img src="img/blog16.jpg" alt="Jannah Description"></div><div class="blog-content"><h3 class="blog-heading">Description of Jannah in Quran - Rewards for Believers</h3><div class="blog-hiding">Explore beautiful description of Paradise from Quran. Learn what actions lead to eternal happiness in Jannah.</div><div class="blog-joining"><p>🌴 Paradise Description | With Quranic Verses</p></div><a href="blog16.html" class="detail-btn">📖 Read Full Detail</a></div></div>
+
+<!-- BLOG 17 --> <div class="blog-card animate-left"><div class="blog-img"><img src="img/blog17.jpg" alt="Patience Sabr"></div><div class="blog-content"><h3 class="blog-heading">Power of Patience Sabr - Quranic Guidance for Difficult Times</h3><div class="blog-hiding">Learn how Sabr brings Allah's help. Quranic verses and stories that teach us to remain patient during trials.</div><div class="blog-joining"><p>💪 Mental Strength | Islamic Coping Strategies</p></div><a href="blog17.html" class="detail-btn">📖 Read Full Detail</a></div></div>
+
+<!-- BLOG 18 --> <div class="blog-card animate-right"><div class="blog-img"><img src="img/blog18.jpg" alt="Halal Haram"></div><div class="blog-content"><h3 class="blog-heading">Halal and Haram in Islam - Complete Guide for Daily Life</h3><div class="blog-hiding">Understand what Islam permits and prohibits. Make informed decisions about food, business, and lifestyle according to Shariah.</div><div class="blog-joining"><p>✅ Shariah Compliance | Daily Life Applications</p></div><a href="blog18.html" class="detail-btn">📖 Read Full Detail</a></div></div>
+
+<!-- BLOG 19 --> <div class="blog-card animate-left"><div class="blog-img"><img src="img/blog19.jpg" alt="Zakat Calculator"></div><div class="blog-content"><h3 class="blog-heading">Complete Guide to Zakat - How to Calculate and Give Properly</h3><div class="blog-hiding">Learn who must pay Zakat, how much, and to whom. Step-by-step calculation method with Nisab and examples.</div><div class="blog-joining"><p>💰 Zakat Calculator | Eligible Recipients List</p></div><a href="blog19.html" class="detail-btn">📖 Read Full Detail</a></div></div>
+
+<!-- BLOG 20 --> <div class="blog-card animate-right"><div class="blog-img"><img src="img/blog20.jpg" alt="Hijab in Islam"></div><div class="blog-content"><h3 class="blog-heading">Importance of Hijab for Muslim Women - Quranic Command</h3><div class="blog-hiding">Understand divine wisdom behind Hijab. Quranic verses and Hadith that explain dignity, protection, and identity of Muslim women.</div><div class="blog-joining"><p>👩 Women's Education | Modesty in Islam</p></div><a href="blog20.html" class="detail-btn">📖 Read Full Detail</a></div></div><!-- BLOG 21 --> <div class="blog-card animate-left"><div class="blog-img"><img src="img/blog21.jpg" alt="Seerah Prophet"></div><div class="blog-content"><h3 class="blog-heading">Seerah of Prophet Muhammad PBUH - Lessons for Modern Muslims</h3><div class="blog-hiding">Study life of Prophet Muhammad PBUH and apply his teachings today. Leadership, kindness, and justice from his beautiful example.</div><div class="blog-joining"><p>🌟 Role Model | Practical Life Applications</p></div><a href="blog21.html" class="detail-btn">📖 Read Full Detail</a></div></div>
+
+<!-- BLOG 22 --> <div class="blog-card animate-right"><div class="blog-img"><img src="img/blog22.jpg" alt="Jummah Friday"></div><div class="blog-content"><h3 class="blog-heading">Virtues of Jummah Friday - Best Day of the Week in Islam</h3><div class="blog-hiding">Discover why Friday is special. Sunnah acts for Jummah including Ghusl, Surah Kahf, and sending Salawat on Prophet PBUH.</div><div class="blog-joining"><p>🕌 Friday Checklist | Weekly Spiritual Boost</p></div><a href="blog22.html" class="detail-btn">📖 Read Full Detail</a></div></div>
+
+<!-- BLOG 23 --> <div class="blog-card animate-left"><div class="blog-img"><img src="img/blog23.jpg" alt="Dhikr Remembrance"></div><div class="blog-content"><h3 class="blog-heading">Power of Dhikr - Remembrance of Allah for Peaceful Heart</h3><div class="blog-hiding">Learn authentic Azkar from Quran and Sunnah. Morning and evening adhkar for protection, peace, and closeness to Allah.</div><div class="blog-joining"><p>📿 Daily Azkar | With Translation & Meaning</p></div><a href="blog23.html" class="detail-btn">📖 Read Full Detail</a></div></div>
+
+<!-- BLOG 24 --> <div class="blog-card animate-right"><div class="blog-img"><img src="img/blog24.jpg" alt="Istighfar"></div><div class="blog-content"><h3 class="blog-heading">Benefits of Istighfar - Seek Forgiveness and Allah Will Provide</h3><div class="blog-hiding">Power of saying Astaghfirullah. Quranic promise that Istighfar brings forgiveness, provision, children, and gardens.</div><div class="blog-joining"><p>🤲 100 Times Daily | Life-Changing Habit</p></div><a href="blog24.html" class="detail-btn">📖 Read Full Detail</a></div></div>
+
+<!-- BLOG 25 --> <div class="blog-card animate-left"><div class="blog-img"><img src="img/blog25.jpg" alt="Quran Healing"></div><div class="blog-content"><h3 class="blog-heading">Quran as Healing - Ruqyah and Spiritual Treatment from Quran</h3><div class="blog-hiding">Learn how Quran heals physical and spiritual diseases. Authentic Ruqyah verses and method of treatment from Sunnah.</div><div class="blog-joining"><p>🌿 Spiritual Healing | No Side Effects</p></div><a href="blog25.html" class="detail-btn">📖 Read Full Detail</a></div></div>
+
+<!-- BLOG 26 --> <div class="blog-card animate-right"><div class="blog-img"><img src="img/blog26.jpg" alt="Marriage in Islam"></div><div class="blog-content"><h3 class="blog-heading">Marriage in Islam - Rights and Responsibilities of Spouses</h3><div class="blog-hiding">Islamic guidelines for successful marriage. Mutual rights, respect, and love according to Quran and teachings of Prophet PBUH.</div><div class="blog-joining"><p>💍 Halal Relationship | Strong Family Foundation</p></div><a href="blog26.html" class="detail-btn">📖 Read Full Detail</a></div></div>
+
+<!-- BLOG 27 --> <div class="blog-card animate-left"><div class="blog-img"><img src="img/blog27.jpg" alt="Death Akhirah"></div><div class="blog-content"><h3 class="blog-heading">Reality of Death and Akhirah - Prepare for Eternal Life</h3><div class="blog-hiding">Quranic reminders about death and life after death. How to prepare for Akhirah while living in this temporary world.</div><div class="blog-joining"><p>⚰️ Reality Check | Prepare for Hereafter</p></div><a href="blog27.html" class="detail-btn">📖 Read Full Detail</a></div></div>
+
+<!-- BLOG 28 --> <div class="blog-card animate-right"><div class="blog-img"><img src="img/blog28.jpg" alt="Quran Miracles"></div><div class="blog-content"><h3 class="blog-heading">Scientific Miracles in Quran - Proof of Divine Revelation</h3><div class="blog-hiding">Explore amazing scientific facts mentioned in Quran 1400 years ago. Modern science confirms what Allah revealed in His Book.</div><div class="blog-joining"><p>🔬 Science & Faith | Strengthen Your Iman</p></div><a href="blog28.html" class="detail-btn">📖 Read Full Detail</a></div></div>
+
+<!-- BLOG 29 --> <div class="blog-card animate-left"><div class="blog-img"><img src="img/blog29.jpg" alt="Trust in Allah"></div><div class="blog-content"><h3 class="blog-heading">Tawakkul - Trust in Allah and He Will Take Care of Everything</h3><div class="blog-hiding">Learn complete reliance on Allah. Quranic verses that teach us to do our best and trust Allah for results and outcomes.</div><div class="blog-joining"><p>🤲 Stress Relief | Peace Through Trust</p></div><a href="blog29.html" class="detail-btn">📖 Read Full Detail</a></div></div>
+
+<!-- BLOG 30 --> <div class="blog-card animate-right"><div class="blog-img"><img src="img/blog30.jpg" alt="Quran Memorization"></div><div class="blog-content"><h3 class="blog-heading">Tips for Memorizing Quran - Become Hafiz with Proven Methods</h3><div class="blog-hiding">Effective techniques for Hifz including repetition, revision, and listening. Daily schedule for Hifz in 2 years.</div><div class="blog-joining"><p>🧠 Memory Techniques | 2-Year Hifz Plan</p></div><a href="blog30.html" class="detail-btn">📖 Read Full Detail</a></div></div>
+
+</div>
+</div>
+
+<footer>
+<p>© 2026 Al Raza Online Quran Academy | All Rights Reserved | Contact: muhammadshazabattari786@gmail.com</p>
+</footer>
+
+<script>
+function toggleMenu() {
+document.getElementById('menu').classList.toggle('show');
+}
+window.addEventListener('click', function(e) {
+if (!e.target.closest('.nav-container')) {
+document.getElementById('menu').classList.remove('show');
+}
+});
+const observer = new IntersectionObserver((entries) => {
+entries.forEach(entry => {
+if (entry.isIntersecting) {
+entry.target.classList.add('show');
+}
+});
+}, { threshold: 0.15 });
+document.querySelectorAll('.animate-left, .animate-right').forEach(el => {
+observer.observe(el);
+});
+</script>
+
+</body>
+                                                                                                                                                           </html>

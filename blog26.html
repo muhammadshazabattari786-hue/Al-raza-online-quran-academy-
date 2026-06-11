@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zakat - Purification of Wealth - 2.5% Purifies 100% Wealth - Al Raza Academy</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Poppins',sans-serif;background:linear-gradient(135deg,#0a0a0a 0%,#1a1a1a 100%);color:#fff;line-height:1.9;overflow-x:hidden}
+nav{background:rgba(17,17,17,0.95);backdrop-filter:blur(10px);padding:20px 0;position:sticky;top:0;z-index:100;border-bottom:3px solid #FFD700;box-shadow:0 5px 30px rgba(255,215,0,0.2)}
+.nav-container{max-width:1300px;margin:auto;padding:0 5%;display:flex;justify-content:space-between;align-items:center}
+.logo{display:flex;align-items:center;gap:15px}
+.logo img{height:65px;width:65px;border-radius:50%;border:3px solid #FFD700;object-fit:cover;box-shadow:0 0 20px rgba(255,215,0,0.4)}
+.logo-text{color:#FFD700;font-size:28px;font-weight:800;letter-spacing:1px}
+.hamburger{display:flex;flex-direction:column;cursor:pointer;gap:5px}
+.hamburger span{width:30px;height:3px;background:#FFD700;border-radius:2px;transition:0.3s}
+.dropdown{display:none;position:absolute;top:90px;right:5%;background:#1a1a1a;border:2px solid #FFD700;border-radius:15px;min-width:260px;box-shadow:0 15px 50px rgba(255,215,0,0.4);z-index:200;overflow:hidden}
+.dropdown.show{display:block;animation:slideDown 0.4s ease}
+@keyframes slideDown{from{opacity:0;transform:translateY(-15px)}to{opacity:1;transform:translateY(0)}}
+.dropdown a{display:block;padding:15px 22px;color:#FFD700;text-decoration:none;font-size:16px;font-weight:600;border-bottom:1px solid #333;transition:0.3s}
+.dropdown a:hover{background:#FFD700;color:#000;padding-left:28px}
+.container{max-width:950px;margin:60px auto;padding:0 5%}
+.header-section{text-align:center;margin-bottom:50px;padding-bottom:35px;border-bottom:2px solid #333}
+.line1{font-size:48px;color:#FFD700;font-weight:800;margin-bottom:15px;line-height:1.3}
+.line2{font-size:20px;color:#aaa;font-weight:400;margin-bottom:20px}
+.line3{display:flex;justify-content:center;gap:25px;flex-wrap:wrap;font-size:15px;color:#FFD700;font-weight:600}
+.line3 span{display:flex;align-items:center;gap:6px}
+.blog-detail-img{width:100%;height:420px;border-radius:30px;overflow:hidden;margin-bottom:45px;border:3px solid #FFD700;box-shadow:0 15px 40px rgba(255,215,0,0.2)}
+.blog-detail-img img{width:100%;height:100%;object-fit:cover}
+.blog-content h2{font-size:34px;color:#FFD700;margin-top:60px;margin-bottom:25px;font-weight:700;border-left:5px solid #FFD700;padding-left:15px}
+.blog-content p{font-size:18px;color:#ddd;line-height:2.1;margin-bottom:22px;text-align:justify}
+.point-box{background:linear-gradient(145deg,#1a1a1a,#222);border-left:6px solid #FFD700;border-radius:15px;padding:30px;margin:35px 0}
+.point-number{background:linear-gradient(135deg,#FFD700,#FFA500);color:#000;width:50px;height:50px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-weight:800;font-size:22px;margin-bottom:15px}
+.ayah-box{background:linear-gradient(145deg,#1a1a1a,#222);border:2px solid #FFD700;border-radius:20px;padding:35px;margin:40px 0;box-shadow:0 10px 30px rgba(255,215,0,0.15)}
+.arabic-text{font-family:'Amiri',serif;font-size:32px;color:#FFD700;text-align:right;direction:rtl;line-height:2.5;margin-bottom:20px;font-weight:700}
+.translation{font-size:17px;color:#ccc;font-style:italic;text-align:left;line-height:2;border-top:1px solid #444;padding-top:20px}
+.reference{color:#FFA500;font-size:14px;font-weight:600;margin-top:10px}
+.warning-box{background:linear-gradient(145deg,#2a0000,#3a0000);border-left:6px solid #ff4444;border-radius:15px;padding:30px;margin:35px 0}
+.warning-title{color:#ff6666;font-size:22px;font-weight:700;margin-bottom:15px}
+.animate-left{opacity:0;transform:translateX(-120px);transition:all 0.9s ease}
+.animate-right{opacity:0;transform:translateX(120px);transition:all 0.9s ease}
+.animate-left.show,.animate-right.show{opacity:1;transform:translateX(0)}
+@media(max-width:768px){.line1{font-size:32px}.line2{font-size:16px}.line3{font-size:13px;gap:15px}.blog-detail-img{height:260px}.container{padding:0 4%}.arabic-text{font-size:24px}}
+</style>
+</head>
+<body>
+
+<!-- MENU SECTION -->
+<nav>
+<div class="nav-container">
+<div class="logo">
+<img src="logo.png" alt="Al Raza Academy Logo">
+<span class="logo-text">Al Raza Academy</span>
+</div>
+<div class="hamburger" onclick="toggleMenu()">
+<span></span>
+<span></span>
+<span></span>
+</div>
+<div class="dropdown" id="menu">
+<a href="index.html">🏠 Home</a>
+<a href="about.html">ℹ️ About Us</a>
+<a href="teachers.html">👨‍🏫 Our Teacher's</a>
+<a href="how-it-works.html">⚙️ How it Works</a>
+<a href="terms.html">📜 Terms & Condition</a>
+<a href="contact.html">📞 Contact Us</a>
+<a href="courses.html">📚 Courses</a>
+<a href="fees.html">💰 Study Plan & Fees</a>
+<a href="blogs.html">📝 Blogs</a>
+</div>
+</div>
+</nav>
+
+<div class="container">
+
+<!-- 3-LINE HEADING SECTION -->
+<div class="header-section animate-left">
+<div class="line1">Zakat - Purification of Wealth</div>
+<div class="line2">2.5% Only - Purifies 100% Wealth & Removes Barakah Blockage</div>
+<div class="line3">
+<span>📅 April 2026</span>
+<span>⏱️ 18 Min Read</span>
+<span>📚 Zakat</span>
+<span>✍️ Al Raza Academy</span>
+</div>
+</div>
+
+<!-- Blog Image -->
+<div class="blog-detail-img animate-right">
+<img src="img/blog26.jpg" alt="Zakat Purification of Wealth">
+</div>
+
+<!-- Blog Content Start -->
+<div class="blog-content">
+
+<h2 class="animate-left">Introduction: Zakat - 3rd Pillar, 2.5% Only</h2>
+<p class="animate-right">Allah ordered: "And establish prayer and give Zakat." Quran mentions Salah + Zakat together 27 times. Why? Because body worship = Salah, wealth worship = Zakat. If you pray 5 times but don't give Zakat, Islam is incomplete.</p>
+
+<p class="animate-left">Zakat = 2.5% of wealth saved 1 year above Nisab. Have $10,000 for 1 year? Give $250 only. Keep $9,750. Allah doesn't ask 20%, 50%. Just 2.5% to purify 100%. Yet many rich Muslims skip it thinking "wealth will decrease". Reality: Zakat increases barakah, no Zakat = wealth gets cursed.</p>
+
+<p class="animate-right">This article explains Zakat rules simply: Who must pay, how to calculate, where to give, 7 benefits, and warning for those who skip. Read carefully – your Akhirah depends on it.</p>
+
+<div class="ayah-box animate-left">
+<div class="arabic-text">خُذْ مِنْ أَمْوَالِهِمْ صَدَقَةً تُطَهِّرُهُمْ وَتُزَكِّيهِم بِهَا</div>
+<div class="translation">"Take from their wealth a charity to purify them and cause them increase."</div>
+<div class="reference">Surah At-Tawbah, Ayah 103</div>
+</div>
+
+<p class="animate-right">Allah says Zakat "purifies and increases". Purifies your wealth from haram mix, purifies your heart from greed, increases barakah. Let's understand 8 key points.</p>
+
+<div class="point-box animate-left">
+<div class="point-number">1</div>
+<h2 style="margin-top:0;display:inline;margin-left:15px">Point 1: Who Must Pay Zakat - Nisab Rule</h2>
+<p><strong>Nisab = 85 grams gold</strong> ≈ $7,000-$8,000 today. If you have cash, gold, silver, business stock, crypto worth Nisab for 1 full lunar year, Zakat is obligatory 2.5%.</p>
+<p><strong>Example:</strong> $10,000 saved since Ramadan last year. Ramadan comes again = 1 year complete = pay $250 Zakat. Salary used monthly? No Zakat. Only SAVED wealth for 1 year.</p>
+</div>
+
+<div class="point-box animate-right">
+<div class="point-number">2</div>
+<h2 style="margin-top:0;display:inline;margin-left:15px">Point 2: How to Calculate - Simple 2.5% Formula</h2>
+<p>Formula: Total Zakatable wealth x 0.025 = Zakat. Zakatable = Cash + Bank + Gold/Silver + Business inventory + Crypto + Stocks - Debts due.</p>
+<p><strong>Easy method:</strong> $40,000 total x 2.5% = $1,000 Zakat. $100,000 x 2.5% = $2,500. Just divide by 40. Our academy gives free Zakat calculator – fill amount, get result instantly.</p>
+</div>
+
+<div class="point-box animate-left">
+<div class="point-number">3</div>
+<h2 style="margin-top:0;display:inline;margin-left:15px">Point 3: 8 Categories Who Can Receive Zakat</h2>
+<p>Quran 9:60: 1. Fuqara – poor, 2. Masakeen – needy, 3. Zakat collectors, 4. New Muslims, 5. To free slaves, 6. Debtors, 7. In path of Allah, 8. Travelers stranded.</p>
+<p><strong>Priority:</strong> Poor relatives first, then local poor, then organizations. Cannot give to parents, children, husband/wife. Can give to siblings, cousins, friends if poor.</p>
+</div>
+
+<div class="point-box animate-right">
+<div class="point-number">4</div>
+<h2 style="margin-top:0;display:inline;margin-left:15px">Point 4: When to Pay - Hawl Anniversary</h2>
+<p>Zakat due after 1 lunar year passes on Nisab amount. Many pay in Ramadan for barakah, but if your "Zakat year" ends in Muharram, pay in Muharram. Delay without reason = sin.</p>
+<p><strong>Tip:</strong> Fix date – 1st Ramadan or your birthday. Calculate yearly same date. Easier to remember. Set phone reminder 1 week before.</p>
+</div><div class="point-box animate-left">
+<div class="point-number">5</div>
+<h2 style="margin-top:0;display:inline;margin-left:15px">Point 5: What Wealth is Zakatable vs Exempt</h2>
+<p><strong>Zakatable:</strong> Cash, bank balance, gold jewelry, silver, business stock, investment, crypto, rental income saved. <strong>Not Zakatable:</strong> House you live in, car you drive, furniture, clothes, salary spent monthly.</p>
+<p><strong>Jewelry:</strong> If gold worn regularly, Hanafi says Zakat due. If kept as investment, Zakat definitely due. 85g gold = ~21 tola. Less than that, no Zakat on jewelry.</p>
+</div>
+
+<div class="point-box animate-right">
+<div class="point-number">6</div>
+<h2 style="margin-top:0;display:inline;margin-left:15px">Point 6: 7 Benefits of Paying Zakat</h2>
+<p>1. <strong>Purifies wealth:</strong> Removes haram 2-3% mixed unknowingly. 2. <strong>Purifies heart:</strong> Removes greed, love of money. 3. <strong>Increases barakah:</strong> $9,750 with Zakat > $10,000 without. 4. <strong>Helps Ummah:</strong> Poverty reduction system. 5. <strong>Protection:</strong> Hadith: "Wealth is protected by Zakat". 6. <strong>Social justice:</strong> Rich help poor. 7. <strong>Reward:</strong> Sadaqah reward + obligatory reward.</p>
+</div>
+
+<div class="point-box animate-left">
+<div class="point-number">7</div>
+<h2 style="margin-top:0;display:inline;margin-left:15px">Point 7: Warning - Punishment for Not Paying</h2>
+<div class="warning-box">
+<div class="warning-title">⚠️ Severe Warning from Quran & Hadith</div>
+<p>Allah says: "Those who hoard gold and silver and don't spend in way of Allah – give them news of painful punishment. Day when metal heated in Hell fire, their foreheads, sides, backs branded with it." Tawbah 34-35.</p>
+<p>Hadith: "Whoever has wealth and doesn't pay Zakat, on Qiyamah wealth will become snake biting his neck." Bukhari. Zakat is not charity – it's right of poor in your wealth. Withholding = stealing from poor.</p>
+</div>
+</div>
+
+<div class="point-box animate-right">
+<div class="point-number">8</div>
+<h2 style="margin-top:0;display:inline;margin-left:15px">Point 8: Zakat vs Sadaqah - Difference</h2>
+<p><strong>Zakat:</strong> 2.5%, obligatory, only for 8 categories, yearly. <strong>Sadaqah:</strong> Any amount, voluntary, anyone, anytime. Zakat is Fardh like Salah. Sadaqah is Nafl like Nafil prayer. Both needed.</p>
+<p><strong>Mindset:</strong> Don't think "I give Sadaqah so Zakat not needed". Zakat is debt to Allah. Sadaqah is bonus. Pay Zakat first, then Sadaqah as much as you can.</p>
+</div><h2 class="animate-left">Common Zakat Questions Answered</h2>
+<p class="animate-right"><strong>Q1:</strong> Zakat on provident fund/pension? A: If you can access it, pay Zakat yearly on full amount. <strong>Q2:</strong> Zakat on house for rent? A: Pay 2.5% on yearly rent collected + value of house if for sale. <strong>Q3:</strong> Can I give Zakat to mosque? A: Yes if mosque helps poor, orphans. Building only = scholars differ, better give to poor.</p>
+
+<h2 class="animate-right">Example Calculation 2026</h2>
+<p class="animate-left">Ahmed has: Cash $5,000 + Bank $8,000 + Gold 100g worth $8,500 + Business stock $15,000 = Total $36,500. Minus debt $1,500 = $35,000. Zakat = $35,000 ÷ 40 = $875. Pay before Ramadan ends. Simple.</p>
+
+<div class="ayah-box animate-left">
+<div class="arabic-text">وَمَا أَنفَقْتُم مِّن شَيْءٍ فَهُوَ يُخْلِفُهُ وَهُوَ خَيْرُ الرَّازِقِينَ</div>
+<div class="translation">"And whatever you spend, He will replace it; and He is the best of providers."</div>
+<div class="reference">Surah Saba, Ayah 39</div>
+</div>
+
+<h2 class="animate-right">Conclusion: 2.5% is Not Loss, It's Investment</h2>
+<p class="animate-left">We spend 30% on tax, 20% on shopping, 10% on phone – no problem. But 2.5% for Allah feels "heavy". Change mindset: Zakat is not expense, it's investment with Allah who never goes bankrupt.</p>
+<p class="animate-right">Calculate your Zakat today. If due, pay immediately. If not due yet, set reminder. And make dua: "Allahumma barik li fi rizqi" – O Allah bless my wealth. Wealth with Zakat = Halal + Barakah + Jannah. Without Zakat = Curse + Anxiety + Punishment.</p>
+
+<p class="animate-left" style="text-align:center; margin-top:40px; font-size:20px; color:#FFD700; font-weight:700;">"Zakat purifies wealth" – Calculate & pay your Zakat today!</p>
+
+</div>
+
+<!-- Join Now Form -->
+<div class="join-section animate-left" id="join-form" style="background:linear-gradient(145deg,#1a1a1a,#222);border:3px solid #FFD700;border-radius:30px;padding:50px;margin:80px 0;box-shadow:0 20px 50px rgba(255,215,0,0.2)">
+<h2 class="join-title" style="text-align:center;font-size:38px;color:#FFD700;font-weight:800;margin-bottom:15px">💰 Free Zakat Calculator + Guidance</h2>
+<p class="join-subtitle" style="text-align:center;color:#aaa;font-size:17px;margin-bottom:40px">Get exact Zakat amount in 2 minutes + list of verified poor families + annual reminder service!</p>
+
+<form onsubmit="alert('JazakAllah Khair! Our Zakat specialist will WhatsApp you personalized calculation sheet + list of eligible recipients within 3 hours. Calculate before Ramadan ends!'); return false;">
+<div class="form-group" style="margin-bottom:25px">
+<label style="display:block;color:#FFD700;font-weight:600;margin-bottom:10px;font-size:16px">Full Name *</label>
+<input type="text" placeholder="Enter your full name" required style="width:100%;padding:16px;border-radius:12px;border:2px solid #444;background:#0a0a0a;color:#fff;font-size:16px">
+</div>
+
+<div class="form-group" style="margin-bottom:25px">
+<label style="display:block;color:#FFD700;font-weight:600;margin-bottom:10px;font-size:16px">WhatsApp Number *</label>
+<input type="tel" placeholder="+1 234 567 8900" required style="width:100%;padding:16px;border-radius:12px;border:2px solid #444;background:#0a0a0a;color:#fff;font-size:16px">
+</div>
+
+<div class="form-group" style="margin-bottom:25px">
+<label style="display:block;color:#FFD700;font-weight:600;margin-bottom:10px;font-size:16px">Approximate Wealth Saved 1 Year</label>
+<select style="width:100%;padding:16px;border-radius:12px;border:2px solid #444;background:#0a0a0a;color:#fff;font-size:16px">
+<option>Below Nisab - No Zakat</option>
+<option>$7,000 - $20,000</option>
+<option>$20,000 - $100,000</option>
+<option>$100,000+</option>
+<option>Need help calculating</option>
+</select>
+</div>
+
+<button type="submit" style="width:100%;background:linear-gradient(135deg,#FFD700,#FFA500);color:#000;padding:18px;border-radius:15px;border:none;font-weight:800;font-size:18px;cursor:pointer">💰 Get Free Zakat Calculation</button>
+</form>
+</div>
+
+<!-- BOTTOM NEXT BLOG SECTION -->
+<div class="next-blog-section animate-left" style="margin-top:80px;padding:50px;background:linear-gradient(145deg,#1a1a1a,#222);border-radius:30px;border:3px solid #FFD700">
+<h2 style="text-align:center;font-size:36px;color:#FFD700;font-weight:800;margin-bottom:40px">📚 Continue Reading More Blogs</h2>
+
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:30px">
+
+<!-- Previous Blog Card -->
+<div style="background:#0a0a0a;border:2px solid #444;border-radius:20px;padding:25px;text-align:center;transition:0.3s">
+<h3 style="color:#aaa;font-size:18px;margin-bottom:15px">← Previous Blog</h3>
+<h4 style="color:#FFD700;font-size:20px;margin-bottom:15px">Power of Dhikr - Remember Allah</h4>
+<p style="color:#ccc;font-size:14px;margin-bottom:20px">SubhanAllah Alhamdulillah</p>
+<a href="blog25.html" style="display:inline-block;background:#2a2a2a;color:#FFD700;padding:12px 25px;border-radius:10px;text-decoration:none;font-weight:700;border:2px solid #FFD700">Read Previous</a>
+</div>
+
+<!-- Next Blog Card -->
+<div style="background:linear-gradient(135deg,#FFD700,#FFA500);border-radius:20px;padding:25px;text-align:center;box-shadow:0 10px 30px rgba(255,215,0,0.4)">
+<h3 style="color:#000;font-size:18px;margin-bottom:15px;font-weight:700">Next Blog →</h3>
+<h4 style="color:#000;font-size:22px;margin-bottom:15px;font-weight:800">Hajj & Umrah - Journey to Allah</h4>
+<p style="color:#333;font-size:15px;margin-bottom:20px;font-weight:600">5th pillar complete guide</p>
+<a href="blog27.html" style="display:inline-block;background:#000;color:#FFD700;padding:14px 30px;border-radius:12px;text-decoration:none;font-weight:800;font-size:16px">Read Next Blog</a>
+</div>
+
+</div>
+</div>
+
+</div>
+
+<footer style="text-align:center;padding:50px 5%;background:#111;margin-top:100px;border-top:3px solid #FFD700">
+<p style="color:#FFD700;font-weight:600;font-size:18px">© 2026 Al Raza Online Quran Academy | All Rights Reserved | Contact: muhammadshazabattari786@gmail.com</p>
+</footer>
+
+<script>
+function toggleMenu() {
+document.getElementById('menu').classList.toggle('show');
+}
+window.addEventListener('click', function(e) {
+if (!e.target.closest('.nav-container')) {
+document.getElementById('menu').classList.remove('show');
+}
+});
+
+const observer = new IntersectionObserver((entries) => {
+entries.forEach(entry => {
+if (entry.isIntersecting) {
+entry.target.classList.add('show');
+}
+});
+}, { threshold: 0.15 });
+
+document.querySelectorAll('.animate-left,.animate-right').forEach(el => {
+observer.observe(el);
+});
+</script>
+
+</body>
+</html>

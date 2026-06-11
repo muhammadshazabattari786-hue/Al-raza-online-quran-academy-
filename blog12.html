@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quran with Translation & Tafseer - Understand Allah's Words - Al Raza Academy</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Poppins',sans-serif;background:linear-gradient(135deg,#0a0a0a 0%,#1a1a1a 100%);color:#fff;line-height:1.9;overflow-x:hidden}
+nav{background:rgba(17,17,17,0.95);backdrop-filter:blur(10px);padding:20px 0;position:sticky;top:0;z-index:100;border-bottom:3px solid #FFD700;box-shadow:0 5px 30px rgba(255,215,0,0.2)}
+.nav-container{max-width:1300px;margin:auto;padding:0 5%;display:flex;justify-content:space-between;align-items:center}
+.logo{display:flex;align-items:center;gap:15px}
+.logo img{height:65px;width:65px;border-radius:50%;border:3px solid #FFD700;object-fit:cover;box-shadow:0 0 20px rgba(255,215,0,0.4)}
+.logo-text{color:#FFD700;font-size:28px;font-weight:800;letter-spacing:1px}
+.hamburger{display:flex;flex-direction:column;cursor:pointer;gap:5px}
+.hamburger span{width:30px;height:3px;background:#FFD700;border-radius:2px;transition:0.3s}
+.dropdown{display:none;position:absolute;top:90px;right:5%;background:#1a1a1a;border:2px solid #FFD700;border-radius:15px;min-width:260px;box-shadow:0 15px 50px rgba(255,215,0,0.4);z-index:200;overflow:hidden}
+.dropdown.show{display:block;animation:slideDown 0.4s ease}
+@keyframes slideDown{from{opacity:0;transform:translateY(-15px)}to{opacity:1;transform:translateY(0)}}
+.dropdown a{display:block;padding:15px 22px;color:#FFD700;text-decoration:none;font-size:16px;font-weight:600;border-bottom:1px solid #333;transition:0.3s}
+.dropdown a:hover{background:#FFD700;color:#000;padding-left:28px}
+.container{max-width:950px;margin:60px auto;padding:0 5%}
+.header-section{text-align:center;margin-bottom:50px;padding-bottom:35px;border-bottom:2px solid #333}
+.line1{font-size:48px;color:#FFD700;font-weight:800;margin-bottom:15px;line-height:1.3}
+.line2{font-size:20px;color:#aaa;font-weight:400;margin-bottom:20px}
+.line3{display:flex;justify-content:center;gap:25px;flex-wrap:wrap;font-size:15px;color:#FFD700;font-weight:600}
+.line3 span{display:flex;align-items:center;gap:6px}
+.blog-detail-img{width:100%;height:420px;border-radius:30px;overflow:hidden;margin-bottom:45px;border:3px solid #FFD700;box-shadow:0 15px 40px rgba(255,215,0,0.2)}
+.blog-detail-img img{width:100%;height:100%;object-fit:cover}
+.blog-content h2{font-size:34px;color:#FFD700;margin-top:60px;margin-bottom:25px;font-weight:700;border-left:5px solid #FFD700;padding-left:15px}
+.blog-content p{font-size:18px;color:#ddd;line-height:2.1;margin-bottom:22px;text-align:justify}
+.importance-box{background:linear-gradient(145deg,#1a1a1a,#222);border-left:6px solid #FFD700;border-radius:15px;padding:30px;margin:35px 0}
+.importance-number{background:linear-gradient(135deg,#FFD700,#FFA500);color:#000;width:50px;height:50px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-weight:800;font-size:22px;margin-bottom:15px}
+.ayah-box{background:linear-gradient(145deg,#1a1a1a,#222);border:2px solid #FFD700;border-radius:20px;padding:35px;margin:40px 0;box-shadow:0 10px 30px rgba(255,215,0,0.15)}
+.arabic-text{font-family:'Amiri',serif;font-size:32px;color:#FFD700;text-align:right;direction:rtl;line-height:2.5;margin-bottom:20px;font-weight:700}
+.translation{font-size:17px;color:#ccc;font-style:italic;text-align:left;line-height:2;border-top:1px solid #444;padding-top:20px}
+.reference{color:#FFA500;font-size:14px;font-weight:600;margin-top:10px}
+.tafseer-box{background:linear-gradient(145deg,#222,#2a2a2a);border:2px solid #444;border-radius:20px;padding:30px;margin:35px 0}
+.tafseer-title{color:#FFD700;font-size:20px;font-weight:700;margin-bottom:12px}
+.animate-left{opacity:0;transform:translateX(-120px);transition:all 0.9s ease}
+.animate-right{opacity:0;transform:translateX(120px);transition:all 0.9s ease}
+.animate-left.show, .animate-right.show{opacity:1;transform:translateX(0)}
+@media(max-width:768px){.line1{font-size:32px}.line2{font-size:16px}.line3{font-size:13px;gap:15px}.blog-detail-img{height:260px}.container{padding:0 4%}.arabic-text{font-size:24px}}
+</style>
+</head>
+<body>
+
+<!-- MENU SECTION -->
+<nav>
+<div class="nav-container">
+<div class="logo">
+<img src="logo.png" alt="Al Raza Academy Logo">
+<span class="logo-text">Al Raza Academy</span>
+</div>
+<div class="hamburger" onclick="toggleMenu()">
+<span></span>
+<span></span>
+<span></span>
+</div>
+<div class="dropdown" id="menu">
+<a href="index.html">🏠 Home</a>
+<a href="about.html">ℹ️ About Us</a>
+<a href="teachers.html">👨‍🏫 Our Teacher's</a>
+<a href="how-it-works.html">⚙️ How it Works</a>
+<a href="terms.html">📜 Terms & Condition</a>
+<a href="contact.html">📞 Contact Us</a>
+<a href="courses.html">📚 Courses</a>
+<a href="fees.html">💰 Study Plan & Fees</a>
+<a href="blogs.html">📝 Blogs</a>
+</div>
+</div>
+</nav>
+
+<div class="container">
+
+<!-- 3-LINE HEADING SECTION -->
+<div class="header-section animate-left">
+<div class="line1">Quran with Translation & Tafseer</div>
+<div class="line2">Understand the Meaning Behind Every Verse - Transform Recitation into Connection</div>
+<div class="line3">
+<span>📅 April 2026</span>
+<span>⏱️ 15 Min Read</span>
+<span>📚 Tafseer Course</span>
+<span>✍️ Al Raza Academy</span>
+</div>
+</div>
+
+<!-- Blog Image -->
+<div class="blog-detail-img animate-right">
+<img src="img/blog11.jpg" alt="Quran Translation Tafseer">
+</div>
+
+<!-- Blog Content Start -->
+<div class="blog-content">
+
+<h2 class="animate-left">Introduction: From Reading Letters to Understanding Allah's Message</h2>
+<p class="animate-right">Millions of Muslims recite Quran daily: "Alif Lam Meem, Zalikal Kitab..." But how many understand what they are saying? Reading Arabic without understanding is like receiving a letter from beloved but never opening it to read the message.</p>
+
+<p class="animate-left">At Al Raza Online Quran Academy, we believe true connection with Quran happens when you understand Allah's words. Translation tells you "what Allah said". Tafseer tells you "why Allah said it, when it was revealed, and how to apply it in life". This combination transforms mechanical recitation into emotional, life-changing connection.</p>
+
+<div class="ayah-box animate-right">
+<div class="arabic-text">كِتَابٌ أَنزَلْنَاهُ إِلَيْكَ مُبَارَكٌ لِّيَدَّبَّرُوا آيَاتِهِ</div>
+<div class="translation">"This is a blessed Book We have sent down to you, that they may reflect upon its verses."</div>
+<div class="reference">Surah Saad, Ayah 29</div>
+</div>
+
+<p class="animate-left">Allah didn't reveal Quran just for recitation. He revealed it for "Tadabbur" – deep reflection and understanding. This article shows why Translation + Tafseer is essential for every Muslim, how our course works, and how you can start understanding Quran within 3 months even without Arabic background.</p>
+
+<div class="importance-box animate-left">
+<div class="importance-number">1</div>
+<h2 style="margin-top:0;display:inline;margin-left:15px">Importance 1: Quran is Allah's Direct Message to YOU</h2>
+<p>Imagine President of USA sends personal letter to you. Will you just kiss the envelope and put it on shelf? No! You will read every word carefully to understand instructions. Quran is letter from King of Kings – Allah Himself. Translation helps you read that letter.</p>
+<p>Without translation, you are missing 90% of benefit. With translation, every verse becomes personal advice, warning, glad tidings, or law from your Creator. Suddenly Quran is not "old book" – it is live conversation between you and Allah.</p>
+</div>
+
+<div class="importance-box animate-right">
+<div class="importance-number">2</div>
+<h2 style="margin-top:0;display:inline;margin-left:15px">Importance 2: Avoid Misunderstanding & Wrong Application</h2>
+<p>Many Muslims quote Quran verses incorrectly because they don't know context. Example: "There is no compulsion in religion" – without Tafseer, people think Islam forces nothing ever. But Tafseer explains this verse was about not forcing non-Muslims to convert. Other verses command Muslims to follow Islamic law.</p>
+<p>Tafseer provides Asbab al-Nuzool – reasons of revelation. When you know verse was revealed during Battle of Badr vs during peace treaty, you understand it correctly. Without Tafseer, you might apply verse meant for war situation to normal daily life, causing confusion.</p>
+</div>
+
+<div class="importance-box animate-left">
+<div class="importance-number">3</div>
+<h2 style="margin-top:0;display:inline;margin-left:15px">Importance 3: Emotional Connection During Prayer</h2>
+<p>How many times you pray Taraweeh but mind wanders because you don't understand what Imam is reciting? After learning Translation + Tafseer, same prayer becomes tearful experience. When Imam recites "Ar-Rahman, Ar-Raheem", you feel Allah's mercy. When he recites about Hell, your heart trembles.</p>
+<p>Students report: "After Tafseer course, my Salah time increased from 5 minutes to 20 minutes because I don't want to finish. Every verse speaks to me now." This is the difference between reciting words and talking to Allah.</p>
+</div><div class="importance-box animate-right">
+<div class="importance-number">4</div>
+<h2 style="margin-top:0;display:inline;margin-left:15px">Importance 4: Guidance for Every Life Problem</h2>
+<p>Depression? Quran has Surah Duha. Financial stress? Quran has Surah Waqiah. Family problems? Quran has Surah Talaq with divorce guidance. Marriage issues? Quran has Surah Nisa. But you only benefit if you understand which verse addresses your problem.</p>
+<p>Translation + Tafseer gives you "user manual" for life. Facing decision? Open Quran, read translation, see Tafseer – Allah guides you directly. 1000 self-help books cannot match guidance of 1 page of Quran with understanding.</p>
+</div>
+
+<div class="importance-box animate-left">
+<div class="importance-number">5</div>
+<h2 style="margin-top:0;display:inline;margin-left:15px">Importance 5: Stronger Faith & Answer to Doubts</h2>
+<p>Non-Muslims ask questions: "Why Hijab?" "Why polygamy?" "Why punishment for theft?" If you only memorized Arabic, you cannot answer. But if you studied Tafseer, you know wisdom, context, and benefits behind every command.</p>
+<p>Many Muslims left Islam due to doubts, then returned after studying Tafseer. Because Tafseer shows Quran is not blind faith – it is book of wisdom, science, logic, and justice. Understanding removes doubts and strengthens Iman 10x.</p>
+</div>
+
+<div class="importance-box animate-right">
+<div class="importance-number">6</div>
+<h2 style="margin-top:0;display:inline;margin-left:15px">Importance 6: You Can Teach & Guide Others</h2>
+<p>Prophet (PBUH) said: "Convey from me even if one verse." But you cannot convey what you don't understand. After Translation + Tafseer course, you can explain Quran to children, friends, new Muslims. You become da'ee – caller to Allah.</p>
+<p>Mothers who study Tafseer raise better Muslim children because they answer "Why we pray?" with wisdom, not just "Because Allah said". This generational impact is priceless. One person learning Tafseer can guide whole family.</p>
+</div>
+
+<h2 class="animate-left">Al Raza's Translation + Tafseer Course Structure</h2>
+<p class="animate-right">We don't overwhelm you with 30 volumes of Ibn Kathir on day one. Our structured 3-level program:</p>
+<p class="animate-left"><strong>Level 1 – Foundation 3 Months:</strong> Juz Amma 37 surahs. Word-by-word translation, basic Tafseer, stories of Prophets mentioned. 30 min class, 3 days/week. Perfect for beginners.</p>
+<p class="animate-right"><strong>Level 2 – Intermediate 6 Months:</strong> Surah Yaseen, Mulk, Kahf, Rahman, Waqiah – most recited surahs. Detailed Tafseer, lessons for daily life, common misconceptions cleared.</p>
+<p class="animate-left"><strong>Level 3 – Advanced 12 Months:</strong> Complete Quran Tafseer. We cover 1 page per class with Ibn Kathir, Qurtubi, and modern scholars' explanations. Includes Fiqh rulings, Arabic grammar, and application for modern life.</p>
+
+<div class="tafseer-box animate-right">
+<div class="tafseer-title">Sample Tafseer: Surah Al-Asr Ayah 1-3</div>
+<p><strong>Arabic:</strong> وَالْعَصْرِ - إِنَّ الْإِنسَانَ لَفِي خُسْرٍ - إِلَّا الَّذِينَ آمَنُوا</p>
+<p><strong>Translation:</strong> "By time, indeed mankind is in loss, except those who believe..."</p>
+<p><strong>Tafseer:</strong> Allah swears by "Asr" – time, afternoon, era. Why? Because time is most valuable asset. Every second passing is wealth you cannot get back. "Mankind in loss" means everyone is losing time except 4 types: 1) Those who have Iman, 2) Do righteous deeds, 3) Advise truth, 4) Advise patience. This 3-verse surah summarizes entire Islam. Imam Shafi said: "If Quran had only this surah, it would be sufficient for guidance."</p>
+</div><h2 class="animate-left">Our Teaching Method: Simple, Not Scholarly Jargon</h2>
+<p class="animate-right">Many Tafseer classes use difficult Arabic terms and bore students. Our teachers explain Tafseer like story: "Allah revealed this verse when Muslims were scared after Battle of Uhud. They were injured, enemies were planning attack. Then Allah sent this verse to give them hope..."</p>
+<p class="animate-left">We use: 1) Stories of revelation, 2) Real-life examples, 3) Q&A sessions, 4) Diagrams for complex concepts, 5) Practical homework: "This week apply verse X in your life and share experience next class." This makes Tafseer alive, not academic subject.</p>
+<p class="animate-right">Language options: English, Urdu, Arabic. Teacher explains in your language while showing Arabic text. No Arabic background required to start.</p>
+
+<h2 class="animate-left">Who Should Join This Course?</h2>
+<p class="animate-right">1. <strong>Hafiz who memorized without meaning:</strong> Now add understanding to your memorization. 2. <strong>Adults who read Quran but don't understand:</strong> Bridge the gap. 3. <strong>Parents:</strong> Learn to teach children Quran with meaning. 4. <strong>New Muslims:</strong> Understand Islam from source, not from media. 5. <strong>Anyone feeling "dry" in Ibadah:</strong> Tafseer brings back love for Quran.</p>
+<p class="animate-left">Age 15 to 70 – no upper limit. We have grandmother age 68 who completed Level 1 and now teaches Tafseer to ladies in her community.</p>
+
+<h2 class="animate-right">Conclusion: Don't Let Quran Be Closed Book</h2>
+<p class="animate-left">On Judgment Day, Allah will ask: "I sent you Quran – did you understand it? Did you apply it?" Recitation alone is not enough. Companions spent 10 years on Surah Baqarah because they applied every verse before moving to next.</p>
+<p class="animate-right">Start with Juz Amma. 3 months, 30 minutes, 3 days/week. In 90 days you will understand 37 surahs deeply. Imagine feeling of praying Maghrib and understanding every word Imam recites. That feeling is worth more than any degree.</p>
+
+<p class="animate-left" style="text-align:center; margin-top:40px; font-size:20px; color:#FFD700; font-weight:700;">"Quran is not just to be recited – it is to be lived" – Start Tafseer journey today!</p>
+
+</div>
+
+<!-- Join Now Form -->
+<div class="join-section animate-left" id="join-form" style="background:linear-gradient(145deg,#1a1a1a,#222);border:3px solid #FFD700;border-radius:30px;padding:50px;margin:80px 0;box-shadow:0 20px 50px rgba(255,215,0,0.2)">
+<h2 class="join-title" style="text-align:center;font-size:38px;color:#FFD700;font-weight:800;margin-bottom:15px">🎁 Free Tafseer Demo Class - Juz Amma</h2>
+<p class="join-subtitle" style="text-align:center;color:#aaa;font-size:17px;margin-bottom:40px">Experience how we explain Surah Al-Fatiha with translation + story + life application. 100% Free!</p>
+
+<form onsubmit="alert('Thank you! Our Tafseer teacher will send you Zoom link for free demo class within 6 hours.'); return false;">
+<div class="form-group" style="margin-bottom:25px">
+<label style="display:block;color:#FFD700;font-weight:600;margin-bottom:10px;font-size:16px">Full Name *</label>
+<input type="text" placeholder="Enter your full name" required style="width:100%;padding:16px;border-radius:12px;border:2px solid #444;background:#0a0a0a;color:#fff;font-size:16px">
+</div>
+
+<div class="form-group" style="margin-bottom:25px">
+<label style="display:block;color:#FFD700;font-weight:600;margin-bottom:10px;font-size:16px">Preferred Language *</label>
+<select required style="width:100%;padding:16px;border-radius:12px;border:2px solid #444;background:#0a0a0a;color:#fff;font-size:16px">
+<option>English</option>
+<option>Urdu</option>
+<option>Arabic</option>
+</select>
+</div>
+
+<div class="form-group" style="margin-bottom:25px">
+<label style="display:block;color:#FFD700;font-weight:600;margin-bottom:10px;font-size:16px">WhatsApp Number *</label>
+<input type="tel" placeholder="+1 234 567 8900" required style="width:100%;padding:16px;border-radius:12px;border:2px solid #444;background:#0a0a0a;color:#fff;font-size:16px">
+</div>
+
+<div class="form-group" style="margin-bottom:25px">
+<label style="display:block;color:#FFD700;font-weight:600;margin-bottom:10px;font-size:16px">Current Quran Level</label>
+<select style="width:100%;padding:16px;border-radius:12px;border:2px solid #444;background:#0a0a0a;color:#fff;font-size:16px">
+<option>Can read Arabic but don't understand</option>
+<option>Know basic translation</option>
+<option>Studied some Tafseer before</option>
+<option>Complete beginner</option>
+</select>
+</div>
+
+<button type="submit" style="width:100%;background:linear-gradient(135deg,#FFD700,#FFA500);color:#000;padding:18px;border-radius:15px;border:none;font-weight:800;font-size:18px;cursor:pointer">🚀 Book Free Tafseer Demo Class Now</button>
+</form>
+</div>
+
+<!-- BOTTOM NEXT BLOG SECTION -->
+<div class="next-blog-section animate-left" style="margin-top:80px;padding:50px;background:linear-gradient(145deg,#1a1a1a,#222);border-radius:30px;border:3px solid #FFD700">
+<h2 style="text-align:center;font-size:36px;color:#FFD700;font-weight:800;margin-bottom:40px">📚 Continue Reading More Blogs</h2>
+
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:30px">
+  
+<!-- Previous Blog Card -->
+<div style="background:#0a0a0a;border:2px solid #444;border-radius:20px;padding:25px;text-align:center;transition:0.3s">
+<h3 style="color:#aaa;font-size:18px;margin-bottom:15px">← Previous Blog</h3>
+<h4 style="color:#FFD700;font-size:20px;margin-bottom:15px">Benefits of Memorizing Quran</h4>
+<p style="color:#ccc;font-size:14px;margin-bottom:20px">10 life-changing benefits</p>
+<a href="blog10.html" style="display:inline-block;background:#2a2a2a;color:#FFD700;padding:12px 25px;border-radius:10px;text-decoration:none;font-weight:700;border:2px solid #FFD700">Read Previous</a>
+</div>
+
+<!-- Next Blog Card -->
+<div style="background:linear-gradient(135deg,#FFD700,#FFA500);border-radius:20px;padding:25px;text-align:center;box-shadow:0 10px 30px rgba(255,215,0,0.4)">
+<h3 style="color:#000;font-size:18px;margin-bottom:15px;font-weight:700">Next Blog →</h3>
+<h4 style="color:#000;font-size:22px;margin-bottom:15px;font-weight:800">Arabic Language Course for Quran</h4>
+<p style="color:#333;font-size:15px;margin-bottom:20px;font-weight:600">Learn Arabic to understand Quran directly</p>
+<a href="blog12.html" style="display:inline-block;background:#000;color:#FFD700;padding:14px 30px;border-radius:12px;text-decoration:none;font-weight:800;font-size:16px">Read Next Blog</a>
+</div>
+
+</div>
+</div>
+
+</div>
+
+<footer style="text-align:center;padding:50px 5%;background:#111;margin-top:100px;border-top:3px solid #FFD700">
+<p style="color:#FFD700;font-weight:600;font-size:18px">© 2026 Al Raza Online Quran Academy | All Rights Reserved | Contact: muhammadshazabattari786@gmail.com</p>
+</footer>
+
+<script>
+function toggleMenu() {
+document.getElementById('menu').classList.toggle('show');
+}
+window.addEventListener('click', function(e) {
+if (!e.target.closest('.nav-container')) {
+document.getElementById('menu').classList.remove('show');
+}
+});
+
+const observer = new IntersectionObserver((entries) => {
+entries.forEach(entry => {
+if (entry.isIntersecting) {
+entry.target.classList.add('show');
+}
+});
+}, { threshold: 0.15 });
+
+document.querySelectorAll('.animate-left, .animate-right').forEach(el => {
+observer.observe(el);
+});
+</script>
+
+</body>
+</html>

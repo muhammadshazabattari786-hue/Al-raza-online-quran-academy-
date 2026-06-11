@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Course Fees & Study Plans - Al Raza Academy</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Poppins',sans-serif;background:#0a0a0a;color:#fff;line-height:1.7}
+nav{background:#111;padding:18px 0;position:sticky;top:0;z-index:100;border-bottom:3px solid #FFD700}
+.nav-container{max-width:1200px;margin:auto;padding:0 4%;display:flex;justify-content:space-between;align-items:center}
+.logo-text{color:#FFD700;font-size:24px;font-weight:700}
+nav ul{list-style:none;display:flex;gap:30px}
+nav ul li a{color:#FFD700;text-decoration:none;font-size:16px;font-weight:600;padding:10px 15px;border-radius:8px;transition:0.3s}
+nav ul li a:hover{background:#FFD700;color:#000}
+.hamburger{display:none;flex-direction:column;cursor:pointer}
+.hamburger span{width:28px;height:3px;background:#FFD700;margin:4px 0;transition:0.3s}
+header{background:linear-gradient(135deg,#FFD700 0%,#FFA500 100%);padding:80px 20px;text-align:center}
+header h1{font-size:48px;margin-bottom:15px;color:#000;font-weight:800}
+header p{font-size:20px;color:#000;font-weight:600}
+.container{max-width:1200px;margin:auto;padding:70px 4%}
+.features-section{background:linear-gradient(135deg,#0d4d2d 0%,#1a5c3a 100%);padding:60px 40px;border-radius:30px;border:3px solid #00FF7F;margin-bottom:80px}
+.section-title{text-align:center;font-size:48px;margin-bottom:40px;color:#00FF7F;font-weight:800}
+.features-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:25px;margin-top:40px}
+.feature-box{background:rgba(255,255,255,0.08);padding:25px;border-radius:15px;border-left:4px solid #00FF7F;transition:0.4s}
+.feature-box:hover{transform:translateX(10px)}
+.feature-box h4{color:#FFD700;font-size:20px;margin-bottom:10px}
+.packages-section{padding:70px 0;margin-bottom:80px}
+.packages-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:30px;margin-top:40px}
+.package-card{background:transparent;padding:0;margin-bottom:25px;opacity:0}
+.package-card h3{font-size:26px;margin-bottom:15px;text-align:center;font-weight:700}
+.duration-30 h3{color:#00BFFF}
+.duration-45 h3{color:#FFA500}
+.duration-60 h3{color:#FF6347}
+.price-box{background:rgba(255,255,255,0.05);padding:25px;border-radius:18px;margin-bottom:15px;border:2px solid rgba(255,255,255,0.1)}
+.price{font-size:42px;color:#FFD700;font-weight:800;text-align:center;margin-bottom:10px}
+.price span{font-size:18px;color:#aaa}
+.package-details p{font-size:16px;color:#ddd;margin:8px 0;text-align:center}
+.free-trial-small{display:block;background:#25D366;color:white;text-align:center;padding:14px;border-radius:10px;text-decoration:none;font-size:17px;font-weight:700;margin-top:15px;transition:0.3s}
+.free-trial-small:hover{background:#20B858;transform:scale(1.05)}.payment-section{background:linear-gradient(135deg,#2d0d4d 0%,#3a1a5c 100%);padding:60px 40px;border-radius:30px;border:3px solid #9370DB;margin-bottom:80px}
+.payment-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:25px;margin-top:40px}
+.payment-box{background:rgba(255,255,255,0.08);padding:25px;border-radius:15px;border-left:4px solid #9370DB}
+.payment-box h4{color:#9370DB;font-size:20px;margin-bottom:10px}
+.whatsapp-float{position:fixed;bottom:25px;right:25px;background:#25D366;width:65px;height:65px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:35px;color:white;text-decoration:none;z-index:999;box-shadow:0 5px 25px rgba(37,211,102,0.6)}
+.whatsapp-float:hover{transform:scale(1.15)}
+footer{text-align:center;padding:50px 20px;background:linear-gradient(135deg,#FFD700 0%,#FFA500 100%);color:#000;font-weight:bold;font-size:18px;margin-top:60px}
+@keyframes slideLeft{from{opacity:0;transform:translateX(-120px)}to{opacity:1;transform:translateX(0)}}
+@keyframes slideRight{from{opacity:0;transform:translateX(120px)}to{opacity:1;transform:translateX(0)}}
+@keyframes slideTop{from{opacity:0;transform:translateY(-120px)}to{opacity:1;transform:translateY(0)}}
+@keyframes slideBottom{from{opacity:0;transform:translateY(120px)}to{opacity:1;transform:translateY(0)}}
+.animate-left{animation:slideLeft 0.8s ease forwards}
+.animate-right{animation:slideRight 0.8s ease forwards}
+.animate-top{animation:slideTop 0.8s ease forwards}
+.animate-bottom{animation:slideBottom 0.8s ease forwards}
+@media(max-width:768px){
+.hamburger{display:flex}
+nav ul{display:none;position:absolute;top:70px;left:0;width:100%;background:#111;flex-direction:column;padding:20px 0;border-top:2px solid #FFD700}
+nav ul.show{display:flex}
+header h1{font-size:36px}
+.section-title{font-size:36px}
+.features-section,.payment-section{padding:40px 20px}
+.container{padding:40px 4%}
+}
+</style>
+</head>
+<body>
+
+<nav>
+<div class="nav-container">
+<div class="logo-text">Al Raza Academy</div>
+<ul id="menu">
+<li><a href="index.html">Home</a></li>
+<li><a href="fees.html">Course Fees & Study Plans</a></li>
+<li><a href="index.html#about">About</a></li>
+<li><a href="index.html#contact">Contact</a></li>
+</ul>
+<div class="hamburger" onclick="toggleMenu()">
+<span></span>
+<span></span>
+<span></span>
+</div>
+</div>
+</nav>
+
+<header>
+<h1>📚 Course Fees & Study Plans</h1>
+<p>Flexible, Affordable & Transparent Pricing</p>
+</header><div class="container">
+<section class="features-section">
+<h2 class="section-title">Flexible Study Plans</h2>
+<div class="features-grid">
+<div class="feature-box"><h4>✓ Affordable Pricing</h4><p>Only $8.5 per hour instead of $10. All courses included for kids & adults</p></div>
+<div class="feature-box"><h4>✓ Share Classes</h4><p>Children can share one class. Parent + child can share with no extra fees</p></div>
+<div class="feature-box"><h4>✓ Set Your Own Schedule</h4><p>Customize weekly hours. Choose days and times you prefer</p></div>
+<div class="feature-box"><h4>✓ Multiple Courses</h4><p>Choose more than one course in the same package</p></div>
+</div>
+</section>
+
+<section class="packages-section">
+<h2 class="section-title" style="color:#00BFFF">Course Packages: Quran, Arabic & Islamic Studies</h2>
+<div class="packages-grid">
+<div class="package-card duration-30">
+<h3>30 Minutes - Study Plans</h3>
+<div class="price-box">
+<div class="price">$17<span>/month</span></div>
+<div class="package-details">
+<p>1 day / weekly</p>
+<p>30 mins / class</p>
+<p>4 classes / month</p>
+<p>Total: 2 hours monthly</p>
+</div>
+<a href="https://wa.me/923090252314?text=Free%20Trial%2030min%201day" class="free-trial-small" target="_blank">Free Trial</a>
+</div>
+</div>
+<div class="package-card duration-30">
+<h3>30 Minutes - Study Plans</h3>
+<div class="price-box">
+<div class="price">$34<span>/month</span></div>
+<div class="package-details">
+<p>2 days / weekly</p>
+<p>30 mins / class</p>
+<p>8 classes / month</p>
+<p>Total: 4 hours monthly</p>
+</div>
+<a href="https://wa.me/923090252314?text=Free%20Trial%2030min%202days" class="free-trial-small" target="_blank">Free Trial</a>
+</div>
+</div>
+<div class="package-card duration-30">
+<h3>30 Minutes - Study Plans</h3>
+<div class="price-box">
+<div class="price">$51<span>/month</span></div>
+<div class="package-details">
+<p>3 days / weekly</p>
+<p>30 mins / class</p>
+<p>12 classes / month</p>
+<p>Total: 6 hours monthly</p>
+</div>
+<a href="https://wa.me/923090252314?text=Free%20Trial%2030min%203days" class="free-trial-small" target="_blank">Free Trial</a>
+</div>
+</div><div class="package-card duration-30">
+<h3>30 Minutes - Study Plans</h3>
+<div class="price-box">
+<div class="price">$68<span>/month</span></div>
+<div class="package-details">
+<p>4 days / weekly</p>
+<p>30 mins / class</p>
+<p>16 classes / month</p>
+<p>Total: 8 hours monthly</p>
+</div>
+<a href="https://wa.me/923090252314?text=Free%20Trial%2030min%204days" class="free-trial-small" target="_blank">Free Trial</a>
+</div>
+</div>
+<div class="package-card duration-30">
+<h3>30 Minutes - Study Plans</h3>
+<div class="price-box">
+<div class="price">$85<span>/month</span></div>
+<div class="package-details">
+<p>5 days / weekly</p>
+<p>30 mins / class</p>
+<p>20 classes / month</p>
+<p>Total: 10 hours monthly</p>
+</div>
+<a href="https://wa.me/923090252314?text=Free%20Trial%2030min%205days" class="free-trial-small" target="_blank">Free Trial</a>
+</div>
+</div>
+<div class="package-card duration-45">
+<h3>45 Minutes - Study Plans</h3>
+<div class="price-box">
+<div class="price">$26<span>/month</span></div>
+<div class="package-details">
+<p>1 day / weekly</p>
+<p>45 mins / class</p>
+<p>4 classes / month</p>
+<p>Total: 3 hours monthly</p>
+</div>
+<a href="https://wa.me/923090252314?text=Free%20Trial%2045min%201day" class="free-trial-small" target="_blank">Free Trial</a>
+</div>
+</div>
+<div class="package-card duration-45">
+<h3>45 Minutes - Study Plans</h3>
+<div class="price-box">
+<div class="price">$51<span>/month</span></div>
+<div class="package-details">
+<p>2 days / weekly</p>
+<p>45 mins / class</p>
+<p>8 classes / month</p>
+<p>Total: 6 hours monthly</p>
+</div>
+<a href="https://wa.me/923090252314?text=Free%20Trial%2045min%202days" class="free-trial-small" target="_blank">Free Trial</a>
+</div>
+</div>
+<div class="package-card duration-45">
+<h3>45 Minutes - Study Plans</h3>
+<div class="price-box">
+<div class="price">$76<span>/month</span></div>
+<div class="package-details">
+<p>3 days / weekly</p>
+<p>45 mins / class</p>
+<p>12 classes / month</p>
+<p>Total: 9 hours monthly</p>
+</div>
+<a href="https://wa.me/923090252314?text=Free%20Trial%2045min%203days" class="free-trial-small" target="_blank">Free Trial</a>
+</div>
+</div>
+<div class="package-card duration-45">
+<h3>45 Minutes - Study Plans</h3>
+<div class="price-box">
+<div class="price">$102<span>/month</span></div>
+<div class="package-details">
+<p>4 days / weekly</p>
+<p>45 mins / class</p>
+<p>16 classes / month</p>
+<p>Total: 12 hours monthly</p>
+</div>
+<a href="https://wa.me/923090252314?text=Free%20Trial%2045min%204days" class="free-trial-small" target="_blank">Free Trial</a>
+</div>
+</div><div class="package-card duration-45">
+<h3>45 Minutes - Study Plans</h3>
+<div class="price-box">
+<div class="price">$127<span>/month</span></div>
+<div class="package-details">
+<p>5 days / weekly</p>
+<p>45 mins / class</p>
+<p>20 classes / month</p>
+<p>Total: 15 hours monthly</p>
+</div>
+<a href="https://wa.me/923090252314?text=Free%20Trial%2045min%205days" class="free-trial-small" target="_blank">Free Trial</a>
+</div>
+</div>
+<div class="package-card duration-60">
+<h3>60 Minutes - Study Plans</h3>
+<div class="price-box">
+<div class="price">$34<span>/month</span></div>
+<div class="package-details">
+<p>1 day / weekly</p>
+<p>60 mins / class</p>
+<p>4 classes / month</p>
+<p>Total: 4 hours monthly</p>
+</div>
+<a href="https://wa.me/923090252314?text=Free%20Trial%2060min%201day" class="free-trial-small" target="_blank">Free Trial</a>
+</div>
+</div>
+<div class="package-card duration-60">
+<h3>60 Minutes - Study Plans</h3>
+<div class="price-box">
+<div class="price">$68<span>/month</span></div>
+<div class="package-details">
+<p>2 days / weekly</p>
+<p>60 mins / class</p>
+<p>8 classes / month</p>
+<p>Total: 8 hours monthly</p>
+</div>
+<a href="https://wa.me/923090252314?text=Free%20Trial%2060min%202days" class="free-trial-small" target="_blank">Free Trial</a>
+</div>
+</div>
+<div class="package-card duration-60">
+<h3>60 Minutes - Study Plans</h3>
+<div class="price-box">
+<div class="price">$102<span>/month</span></div>
+<div class="package-details">
+<p>3 days / weekly</p>
+<p>60 mins / class</p>
+<p>12 classes / month</p>
+<p>Total: 12 hours monthly</p>
+</div>
+<a href="https://wa.me/923090252314?text=Free%20Trial%2060min%203days" class="free-trial-small" target="_blank">Free Trial</a>
+</div>
+</div>
+<div class="package-card duration-60">
+<h3>60 Minutes - Study Plans</h3>
+<div class="price-box">
+<div class="price">$136<span>/month</span></div>
+<div class="package-details">
+<p>4 days / weekly</p>
+<p>60 mins / class</p>
+<p>16 classes / month</p>
+<p>Total: 16 hours monthly</p>
+</div>
+<a href="https://wa.me/923090252314?text=Free%20Trial%2060min%204days" class="free-trial-small" target="_blank">Free Trial</a>
+</div>
+</div>
+<div class="package-card duration-60">
+<h3>60 Minutes - Study Plans</h3>
+<div class="price-box">
+<div class="price">$170<span>/month</span></div>
+<div class="package-details">
+<p>5 days / weekly</p>
+<p>60 mins / class</p>
+<p>20 classes / month</p>
+<p>Total: 20 hours monthly</p>
+</div>
+<a href="https://wa.me/923090252314?text=Free%20Trial%2060min%205days" class="free-trial-small" target="_blank">Free Trial</a>
+</div>
+</div>
+</div>
+</section>
+
+<section class="payment-section">
+<h2 class="section-title">Customer Support & Payment</h2>
+<div class="payment-grid">
+<div class="payment-box"><h4>✓ 24/7 Customer Support</h4><p>Always available by Email, Live Chat, WhatsApp, Telegram</p></div>
+<div class="payment-box"><h4>✓ Secure Payment</h4><p>100% secured by PayPal. If no PayPal account, we will sort it out</p></div>
+<div class="payment-box"><h4>✓ Different Payment Methods</h4><p>Stripe, Direct Credit/Debit Cards, and other methods available</p></div>
+<div class="payment-box"><h4>✓ 100% Money Back Guarantee</h4><p>Full refund for remaining classes if you want to stop anytime</p></div>
+</div>
+</section>
+</div>
+
+<a href="https://wa.me/923090252314" class="whatsapp-float" target="_blank">💬</a>
+
+<footer>
+<p>© 2026 Al Raza Online Quran Academy | Learn Quran, Transform Life ✨</p>
+</footer>
+
+<script>
+function toggleMenu(){
+document.getElementById('menu').classList.toggle('show');
+}
+
+const observer = new IntersectionObserver((entries)=>{
+entries.forEach((entry, index)=>{
+if(entry.isIntersecting && !entry.target.classList.contains('animated')){
+const animClasses = ['animate-left', 'animate-right', 'animate-top', 'animate-bottom'];
+const animClass = animClasses[index % 4];
+entry.target.classList.add(animClass, 'animated');
+}
+});
+}, {threshold:0.15});
+
+document.querySelectorAll('.package-card').forEach(card=>{
+observer.observe(card);
+});
+</script>
+</body>
+  </html>

@@ -1,336 +1,252 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Al Raza Online Quran Academy - Learn Quran Online</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&family=Noto+Nastaliq+Urdu:wght@400;700&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
 <style>
+:root{
+  --emerald:#0F766E;
+  --emerald-dark:#0B5C56;
+  --gold:#D4A017;
+  --white:#FFFFFF;
+  --light-gray:#F8FAFC;
+  --dark-gray:#1F2937;
+  --footer-green:#064E3B;
+}
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{font-family:'Poppins',sans-serif;background:#0a0a0a;color:#fff;line-height:1.7}
-nav{background:#111;padding:18px 0;position:sticky;top:0;z-index:100;border-bottom:3px solid #FFD700}
-.nav-container{max-width:1200px;margin:auto;padding:0 4%;display:flex;justify-content:space-between;align-items:center}
-.logo-text{color:#FFD700;font-size:24px;font-weight:700}
-
-.hamburger{display:none;flex-direction:column;cursor:pointer}
-.hamburger span{width:28px;height:3px;background:#FFD700;margin:4px 0;transition:0.3s}
-
-/* NAYA DROPDOWN MENU - Sirf ye hissa add kiya */
-.dropdown{display:none;position:absolute;top:70px;right:4%;background:#1a1a1a;border:2px solid #FFD700;border-radius:12px;min-width:240px;overflow:hidden;box-shadow:0 10px 40px rgba(255,215,0,0.3);z-index:200}
-.dropdown.show{display:block;animation:slideDown 0.3s ease}
-@keyframes slideDown{from{opacity:0;transform:translateY(-10px)}to{opacity:1;transform:translateY(0)}}
-.dropdown a{display:block;padding:14px 20px;color:#FFD700;text-decoration:none;font-size:16px;font-weight:600;border-bottom:1px solid #333;transition:0.3s}
-.dropdown a:hover{background:#FFD700;color:#000}
-.dropdown a:last-child{border-bottom:none}
-
-header{background:linear-gradient(135deg,#FFD700 0%,#FFA500 100%);padding:120px 20px;text-align:center}
-.logo-box{background:rgba(0,0,0,0.2);padding:30px;border-radius:50%;display:inline-block;border:5px solid white;margin-bottom:25px}
-.logo{width:150px;height:150px;border-radius:50%;object-fit:cover;border:3px solid #fff}
-header h1{font-size:55px;margin-bottom:15px;color:#000;font-weight:800}
-header p{font-size:24px;color:#000;font-weight:600;margin-bottom:25px}
-.free-trial-btn{background:#000;color:#FFD700;padding:18px 45px;border-radius:50px;text-decoration:none;font-size:20px;font-weight:700;border:3px solid #000;display:inline-block;transition:0.3s;box-shadow:0 8px 25px rgba(0,0,0,0.4)}
-.free-trial-btn:hover{background:#FFD700;color:#000;transform:scale(1.08)}
-.container{max-width:1200px;margin:auto;padding:70px 4%}
-.about-section{background:linear-gradient(135deg,#0d4d2d 0%,#1a5c3a 100%);padding:70px 50px;border-radius:30px;border:3px solid #00FF7F;margin-bottom:80px}
-.section-title{text-align:center;font-size:48px;margin-bottom:40px;color:#00FF7F;font-weight:800}
-.about-text{font-size:19px;text-align:justify;color:#e8f5e9}
-.about-text b{color:#FFD700;font-size:21px}
-.courses-section{padding:70px 0;margin-bottom:80px}
-.courses-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:35px;margin-top:40px}
-.course-card{background:transparent;margin-bottom:20px;opacity:0}
-.course-card img{width:100%;height:240px;object-fit:cover;border-radius:18px;margin-bottom:18px;border:2px solid rgba(255,255,255,0.1)}
-.course-card h3{font-size:24px;margin-bottom:12px;text-align:center;font-weight:700}
-.c1 h3{color:#FF6347}.c2 h3{color:#8A2BE2}.c3 h3{color:#00BFFF}.c4 h3{color:#FFA500}
-.c5 h3{color:#FF1493}.c6 h3{color:#00CED1}.c7 h3{color:#32CD32}.c8 h3{color:#FFD700}
-.c9 h3{color:#FF7F50}.c10 h3{color:#EE82EE}
-.detail-btn{background:rgba(255,255,255,0.12);border:2px solid #FFD700;color:#FFD700;padding:12px 20px;border-radius:10px;font-size:16px;font-weight:600;cursor:pointer;width:100%;margin:12px 0;font-family:'Poppins'}
-.detail-btn:hover{background:#FFD700;color:#000}
-.detail-content{display:none;padding:15px 10px}
-.detail-content.show{display:block}
-.detail-content p{font-size:16px;color:#ddd;margin:8px 0;text-align:left}
-.join-btn{display:block;background:#25D366;color:white;text-align:center;padding:14px;border-radius:10px;text-decoration:none;font-size:17px;font-weight:700;margin-top:12px;transition:0.3s}
-.join-btn:hover{background:#20B858;transform:scale(1.05)}.why-section{background:linear-gradient(135deg,#2d0d4d 0%,#3a1a5c 100%);padding:70px 50px;border-radius:30px;border:3px solid #9370DB;margin-bottom:80px}
-.why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:25px;margin-top:40px}
-.why-box{background:rgba(255,255,255,0.08);padding:25px;border-radius:15px;border-left:4px solid #9370DB;transition:0.4s}
-.why-box:hover{transform:translateX(12px)}
-.why-box h4{color:#9370DB;font-size:20px;margin-bottom:10px}
-.reviews-section{background:linear-gradient(135deg,#4d2d0d 0%,#5c3a1a 100%);padding:70px 50px;border-radius:30px;border:3px solid #FF8C00;margin-bottom:80px}
-.review-card{background:rgba(255,255,255,0.08);padding:25px;border-radius:15px;margin-bottom:20px;border-right:4px solid #FF8C00}
-.review-card p{font-size:17px;color:#f0f0f0;margin-bottom:12px}
-.review-card .student{color:#FFD700;font-weight:600}
-.contact-section{background:linear-gradient(135deg,#4d0d0d 0%,#5c1a1a 100%);padding:70px 50px;border-radius:30px;border:3px solid #FF4444;text-align:center}
-.contact-info{font-size:22px;color:#FFD700;margin:18px 0;font-weight:600}
-@keyframes slideLeft{from{opacity:0;transform:translateX(-120px)}to{opacity:1;transform:translateX(0)}}
-@keyframes slideRight{from{opacity:0;transform:translateX(120px)}to{opacity:1;transform:translateX(0)}}
-@keyframes slideTop{from{opacity:0;transform:translateY(-120px)}to{opacity:1;transform:translateY(0)}}
-@keyframes slideBottom{from{opacity:0;transform:translateY(120px)}to{opacity:1;transform:translateY(0)}}
-.animate-left{animation:slideLeft 0.8s ease forwards}
-.animate-right{animation:slideRight 0.8s ease forwards}
-.animate-top{animation:slideTop 0.8s ease forwards}
-.animate-bottom{animation:slideBottom 0.8s ease forwards}
-.whatsapp-float{position:fixed;bottom:25px;right:25px;background:#25D366;width:65px;height:65px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:35px;color:white;text-decoration:none;z-index:999;box-shadow:0 5px 25px rgba(37,211,102,0.6)}
-.whatsapp-float:hover{transform:scale(1.15)}
-footer{text-align:center;padding:50px 20px;background:linear-gradient(135deg,#FFD700 0%,#FFA500 100%);color:#000;font-weight:bold;font-size:18px;margin-top:60px}
-@media(max-width:768px){
-.hamburger{display:flex}
-.dropdown{right:4%;left:4%;min-width:auto}
-header h1{font-size:38px}
-.section-title{font-size:36px}
-.free-trial-btn{font-size:17px;padding:15px 30px}
-.about-section,.why-section,.reviews-section,.contact-section{padding:40px 20px}
-.container{padding:40px 4%}
+body{font-family:'Poppins',sans-serif;background:var(--white);color:var(--dark-gray);line-height:1.8}
+body.urdu{font-family:'Noto Nastaliq Urdu', serif;direction:rtl;text-align:right}
+body.ar{font-family:'Amiri', serif;direction:rtl;text-align:right}
+.reveal{opacity:0;transform:translateY(40px);transition:all 0.8s ease}
+.reveal.active{opacity:1;transform:translateY(0)}
+header.sticky-nav{background:var(--white);height:80px;position:sticky;top:0;z-index:1000;border-bottom:1px solid #eee;display:flex;align-items:center}
+.nav-container{max-width:1200px;margin:auto;padding:0 4%;width:100%;display:flex;justify-content:space-between;align-items:center}
+.logo-text{color:var(--emerald);font-size:24px;font-weight:800}
+.nav-right{display:flex;gap:12px;align-items:center}
+.lang-switch{background:var(--gold);border:2px solid var(--gold);color:var(--dark-gray);padding:8px 10px;border-radius:8px;font-weight:800;cursor:pointer;font-size:13px;transition:0.3s}
+.lang-switch:hover{background:#E6B624}
+.btn-primary{background:var(--emerald);color:var(--white);padding:12px 20px;border-radius:8px;text-decoration:none;font-weight:700;transition:0.3s;border:none;cursor:pointer;font-size:14px}
+.btn-primary:hover{background:var(--emerald-dark)}
+.hamburger{display:flex;flex-direction:column;cursor:pointer;gap:5px;padding:8px}
+.hamburger span{width:28px;height:3px;background:var(--emerald);border-radius:2px;transition:0.3s}
+.dropdown{display:none;position:absolute;top:80px;right:4%;background:var(--white);border:1px solid #eee;border-radius:12px;min-width:250px;box-shadow:0 10px 30px rgba(0,0,0,0.15);z-index:2000}
+.dropdown.show{display:block}
+.dropdown a{display:block;padding:14px 20px;color:var(--dark-gray);text-decoration:none;font-weight:600;border-bottom:1px solid #f1f1f1;transition:0.3s}
+.dropdown a:hover{background:var(--light-gray);color:var(--emerald)}
+/* Hero with hero.jpg - Just like course1.jpg */
+.hero{
+  background: linear-gradient(rgba(15, 118, 110, 0.85), rgba(11, 92, 86, 0.9)), url('hero.jpg') center/cover no-repeat;
+  padding:140px 20px 140px;position:relative;overflow:hidden;color:var(--white)
 }
+.hero-container{max-width:1200px;margin:auto;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;position:relative;z-index:1}
+.hero h1{font-size:56px;font-weight:800;color:var(--white);margin-bottom:20px;line-height:1.2;text-shadow:0 2px 10px rgba(0,0,0,0.3)}
+.hero p{font-size:20px;color:#F0FBF9;margin-bottom:30px}
+.section-gap{padding:110px 4%}
+.section-title{text-align:center;font-size:42px;margin-bottom:20px;color:var(--dark-gray);font-weight:800}
+.title-line{width:60px;height:4px;background:var(--gold);margin:0 auto 50px;border-radius:2px}
+.card{background:var(--white);border-radius:16px;box-shadow:0 4px 20px rgba(0,0,0,0.06);padding:30px;transition:all 0.4s ease;border:2px solid transparent}
+.card:hover{transform:translateY(-8px);border-color:var(--gold);box-shadow:0 12px 30px rgba(212,160,23,0.15)}
+.courses-section{background:var(--light-gray)}
+.courses-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:30px;margin-top:40px}
+.course-card img{width:100%;height:200px;object-fit:cover;border-radius:12px;margin-bottom:18px}
+.course-card h3{font-size:22px;margin-bottom:12px;text-align:center;font-weight:700;color:var(--dark-gray)}
+.detail-btn{background:var(--white);border:2px solid var(--emerald);color:var(--emerald);padding:12px 20px;border-radius:10px;font-size:16px;font-weight:600;cursor:pointer;width:100%;margin:12px 0;font-family:'Poppins';transition:0.3s}
+.detail-btn:hover{background:var(--emerald);color:var(--white)}
+.detail-content{display:none;padding:15px 0}
+.detail-content.show{display:block}
+.detail-content p{font-size:16px;color:#4B5563;margin:8px 0}
+.btn-secondary{background:var(--white);border:2px solid var(--emerald);color:var(--emerald);padding:14px;border-radius:10px;text-decoration:none;font-size:17px;font-weight:700;display:block;text-align:center;margin-top:12px;transition:0.3s;cursor:pointer}
+.btn-secondary:hover{background:var(--emerald);color:var(--white)}
+.join-form-section{display:none;background:var(--white);padding:40px;border-radius:16px;margin-top:20px;border:2px solid var(--gold);max-width:600px;margin:30px auto 0}
+.join-form-section.show{display:block;animation:fadeIn 0.5s}
+@keyframes fadeIn{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+.join-form-section input, .join-form-section select{width:100%;padding:14px;margin:10px 0;border:2px solid #ddd;border-radius:10px;font-size:16px;font-family:'Poppins'}
+.join-form-section input:focus, .join-form-section select:focus{border-color:var(--emerald);outline:none}
+@media(max-width:768px){
+  .hero-container{grid-template-columns:1fr;text-align:center}
+  .hero h1{font-size:36px}
 </style>
 </head>
 <body>
-
-<nav>
+<header class="sticky-nav">
 <div class="nav-container">
-<div class="logo-text">Al Raza Academy</div>
-
-<!-- Purana <ul id="menu"> delete karke ye naya dropdown laga diya -->
-<div class="hamburger" onclick="toggleMenu()">
-<span></span>
-<span></span>
-<span></span>
+<div class="logo-text" data-en="Al Raza Academy" data-ur="الرضا اکیڈمی" data-ar="أكاديمية الرضا">Al Raza Academy</div>
+<div class="nav-right">
+<button class="lang-switch" onclick="cycleLang()">EN | اردو | العربية</button>
+<a href="#courses" class="btn-primary" data-en="Free Trial" data-ur="فری ٹرائل" data-ar="تجربة مجانية">Free Trial</a>
+<div class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
 </div>
 <div class="dropdown" id="menu">
-<a href="index.html">🏠 Home</a>
-<a href="about.html">ℹ️ About Us</a>
-<a href="teachers.html">👨‍🏫 Our Teacher's</a>
-<a href="how-it-works.html">⚙️ How it Works</a>
-<a href="terms.html">📜 Terms & Condition</a>
-<a href="contact.html">📞 Contact Us</a>
-<a href="courses.html">📚 Courses</a>
-<a href="fees.html">💰 Study Plan & Fees</a>
-<a href="blogs.html">📝 Blogs</a>
+<a href="index.html" data-en="Home" data-ur="ہوم" data-ar="الرئيسية">Home</a>
+<a href="about.html" data-en="About Us" data-ur="ہمارے بارے میں" data-ar="من نحن">About Us</a>
+<a href="teachers.html" data-en="Our Teacher's" data-ur="اساتذہ" data-ar="معلمونا">Our Teacher's</a>
+<a href="how-it-works.html" data-en="How it Works" data-ur="یہ کیسے کام کرتا ہے" data-ar="كيف يعمل">How it Works</a>
+<a href="terms.html" data-en="Terms & Condition" data-ur="شرائط و ضوابط" data-ar="الشروط والأحكام">Terms & Condition</a>
+<a href="contact.html" data-en="Contact Us" data-ur="رابطہ کریں" data-ar="اتصل بنا">Contact Us</a>
+<a href="courses.html" data-en="Courses" data-ur="کورسز" data-ar="الدورات">Courses</a>
+<a href="fees.html" data-en="Study Plan & Fees" data-ur="فیس پلان" data-ar="خطة الدراسة والرسوم">Study Plan & Fees</a>
+<a href="blogs.html" data-en="Blogs" data-ur="بلاگ" data-ar="مدونة">Blogs</a>
 </div>
 </div>
-</nav>
-
-<header>
-<div class="logo-box">
-<img src="logo.png" alt="Al Raza Logo" class="logo">
-</div>
-<h1>📖 Al Raza Online Quran Academy</h1>
-<p>VIP Professional Islamic Education</p>
-<a href="https://wa.me/923090252314?text=Assalam%20Alaikum%20I%20want%203%20days%20free%20trial%20class" class="free-trial-btn" target="_blank">🎁 Get 3 Days Free Trial Class</a>
 </header>
-
+<section class="hero">
+<div class="hero-container">
+<div class="reveal">
+<h1 data-en="📖 Al Raza Online Quran Academy" data-ur="📖 الرضا آن لائن قرآن اکیڈمی" data-ar="📖 أكاديمية الرضا للقرآن أونلاين">📖 Al Raza Online Quran Academy</h1>
+<p data-en="VIP Professional Islamic Education" data-ur="وی آئی پی پروفیشنل اسلامی تعلیم" data-ar="تعليم إسلامي احترافي مميز">VIP Professional Islamic Education</p>
+<a href="#courses" class="btn-primary" style="font-size:18px;padding:16px 35px" data-en="🎁 Get 3 Days Free Trial Class" data-ur="🎁 3 دن کا فری ٹرائل لیں" data-ar="🎁 احصل على 3 أيام تجربة مجانية">🎁 Get 3 Days Free Trial Class</a>
+</div>
+<div class="reveal"><img src="logo.png" alt="Al Raza Logo" style="max-width:100%;border-radius:20px;box-shadow:0 20px 50px rgba(0,0,0,0.3)"></div>
+</div>
+</section>
 <div class="container">
-<section class="about-section" id="about">
-<h2 class="section-title">About Al Raza Online Quran Academy</h2>
-<div class="about-text">
-<p><b>Assalam-o-Alaikum!</b> Al Raza Online Quran Academy is a premium Islamic education institution, providing online Quran and Islamic studies to Muslims worldwide from the comfort of their homes.</p>
+<section class="section-gap reveal" id="about">
+<h2 class="section-title" data-en="About Al Raza Online Quran Academy" data-ur="الرضا آن لائن قرآن اکیڈمی کے بارے میں" data-ar="عن أكاديمية الرضا للقرآن أونلاين">About Al Raza Online Quran Academy</h2>
+<div class="title-line"></div>
+<div style="max-width:900px;margin:auto;font-size:18px;text-align:justify;color:#4B5563">
+<p><b data-en="Assalam-o-Alaikum!" data-ur="السلام علیکم!" data-ar="السلام عليكم!">Assalam-o-Alaikum!</b> <span data-en="Al Raza Online Quran Academy is a premium Islamic education institution, providing online Quran and Islamic studies to Muslims worldwide from the comfort of their homes." data-ur="الرضا آن لائن قرآن اکیڈمی ایک پریمیم اسلامی تعلیمی ادارہ ہے، جو دنیا بھر کے مسلمانوں کو ان کے گھروں کے آرام سے آن لائن قرآن اور اسلامی تعلیم فراہم کرتا ہے۔" data-ar="أكاديمية الرضا للقرآن أونلاين هي مؤسسة تعليم إسلامي متميزة، توفر تعليم القرآن والدراسات الإسلامية للمسلمين في جميع أنحاء العالم منازلهم.">Al Raza Online Quran Academy is a premium Islamic education institution, providing online Quran and Islamic studies to Muslims worldwide from the comfort of their homes.</span></p>
 <br>
-<p>Our mission is to deliver authentic Deen knowledge and Quran with proper Tajweed to men, women, and children of all ages.</p>
+<p data-en="Our mission is to deliver authentic Deen knowledge and Quran with proper Tajweed to men, women, and children of all ages." data-ur="ہمارا مشن تمام عمر کے مردوں، عورتوں اور بچوں کو مستند دین کا علم اور تجوید کے ساتھ قرآن سکھانا ہے۔" data-ar="مهمتنا هي تقديم معرفة الدين الأصيلة والقرآن بالتجويد الصحيح للرجال والنساء والأطفال من جميع الأعمار.">Our mission is to deliver authentic Deen knowledge and Quran with proper Tajweed to men, women, and children of all ages.</p>
 <br>
-<p>We have certified Male and Female teachers who teach in a very easy and compassionate manner.</p>
+<p data-en="We have certified Male and Female teachers who teach in a very easy and compassionate manner." data-ur="ہمارے پاس سند یافتہ مرد و خواتین اساتذہ ہیں جو بہت آسان اور شفقت والے انداز میں پڑھاتے ہیں۔" data-ar="لدينا معلمون ومعلمات معتمدون يدرسون بطريقة سهلة ورحيمة للغاية.">We have certified Male and Female teachers who teach in a very easy and compassionate manner.</p>
 <br>
-<p><b>Our Process:</b> Student registers → Free trial class → Teacher assessment → Regular classes → Monthly tests → Progress reports → Certification</p>
+<p><b data-en="Our Process:" data-ur="ہمارا طریقہ کار:" data-ar="عمليتنا:">Our Process:</b> <span data-en="Student registers → Free trial class → Teacher assessment → Regular classes → Monthly tests → Progress reports → Certification" data-ur="طالب علم رجسٹر کرتا ہے → فری ٹرائل کلاس → ٹیچر اسیسمنٹ → باقاعدہ کلاسز → ماہانہ ٹیسٹ → رپورٹ → سرٹیفکیٹ" data-ar="تسجيل الطالب → حصة تجريبية مجانية → تقييم المعلم → حصص منتظمة → اختبارات شهرية → تقارير التقدم → شهادة">Student registers → Free trial class → Teacher assessment → Regular classes → Monthly tests → Progress reports → Certification</span></p>
 </div>
-</section><section class="courses-section" id="courses">
-<h2 class="section-title" style="color:#00BFFF">Our 10 Premium Courses</h2>
+</section>
+<section class="courses-section section-gap reveal" id="courses">
+<h2 class="section-title" data-en="Our 10 Premium Courses" data-ur="ہمارے 10 پریمیم کورسز" data-ar="دوراتنا المتميزة 10">Our 10 Premium Courses</h2>
+<div class="title-line"></div>
 <div class="courses-grid">
-<div class="course-card c1">
-<img src="course1.jpg" alt="Nazra Quran Course">
-<h3>1. Nazra Quran Course</h3>
-<button class="detail-btn" onclick="toggleDetail(this)">Details ▼</button>
-<div class="detail-content">
-<p>• Noorani Qaida with proper pronunciation</p>
-<p>• Quran reading with Tajweed rules</p>
-<p>• One-on-one live classes</p>
+<div class="course-card card reveal"><img src="course1.jpg" alt="Nazra Quran Course"><h3 data-en="1. Nazra Quran Course" data-ur="1. ناظرہ قرآن کورس" data-ar="1. دورة ناظرة القرآن">1. Nazra Quran Course</h3><button class="detail-btn" onclick="toggleDetail(this)" data-en="Details ▼" data-ur="تفصیلات ▼" data-ar="التفاصيل ▼">Details ▼</button><div class="detail-content"><p data-en="• Noorani Qaida with proper pronunciation" data-ur="• نورانی قاعدہ صحیح تلفظ کے ساتھ" data-ar="• القاعدة النورانية بالنطق الصحيح">• Noorani Qaida with proper pronunciation</p><p data-en="• Quran reading with Tajweed rules" data-ur="• تجوید کے قواعد کے ساتھ قرآن پڑھنا" data-ar="• قراءة القرآن بقواعد التجويد">• Quran reading with Tajweed rules</p><p data-en="• One-on-one live classes" data-ur="• ون ٹو ون لائیو کلاسز" data-ar="• حصص مباشرة فردية">• One-on-one live classes</p></div><button class="btn-secondary" onclick="showJoinForm('1. Nazra Quran Course')" data-en="Join Now - WhatsApp" data-ur="ابھی جوائن کریں - واٹس ایپ" data-ar="انضم الآن - واتساب">Join Now - WhatsApp</button></div>
+<div class="course-card card reveal"><img src="course2.jpg" alt="Hifz Quran Course"><h3 data-en="2. Hifz Quran Course" data-ur="2. حفظ قرآن کورس" data-ar="2. دورة حفظ القرآن">2. Hifz Quran Course</h3><button class="detail-btn" onclick="toggleDetail(this)" data-en="Details ▼" data-ur="تفصیلات ▼" data-ar="التفاصيل ▼">Details ▼</button><div class="detail-content"><p data-en="• Complete Quran memorization facility" data-ur="• مکمل قرآن حفظ کی سہولت" data-ar="• تسهيل حفظ القرآن كاملاً">• Complete Quran memorization facility</p><p data-en="• Supervision by expert Hafiz teachers" data-ur="• ماہر حافظ اساتذہ کی نگرانی" data-ar="• إشراف معلمين حفظة خبراء">• Supervision by expert Hafiz teachers</p><p data-en="• Daily revision and test system" data-ur="• روزانہ دہرائ اور ٹیسٹ سسٹم" data-ar="• نظام المراجعة والاختبار اليومي">• Daily revision and test system</p></div><button class="btn-secondary" onclick="showJoinForm('2. Hifz Quran Course')" data-en="Join Now - WhatsApp" data-ur="ابھی جوائن کریں - واٹس ایپ" data-ar="انضم الآن - واتساب">Join Now - WhatsApp</button></div>
+<div class="course-card card reveal"><img src="course3.jpg" alt="Tajweed Course"><h3 data-en="3. Ilm-ul-Tajweed Course" data-ur="3. علم التجويد کورس" data-ar="3. دورة علم التجويد">3. Ilm-ul-Tajweed Course</h3><button class="detail-btn" onclick="toggleDetail(this)" data-en="Details ▼" data-ur="تفصیلات ▼" data-ar="التفاصيل ▼">Details ▼</button><div class="detail-content"><p data-en="• Recitation according to Makharij and rules" data-ur="• مخارج اور قواعد کے مطابق تلاوت" data-ar="• التلاوة حسب المخارج والقواعد">• Recitation according to Makharij and rules</p><p data-en="• Complete training in correct pronunciation" data-ur="• صحیح تلفظ کی مکمل تربیت" data-ar="• تدريب كامل على النطق الصحيح">• Complete training in correct pronunciation</p><p data-en="• Practical exercises with feedback" data-ur="• عملی مشقیں اور فیڈبیک" data-ar="• تمارين عملية مع التغذية الراجعة">• Practical exercises with feedback</p></div><button class="btn-secondary" onclick="showJoinForm('3. Ilm-ul-Tajweed Course')" data-en="Join Now - WhatsApp" data-ur="ابھی جوائن کریں - واٹس ایپ" data-ar="انضم الآن - واتساب">Join Now - WhatsApp</button></div>
+<div class="course-card card reveal"><img src="course4.jpg" alt="Namaz Course"><h3 data-en="4. Faizan-e-Namaz Course" data-ur="4. فیضان نماز کورس" data-ar="4. دورة فيضان الصلاة">4. Faizan-e-Namaz Course</h3><button class="detail-btn" onclick="toggleDetail(this)" data-en="Details ▼" data-ur="تفصیلات ▼" data-ar="التفاصيل ▼">Details ▼</button><div class="detail-content"><p data-en="• Azkar of Salah" data-ur="• نماز کے اذکار" data-ar="• أذكار الصلاة">• Azkar of Salah</p><p data-en="• Method of Wudu" data-ur="• وضو کا طریقہ" data-ar="• طريقة الوضوء">• Method of Wudu</p><p data-en="• Method of Ghusl" data-ur="• غسل کا طریقہ" data-ar="• طريقة الغسل">• Method of Ghusl</p><p data-en="• Method of Salah" data-ur="• نماز کا طریقہ" data-ar="• طريقة الصلاة">• Method of Salah</p><p data-en="• Essential Surahs" data-ur="• ضروری سورتیں" data-ar="• السور الأساسية">• Essential Surahs</p></div><button class="btn-secondary" onclick="showJoinForm('4. Faizan-e-Namaz Course')" data-en="Join Now - WhatsApp" data-ur="ابھی جوائن کریں - واٹس ایپ" data-ar="انضم الآن - واتساب">Join Now - WhatsApp</button></div>
+<div class="course-card card reveal"><img src="course5.jpg" alt="Taharat Course"><h3 data-en="5. Taharat Course" data-ur="5. طہارت کورس" data-ar="5. دورة الطهارة">5. Taharat Course</h3><button class="detail-btn" onclick="toggleDetail(this)" data-en="Details ▼" data-ur="تفصیلات ▼" data-ar="التفاصيل ▼">Details ▼</button><div class="detail-content"><p data-en="• Explanation of impurities" data-ur="• نجاستوں کی وضاحت" data-ar="• شرح النجاسات">• Explanation of impurities</p><p data-en="• How to purify clothes" data-ur="• کپڑے پاک کرنے کا طریقہ" data-ar="• كيفية تطهير الملابس">• How to purify clothes</p><p data-en="• How to purify body" data-ur="• جسم پاک کرنے کا طریقہ" data-ar="• كيفية تطهير الجسم">• How to purify body</p><p data-en="• How to purify ground" data-ur="• زمین پاک کرنے کا طریقہ" data-ar="• كيفية تطهير الأرض">• How to purify ground</p><p data-en="• If impure thing falls in food, how to purify" data-ur="• اگر کھانے میں ناپاک چیز گر جائے تو پاک کرنے کا طریقہ" data-ar="• إذا وقع شيء نجس في الطعام، كيفية تطهيره">• If impure thing falls in food, how to purify</p></div><button class="btn-secondary" onclick="showJoinForm('5. Taharat Course')" data-en="Join Now - WhatsApp" data-ur="ابھی جوائن کریں - واٹس ایپ" data-ar="انضم الآن - واتساب">Join Now - WhatsApp</button></div><div class="course-card card reveal"><img src="course6.jpg" alt="Islah Amaal Course"><h3 data-en="6. Islah-e-Amaal Course" data-ur="6. اصلاح اعمال کورس" data-ar="6. دورة إصلاح الأعمال">6. Islah-e-Amaal Course</h3><button class="detail-btn" onclick="toggleDetail(this)" data-en="Details ▼" data-ur="تفصیلات ▼" data-ar="التفاصيل ▼">Details ▼</button><div class="detail-content"><p data-en="• Destructive effects of backbiting" data-ur="• غیبت کے نقصانات" data-ar="• الآثار المدمرة للغيبة">• Destructive effects of backbiting</p><p data-en="• Consequences of lying" data-ur="• جھوٹ کے نتائج" data-ar="• عواقب الكذب">• Consequences of lying</p><p data-en="• Rights of Allah" data-ur="• اللہ کے حقوق" data-ar="• حقوق الله">• Rights of Allah</p><p data-en="• Rights of people" data-ur="• بندوں کے حقوق" data-ar="• حقوق العباد">• Rights of people</p><p data-en="• Explanation of show-off" data-ur="• ریاکاری کی وضاحت" data-ar="• شرح الرياء">• Explanation of show-off</p></div><button class="btn-secondary" onclick="showJoinForm('6. Islah-e-Amaal Course')" data-en="Join Now - WhatsApp" data-ur="ابھی جوائن کریں - واٹس ایپ" data-ar="انضم الآن - واتساب">Join Now - WhatsApp</button></div>
+<div class="course-card card reveal"><img src="course7.jpg" alt="Hajj Umrah Course"><h3 data-en="7. Hajj & Umrah Course" data-ur="7. حج و عمرہ کورس" data-ar="7. دورة الحج والعمرة">7. Hajj & Umrah Course</h3><button class="detail-btn" onclick="toggleDetail(this)" data-en="Details ▼" data-ur="تفصیلات ▼" data-ar="التفاصيل ▼">Details ▼</button><div class="detail-content"><p data-en="• Complete rituals of Hajj" data-ur="• حج کے مکمل ارکان" data-ar="• مناسك الحج كاملة">• Complete rituals of Hajj</p><p data-en="• Method of Umrah" data-ur="• عمرہ کا طریقہ" data-ar="• طريقة العمرة">• Method of Umrah</p><p data-en="• Masnoon Duas" data-ur="• مسنون دعائیں" data-ar="• الأدعية المأثورة">• Masnoon Duas</p></div><button class="btn-secondary" onclick="showJoinForm('7. Hajj & Umrah Course')" data-en="Join Now - WhatsApp" data-ur="ابھی جوائن کریں - واٹس ایپ" data-ar="انضم الآن - واتساب">Join Now - WhatsApp</button></div>
+<div class="course-card card reveal"><img src="course8.jpg" alt="Marriage Life Course"><h3 data-en="8. Marital Life Course" data-ur="8. ازدواجی زندگی کورس" data-ar="8. دورة الحياة الزوجية">8. Marital Life Course</h3><button class="detail-btn" onclick="toggleDetail(this)" data-en="Details ▼" data-ur="تفصیلات ▼" data-ar="التفاصيل ▼">Details ▼</button><div class="detail-content"><p data-en="• Rights of husband over wife" data-ur="• شوہر کے بیوی پر حقوق" data-ar="• حقوق الزوج على الزوجة">• Rights of husband over wife</p><p data-en="• Rights of wife over husband" data-ur="• بیوی کے شوہر پر حقوق" data-ar="• حقوق الزوجة على الزوج">• Rights of wife over husband</p><p data-en="• Rights of parents over children" data-ur="• والدین کے بچوں پر حقوق" data-ar="• حقوق الوالدين على الأبناء">• Rights of parents over children</p><p data-en="• Rights of children over parents" data-ur="• بچوں کے والدین پر حقوق" data-ar="• حقوق الأبناء على الوالدين">• Rights of children over parents</p></div><button class="btn-secondary" onclick="showJoinForm('8. Marital Life Course')" data-en="Join Now - WhatsApp" data-ur="ابھی جوائن کریں - واٹس ایپ" data-ar="انضم الآن - واتساب">Join Now - WhatsApp</button></div>
+<div class="course-card card reveal"><img src="course9.jpg" alt="Islamic Aqeedah Course"><h3 data-en="9. Islamic Beliefs Course" data-ur="9. اسلامی عقائد کورس" data-ar="9. دورة العقيدة الإسلامية">9. Islamic Beliefs Course</h3><button class="detail-btn" onclick="toggleDetail(this)" data-en="Details ▼" data-ur="تفصیلات ▼" data-ar="التفاصيل ▼">Details ▼</button><div class="detail-content"><p data-en="• Belief about Allah Almighty" data-ur="• اللہ تعالی پر ایمان" data-ar="• الإيمان بالله تعالى">• Belief about Allah Almighty</p><p data-en="• Belief about Prophets" data-ur="• انبیاء پر ایمان" data-ar="• الإيمان بالأنبياء">• Belief about Prophets</p><p data-en="• Belief about Angels" data-ur="• فرشتوں پر ایمان" data-ar="• الإيمان بالملائكة">• Belief about Angels</p><p data-en="• Explanation of Paradise and Hell" data-ur="• جنت اور دوزخ کی وضاحت" data-ar="• شرح الجنة والنار">• Explanation of Paradise and Hell</p><p data-en="• Explanation of Death" data-ur="• موت کی وضاحت" data-ar="• شرح الموت">• Explanation of Death</p><p data-en="• Explanation of Barzakh" data-ur="• برزخ کی وضاحت" data-ar="• شرح البرزخ">• Explanation of Barzakh</p></div><button class="btn-secondary" onclick="showJoinForm('9. Islamic Beliefs Course')" data-en="Join Now - WhatsApp" data-ur="ابھی جوائن کریں - واٹس ایپ" data-ar="انضم الآن - واتساب">Join Now - WhatsApp</button></div>
+<div class="course-card card reveal"><img src="course10.jpg" alt="Fiqh Course"><h3 data-en="10. Fiqh Course" data-ur="10. فقہ کورس" data-ar="10. دورة الفقه">10. Fiqh Course</h3><button class="detail-btn" onclick="toggleDetail(this)" data-en="Details ▼" data-ur="تفصیلات ▼" data-ar="التفاصيل ▼">Details ▼</button><div class="detail-content"><p data-en="• Explanation of purity" data-ur="• طہارت کی وضاحت" data-ar="• شرح الطهارة">• Explanation of purity</p><p data-en="• Explanation of prayer" data-ur="• نماز کی وضاحت" data-ar="• شرح الصلاة">• Explanation of prayer</p><p data-en="• Divorce rulings" data-ur="• طلاق کے احکام" data-ar="• أحكام الطلاق">• Divorce rulings</p><p data-en="• Explanation of menstruation and postnatal bleeding" data-ur="• حیض اور نفاس کی وضاحت" data-ar="• شرح الحيض والنفاس">• Explanation of menstruation and postnatal bleeding</p><p data-en="• Explanation of Tayammum" data-ur="• تیمم کی وضاحت" data-ar="• شرح التيمم">• Explanation of Tayammum</p></div><button class="btn-secondary" onclick="showJoinForm('10. Fiqh Course')" data-en="Join Now - WhatsApp" data-ur="ابھی جوائن کریں - واٹس ایپ" data-ar="انضم الآن - واتساب">Join Now - WhatsApp</button></div>
 </div>
-<a href="https://wa.me/923090252314" class="join-btn" target="_blank">Join Now - WhatsApp</a>
-</div>
-<div class="course-card c2">
-<img src="course2.jpg" alt="Hifz Quran Course">
-<h3>2. Hifz Quran Course</h3>
-<button class="detail-btn" onclick="toggleDetail(this)">Details ▼</button>
-<div class="detail-content">
-<p>• Complete Quran memorization facility</p>
-<p>• Supervision by expert Hafiz teachers</p>
-<p>• Daily revision and test system</p>
-</div>
-<a href="https://wa.me/923090252314" class="join-btn" target="_blank">Join Now - WhatsApp</a>
-</div>
-<div class="course-card c3">
-<img src="course3.jpg" alt="Tajweed Course">
-<h3>3. Ilm-ul-Tajweed Course</h3>
-<button class="detail-btn" onclick="toggleDetail(this)">Details ▼</button>
-<div class="detail-content">
-<p>• Recitation according to Makharij and rules</p>
-<p>• Complete training in correct pronunciation</p>
-<p>• Practical exercises with feedback</p>
-</div>
-<a href="https://wa.me/923090252314" class="join-btn" target="_blank">Join Now - WhatsApp</a>
-</div>
-<div class="course-card c4">
-<img src="course4.jpg" alt="Namaz Course">
-<h3>4. Faizan-e-Namaz Course</h3>
-<button class="detail-btn" onclick="toggleDetail(this)">Details ▼</button>
-<div class="detail-content">
-<p>• Azkar of Salah</p>
-<p>• Method of Wudu</p>
-<p>• Method of Ghusl</p>
-<p>• Method of Salah</p>
-<p>• Essential Surahs</p>
-</div>
-<a href="https://wa.me/923090252314" class="join-btn" target="_blank">Join Now - WhatsApp</a>
-</div>
-<div class="course-card c5">
-<img src="course5.jpg" alt="Taharat Course">
-<h3>5. Taharat Course</h3>
-<button class="detail-btn" onclick="toggleDetail(this)">Details ▼</button>
-<div class="detail-content">
-<p>• Explanation of impurities</p>
-<p>• How to purify clothes</p>
-<p>• How to purify body</p>
-<p>• How to purify ground</p>
-<p>• If impure thing falls in food, how to purify</p>
-</div>
-<a href="https://wa.me/923090252314" class="join-btn" target="_blank">Join Now - WhatsApp</a>
-</div><div class="course-card c6">
-<img src="course6.jpg" alt="Islah Amaal Course">
-<h3>6. Islah-e-Amaal Course</h3>
-<button class="detail-btn" onclick="toggleDetail(this)">Details ▼</button>
-<div class="detail-content">
-<p>• Destructive effects of backbiting</p>
-<p>• Consequences of lying</p>
-<p>• Rights of Allah</p>
-<p>• Rights of people</p>
-<p>• Explanation of show-off</p>
-</div>
-<a href="https://wa.me/923090252314" class="join-btn" target="_blank">Join Now - WhatsApp</a>
-</div>
-<div class="course-card c7">
-<img src="course7.jpg" alt="Hajj Umrah Course">
-<h3>7. Hajj & Umrah Course</h3>
-<button class="detail-btn" onclick="toggleDetail(this)">Details ▼</button>
-<div class="detail-content">
-<p>• Complete rituals of Hajj</p>
-<p>• Method of Umrah</p>
-<p>• Masnoon Duas</p>
-</div>
-<a href="https://wa.me/923090252314" class="join-btn" target="_blank">Join Now - WhatsApp</a>
-</div>
-<div class="course-card c8">
-<img src="course8.jpg" alt="Marriage Life Course">
-<h3>8. Marital Life Course</h3>
-<button class="detail-btn" onclick="toggleDetail(this)">Details ▼</button>
-<div class="detail-content">
-<p>• Rights of husband over wife</p>
-<p>• Rights of wife over husband</p>
-<p>• Rights of parents over children</p>
-<p>• Rights of children over parents</p>
-</div>
-<a href="https://wa.me/923090252314" class="join-btn" target="_blank">Join Now - WhatsApp</a>
-</div>
-<div class="course-card c9">
-<img src="course9.jpg" alt="Islamic Aqeedah Course">
-<h3>9. Islamic Beliefs Course</h3>
-<button class="detail-btn" onclick="toggleDetail(this)">Details ▼</button>
-<div class="detail-content">
-<p>• Belief about Allah Almighty</p>
-<p>• Belief about Prophets</p>
-<p>• Belief about Angels</p>
-<p>• Explanation of Paradise and Hell</p>
-<p>• Explanation of Death</p>
-<p>• Explanation of Barzakh</p>
-</div>
-<a href="https://wa.me/923090252314" class="join-btn" target="_blank">Join Now - WhatsApp</a>
-</div>
-<div class="course-card c10">
-<img src="course10.jpg" alt="Fiqh Course">
-<h3>10. Fiqh Course</h3>
-<button class="detail-btn" onclick="toggleDetail(this)">Details ▼</button>
-<div class="detail-content">
-<p>• Explanation of purity</p>
-<p>• Explanation of prayer</p>
-<p>• Divorce rulings</p>
-<p>• Explanation of menstruation and postnatal bleeding</p>
-<p>• Explanation of Tayammum</p>
-</div>
-<a href="https://wa.me/923090252314" class="join-btn" target="_blank">Join Now - WhatsApp</a>
-</div>
+
+<!-- Full Joining Form -->
+<div class="join-form-section" id="joinForm">
+<h3 style="color:var(--emerald);margin-bottom:20px;text-align:center;font-size:28px" data-en="📝 Join Your Course - Free Trial" data-ur="📝 کورس جوائن کریں - فری ٹرائل" data-ar="📝 انضم إلى دورتك - تجربة مجانية">📝 Join Your Course - Free Trial</h3>
+<input type="text" id="studentName" placeholder="Student Full Name" data-en-placeholder="Student Full Name" data-ur-placeholder="طالب علم کا مکمل نام" data-ar-placeholder="الاسم الكامل للطالب" required>
+<input type="number" id="studentAge" placeholder="Student Age" data-en-placeholder="Student Age" data-ur-placeholder="طالب علم کی عمر" data-ar-placeholder="عمر الطالب" required>
+<select id="studentGender"><option value="" data-en="Select Gender" data-ur="جنس منتخب کریں" data-ar="اختر الجنس">Select Gender</option><option value="Male" data-en="Male" data-ur="مرد" data-ar="ذكر">Male</option><option value="Female" data-en="Female" data-ur="خاتون" data-ar="أنثى">Female</option></select>
+<input type="text" id="country" placeholder="Country" data-en-placeholder="Country" data-ur-placeholder="ملک" data-ar-placeholder="البلد" required>
+<select id="timeSlot"><option value="" data-en="Preferred Time Slot" data-ur="پسندیدہ ٹائم سلاٹ" data-ar="الفترة الزمنية المفضلة">Preferred Time Slot</option><option value="Morning 9-12 AM" data-en="Morning 9-12 AM" data-ur="صبح 9-12 بجے" data-ar="الصباح 9-12 ص">Morning 9-12 AM</option><option value="Afternoon 2-5 PM" data-en="Afternoon 2-5 PM" data-ur="دوپہر 2-5 بجے" data-ar="بعد الظهر 2-5 م">Afternoon 2-5 PM</option><option value="Evening 7-10 PM" data-en="Evening 7-10 PM" data-ur="شام 7-10 بجے" data-ar="المساء 7-10 م">Evening 7-10 PM</option></select>
+<input type="tel" id="whatsappNum" placeholder="Parent WhatsApp with +92" data-en-placeholder="Parent WhatsApp with +92" data-ur-placeholder="والدین کا واٹس ایپ +92 کے ساتھ" data-ar-placeholder="واتساب ولي الأمر مع +92" required>
+<select id="courseSelect"></select>
+<button class="btn-primary" onclick="submitForm()" style="width:100%;margin-top:15px" data-en="Submit via WhatsApp" data-ur="واٹس ایپ پر بھیجیں" data-ar="إرسال عبر واتساب">Submit via WhatsApp</button>
 </div>
 </section>
 
-<section class="why-section" id="why">
-<h2 class="section-title">Why Choose Al Raza Academy?</h2>
-<div class="why-grid">
-<div class="why-box"><h4>✓ Committed to Student Progress</h4><p>Al-Azhar University certified teachers with proven results</p></div>
-<div class="why-box"><h4>✓ 24/7 Support</h4><p>Call, chat or email anytime - we are always available</p></div>
-<div class="why-box"><h4>✓ High Quality Teaching</h4><p>Best teaching methodology with high student progress rate</p></div>
-<div class="why-box"><h4>✓ Native Arabic Speakers</h4><p>Egyptian male and female teachers for authentic pronunciation</p></div>
-<div class="why-box"><h4>✓ Regular Reports & Exams</h4><p>Monthly tests and detailed progress reports for parents</p></div>
-<div class="why-box"><h4>✓ 100% Money Back Guarantee</h4><p>Full refund policy if not satisfied with our service</p></div>
-</div>
-</section><section class="reviews-section" id="reviews">
-<h2 class="section-title">Student Reviews</h2>
-<div class="review-card">
-<p>Mashallah, I completed Taharat course from Al Raza Online Quran Academy and they taught me so much that I couldn't learn anywhere else. Excellent teaching!</p>
-<div class="student">- Rafaqat Ali, London</div>
-</div>
-<div class="review-card">
-<p>Alhamdulillah, Al Raza Online Quran Academy is a very good institution. They taught my son Nazra Quran with Tajweed. They also conduct monthly tests.</p>
-<div class="student">- Ayesha Aziz, Dubai</div>
-</div>
-<div class="review-card">
-<p>Mashallah, it's a very good institution in Pakistan. I completed Islah-e-Amaal course and learned a lot from it.</p>
-<div class="student">- Talha bin Ubaidullah, Qatar</div>
-</div>
-</section>
+<!-- Why -->
+<section class="section-gap reveal" id="why"><h2 class="section-title" data-en="Why Choose Al Raza Academy?" data-ur="الرضا اکیڈمی کو کیوں منتخب کریں؟" data-ar="لماذا تختار أكاديمية الرضا؟">Why Choose Al Raza Academy?</h2><div class="title-line"></div><div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:25px;max-width:1200px;margin:auto"><div class="card reveal"><h4 style="color:var(--emerald);font-size:20px;margin-bottom:10px" data-en="✓ Committed to Student Progress" data-ur="✓ طالب علم کی ترقی کے لیے پرعزم" data-ar="✓ ملتزمون بتقدم الطالب">✓ Committed to Student Progress</h4><p data-en="Al-Azhar University certified teachers with proven results" data-ur="الازہر یونیورسٹی کے سند یافتہ اساتذہ بہترین نتائج کے ساتھ" data-ar="معلمون معتمدون من جامعة الأزهر بنتائج مثبتة">Al-Azhar University certified teachers with proven results</p></div><div class="card reveal"><h4 style="color:var(--emerald);font-size:20px;margin-bottom:10px" data-en="✓ 24/7 Support" data-ur="✓ 24/7 سپورٹ" data-ar="✓ دعم 24/7">✓ 24/7 Support</h4><p data-en="Call, chat or email anytime - we are always available" data-ur="کال، چیٹ یا ای میل کسی بھی وقت - ہمیشہ دستیاب ہیں" data-ar="اتصل، دردشة أو بريد إلكتروني في أي وقت - نحن متاحون دائمًا">Call, chat or email anytime - we are always available</p></div><div class="card reveal"><h4 style="color:var(--emerald);font-size:20px;margin-bottom:10px" data-en="✓ High Quality Teaching" data-ur="✓ اعلی معیار کی تعلیم" data-ar="✓ تعليم عالي الجودة">✓ High Quality Teaching</h4><p data-en="Best teaching methodology with high student progress rate" data-ur="بہترین تدریسی طریقہ کار اور طلبہ کی ترقی کی شرح" data-ar="أفضل منهجية تدريس معدل تقدم عالي للطلاب">Best teaching methodology with high student progress rate</p></div><div class="card reveal"><h4 style="color:var(--emerald);font-size:20px;margin-bottom:10px" data-en="✓ Native Arabic Speakers" data-ur="✓ مقامی عرب اساتذہ" data-ar="✓ متحدثون عرب أصليون">✓ Native Arabic Speakers</h4><p data-en="Egyptian male and female teachers for authentic pronunciation" data-ur="مصری مرد و خواتین اساتذہ مستند تلفظ کے لیے" data-ar="معلمون ومعلمات مصريون للنطق الأصيل">Egyptian male and female teachers for authentic pronunciation</p></div><div class="card reveal"><h4 style="color:var(--emerald);font-size:20px;margin-bottom:10px" data-en="✓ Regular Reports & Exams" data-ur="✓ باقاعدہ رپورٹس اور امتحانات" data-ar="✓ تقارير واختبارات منتظمة">✓ Regular Reports & Exams</h4><p data-en="Monthly tests and detailed progress reports for parents" data-ur="والدین کے لیے ماہانہ ٹیسٹ اور تفصیلی رپورٹس" data-ar="اختبارات شهرية وتقارير تقدم مفصلة لأولياء الأمور">Monthly tests and detailed progress reports for parents</p></div><div class="card reveal"><h4 style="color:var(--emerald);font-size:20px;margin-bottom:10px" data-en="✓ 100% Money Back Guarantee" data-ur="✓ 100% منی بیک گارنٹی" data-ar="✓ ضمان استرداد الأموال 100%">✓ 100% Money Back Guarantee</h4><p data-en="Full refund policy if not satisfied with our service" data-ur="اگر سروس پسند نہ آئے تو مکمل رقم واپس" data-ar="سياسة استرداد كامل إذا لم تكن راضيًا عن خدمتنا">Full refund policy if not satisfied with our service</p></div></div></section>
 
-<section class="contact-section" id="contact">
-<h2 class="section-title">Contact Us</h2>
-<div class="contact-info">📞 03090252314</div>
-<div class="contact-info">📧 muhammadshazabattari786@gmail.com</div>
+<!-- Reviews -->
+<section class="reviews-section section-gap reveal" id="reviews"><h2 class="section-title" data-en="Student Reviews" data-ur="طلبہ کے ریویوز" data-ar="آراء الطلاب">Student Reviews</h2><div class="title-line"></div><div style="max-width:900px;margin:auto"><div class="review-card reveal" style="background:var(--white);padding:30px;border-radius:16px;margin:20px 0;box-shadow:0 4px 20px rgba(0,0,0,0.06)"><div class="stars" style="color:var(--gold);font-size:20px;margin-bottom:12px">★★★</div><p data-en="Mashallah, I completed Taharat course from Al Raza Online Quran Academy and they taught me so much that I couldn't learn anywhere else. Excellent teaching!" data-ur="ماشاءاللہ، میں نے الرضا آن لائن قرآن اکیڈمی سے طہارت کورس مکمل کیا اور انہوں نے مجھے اتنا کچھ سکھایا جو میں نے کہیں اور نہیں سیکھا۔ شاندار تدریس!" data-ar="ما شاء الله، أكملت دورة الطهارة من أكاديمية الرضا للقرآن أونلاين وعلموني أشياء كثيرة لم أتعلمها في أي مكان آخر. تدريس ممتاز!">Mashallah, I completed Taharat course from Al Raza Online Quran Academy and they taught me so much that I couldn't learn anywhere else. Excellent teaching!</p><div style="color:var(--gold);font-weight:600;margin-top:12px">- Rafaqat Ali, London</div></div><div class="review-card reveal" style="background:var(--white);padding:30px;border-radius:16px;margin:20px 0;box-shadow:0 4px 20px rgba(0,0,0,0.06)"><div class="stars" style="color:var(--gold);font-size:20px;margin-bottom:12px">★★★</div><p data-en="Alhamdulillah, Al Raza Online Quran Academy is a very good institution. They taught my son Nazra Quran with Tajweed. They also conduct monthly tests." data-ur="الحمدللہ، الرضا آن لائن قرآن اکیڈمی ایک بہت اچھا ادارہ ہے۔ انہوں نے میرے بیٹے کو تجوید کے ساتھ ناظرہ قرآن سکھایا۔ وہ ماہانہ ٹیسٹ بھی لیتے ہیں۔" data-ar="الحمد لله، أكاديمية الرضا للقرآن أونلاين مؤسسة جيدة جدًا. علموا ابني ناظرة القرآن بالتجويد. كما يجريون اختبارات شهرية.">Alhamdulillah, Al Raza Online Quran Academy is a very good institution. They taught my son Nazra Quran with Tajweed. They also conduct monthly tests.</p><div style="color:var(--gold);font-weight:600;margin-top:12px">- Ayesha Aziz, Dubai</div></div><div class="review-card reveal" style="background:var(--white);padding:30px;border-radius:16px;margin:20px 0;box-shadow:0 4px 20px rgba(0,0,0,0.06)"><div class="stars" style="color:var(--gold);font-size:20px;margin-bottom:12px">★★★</div><p data-en="Mashallah, it's a very good institution in Pakistan. I completed Islah-e-Amaal course and learned a lot from it." data-ur="ماشاءاللہ، پاکستان میں یہ ایک بہت اچھا ادارہ ہے۔ میں نے اصلاح اعمال کورس مکمل کیا اور اس سے بہت کچھ سیکھا۔" data-ar="ما شاء الله، إنها مؤسسة جيدة جدًا في باكستان. أكملت دورة إصلاح الأعمال وتعلمت منها الكثير.">Mashallah, it's a very good institution in Pakistan. I completed Islah-e-Amaal course and learned a lot from it.</p><div style="color:var(--gold);font-weight:600;margin-top:12px">- Talha bin Ubaidullah, Qatar</div></div></div></section><!-- Contact -->
+<section class="section-gap reveal" id="contact" style="background:var(--light-gray)">
+<h2 class="section-title" data-en="Contact Us" data-ur="رابطہ کریں" data-ar="اتصل بنا">Contact Us</h2>
+<div class="title-line"></div>
+<div style="text-align:center;font-size:22px;color:var(--emerald);font-weight:600">
+<div>📞 03090252314</div>
+<div style="margin-top:12px">📧 muhammadshazabattari786@gmail.com</div>
+</div>
 </section>
 </div>
 
-<a href="https://wa.me/923090252314" class="whatsapp-float" target="_blank">💬</a>
+<!-- CTA -->
+<section class="cta-section reveal" style="background:var(--emerald);padding:80px 4%;text-align:center;color:var(--white)">
+<h2 data-en="Start Your Quran Journey Today" data-ur="آج ہی اپنی قرآن جَرنی شروع کریں" data-ar="ابدأ رحلة القرآن اليوم">Start Your Quran Journey Today</h2>
+<p style="font-size:18px;margin:20px 0 30px" data-en="Book your 3 Days Free Trial Class Now" data-ur="ابھی اپنا 3 دن کا فری ٹرائل بک کریں" data-ar="احجز حصتك التجريبية لمدة 3 أيام الآن">Book your 3 Days Free Trial Class Now</p>
+<a href="https://wa.me/923090252314" class="btn-primary" style="background:var(--gold);color:var(--dark-gray);font-size:18px;padding:16px 35px" target="_blank" data-en="Get Free Trial" data-ur="فری ٹرائل لیں" data-ar="احصل على تجربة مجانية">Get Free Trial</a>
+</section>
 
-<footer>
-<p>© 2026 Al Raza Online Quran Academy | Learn Quran, Transform Life ✨</p>
+<a href="https://wa.me/923090252314" class="whatsapp-float" target="_blank" style="position:fixed;bottom:25px;right:25px;background:#25D366;color:white;width:60px;height:60px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:32px;text-decoration:none;box-shadow:0 4px 20px rgba(37,211,102,0.4);z-index:999">💬</a>
+
+<!-- Footer -->
+<footer style="background:var(--footer-green);color:var(--white);text-align:center;padding:40px 4%">
+<p data-en="© 2026 Al Raza Online Quran Academy | Learn Quran, Transform Life ✨" data-ur="© 2026 الرضا آن لائن قرآن اکیڈمی | قرآن سیکھیں، زندگی بدلیں ✨" data-ar="© 2026 أكاديمية الرضا للقرآن أونلاين | تعلم القرآن، غير حياتك ✨">© 2026 Al Raza Online Quran Academy | Learn Quran, Transform Life ✨</p>
+<div style="margin-top:20px">
+<a href="index.html" style="color:var(--white);text-decoration:none;margin:0 10px" data-en="Home" data-ur="ہوم" data-ar="الرئيسية">Home</a> | <a href="about.html" style="color:var(--white);text-decoration:none;margin:0 10px" data-en="About" data-ur="ہمارے بارے میں" data-ar="حول">About</a> | <a href="terms.html" style="color:var(--white);text-decoration:none;margin:0 10px" data-en="Terms" data-ur="شرائط" data-ar="الشروط">Terms</a> | <a href="contact.html" style="color:var(--white);text-decoration:none;margin:0 10px" data-en="Contact" data-ur="رابطہ" data-ar="اتصال">Contact</a>
+</div>
 </footer>
 
 <script>
+// 1. Scroll Animation
+const observer = new IntersectionObserver((entries)=>{
+entries.forEach((entry)=>{
+if(entry.isIntersecting){entry.target.classList.add('active');}
+});
+},{threshold:0.15});
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+
+// 2. Details Toggle
 function toggleDetail(btn){
 const detail = btn.nextElementSibling;
 detail.classList.toggle('show');
-btn.textContent = detail.classList.contains('show') ? 'Details ▲' : 'Details ▼';
+const bodyClass = document.body.classList.contains('urdu') ? 'ur' : document.body.classList.contains('ar') ? 'ar' : 'en';
+btn.textContent = detail.classList.contains('show') ? (bodyClass=='ur'?'تفصیلات ▲':bodyClass=='ar'?'التفاصيل ▲':'Details ▲') : (bodyClass=='ur'?'تفصیلات ▼':bodyClass=='ar'?'التفاصيل ▼':'Details ▼');
 }
 
-// Menu toggle function - sirf ye change kiya
-function toggleMenu(){
-document.getElementById('menu').classList.toggle('show');
-}
-
-// Menu bahar click karein to band ho jaye
-window.onclick = function(event) {
-    if (!event.target.matches('.hamburger') && !event.target.matches('.hamburger span')) {
-        var dropdown = document.getElementById('menu');
-        if (dropdown.classList.contains('show')) {
-            dropdown.classList.remove('show');
-        }
+// 3. Menu Toggle - 3 Lines Only
+function toggleMenu(){document.getElementById('menu').classList.toggle('show');}
+document.addEventListener('click', function(event) {
+    const menu = document.getElementById('menu');
+    const hamburger = document.querySelector('.hamburger');
+    if (!menu.contains(event.target) && !hamburger.contains(event.target)) {
+        menu.classList.remove('show');
     }
+});
+
+// 4. Join Form Show
+function showJoinForm(courseName){
+const form = document.getElementById('joinForm');
+form.classList.add('show');
+document.getElementById('courseSelect').innerHTML = `<option>${courseName}</option>`;
+form.scrollIntoView({behavior:'smooth'});
 }
 
-const observer = new IntersectionObserver((entries)=>{
-entries.forEach((entry, index)=>{
-if(entry.isIntersecting && !entry.target.classList.contains('animated')){
-const animClasses = ['animate-left', 'animate-right', 'animate-top', 'animate-bottom'];
-const animClass = animClasses[index % 4];
-entry.target.classList.add(animClass, 'animated');
+// 5. Submit Full Form to WhatsApp
+function submitForm(){
+const name = document.getElementById('studentName').value;
+const age = document.getElementById('studentAge').value;
+const gender = document.getElementById('studentGender').value;
+const country = document.getElementById('country').value;
+const slot = document.getElementById('timeSlot').value;
+const num = document.getElementById('whatsappNum').value;
+const course = document.getElementById('courseSelect').value;
+const bodyClass = document.body.classList.contains('urdu') ? 'ur' : document.body.classList.contains('ar') ? 'ar' : 'en';
+if(!name || !age || !gender || !country || !slot || !num){alert(bodyClass=='ur'?'براہ کرم تمام فیلڈز پُر کریں':bodyClass=='ar'?'يرجى ملء جميع الحقول':'Please fill all fields');return;}
+const msg = `Assalam Alaikum Al Raza Academy\n*New Admission Request*\n*Course:* ${course}\n*Student:* ${name}\n*Age:* ${age}\n*Gender:* ${gender}\n*Country:* ${country}\n*Time:* ${slot}\n*WhatsApp:* ${num}`;
+window.open(`https://wa.me/923090252314?text=${encodeURIComponent(msg)}`,'_blank');
 }
-});
-}, {threshold:0.15});
 
-document.querySelectorAll('.course-card').forEach(card=>{
-observer.observe(card);
-});
+// 6. Language Switcher: EN > Urdu > Arabic > EN
+const langs = ['en', 'ur', 'ar'];
+let currentLangIndex = 0;
+
+function cycleLang(){
+  currentLangIndex = (currentLangIndex + 1) % langs.length;
+  const lang = langs[currentLangIndex];
+
+  document.body.classList.remove('urdu','ar');
+  if(lang === 'ur'){document.body.classList.add('urdu');}
+  if(lang === 'ar'){document.body.classList.add('ar');}
+
+  document.querySelectorAll('[data-en]').forEach(el=>{
+    el.textContent = el.getAttribute(`data-${lang}`);
+  });
+  document.querySelectorAll('[data-en-placeholder]').forEach(el=>{
+    el.placeholder = el.getAttribute(`data-${lang}-placeholder`);
+  });
+}
 </script>
 </body>
-  </html>
+</html>

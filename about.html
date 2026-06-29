@@ -1,228 +1,332 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>About Us - Al Raza Online Quran Academy</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
+:root{
+  --bg-60:#F9FBF9;
+  --text-30:#1A3B32;
+  --accent-10:#D4AF37;
+  --text-secondary:#556B64;
+  --white:#FFFFFF;
+}
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{font-family:'Poppins',sans-serif;background:#0a0a0a;color:#fff;line-height:1.7}
+body{font-family:'Inter', sans-serif;background:var(--bg-60);color:var(--text-30);line-height:1.7}
+body.urdu{font-family:'Noto Nastaliq Urdu', serif;direction:rtl;text-align:right}
+body.ar{font-family:'Amiri', serif;direction:rtl;text-align:right}
+h1, h2, h3{font-family:'Playfair Display', serif;font-weight:700}
+.reveal{opacity:0;transform:translateY(40px);transition:all 0.8s ease}
+.reveal.active{opacity:1;transform:translateY(0)}
 
-nav{background:#111;padding:18px 0;position:sticky;top:0;z-index:100;border-bottom:3px solid #FFD700}
-.nav-container{max-width:1200px;margin:auto;padding:0 4%;display:flex;justify-content:space-between;align-items:center}
-.logo-text{color:#FFD700;font-size:24px;font-weight:700}
-.hamburger{display:flex;flex-direction:column;cursor:pointer}
-.hamburger span{width:28px;height:3px;background:#FFD700;margin:4px 0;transition:0.3s}
+/* NAV - LOGO LEFT VIP + GLOBAL LANG */
+header.sticky-nav{background:var(--white);height:80px;position:sticky;top:0;z-index:1000;border-bottom:1px solid rgba(26, 59, 50, 0.08);display:flex;align-items:center}
+.nav-container{max-width:1200px;margin:auto;padding:0 4%;width:100%;display:flex;justify-content:space-between;align-items:center}
+.logo-img{height:40px;width:auto}
+.nav-right{display:flex;gap:12px;align-items:center}
+.lang-switch{background:var(--accent-10);border:2px solid var(--accent-10);color:var(--text-30);padding:8px 10px;border-radius:8px;font-weight:700;cursor:pointer;font-size:13px;transition:0.3s;font-family:'Inter'}
+.lang-switch:hover{background:#C39B2E}
+.btn-primary{background:var(--text-30);color:var(--white);padding:12px 20px;border-radius:30px;text-decoration:none;font-weight:600;transition:0.3s;border:none;cursor:pointer;font-size:14px;font-family:'Inter'}
+.btn-primary:hover{background:#132b25}
+.hamburger{display:flex;flex-direction:column;cursor:pointer;gap:5px;padding:8px}
+.hamburger span{width:28px;height:3px;background:var(--text-30);border-radius:2px;transition:0.3s}
+.dropdown{display:none;position:absolute;top:80px;right:4%;background:var(--white);border:1px solid rgba(26, 59, 50, 0.08);border-radius:12px;min-width:250px;box-shadow:0 10px 30px rgba(26,59,50,0.1);z-index:2000}
+.dropdown.show{display:block}
+.dropdown a{display:block;padding:14px 20px;color:var(--text-30);text-decoration:none;font-weight:600;border-bottom:1px solid #f1f1f1;transition:0.3s;font-family:'Inter'}
+.dropdown a:hover{background:var(--bg-60);color:var(--accent-10)}
 
-/* Menu Dropdown */
-.dropdown{display:none;position:absolute;top:70px;right:4%;background:#1a1a1a;border:2px solid #FFD700;border-radius:12px;min-width:240px;overflow:hidden;box-shadow:0 10px 40px rgba(255,215,0,0.3);z-index:200}
-.dropdown.show{display:block;animation:slideDown 0.3s ease}
-@keyframes slideDown{from{opacity:0;transform:translateY(-10px)}to{opacity:1;transform:translateY(0)}}
-.dropdown a{display:block;padding:14px 20px;color:#FFD700;text-decoration:none;font-size:16px;font-weight:600;border-bottom:1px solid #333;transition:0.3s}
-.dropdown a:hover{background:#FFD700;color:#000}
-.dropdown a:last-child{border-bottom:none}
+.container{max-width:1200px;margin:auto;padding:0 4%}
 
-.container{max-width:1100px;margin:50px auto;padding:0 4%}
+/* SECTION 1: HERO BANNER */
+.hero-about{padding:100px 0}
+.hero-grid{display:grid;grid-template-columns:60% 40%;gap:60px;align-items:center}
+.hero-about h1{font-size:42px;font-weight:700;color:var(--text-30);line-height:1.3}
+.hero-about p{color:var(--text-secondary);font-size:16px;margin-top:15px}
+.hero-img-box img{width:100%;height:100%;object-fit:cover;border-radius:24px;box-shadow:0px 10px 30px rgba(26, 59, 50, 0.05)}
 
-.page-header{text-align:center;padding:80px 20px;background:linear-gradient(135deg,#FFD700 0%,#FFA500 100%);border-radius:30px;margin-bottom:60px;opacity:0}
-.page-header h1{font-size:48px;color:#000;font-weight:800;margin-bottom:20px}
-.page-header p{font-size:20px;color:#000;font-weight:600}
-
-/* Sections with opacity 0 for animation */
-.welcome-section{background:linear-gradient(135deg,#0d4d2d 0%,#1a5c3a 100%);padding:70px 50px;border-radius:30px;border:3px solid #00FF7F;margin-bottom:60px;opacity:0}
-.vision-section{background:linear-gradient(135deg,#2d0d4d 0%,#3a1a5c 100%);padding:70px 50px;border-radius:30px;border:3px solid #9370DB;margin-bottom:60px;opacity:0}
-.features-section{background:linear-gradient(135deg,#4d2d0d 0%,#5c3a1a 100%);padding:70px 50px;border-radius:30px;border:3px solid #FF8C00;margin-bottom:60px;opacity:0}
-.contact-section{background:linear-gradient(135deg,#4d0d0d 0%,#5c1a1a 100%);padding:70px 50px;border-radius:30px;border:3px solid #FF4444;text-align:center;opacity:0}
-
-.section-title{text-align:center;font-size:42px;margin-bottom:40px;color:#00FF7F;font-weight:800}
-.vision-section .section-title{color:#9370DB}
-.features-section .section-title{color:#FF8C00}
-.contact-section .section-title{color:#FF4444}
-
-.welcome-text{font-size:19px;color:#e8f5e9;text-align:justify;line-height:2}
-.welcome-text p{opacity:0;margin-bottom:25px}
-
-.vision-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:30px;margin-top:40px}
-.vision-box{background:rgba(255,255,255,0.08);padding:35px;border-radius:20px;border-left:5px solid #9370DB;transition:0.4s;opacity:0}
-.vision-box:hover{transform:translateX(12px);border-left-color:#FFD700}
-.vision-box h3{color:#9370DB;font-size:26px;margin-bottom:15px;font-weight:700}
-.vision-box p{color:#f0e8ff;font-size:18px;line-height:1.9}
-
-.features-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:25px;margin-top:40px}
-.feature-box{background:rgba(255,255,255,0.08);padding:30px;border-radius:18px;border-left:4px solid #FF8C00;transition:0.3s;opacity:0}
-.feature-box:hover{transform:translateY(-8px);box-shadow:0 10px 30px rgba(255,140,0,0.3)}
-.feature-box h4{color:#FF8C00;font-size:22px;margin-bottom:12px;font-weight:700}
-.feature-box p{color:#ffe8d0;font-size:17px;line-height:1.8}
-
-.contact-info{font-size:22px;color:#FFD700;margin:18px 0;font-weight:600}
-.contact-info a{color:#FFD700;text-decoration:none}
-.free-trial-btn{display:inline-block;background:#000;color:#FFD700;padding:18px 45px;border-radius:50px;text-decoration:none;font-size:20px;font-weight:700;border:3px solid #FFD700;margin-top:30px;transition:0.3s}
-.free-trial-btn:hover{background:#FFD700;color:#000;transform:scale(1.08)}
-
-.whatsapp-float{position:fixed;bottom:25px;right:25px;background:#25D366;width:65px;height:65px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:35px;color:white;text-decoration:none;z-index:999;box-shadow:0 5px 25px rgba(37,211,102,0.6)}
-.whatsapp-float:hover{transform:scale(1.15)}
-
-footer{text-align:center;padding:50px 20px;background:linear-gradient(135deg,#FFD700 0%,#FFA500 100%);color:#000;font-weight:bold;font-size:18px;margin-top:60px}
-
-/* Animations - Left, Right, Top, Bottom */
-@keyframes slideLeft{from{opacity:0;transform:translateX(-120px)}to{opacity:1;transform:translateX(0)}}
-@keyframes slideRight{from{opacity:0;transform:translateX(120px)}to{opacity:1;transform:translateX(0)}}
-@keyframes slideTop{from{opacity:0;transform:translateY(-120px)}to{opacity:1;transform:translateY(0)}}
-@keyframes slideBottom{from{opacity:0;transform:translateY(120px)}to{opacity:1;transform:translateY(0)}}
-.animate-left{animation:slideLeft 0.8s ease forwards}
-.animate-right{animation:slideRight 0.8s ease forwards}
-.animate-top{animation:slideTop 0.8s ease forwards}
-.animate-bottom{animation:slideBottom 0.8s ease forwards}
-
+@media(max-width:992px){
+  .hero-grid{grid-template-columns:1fr;gap:40px;text-align:center}
+  .hero-about h1{font-size:34px}
 @media(max-width:768px){
-.page-header h1{font-size:36px}
-.section-title{font-size:34px}
-.welcome-section,.vision-section,.features-section,.contact-section{padding:40px 25px}
-.vision-grid,.features-grid{grid-template-columns:1fr}
-.dropdown{right:4%;left:4%;min-width:auto}
+  .logo-img{height:35px}
+}
+
+/* JOINING FORM POPUP STYLE */
+.form-popup{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.7);z-index:9999;align-items:center;justify-content:center;padding:20px}
+.form-popup.show{display:flex}
+.form-box{background:var(--white);border-radius:20px;padding:40px;max-width:500px;width:100%;position:relative;box-shadow:0 20px 60px rgba(0,0,0,0.3)}
+.form-box h3{font-size:24px;margin-bottom:20px;color:var(--text-30)}
+.form-box input, .form-box select{width:100%;padding:14px;margin-bottom:15px;border:1px solid #ddd;border-radius:10px;font-size:15px;font-family:'Inter'}
+.form-box label{font-weight:600;font-size:14px;margin-bottom:5px;display:block;color:var(--text-30)}
+.form-box button{width:100%;background:var(--text-30);color:var(--white);padding:14px;border:none;border-radius:30px;font-weight:700;font-size:16px;cursor:pointer;transition:0.3s}
+.form-box button:hover{background:#132b25}
+.close-btn{position:absolute;top:15px;right:20px;font-size:28px;color:var(--text-secondary);cursor:pointer;font-weight:700}
+.close-btn:hover{color:var(--text-30)}
 </style>
 </head>
 <body>
-
-<nav>
+<header class="sticky-nav">
 <div class="nav-container">
-<div class="logo-text">Al Raza Academy</div>
-<div class="hamburger" onclick="toggleMenu()">
-<span></span>
-<span></span>
-<span></span>
+<a href="index.html"><img src="logo.png" alt="Al Raza Logo" class="logo-img"></a>
+<div class="nav-right">
+<button class="lang-switch" onclick="cycleLang()">EN | اردو | العربية</button>
+<button class="btn-primary" onclick="openForm()" data-en="Free Trial" data-ur="فری ٹرائل" data-ar="تجربة مجانية">Free Trial</button>
+<div class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
 </div>
 <div class="dropdown" id="menu">
-<a href="index.html">🏠 Home</a>
-<a href="about.html">ℹ️ About Us</a>
-<a href="teachers.html">👨‍🏫 Our Teacher's</a>
-<a href="how-it-works.html">⚙️ How it Works</a>
-<a href="terms.html">📜 Terms & Condition</a>
-<a href="contact.html">📞 Contact Us</a>
-<a href="courses.html">📚 Courses</a>
-<a href="fees.html">💰 Study Plan & Fees</a>
-<a href="blogs.html">📝 Blogs</a>
+<a href="index.html" data-en="Home" data-ur="ہوم" data-ar="الرئيسية">🏠 Home</a>
+<a href="about.html" data-en="About Us" data-ur="ہمارے بارے میں" data-ar="من نحن">ℹ️ About Us</a>
+<a href="teachers.html" data-en="Our Teacher's" data-ur="اساتذہ" data-ar="معلمونا">👨‍🏫 Our Teacher's</a>
+<a href="how-it-works.html" data-en="How it Works" data-ur="یہ کیسے کام کرتا ہے" data-ar="كيف يعمل">⚙️ How it Works</a>
+<a href="terms.html" data-en="Terms & Condition" data-ur="شرائط و ضوابط" data-ar="الشروط والأحكام">📜 Terms & Condition</a>
+<a href="contact.html" data-en="Contact Us" data-ur="رابطہ کریں" data-ar="اتصل بنا">📞 Contact Us</a>
+<a href="courses.html" data-en="Courses" data-ur="کورسز" data-ar="الدورات">📚 Courses</a>
+<a href="fees.html" data-en="Study Plan & Fees" data-ur="فیس پلان" data-ar="خطة الدراسة والرسوم">💰 Study Plan & Fees</a>
+<a href="blogs.html" data-en="Blogs" data-ur="بلاگ" data-ar="مدونة">📝 Blogs</a>
 </div>
 </div>
-</nav>
+</header>
 
+<!-- SECTION 1: HERO BANNER - AAPKA CONTENT SAME -->
+<section class="hero-about reveal">
 <div class="container">
-
-<!-- Header - Top Animation -->
-<div class="page-header animate-top">
-<h1>📖 Welcome to Al Raza Online Quran Academy</h1>
-<p>Professional & Global Level Islamic Education Institute</p>
+<div class="hero-grid">
+<div class="hero-text">
+<h1 data-en="📖 Welcome to Al Raza Online Quran Academy" data-ur="📖 الرضا آن لائن قرآن اکیڈمی میں خوش آمدید" data-ar="📖 مرحبًا بكم في أكاديمية الرضا للقرآن أونلاين">📖 Welcome to Al Raza Online Quran Academy</h1>
+<p data-en="Professional & Global Level Islamic Education Institute. Al Raza Online Quran Academy is a professional and global level online institution that provides Quranic education and Islamic training to Muslims worldwide from the comfort of their homes. Our mission is to deliver authentic Quran recitation with Tajweed, Hifz, and Islamic education to people of all ages using modern digital platforms like Skype, Zoom, and WhatsApp." data-ur="پروفیشنل اور عالمی سطح کا اسلامی تعلیمی ادارہ۔ الرضا آن لائن قرآن اکیڈمی ایک پیشہ ورانہ اور عالمی سطح کا آن لائن ادارہ ہے جو دنیا بھر کے مسلمانوں کو ان کے گھروں کے آرام سے قرآن کی تعلیم اور اسلامی تربیت فراہم کرتا ہے۔ ہمارا مشن تمام عمر کے لوگوں کو سكائپ، زوم اور واٹس ایپ جیسے جدید ڈیجیٹل پلیٹ فارمز کا استعمال کرتے ہوئے تجوید، حفظ اور اسلامی تعلیم کے ساتھ مستند قرآن کی تلاوت فراہم کرنا ہے۔" data-ar="معهد تعليمي إسلامي محترف وعلى مستوى عالمي. أكاديمية الرضا للقرآن أونلاين هي مؤسسة إلكترونية محترفة وعلى مستوى عالمي توفر تعليم القرآن والتدريب الإسلامي للمسلمين في جميع أنحاء العالم منازلهم. مهمتنا هي تقديم تلاوة القرآن الأصيلة بالتجويد والحفظ والتعليم الإسلامي للأشخاص من جميع الأعمار باستخدام منصات رقمية حديثة مثل سكايب وزوم وواتساب.">Professional & Global Level Islamic Education Institute. Al Raza Online Quran Academy is a professional and global level online institution that provides Quranic education and Islamic training to Muslims worldwide from the comfort of their homes. Our mission is to deliver authentic Quran recitation with Tajweed, Hifz, and Islamic education to people of all ages using modern digital platforms like Skype, Zoom, and WhatsApp.</p>
 </div>
-
-<!-- Welcome Section - Right Animation -->
-<section class="welcome-section animate-right">
-<h2 class="section-title">About Al Raza Online Quran Academy</h2>
-<div class="welcome-text">
-<p>Al Raza Online Quran Academy is a professional and global level online institution that provides Quranic education and Islamic training to Muslims worldwide from the comfort of their homes.</p>
-<p>Our mission is to deliver authentic Quran recitation with Tajweed, Hifz, and Islamic education to people of all ages using modern digital platforms like Skype, Zoom, and WhatsApp.</p>
+<div class="hero-img-box">
+<img src="about-hero.jpg" alt="Modern Student Dashboard or Open Quran">
 </div>
-</section>
-
-<!-- Vision & Mission - Left Animation -->
-<section class="vision-section animate-left">
-<h2 class="section-title">Our Vision & Mission</h2>
-<div class="vision-grid">
-<div class="vision-box animate-left">
-<h3>🌟 Spiritual Growth</h3>
-<p>Our goal is to develop true love for Allah Almighty and His beloved Prophet Muhammad (PBUH) in the hearts of students.</p>
-</div>
-<div class="vision-box animate-right">
-<h3>📚 Perfect Tajweed</h3>
-<p>Teaching every student Quran with proper Makharij and Tajweed rules is our top priority.</p>
-</div>
-<div class="vision-box animate-left">
-<h3>✨ Islamic Character</h3>
-<p>We don't just teach Quran, we also instill Islamic character, prayer habits, and good manners in children and adults.</p>
 </div>
 </div>
 </section>
 
-<!-- Why Choose Us - Top Animation -->
-<section class="features-section animate-top">
-<h2 class="section-title">Why Choose Al Raza Academy?</h2>
-<div class="features-grid">
-<div class="feature-box animate-left">
-<h4>👨‍🏫 Expert & Qualified Teachers</h4>
-<p>We have a team of Alim, Hafiz, and experienced teachers who teach children and adults with great care and attention.</p>
+<!-- JOINING FORM POPUP - WHATSAPP DIRECT -->
+<div class="form-popup" id="joinForm">
+<div class="form-box">
+<span class="close-btn" onclick="closeForm()">&times;</span>
+<h3 data-en="Book Your 3 Days Free Trial" data-ur="3 دن کا فری ٹرائل بک کریں" data-ar="احجز تجربتك المجانية لمدة 3 أيام">Book Your 3 Days Free Trial</h3>
+<form id="whatsappForm">
+<label data-en="Full Name *" data-ur="مکمل نام *" data-ar="الاسم الكامل *">Full Name *</label>
+<input type="text" id="name" required>
+
+<label data-en="Student Age" data-ur="طالب علم کی عمر" data-ar="عمر الطالب">Student Age</label>
+<input type="number" id="age">
+
+<label data-en="Select Course *" data-ur="کورس منتخب کریں *" data-ar="اختر الدورة *">Select Course *</label>
+<select id="course" required>
+<option value="">--Select--</option>
+<option value="Nazra & Qaida">Nazra & Qaida</option>
+<option value="Hifz with Tajweed">Hifz with Tajweed</option>
+<option value="Tajweed Course">Tajweed Course</option>
+<option value="Islamic Studies">Islamic Studies</option>
+</select>
+
+<label data-en="Country *" data-ur="ملک *" data-ar="الدولة *">Country *</label>
+<input type="text" id="country" required>
+
+<label data-en="Your WhatsApp Number *" data-ur="آپ کا واٹس ایپ نمبر *" data-ar="رقم الواتساب الخاصة بك *">Your WhatsApp Number *</label>
+<input type="tel" id="wano" placeholder="+92..." required>
+
+<button type="submit" data-en="Submit to WhatsApp" data-ur="واٹس ایپ پر جمع کروائیں" data-ar="إرسال إلى الواتساب">Submit to WhatsApp</button>
+</form>
 </div>
-<div class="feature-box animate-right">
-<h4>💻 Easy Online Classes</h4>
-<p>Take classes from any corner of the world via Skype, Zoom, and WhatsApp.</p>
+    </div><!-- SECTION 2: OUR MISSION & VISION - BENTO GRID - AAPKA CONTENT SAME -->
+<section class="mission-section reveal" style="padding:80px 0">
+<div class="container">
+<h2 class="section-title" style="text-align:center;font-size:36px;color:var(--text-30);margin-bottom:50px" data-en="Our Vision & Mission" data-ur="ہمارا وژن اور مشن" data-ar="رؤيتنا ومهمتنا">Our Vision & Mission</h2>
+<div class="bento-grid" style="display:grid;grid-template-columns:repeat(2, 1fr);gap:24px">
+<div class="bento-card" style="background:var(--white);border:1px solid rgba(26, 59, 50, 0.08);border-radius:16px;padding:32px;transition: transform 0.3s ease;">
+<div style="margin-bottom:15px">
+<svg width="40" height="40" fill="none" stroke="var(--accent-10)" stroke-width="1.5" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path></svg>
 </div>
-<div class="feature-box animate-left">
-<h4>👩‍🏫 Separate Arrangement for Females</h4>
-<p>For convenience of women and girls, we have qualified female teachers (Aalimaat) available.</p>
+<h3 style="font-size:22px;color:var(--text-30);margin-bottom:10px" data-en="🌟 Spiritual Growth" data-ur="🌟 روحانی نشوونما" data-ar="🌟 النمو الروحي">🌟 Spiritual Growth</h3>
+<p style="color:var(--text-secondary);font-size:16px" data-en="Our goal is to develop true love for Allah Almighty and His beloved Prophet Muhammad (PBUH) in the hearts of students." data-ur="ہمارا مقصد طلبہ کے دلوں میں اللہ تعالیٰ اور ان کے محبوب نبی محمد صلی اللہ علیہ وسلم کی سچی محبت پیدا کرنا ہے۔" data-ar="هدفنا هو تنمية الحب الحقي لله تعالى ونبيه الحبيب محمد (صلى الله عليه وسلم) في قلوب الطلاب.">Our goal is to develop true love for Allah Almighty and His beloved Prophet Muhammad (PBUH) in the hearts of students.</p>
 </div>
-<div class="feature-box animate-right">
-<h4>🎁 3 Days Free Trial Class</h4>
-<p>We provide 3 days free trial classes so you can understand our teaching method before enrolling.</p>
+<div class="bento-card" style="background:var(--white);border:1px solid rgba(26, 59, 50, 0.08);border-radius:16px;padding:32px;transition: transform 0.3s ease;">
+<div style="margin-bottom:15px">
+<svg width="40" height="40" fill="none" stroke="var(--accent-10)" stroke-width="1.5" viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
 </div>
-<div class="feature-box animate-left">
-<h4>⏰ Flexible Timings</h4>
-<p>You can select class timing according to your country or city timezone.</p>
+<h3 style="font-size:22px;color:var(--text-30);margin-bottom:10px" data-en="📚 Perfect Tajweed" data-ur="📚 کامل تجوید" data-ar="📚 تجويد مثالي">📚 Perfect Tajweed</h3>
+<p style="color:var(--text-secondary);font-size:16px" data-en="Teaching every student Quran with proper Makharij and Tajweed rules is our top priority." data-ur="ہر طالب علم کو مخارج اور تجوید کے قواعد کے ساتھ قرآن سکھانا ہماری اولین ترجیح ہے۔" data-ar="تعليم كل طالب القرآن مع المخارج وقواعد التجويد الصحيحة هي أولويتنا القصوى.">Teaching every student Quran with proper Makharij and Tajweed rules is our top priority.</p>
 </div>
-<div class="feature-box animate-right">
-<h4>🎯 Personalized Attention</h4>
-<p>Every child gets individual attention and customized learning plan.</p>
+<div class="bento-card" style="background:var(--white);border:1px solid rgba(26, 59, 50, 0.08);border-radius:16px;padding:32px;transition: transform 0.3s ease;grid-column:span 2;">
+<div style="margin-bottom:15px">
+<svg width="40" height="40" fill="none" stroke="var(--accent-10)" stroke-width="1.5" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+</div>
+<h3 style="font-size:22px;color:var(--text-30);margin-bottom:10px" data-en="✨ Islamic Character" data-ur="✨ اسلامی کردار" data-ar="✨ الطابع الإسلامي">✨ Islamic Character</h3>
+<p style="color:var(--text-secondary);font-size:16px" data-en="We don't just teach Quran, we also instill Islamic character, prayer habits, and good manners in children and adults." data-ur="ہم صرف قرآن نہیں پڑھاتے، ہم بچوں اور بڑوں میں اسلامی کردار، نماز کی عادت اور اچھے اخلاق بھی پیدا کرتے ہیں۔" data-ar="نحن لا نعلم القرآن فحسب، بل نغرس أيضًا الطابع الإسلامي وعادات الصلاة والأخلاق الحميدة في الأطفال والبالغين.">We don't just teach Quran, we also instill Islamic character, prayer habits, and good manners in children and adults.</p>
+</div>
 </div>
 </div>
 </section>
 
-<!-- Contact Section - Bottom Animation -->
-<section class="contact-section animate-bottom">
-<h2 class="section-title">Contact Us</h2>
-<p style="font-size:19px;color:#ffe8e8;margin-bottom:30px">If you or your children want to learn Quran online, contact us today to book your Free Trial Class:</p>
-<div class="contact-info">📞 WhatsApp / Call: <a href="tel:+923090252314">+92 3090252314</a></div>
-<div class="contact-info">📧 Email: <a href="mailto:muhammadshazabattari786@gmail.com">muhammadshazabattari786@gmail.com</a></div>
-<div class="contact-info">📱 Instagram: Al Raza Online Quran Academy</div>
-<a href="https://wa.me/923090252314?text=Assalam%20Alaikum%20I%20want%203%20days%20free%20trial%20class" class="free-trial-btn" target="_blank">🎁 Book Free Trial Now</a>
+<style>
+.bento-card:hover{transform: translateY(-5px);}
+@media(max-width:768px){.bento-grid{grid-template-columns:1fr!important}.bento-card[style*="span 2"]{grid-column:span 1!important}}
+</style>
+
+<!-- SECTION 3: MEET OUR QUALIFIED FACULTY -->
+<section class="faculty-section reveal" style="padding:80px 0;background:var(--white)">
+<div class="container">
+<h2 class="section-title" style="text-align:center;font-size:36px;color:var(--text-30);margin-bottom:50px" data-en="Meet Our Qualified Faculty" data-ur="ہمارے ماہر اساتذہ سے ملیں" data-ar="تعرف على هيئة التدريس المؤهلة لدينا">Meet Our Qualified Faculty</h2>
+<div class="faculty-grid" style="display:grid;grid-template-columns:repeat(auto-fit, minmax(250px, 1fr));gap:30px">
+<!-- Faculty Card 1 -->
+<div class="faculty-card" style="text-align:center">
+<div class="faculty-img" style="width:180px;height:180px;margin:0 auto 15px;border-radius:50%;background-image: url('data:image/svg+xml,%3Csvg width=\'100\' height=\'100\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cdefs%3E%3Cpattern id=\'a\' patternUnits=\'userSpaceOnUse\' width=\'20\' height=\'20\'%3E%3Cpath d=\'M0 10 L10 0 L20 10 L10 20Z\' fill=\'%23E2EFEA\'/%3E%3C/pattern%3E%3C/defs%3E%3Crect width=\'100%25\' height=\'100%25\' fill=\'url(%23a)\'/%3E%3C/svg%3E');display:flex;align-items:center;justify-content:center;font-size:50px;color:var(--text-30);">👨‍🏫</div>
+<h3 style="font-size:20px;color:var(--text-30);font-weight:700" data-en="Mufti Usman" data-ur="مفتی عثمان" data-ar="مفتي عثمان">Mufti Usman</h3>
+<p style="color:var(--text-secondary);margin:8px 0" data-en="Hifz & Tajweed" data-ur="حفظ و تجوید" data-ar="حفظ وتجويد">Hifz & Tajweed</p>
+<span style="background:#E2EFEA;color:var(--text-30);padding:6px 14px;border-radius:20px;font-size:13px;font-weight:600;display:inline-block" data-en="Al-Azhar Certified" data-ur="الازہر سند یافتہ" data-ar="معتمد من الأزهر">Al-Azhar Certified</span>
+</div>
+<!-- Faculty Card 2 -->
+<div class="faculty-card" style="text-align:center">
+<div class="faculty-img" style="width:180px;height:180px;margin:0 auto 15px;border-radius:50%;background-image: url('data:image/svg+xml,%3Csvg width=\'100\' height=\'100\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cdefs%3E%3Cpattern id=\'a\' patternUnits=\'userSpaceOnUse\' width=\'20\' height=\'20\'%3E%3Cpath d=\'M0 10 L10 0 L20 10 L10 20Z\' fill=\'%23E2EFEA\'/%3E%3C/pattern%3E%3C/defs%3E%3Crect width=\'100%25\' height=\'100%25\' fill=\'url(%23a)\'/%3E%3C/svg%3E');display:flex;align-items:center;justify-content:center;font-size:50px;color:var(--text-30);">👩‍🏫</div>
+<h3 style="font-size:20px;color:var(--text-30);font-weight:700" data-en="Ustaza Fatima" data-ur="استاذہ فاطمہ" data-ar="أستاذة فاطمة">Ustaza Fatima</h3>
+<p style="color:var(--text-secondary);margin:8px 0" data-en="Nazra & Noorani Qaida" data-ur="ناظرہ و نورانی قاعدہ" data-ar="ناظرة والقاعدة النورانية">Nazra & Noorani Qaida</p>
+<span style="background:#E2EFEA;color:var(--text-30);padding:6px 14px;border-radius:20px;font-size:13px;font-weight:600;display:inline-block" data-en="Al-Azhar Certified" data-ur="الازہر سند یافتہ" data-ar="معتمد من الأزهر">Al-Azhar Certified</span>
+</div>
+<!-- Faculty Card 3 -->
+<div class="faculty-card" style="text-align:center">
+<div class="faculty-img" style="width:180px;height:180px;margin:0 auto 15px;border-radius:50%;background-image: url('data:image/svg+xml,%3Csvg width=\'100\' height=\'100\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cdefs%3E%3Cpattern id=\'a\' patternUnits=\'userSpaceOnUse\' width=\'20\' height=\'20\'%3E%3Cpath d=\'M0 10 L10 0 L20 10 L10 20Z\' fill=\'%23E2EFEA\'/%3E%3C/pattern%3E%3C/defs%3E%3Crect width=\'100%25\' height=\'100%25\' fill=\'url(%23a)\'/%3E%3C/svg%3E');display:flex;align-items:center;justify-content:center;font-size:50px;color:var(--text-30);">👨‍🏫</div>
+<h3 style="font-size:20px;color:var(--text-30);font-weight:700" data-en="Shaykh Ahmed" data-ur="شیخ احمد" data-ar="الشيخ أحمد">Shaykh Ahmed</h3>
+<p style="color:var(--text-secondary);margin:8px 0" data-en="Fiqh & Aqeedah" data-ur="فقہ و عقیدہ" data-ar="فقه وعقيدة">Fiqh & Aqeedah</p>
+<span style="background:#E2EFEA;color:var(--text-30);padding:6px 14px;border-radius:20px;font-size:13px;font-weight:600;display:inline-block" data-en="Al-Azhar Certified" data-ur="الازہر سند یافتہ" data-ar="معتمد من الأزهر">Al-Azhar Certified</span>
+</div>
+<!-- Faculty Card 4 -->
+<div class="faculty-card" style="text-align:center">
+<div class="faculty-img" style="width:180px;height:180px;margin:0 auto 15px;border-radius:50%;background-image: url('data:image/svg+xml,%3Csvg width=\'100\' height=\'100\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cdefs%3E%3Cpattern id=\'a\' patternUnits=\'userSpaceOnUse\' width=\'20\' height=\'20\'%3E%3Cpath d=\'M0 10 L10 0 L20 10 L10 20Z\' fill=\'%23E2EFEA\'/%3E%3C/pattern%3E%3C/defs%3E%3Crect width=\'100%25\' height=\'100%25\' fill=\'url(%23a)\'/%3E%3C/svg%3E');display:flex;align-items:center;justify-content:center;font-size:50px;color:var(--text-30);">👩‍🏫</div>
+<h3 style="font-size:20px;color:var(--text-30);font-weight:700" data-en="Ustaza Aisha" data-ur="استاذہ عائشہ" data-ar="أستاذة عائشة">Ustaza Aisha</h3>
+<p style="color:var(--text-secondary);margin:8px 0" data-en="Islamic Studies" data-ur="اسلامیات" data-ar="الدراسات الإسلامية">Islamic Studies</p>
+<span style="background:#E2EFEA;color:var(--text-30);padding:6px 14px;border-radius:20px;font-size:13px;font-weight:600;display:inline-block" data-en="Al-Azhar Certified" data-ur="الازہر سند یافتہ" data-ar="معتمد من الأزهر">Al-Azhar Certified</span>
+</div>
+</div>
+</div><!-- SECTION 4: WHY CHOOSE US - NUMERIC COUNTERS - AAPKA CONTENT SAME -->
+<section class="why-section reveal" style="padding:80px 0">
+<div class="container">
+<h2 class="section-title" style="text-align:center;font-size:36px;color:var(--text-30);margin-bottom:50px" data-en="Why Choose Al Raza Academy?" data-ur="الراضا اکیڈمی کو کیوں منتخب کریں؟" data-ar="لماذا تختار أكاديمية الرضا؟">Why Choose Al Raza Academy?</h2>
+<div class="counter-grid" style="display:grid;grid-template-columns:repeat(auto-fit, minmax(200px, 1fr));gap:30px;text-align:center">
+<div class="counter-item">
+<div class="counter-num" style="font-size:48px;font-weight:800;color:var(--accent-10);line-height:1">1:1</div>
+<p style="color:var(--text-30);font-weight:600;font-size:18px;margin-top:8px" data-en="Live Classes" data-ur="لائیو کلاسز" data-ar="حصص مباشرة">Live Classes</p>
+</div>
+<div class="counter-item">
+<div class="counter-num" style="font-size:48px;font-weight:800;color:var(--accent-10);line-height:1">24/7</div>
+<p style="color:var(--text-30);font-weight:600;font-size:18px;margin-top:8px" data-en="Support" data-ur="سپورٹ" data-ar="دعم">Support</p>
+</div>
+<div class="counter-item">
+<div class="counter-num" style="font-size:48px;font-weight:800;color:var(--accent-10);line-height:1">3</div>
+<p style="color:var(--text-30);font-weight:600;font-size:18px;margin-top:8px" data-en="Free Trial Days" data-ur="فری ٹرائل دن" data-ar="أيام التجربة المجانية">Free Trial Days</p>
+</div>
+<div class="counter-item">
+<div class="counter-num" style="font-size:48px;font-weight:800;color:var(--accent-10);line-height:1">100%</div>
+<p style="color:var(--text-30);font-weight:600;font-size:18px;margin-top:8px" data-en="Personal Attention" data-ur="ذاتی توجہ" data-ar="اهتمام شخصي">Personal Attention</p>
+</div>
+</div>
+</div>
 </section>
 
+<!-- SECTION 5: FINAL CTA - AAPKA CONTACT CONTENT SAME -->
+<section class="cta-section reveal" style="padding:80px 4%">
+<div class="container">
+<div style="background:var(--text-30);color:var(--white);border-radius:24px;padding:60px 40px;text-align:center">
+<h2 style="font-size:36px;margin-bottom:20px" data-en="Contact Us Today" data-ur="آج ہی رابطہ کریں" data-ar="اتصل بنا اليوم">Contact Us Today</h2>
+<p style="font-size:18px;margin-bottom:30px;opacity:0.9" data-en="If you or your children want to learn Quran online, contact us today to book your Free Trial Class:" data-ur="اگر آپ یا آپ کے بچے آن لائن قرآن سیکھنا چاہتے ہیں تو آج ہی ہم سے رابطہ کر کے اپنا فری ٹرائل کلاس بک کروائیں:" data-ar="إذا كنت أنت أو أطفالك ترغبون في تعلم القرآن عبر الإنترنت، اتصلوا بنا اليوم لحجز حصتكم التجريبية المجانية:">If you or your children want to learn Quran online, contact us today to book your Free Trial Class:</p>
+<p style="font-size:22px;color:var(--accent-10);margin:18px 0;font-weight:600" data-en="📞 WhatsApp / Call: +92 3090252314" data-ur="📞 واٹس ایپ / کال: +92 3090252314" data-ar="📞 واتساب / اتصال: +92 3090252314">📞 WhatsApp / Call: <a href="tel:+923090252314" style="color:var(--accent-10);text-decoration:none">+92 3090252314</a></p>
+<p style="font-size:22px;color:var(--accent-10);margin:18px 0;font-weight:600" data-en="📧 Email: muhammadshazabattari786@gmail.com" data-ur="📧 ای میل: muhammadshazabattari786@gmail.com" data-ar="📧 البريد الإلكتروني: muhammadshazabattari786@gmail.com">📧 Email: <a href="mailto:muhammadshazabattari786@gmail.com" style="color:var(--accent-10);text-decoration:none">muhammadshazabattari786@gmail.com</a></p>
+<button onclick="openForm()" class="cta-btn" style="background:var(--accent-10);color:var(--text-30);font-weight:600;padding:14px 32px;border-radius:30px;text-decoration:none;display:inline-block;font-size:16px;margin-top:20px;transition: all 0.3s;border:none;cursor:pointer;font-family:'Inter'" data-en="🎁 Book Free Trial Now" data-ur="🎁 ابھی فری ٹرائل بک کریں" data-ar="🎁 احجز تجربتك المجانية الآن">🎁 Book Free Trial Now</button>
 </div>
+</div>
+</section>
 
-<!-- WhatsApp Float Button - Right Side -->
-<a href="https://wa.me/923090252314" class="whatsapp-float" target="_blank">💬</a>
+<style>
+.cta-btn:hover{background:#C39B2E!important;}
+</style>
 
-<footer>
-<p>© 2026 Al Raza Online Quran Academy | Learn Quran, Transform Life ✨</p>
+<!-- Footer -->
+<footer style="background:var(--text-30);color:var(--white);text-align:center;padding:50px 20px;font-weight:bold;font-size:18px;margin-top:0">
+<p data-en="© 2026 Al Raza Online Quran Academy | Learn Quran, Transform Life ✨" data-ur="© 2026 الرضا آن لائن قرآن اکیڈمی | قرآن سیکھیں، زندگی بدلیں ✨" data-ar="© 2026 أكاديمية الرضا للقرآن أونلاين | تعلم القرآن، غير حياتك ✨">© 2026 Al Raza Online Quran Academy | Learn Quran, Transform Life ✨</p>
+<div style="margin-top:20px">
+<a href="index.html" style="color:var(--white);text-decoration:none;margin:0 10px" data-en="Home" data-ur="ہوم" data-ar="الرئيسية">Home</a> | <a href="about.html" style="color:var(--white);text-decoration:none;margin:0 10px" data-en="About" data-ur="ہمارے بارے میں" data-ar="حول">About</a> | <a href="terms.html" style="color:var(--white);text-decoration:none;margin:0 10px" data-en="Terms" data-ur="شرائط" data-ar="الشروط">Terms</a> | <a href="contact.html" style="color:var(--white);text-decoration:none;margin:0 10px" data-en="Contact" data-ur="رابطہ" data-ar="اتصال">Contact</a>
+</div>
 </footer>
 
+<!-- WhatsApp Float Button -->
+<a href="https://wa.me/923090252314" class="whatsapp-float" target="_blank" style="position:fixed;bottom:25px;right:25px;background:#25D366;width:65px;height:65px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:35px;color:white;text-decoration:none;z-index:999;box-shadow:0 5px 25px rgba(37,211,102,0.6);transition:0.3s">💬</a>
+<style>.whatsapp-float:hover{transform:scale(1.15)}</style>
+
 <script>
-function toggleMenu(){
-document.getElementById('menu').classList.toggle('show');
-}
-window.onclick = function(event) {
-    if (!event.target.matches('.hamburger') && !event.target.matches('.hamburger span')) {
-        var dropdown = document.getElementById('menu');
-        if (dropdown.classList.contains('show')) {
-            dropdown.classList.remove('show');
-        }
-    }
-}
-
-// Scroll Animation - Left, Right, Top, Bottom Alternate
+// 1. Scroll Animation
 const observer = new IntersectionObserver((entries)=>{
-entries.forEach((entry, index)=>{
-if(entry.isIntersecting && !entry.target.classList.contains('animated')){
-const animClasses = ['animate-left', 'animate-right', 'animate-top', 'animate-bottom'];
-const animClass = animClasses[index % 4];
-entry.target.classList.add(animClass, 'animated');
-}
+entries.forEach((entry)=>{
+if(entry.isIntersecting){entry.target.classList.add('active');}
 });
-}, {threshold:0.15});
+},{threshold:0.15});
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
 
-// Observe all sections, boxes and paragraphs
-document.querySelectorAll('.welcome-section, .vision-section, .features-section, .contact-section, .vision-box, .feature-box, .page-header, .welcome-text p').forEach(section=>{
-observer.observe(section);
+// 2. Menu Toggle
+function toggleMenu(){document.getElementById('menu').classList.toggle('show');}
+document.addEventListener('click', function(event) {
+    const menu = document.getElementById('menu');
+    const hamburger = document.querySelector('.hamburger');
+    if (!menu.contains(event.target) &&!hamburger.contains(event.target)) {
+        menu.classList.remove('show');
+    }
+});
+
+// 3. FORM POPUP OPEN/CLOSE
+function openForm(){document.getElementById('joinForm').classList.add('show');}
+function closeForm(){document.getElementById('joinForm').classList.remove('show');}
+document.getElementById('joinForm').addEventListener('click', function(e){if(e.target.id==='joinForm'){closeForm();}});
+
+// 4. FORM TO WHATSAPP DIRECT - YOUR NUMBER: +923090252314
+document.getElementById('whatsappForm').addEventListener('submit', function(e){
+e.preventDefault();
+let name = document.getElementById('name').value;
+let age = document.getElementById('age').value;
+let course = document.getElementById('course').value;
+let country = document.getElementById('country').value;
+let wano = document.getElementById('wano').value;
+
+let message = `*New Free Trial Request - Al Raza Academy*%0A%0A`;
+message += `*Name:* ${name}%0A`;
+message += `*Age:* ${age}%0A`;
+message += `*Course:* ${course}%0A`;
+message += `*Country:* ${country}%0A`;
+message += `*Student WhatsApp:* ${wano}`;
+
+let whatsappURL = `https://wa.me/923090252314?text=${message}`;
+window.open(whatsappURL, '_blank');
+closeForm();
+});
+
+// 5. GLOBAL Language Switcher: EN > Urdu > Arabic > EN for Whole Site
+const langs = ['en', 'ur', 'ar'];
+let currentLangIndex = localStorage.getItem('langIndex')? parseInt(localStorage.getItem('langIndex')) : 0;
+
+function applyLang(lang){
+  document.body.classList.remove('urdu','ar');
+  if(lang === 'ur'){document.body.classList.add('urdu');}
+  if(lang === 'ar'){document.body.classList.add('ar');}
+  document.querySelectorAll('[data-en]').forEach(el=>{
+    el.textContent = el.getAttribute(`data-${lang}`);
+  });
+}
+
+function cycleLang(){
+  currentLangIndex = (currentLangIndex + 1) % langs.length;
+  localStorage.setItem('langIndex', currentLangIndex);
+  applyLang(langs[currentLangIndex]);
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  applyLang(langs[currentLangIndex]);
 });
 </script>
-
 </body>
-  </html>
+    </html>
+                                                                                                             </section>

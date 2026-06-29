@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,7 +24,9 @@ body.ar{font-family:'Amiri', serif;direction:rtl;text-align:right}
 .reveal.active{opacity:1;transform:translateY(0)}
 header.sticky-nav{background:var(--white);height:80px;position:sticky;top:0;z-index:1000;border-bottom:1px solid #eee;display:flex;align-items:center}
 .nav-container{max-width:1200px;margin:auto;padding:0 4%;width:100%;display:flex;justify-content:space-between;align-items:center}
-.logo-text{color:var(--emerald);font-size:24px;font-weight:800}
+
+/* LOGO CHOTA 40px NAV MEIN */
+.logo-img{height:40px;width:auto}
 .nav-right{display:flex;gap:12px;align-items:center}
 .lang-switch{background:var(--gold);border:2px solid var(--gold);color:var(--dark-gray);padding:8px 10px;border-radius:8px;font-weight:800;cursor:pointer;font-size:13px;transition:0.3s}
 .lang-switch:hover{background:#E6B624}
@@ -37,12 +38,13 @@ header.sticky-nav{background:var(--white);height:80px;position:sticky;top:0;z-in
 .dropdown.show{display:block}
 .dropdown a{display:block;padding:14px 20px;color:var(--dark-gray);text-decoration:none;font-weight:600;border-bottom:1px solid #f1f1f1;transition:0.3s}
 .dropdown a:hover{background:var(--light-gray);color:var(--emerald)}
-/* Hero with hero.jpg - Just like course1.jpg */
+
+/* PICTURE SAaf - OVERLAY 0.65 */
 .hero{
-  background: linear-gradient(rgba(15, 118, 110, 0.85), rgba(11, 92, 86, 0.9)), url('hero.jpg') center/cover no-repeat;
+  background: linear-gradient(rgba(15, 118, 110, 0.65), rgba(11, 92, 86, 0.65)), url('hero.jpg') center/cover no-repeat;
   padding:140px 20px 140px;position:relative;overflow:hidden;color:var(--white)
 }
-.hero-container{max-width:1200px;margin:auto;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;position:relative;z-index:1}
+.hero-container{max-width:1200px;margin:auto;display:grid;grid-template-columns:1fr;gap:60px;align-items:center;position:relative;z-index:1;text-align:center}
 .hero h1{font-size:56px;font-weight:800;color:var(--white);margin-bottom:20px;line-height:1.2;text-shadow:0 2px 10px rgba(0,0,0,0.3)}
 .hero p{font-size:20px;color:#F0FBF9;margin-bottom:30px}
 .section-gap{padding:110px 4%}
@@ -69,12 +71,13 @@ header.sticky-nav{background:var(--white);height:80px;position:sticky;top:0;z-in
 @media(max-width:768px){
   .hero-container{grid-template-columns:1fr;text-align:center}
   .hero h1{font-size:36px}
+  .logo-img{height:35px}
 </style>
 </head>
 <body>
 <header class="sticky-nav">
 <div class="nav-container">
-<div class="logo-text" data-en="Al Raza Academy" data-ur="الرضا اکیڈمی" data-ar="أكاديمية الرضا">Al Raza Academy</div>
+<img src="logo.png" alt="Al Raza Logo" class="logo-img">
 <div class="nav-right">
 <button class="lang-switch" onclick="cycleLang()">EN | اردو | العربية</button>
 <a href="#courses" class="btn-primary" data-en="Free Trial" data-ur="فری ٹرائل" data-ar="تجربة مجانية">Free Trial</a>
@@ -100,10 +103,8 @@ header.sticky-nav{background:var(--white);height:80px;position:sticky;top:0;z-in
 <p data-en="VIP Professional Islamic Education" data-ur="وی آئی پی پروفیشنل اسلامی تعلیم" data-ar="تعليم إسلامي احترافي مميز">VIP Professional Islamic Education</p>
 <a href="#courses" class="btn-primary" style="font-size:18px;padding:16px 35px" data-en="🎁 Get 3 Days Free Trial Class" data-ur="🎁 3 دن کا فری ٹرائل لیں" data-ar="🎁 احصل على 3 أيام تجربة مجانية">🎁 Get 3 Days Free Trial Class</a>
 </div>
-<div class="reveal"><img src="logo.png" alt="Al Raza Logo" style="max-width:100%;border-radius:20px;box-shadow:0 20px 50px rgba(0,0,0,0.3)"></div>
 </div>
-</section>
-<div class="container">
+  </section><div class="container">
 <section class="section-gap reveal" id="about">
 <h2 class="section-title" data-en="About Al Raza Online Quran Academy" data-ur="الرضا آن لائن قرآن اکیڈمی کے بارے میں" data-ar="عن أكاديمية الرضا للقرآن أونلاين">About Al Raza Online Quran Academy</h2>
 <div class="title-line"></div>
@@ -144,9 +145,7 @@ header.sticky-nav{background:var(--white);height:80px;position:sticky;top:0;z-in
 <select id="courseSelect"></select>
 <button class="btn-primary" onclick="submitForm()" style="width:100%;margin-top:15px" data-en="Submit via WhatsApp" data-ur="واٹس ایپ پر بھیجیں" data-ar="إرسال عبر واتساب">Submit via WhatsApp</button>
 </div>
-</section>
-
-<!-- Why -->
+  </section><!-- Why -->
 <section class="section-gap reveal" id="why"><h2 class="section-title" data-en="Why Choose Al Raza Academy?" data-ur="الرضا اکیڈمی کو کیوں منتخب کریں؟" data-ar="لماذا تختار أكاديمية الرضا؟">Why Choose Al Raza Academy?</h2><div class="title-line"></div><div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:25px;max-width:1200px;margin:auto"><div class="card reveal"><h4 style="color:var(--emerald);font-size:20px;margin-bottom:10px" data-en="✓ Committed to Student Progress" data-ur="✓ طالب علم کی ترقی کے لیے پرعزم" data-ar="✓ ملتزمون بتقدم الطالب">✓ Committed to Student Progress</h4><p data-en="Al-Azhar University certified teachers with proven results" data-ur="الازہر یونیورسٹی کے سند یافتہ اساتذہ بہترین نتائج کے ساتھ" data-ar="معلمون معتمدون من جامعة الأزهر بنتائج مثبتة">Al-Azhar University certified teachers with proven results</p></div><div class="card reveal"><h4 style="color:var(--emerald);font-size:20px;margin-bottom:10px" data-en="✓ 24/7 Support" data-ur="✓ 24/7 سپورٹ" data-ar="✓ دعم 24/7">✓ 24/7 Support</h4><p data-en="Call, chat or email anytime - we are always available" data-ur="کال، چیٹ یا ای میل کسی بھی وقت - ہمیشہ دستیاب ہیں" data-ar="اتصل، دردشة أو بريد إلكتروني في أي وقت - نحن متاحون دائمًا">Call, chat or email anytime - we are always available</p></div><div class="card reveal"><h4 style="color:var(--emerald);font-size:20px;margin-bottom:10px" data-en="✓ High Quality Teaching" data-ur="✓ اعلی معیار کی تعلیم" data-ar="✓ تعليم عالي الجودة">✓ High Quality Teaching</h4><p data-en="Best teaching methodology with high student progress rate" data-ur="بہترین تدریسی طریقہ کار اور طلبہ کی ترقی کی شرح" data-ar="أفضل منهجية تدريس معدل تقدم عالي للطلاب">Best teaching methodology with high student progress rate</p></div><div class="card reveal"><h4 style="color:var(--emerald);font-size:20px;margin-bottom:10px" data-en="✓ Native Arabic Speakers" data-ur="✓ مقامی عرب اساتذہ" data-ar="✓ متحدثون عرب أصليون">✓ Native Arabic Speakers</h4><p data-en="Egyptian male and female teachers for authentic pronunciation" data-ur="مصری مرد و خواتین اساتذہ مستند تلفظ کے لیے" data-ar="معلمون ومعلمات مصريون للنطق الأصيل">Egyptian male and female teachers for authentic pronunciation</p></div><div class="card reveal"><h4 style="color:var(--emerald);font-size:20px;margin-bottom:10px" data-en="✓ Regular Reports & Exams" data-ur="✓ باقاعدہ رپورٹس اور امتحانات" data-ar="✓ تقارير واختبارات منتظمة">✓ Regular Reports & Exams</h4><p data-en="Monthly tests and detailed progress reports for parents" data-ur="والدین کے لیے ماہانہ ٹیسٹ اور تفصیلی رپورٹس" data-ar="اختبارات شهرية وتقارير تقدم مفصلة لأولياء الأمور">Monthly tests and detailed progress reports for parents</p></div><div class="card reveal"><h4 style="color:var(--emerald);font-size:20px;margin-bottom:10px" data-en="✓ 100% Money Back Guarantee" data-ur="✓ 100% منی بیک گارنٹی" data-ar="✓ ضمان استرداد الأموال 100%">✓ 100% Money Back Guarantee</h4><p data-en="Full refund policy if not satisfied with our service" data-ur="اگر سروس پسند نہ آئے تو مکمل رقم واپس" data-ar="سياسة استرداد كامل إذا لم تكن راضيًا عن خدمتنا">Full refund policy if not satisfied with our service</p></div></div></section>
 
 <!-- Reviews -->
@@ -249,4 +248,4 @@ function cycleLang(){
 }
 </script>
 </body>
-</html>
+  </html>

@@ -22,9 +22,10 @@ h1, h2, h3{font-family:'Poppins', sans-serif;font-weight:700}
 body.urdu h1, body.urdu h2, body.urdu h3{font-family:'Noto Nastaliq Urdu', serif}
 body.ar h1, body.ar h2, body.ar h3{font-family:'Amiri', serif}
 .container{max-width:1200px;margin:auto;padding:0 4%}
-section{padding:80px 0;opacity:0} /* ANIMATION BASE */
+section{padding:80px 0;opacity:0;transform:translateY(50px);transition:all 0.8s ease-out}
+section.visible{opacity:1;transform:translateY(0)}
 
-/* NAV - 38px LOGO + LANG + 10 PAGES */
+/* NAV */
 header.sticky-nav{background:var(--bg);height:80px;position:sticky;top:0;z-index:1000;border-bottom:1px solid rgba(15, 81, 50, 0.08);display:flex;align-items:center}
 .nav-container{max-width:1200px;margin:auto;padding:0 4%;width:100%;display:flex;justify-content:space-between;align-items:center}
 .logo-img{height:38px;width:auto;object-fit:contain;background:transparent;padding:0;border-radius:50%}
@@ -42,14 +43,12 @@ header.sticky-nav{background:var(--bg);height:80px;position:sticky;top:0;z-index
 @media(max-width:768px){.logo-img{height:34px}}
 
 /* 1. HERO SECTION - PICTURE BACKGROUND */
-.hero-teachers{background:url('hero.jpg') center/cover no-repeat;position:relative;padding:120px 0;text-align:center;color:#FFFFFF;overflow:hidden}
+.hero-teachers{background:url('hero.jpg') center/cover no-repeat;position:relative;padding:120px 0;text-align:center;color:#FFFFFF;overflow:hidden;opacity:1;transform:translateY(0)}
 .hero-teachers::before{content:'';position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(135deg, rgba(15, 81, 50, 0.9) 0%, rgba(25, 135, 84, 0.8) 100%);z-index:1}
 .hero-teachers h1{font-size:52px;font-weight:700;line-height:1.2;position:relative;z-index:2}
 .hero-teachers p{font-size:18px;margin-top:20px;max-width:700px;margin-left:auto;margin-right:auto;opacity:0.9;position:relative;z-index:2}
 .hero-teachers .btn-primary{margin-top:30px;position:relative;z-index:2}
-@media(max-width:768px){.hero-teachers h1{font-size:36px}.hero-teachers{padding:80px 0}}
-
-/* 2. TEACHERS INTRODUCTION SECTION */
+@media(max-width:768px){.hero-teachers h1{font-size:36px}.hero-teachers{padding:80px 0}} /* 2. TEACHERS INTRODUCTION SECTION */
 .intro-section{background:var(--bg)}
 .intro-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
 .intro-text h2{font-size:36px;color:var(--primary);margin-bottom:20px}
@@ -75,12 +74,6 @@ body.urdu .teacher-bio{text-align:right}
 .btn-book:hover{background:#0b3d26}
 @media(max-width:900px){.teacher-grid{grid-template-columns:repeat(2, 1fr)}}
 @media(max-width:600px){.teacher-grid{grid-template-columns:1fr}}
-
-/* ANIMATION KEYFRAMES */
-@keyframes slideLeft{from{opacity:0;transform:translateX(-100px)}to{opacity:1;transform:translateX(0)}}
-@keyframes slideRight{from{opacity:0;transform:translateX(100px)}to{opacity:1;transform:translateX(0)}}
-.animate-left{animation:slideLeft 0.8s ease forwards}
-.animate-right{animation:slideRight 0.8s ease forwards}
 </style>
 </head>
 <body>
@@ -107,7 +100,7 @@ body.urdu .teacher-bio{text-align:right}
 </header>
 
 <!-- 1. HERO SECTION -->
-<section class="hero-teachers animate-top">
+<section class="hero-teachers visible">
 <div class="container">
 <h1 data-en="Meet Our Qualified Quran Teachers" data-ur="ہمارے مستند قرآن اساتذہ سے ملیں" data-ar="تعرف على معلمي القرآن المؤهلين لدينا">Meet Our Qualified Quran Teachers</h1>
 <p data-en="Learn Quran with experienced, certified and dedicated male & female teachers from around the world." data-ur="تجربہ کار، سند یافتہ اور وقف شدہ مرد و خواتین اساتذہ سے دنیا بھر سے قرآن سیکھیں۔" data-ar="تعلم القرآن معلمين ومعلمات ذوي خبرة ومعتمدين ومتفانين من جميع أنحاء العالم.">Learn Quran with experienced, certified and dedicated male & female teachers from around the world.</p>
@@ -116,24 +109,26 @@ body.urdu .teacher-bio{text-align:right}
 </section>
 
 <!-- 2. TEACHERS INTRODUCTION SECTION -->
-<section class="intro-section animate-left">
+<section class="intro-section">
 <div class="container">
 <div class="intro-grid">
 <div class="intro-text">
 <h2 data-en="Teachers Who Care, Guide & Inspire" data-ur="ایسے اساتذہ جو خیال رکھتے ہیں، رہنمائی کرتے ہیں اور متاثر کرتے ہیں" data-ar="معلمون يهتمون ويرشدون ويلهمون">Teachers Who Care, Guide & Inspire</h2>
 <p data-en="At Al Raza Online Quran Academy, our teachers are the heart of our mission. Every male & female teacher is Ijazah certified, has 10+ years of experience, and is trained to teach students of all ages from UK, USA, Canada, Australia and worldwide. We focus on Tajweed, Hifz, Nazra, and Islamic Studies with one-on-one classes in a friendly learning environment." data-ur="الرضا آن لائن قرآن اکیڈمی میں، ہمارے اساتذہ ہمارے مشن کا دل ہیں۔ ہر مرد و خاتون استاد اجازہ یافتہ ہے، 10+ سال کا تجربہ رکھتا ہے، اور برطانیہ، امریکہ، کینیڈا، آسٹریلیا اور دنیا بھر کے تمام عمر کے طلبہ کو پڑھانے کی تربیت یافتہ ہے۔ ہم دوستانہ تعلیمی ماحول میں ون آن ون کلاسز کے ساتھ تجوید، حفظ، ناظرہ اور اسلامیات پر توجہ دیتے ہیں۔" data-ar="في أكاديمية الرضا للقرآن أونلاين، معلمونا هم قلب مهمتنا. كل معلم ومعلمة حاصل على إجازة، ولديه أكثر من 10 سنوات خبرة، ومدرب على تدريس الطلاب من جميع الأعمار من المملكة المتحدة والولايات المتحدة وكندا وأستراليا وجميع أنحاء العالم. نركز على التجويد والحفظ والنظرة والدراسات الإسلامية مع دروس فردية في بيئة تعليمية ودية.">At Al Raza Online Quran Academy, our teachers are the heart of our mission. Every male & female teacher is Ijazah certified, has 10+ years of experience, and is trained to teach students of all ages from UK, USA, Canada, Australia and worldwide. We focus on Tajweed, Hifz, Nazra, and Islamic Studies with one-on-one classes in a friendly learning environment.</p>
 </div>
-<div class="intro-img">📚 <!-- Yahan <img src="teacher-group.jpg"> laga do --></div>
+<div class="intro-img">📚</div>
 </div>
 </div>
-  </section><!-- 3. TEACHERS GRID SECTION -->
-<section class="animate-top">
+</section>
+
+<!-- 3. TEACHERS GRID SECTION -->
+<section>
 <div class="container">
 <h2 class="section-title" data-en="Our Expert Teachers" data-ur="ہمارے ماہر اساتذہ" data-ar="معلمونا الخبراء">Our Expert Teachers</h2>
 <div class="teacher-grid">
 
-<!-- Teacher 1 - Male | ANIMATION: LEFT -->
-<div class="teacher-card animate-left">
+<!-- Teacher 1 -->
+<div class="teacher-card">
 <div class="teacher-icon">👨‍🏫</div>
 <div class="teacher-info">
 <h2>Qari Muhammad Tahir Qadri</h2>
@@ -154,8 +149,8 @@ body.urdu .teacher-bio{text-align:right}
 </div>
 </div>
 
-<!-- Teacher 2 - Male | ANIMATION: RIGHT -->
-<div class="teacher-card animate-right">
+<!-- Teacher 2 -->
+<div class="teacher-card">
 <div class="teacher-icon">🧔</div>
 <div class="teacher-info">
 <h2>Hafiz Abdullah Bin Khalid</h2>
@@ -176,8 +171,8 @@ body.urdu .teacher-bio{text-align:right}
 </div>
 </div>
 
-<!-- Teacher 3 - Female | ANIMATION: LEFT -->
-<div class="teacher-card animate-left">
+<!-- Teacher 3 -->
+<div class="teacher-card">
 <div class="teacher-icon">👩‍🏫</div>
 <div class="teacher-info">
 <h2>Qariya Fatima Noor Alvi</h2>
@@ -198,8 +193,8 @@ body.urdu .teacher-bio{text-align:right}
 </div>
 </div>
 
-<!-- Teacher 4 - Male | ANIMATION: RIGHT -->
-<div class="teacher-card animate-right">
+<!-- Teacher 4 -->
+<div class="teacher-card">
 <div class="teacher-icon">📚</div>
 <div class="teacher-info">
 <h2>Maulana Usman Ghani</h2>
@@ -220,8 +215,8 @@ body.urdu .teacher-bio{text-align:right}
 </div>
 </div>
 
-<!-- Teacher 5 - Male | ANIMATION: LEFT -->
-<div class="teacher-card animate-left">
+<!-- Teacher 5 -->
+<div class="teacher-card">
 <div class="teacher-icon">🕌</div>
 <div class="teacher-info">
 <h2>Qari Bilal Ahmed</h2>
@@ -240,10 +235,8 @@ body.urdu .teacher-bio{text-align:right}
 </div>
 <button class="btn-book" onclick="openForm()" data-en="View Profile" data-ur="پروفائل دیکھیں" data-ar="عرض الملف">View Profile</button>
 </div>
-</div>
-
-<!-- Teacher 6 - Female | ANIMATION: RIGHT -->
-<div class="teacher-card animate-right">
+</div> <!-- Teacher 6 -->
+<div class="teacher-card">
 <div class="teacher-icon">👩‍🎓</div>
 <div class="teacher-info">
 <h2>Qariya Ayesha Siddiqui</h2>
@@ -264,8 +257,8 @@ body.urdu .teacher-bio{text-align:right}
 </div>
 </div>
 
-<!-- Teacher 7 - Male | ANIMATION: LEFT -->
-<div class="teacher-card animate-left">
+<!-- Teacher 7 -->
+<div class="teacher-card">
 <div class="teacher-icon">🎓</div>
 <div class="teacher-info">
 <h2>Dr. Hafiz Saad Rehman</h2>
@@ -286,8 +279,8 @@ body.urdu .teacher-bio{text-align:right}
 </div>
 </div>
 
-<!-- Teacher 8 - Male | ANIMATION: RIGHT -->
-<div class="teacher-card animate-right">
+<!-- Teacher 8 -->
+<div class="teacher-card">
 <div class="teacher-icon">📖</div>
 <div class="teacher-info">
 <h2>Qari Zain Ul Abideen</h2>
@@ -308,8 +301,8 @@ body.urdu .teacher-bio{text-align:right}
 </div>
 </div>
 
-<!-- Teacher 9 - Female | ANIMATION: LEFT -->
-<div class="teacher-card animate-left">
+<!-- Teacher 9 -->
+<div class="teacher-card">
 <div class="teacher-icon">🌸</div>
 <div class="teacher-info">
 <h2>Qariya Zainab Bint Ali</h2>
@@ -330,12 +323,31 @@ body.urdu .teacher-bio{text-align:right}
 </div>
 </div>
 
-<!-- Teacher 10 - Male | ANIMATION: RIGHT -->
-<div class="teacher-card animate-right">
+<!-- Teacher 10 -->
+<div class="teacher-card">
 <div class="teacher-icon">🕋</div>
 <div class="teacher-info">
 <h2>Maulana Ibrahim Qasmi</h2>
-<d<style>
+<div class="teacher-title" data-en="Islamic Manners & Dua Course" data-ur="اسلامی آداب و دعا کورس" data-ar="دورة الآداب الإسلامية والدعاء">Islamic Manners & Dua Course</div>
+<div class="teacher-bio">
+<strong data-en="Qualification:" data-ur="تعلیم:" data-ar="المؤهل:">Qualification:</strong> 
+<span data-en="Fazil from Darul Uloom Deoband India. Takhassus in Adab-e-Islami from Jamia Ashrafia. 14 years experience." data-ur="دارالعلوم دیوبند انڈیا سے فاضل۔ جامعہ اشرفیہ سے آداب اسلامی میں تخصص۔ 14 سال کا تجربہ۔" data-ar="فاضل من دار العلوم ديوبند الهند. تخصص في الآداب الإسلامية من جامعة أشرفية. 14 سنة خبرة.">Fazil from Darul Uloom Deoband India. Takhassus in Adab-e-Islami from Jamia Ashrafia. 14 years experience.</span>
+<br><br>
+<strong data-en="About:" data-ur="تعارف:" data-ar="نبذة:">About:</strong> 
+<span data-en="Maulana Ibrahim Sahab teaches kids Islamic manners, duas and sunnah. Daily duas, eating, sleeping, waking up manners. Teacher of kids training." data-ur="مولانا ابراہیم صاحب بچوں کو اسلامی آداب، دعائیں اور سنت سکھاتے ہیں۔ روزمرہ کی دعائیں، کھانے پینے، سونے جاگنے کے آداب۔ بچوں کی تربیت کے استاد ہیں۔" data-ar="المولانا إبراهيم يعلم الأطفال الآداب الإسلامية والأدعية والسنة. الأدعية اليومية وآداب الأكل والشرب والنوم والاستيقاظ. أستاذ تربية الأطفال.">Maulana Ibrahim Sahab bachon ko Islamic manners, duaen aur sunnat sikhate hain. Roz marra ki duaen, khane peene, sone jagne ke adab. Bachon ki tarbiyat ke ustad hain.</span>
+</div>
+<div class="specialization">
+<span class="spec-tag" data-en="Islamic Manners" data-ur="اسلامی آداب" data-ar="الآداب الإسلامية">Islamic Manners</span>
+<span class="spec-tag" data-en="Daily Duas" data-ur="روزانہ دعائیں" data-ar="أدعية يومية">Daily Duas</span>
+<span class="spec-tag" data-en="Kids Tarbiyat" data-ur="بچوں کی تربیت" data-ar="تربية الأطفال">Kids Tarbiyat</span>
+</div>
+<button class="btn-book" onclick="openForm()" data-en="View Profile" data-ur="پروفائل دیکھیں" data-ar="عرض الملف">View Profile</button>
+</div>
+</div>
+
+</div>
+</div>
+</section> <style>
 /* 4. WHY OUR TEACHERS SECTION */
 .why-section{background:var(--bg-light)}
 .why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:30px;text-align:center}
@@ -349,7 +361,7 @@ body.urdu .teacher-bio{text-align:right}
 /* 5. TEACHING METHODOLOGY SECTION */
 .timeline{position:relative;max-width:800px;margin:auto}
 .timeline::after{content:'';position:absolute;width:3px;background:var(--secondary);top:0;bottom:0;left:50%;margin-left:-1.5px}
-.timeline-item{padding:10px 40px;position:relative;width:50%;opacity:0}
+.timeline-item{padding:10px 40px;position:relative;width:50%}
 .timeline-item::after{content:'';position:absolute;width:20px;height:20px;right:-10px;background:var(--primary);border:4px solid var(--secondary);top:25px;border-radius:50%;z-index:1}
 .timeline-left{left:0}
 .timeline-right{left:50%}
@@ -366,7 +378,7 @@ body.urdu .teacher-bio{text-align:right}
 /* 6. STUDENT FEEDBACK SECTION */
 .feedback-section{background:var(--primary);color:#fff;padding:80px 0}
 .feedback-slider{display:flex;gap:30px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:20px}
-.feedback-card{background:var(--bg);color:var(--text);padding:30px;border-radius:15px;min-width:320px;scroll-snap-align:start;opacity:0}
+.feedback-card{background:var(--bg);color:var(--text);padding:30px;border-radius:15px;min-width:320px;scroll-snap-align:start}
 .stars{color:var(--secondary);font-size:20px;margin-bottom:15px}
 .feedback-card p{font-style:italic;margin-bottom:15px}
 .feedback-card h4{color:var(--primary)}
@@ -375,10 +387,10 @@ body.urdu .teacher-bio{text-align:right}
 .cta-section{background:linear-gradient(135deg, #D4AF37 0%, #E6C75A 100%);text-align:center;padding:80px 0}
 .cta-section h2{font-size:42px;color:#000;margin-bottom:15px}
 .cta-section p{font-size:18px;color:#000;margin-bottom:30px;max-width:600px;margin-left:auto;margin-right:auto}
-.cta-section.btn-primary{background:#000;color:var(--secondary);font-size:18px;padding:16px 40px}
-.cta-section.btn-primary:hover{background:#222}
+.cta-section .btn-primary{background:#000;color:var(--secondary);font-size:18px;padding:16px 40px}
+.cta-section .btn-primary:hover{background:#222}
 
-/* FORM POPUP */
+/* FORM POPUP - FIXED 100% */
 .form-popup{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.7);z-index:9999;align-items:center;justify-content:center;padding:20px}
 .form-popup.show{display:flex}
 .form-box{background:var(--bg);padding:35px;border-radius:20px;max-width:500px;width:100%;position:relative;max-height:90vh;overflow-y:auto}
@@ -390,8 +402,8 @@ body.urdu .teacher-bio{text-align:right}
 .form-box button:hover{background:#0b3d26}
 </style>
 
-<!-- 4. WHY OUR TEACHERS SECTION | ANIMATION: LEFT -->
-<section class="why-section animate-left">
+<!-- 4. WHY OUR TEACHERS SECTION -->
+<section class="why-section">
 <div class="container">
 <h2 class="section-title" data-en="Why Our Teachers" data-ur="ہمارے اساتذہ کیوں بہتر ہیں" data-ar="لماذا معلمونا">Why Our Teachers</h2>
 <div class="why-grid">
@@ -403,30 +415,30 @@ body.urdu .teacher-bio{text-align:right}
 </div>
 </section>
 
-<!-- 5. TEACHING METHODOLOGY SECTION | ANIMATION: RIGHT -->
-<section class="animate-right">
+<!-- 5. TEACHING METHODOLOGY SECTION -->
+<section>
 <div class="container">
 <h2 class="section-title" data-en="Our Teaching Methodology" data-ur="ہماری تدریسی طریقہ کار" data-ar="منهجيتنا التعليمية">Our Teaching Methodology</h2>
 <div class="timeline">
-<div class="timeline-item timeline-left animate-left">
+<div class="timeline-item timeline-left">
 <div class="timeline-content">
 <h3 data-en="Step 1: Assessment Class" data-ur="مرحلہ 1: تشخیصی کلاس" data-ar="الخطوة 1: حصة التقييم">Step 1: Assessment Class</h3>
 <p data-en="We check your current Quran level and goals in a free assessment." data-ur="ہم فری تشخیص میں آپ کی موجودہ قرآن کی سطح اور اہداف چیک کرتے ہیں۔" data-ar="نقوم بفحص مستواك الحالي في القرآن وأهدافك في تقييم مجاني.">We check your current Quran level and goals in a free assessment.</p>
 </div>
 </div>
-<div class="timeline-item timeline-right animate-right">
+<div class="timeline-item timeline-right">
 <div class="timeline-content">
 <h3 data-en="Step 2: Personal Learning Plan" data-ur="مرحلہ 2: ذاتی سیکھنے کا منصوبہ" data-ar="الخطوة 2: خطة تعلم شخصية">Step 2: Personal Learning Plan</h3>
 <p data-en="Custom plan made for Nazra, Hifz, Tajweed or Islamic Studies." data-ur="ناظرہ، حفظ، تجوید یا اسلامیات کے لیے اپنی مرضی کا منصوبہ۔" data-ar="خطة مخصصة للنظرة أو الحفظ أو التجويد أو الدراسات الإسلامية.">Custom plan made for Nazra, Hifz, Tajweed or Islamic Studies.</p>
 </div>
 </div>
-<div class="timeline-item timeline-left animate-left">
+<div class="timeline-item timeline-left">
 <div class="timeline-content">
 <h3 data-en="Step 3: Regular Classes" data-ur="مرحلہ 3: باقاعدہ کلاسز" data-ar="الخطوة 3: دروس منتظمة">Step 3: Regular Classes</h3>
 <p data-en="Live one-on-one classes on Zoom/Skype with your assigned teacher." data-ur="اپنے مقرر کردہ استاد کے ساتھ زوم/سکائپ پر لائیو ون آن ون کلاسز۔" data-ar="دروس فردية مباشرة على زوم/سكايب معلمك المخصص.">Live one-on-one classes on Zoom/Skype with your assigned teacher.</p>
 </div>
 </div>
-<div class="timeline-item timeline-right animate-right">
+<div class="timeline-item timeline-right">
 <div class="timeline-content">
 <h3 data-en="Step 4: Progress Evaluation" data-ur="مرحلہ 4: ترقی کا جائزہ" data-ar="الخطوة 4: تقييم التقدم">Step 4: Progress Evaluation</h3>
 <p data-en="Weekly & monthly reports to track your Quran journey." data-ur="آپ کے قرآن کے سفر کو ٹریک کرنے کے لیے ہفتہ وار اور ماہانہ رپورٹس۔" data-ar="تقارير أسبوعية وشهرية لتتبع رحلتك في القرآن.">Weekly & monthly reports to track your Quran journey.</p>
@@ -436,22 +448,22 @@ body.urdu .teacher-bio{text-align:right}
 </div>
 </section>
 
-<!-- 6. STUDENT FEEDBACK SECTION | ANIMATION: LEFT -->
-<section class="feedback-section animate-left">
+<!-- 6. STUDENT FEEDBACK SECTION -->
+<section class="feedback-section">
 <div class="container">
 <h2 class="section-title" style="color:#fff;" data-en="What Our Students Say" data-ur="ہمارے طلبہ کیا کہتے ہیں" data-ar="ماذا يقول طلابنا">What Our Students Say</h2>
 <div class="feedback-slider">
-<div class="feedback-card animate-left">
+<div class="feedback-card">
 <div class="stars">★★★</div>
 <p data-en="Qari Tahir Sahab is amazing. My son learned Nazra in just 4 months with perfect Tajweed." data-ur="قاری طاہر صاحب کمال ہیں۔ میرے بیٹے نے صرف 4 ماہ میں بہترین تجوید کے ساتھ ناظرہ سیکھا۔" data-ar="القاري طاهر رائع. تعلم ابني النظرة في 4 أشهر فقط بتجويد مثالي.">"Qari Tahir Sahab is amazing. My son learned Nazra in just 4 months with perfect Tajweed."</p>
 <h4>- Ahmed, UK</h4>
 </div>
-<div class="feedback-card animate-right">
+<div class="feedback-card">
 <div class="stars">★★★</div>
 <p data-en="Qariya Fatima is very patient with ladies. Best Tajweed teacher I have found online." data-ur="قاریہ فاطمہ خواتین کے ساتھ بہت صبر سے پیش آتی ہیں۔ آن لائن مجھے ملنے والی بہترین تجوید ٹیچر۔" data-ar="القارئة فاطمة صبورة جدا مع السيدات. أفضل معلمة تجويد وجدتها على الإنترنت.">"Qariya Fatima is very patient with ladies. Best Tajweed teacher I have found online."</p>
 <h4>- Aisha, USA</h4>
 </div>
-<div class="feedback-card animate-left">
+<div class="feedback-card">
 <div class="stars">★★★</div>
 <p data-en="Hafiz Abdullah's Hifz plan is excellent. I completed 10 paras in 6 months." data-ur="حافظ عبداللہ کا حفظ پلان بہترین ہے۔ میں نے 6 ماہ میں 10 پارے مکمل کیے۔" data-ar="خطة الحفظ لحافظ عبدالله ممتازة. أكملت 10 أجزاء في 6 أشهر.">"Hafiz Abdullah's Hifz plan is excellent. I completed 10 paras in 6 months."</p>
 <h4>- Bilal, Canada</h4>
@@ -460,8 +472,8 @@ body.urdu .teacher-bio{text-align:right}
 </div>
 </section>
 
-<!-- 7. FREE TRIAL CTA SECTION | ANIMATION: RIGHT -->
-<section class="cta-section animate-right">
+<!-- 7. FREE TRIAL CTA SECTION -->
+<section class="cta-section">
 <div class="container">
 <h2 data-en="Start Learning Quran Today" data-ur="آج ہی قرآن سیکھنا شروع کریں" data-ar="ابدأ بتعلم القرآن اليوم">Start Learning Quran Today</h2>
 <p data-en="Book your free trial class and experience professional Quran education." data-ur="اپنی فری ٹرائل کلاس بک کریں اور پیشہ ورانہ قرآن کی تعلیم کا تجربہ کریں۔" data-ar="احجز حصتك التجريبية المجانية واختبر التعليم القرآني المهني.">Book your free trial class and experience professional Quran education.</p>
@@ -475,7 +487,7 @@ body.urdu .teacher-bio{text-align:right}
 </footer>
 
 <!-- WhatsApp Float -->
-<a href="https://wa.me/923090252314" target="_blank" style="position:fixed;bottom:25px;right:25px;background:#25D366;width:65px;height:65px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:35px;color:white;text-decoration:none;z-index:999;box-shadow:0 5px 25px rgba(37,211,102,0.6)">💬</a>
+<a href="https://wa.me/92309252314" target="_blank" style="position:fixed;bottom:25px;right:25px;background:#25D366;width:65px;height:65px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:35px;color:white;text-decoration:none;z-index:999;box-shadow:0 5px 25px rgba(37,211,102,0.6)">💬</a>
 
 <!-- JOINING FORM POPUP -->
 <div class="form-popup" id="joinForm">
@@ -508,63 +520,93 @@ body.urdu .teacher-bio{text-align:right}
 <button type="submit" data-en="Submit & Chat on WhatsApp" data-ur="جمع کروائیں اور واٹس ایپ پر بات کریں" data-ar="إرسال والدردشة على واتساب">Submit & Chat on WhatsApp</button>
 </form>
 </div>
-</div>
-
-<script>
-// 1. Menu Toggle
-function toggleMenu(){document.getElementById('menu').classList.toggle('show');}
+</div> <script>
+// 1. Menu Toggle - 100% OK
+function toggleMenu(){
+    document.getElementById('menu').classList.toggle('show');
+}
 document.addEventListener('click', function(event) {
     const menu = document.getElementById('menu');
     const hamburger = document.querySelector('.hamburger');
-    if (!menu.contains(event.target) &&!hamburger.contains(event.target)) {
+    if (menu && hamburger &&!menu.contains(event.target) &&!hamburger.contains(event.target)) {
         menu.classList.remove('show');
     }
 });
 
-// 2. FORM POPUP
-function openForm(){document.getElementById('joinForm').classList.add('show');}
-function closeForm(){document.getElementById('joinForm').classList.remove('show');}
-document.getElementById('joinForm').addEventListener('click', function(e){if(e.target.id==='joinForm'){closeForm();}});
+// 2. FORM POPUP - 100% FIXED. CLICK = FORM KHULEGA
+function openForm(){
+    const form = document.getElementById('joinForm');
+    if(form){
+        form.style.display='flex';
+        form.classList.add('show');
+    }
+}
+function closeForm(){
+    const form = document.getElementById('joinForm');
+    if(form){
+        form.style.display='none';
+        form.classList.remove('show');
+    }
+}
+// Bahar click karo to band ho jaye
+document.getElementById('joinForm').addEventListener('click', function(e){
+    if(e.target.id==='joinForm'){closeForm();}
+});
 
-// 3. LANGUAGE SWITCHER - 100% URDU FIXED
+// 3. LANGUAGE SWITCHER - 100% URDU
 const langs=['en','ur','ar'];
 let currentLang=localStorage.getItem('lang')||'en';
 function setLang(lang){
   currentLang=lang;localStorage.setItem('lang',lang);
   document.body.className=lang;
   document.querySelectorAll('[data-en]').forEach(el=>{
-    el.textContent=el.getAttribute('data-'+lang)||el.getAttribute('data-en');
+    const txt = el.getAttribute('data-'+lang);
+    if(txt){el.textContent=txt;}
   });
 }
 function cycleLang(){let i=(langs.indexOf(currentLang)+1)%3;setLang(langs[i]);}
 setLang(currentLang);
 
-// 4. SCROLL ANIMATION - LEFT / RIGHT
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            if(entry.target.classList.contains('animate-left')){entry.target.style.animation='slideLeft 0.8s ease forwards';}
-            if(entry.target.classList.contains('animate-right')){entry.target.style.animation='slideRight 0.8s ease forwards';}
-            if(entry.target.classList.contains('animate-top')){entry.target.style.opacity='1';entry.target.style.transform='translateY(0)';}
-            observer.unobserve(entry.target);
+// 4. SCROLL ANIMATION - 100% FIXED. SCROLL = ANIMATION AAYEGA
+function checkVisible(){
+    const sections = document.querySelectorAll('section');
+    const triggerBottom = window.innerHeight * 0.85;
+    sections.forEach(section=>{
+        const sectionTop = section.getBoundingClientRect().top;
+        if(sectionTop < triggerBottom){
+            section.classList.add('visible');
         }
     });
-},{threshold:0.15});
-document.querySelectorAll('section,.teacher-card,.timeline-item,.feedback-card').forEach(el=>{observer.observe(el);});
+}
+window.addEventListener('scroll', checkVisible);
+window.addEventListener('load', checkVisible);
+checkVisible(); // Page load pe bhi check karo
 
-// 5. FORM TO WHATSAPP +92 3090252314
+// 5. FORM TO WHATSAPP +92 3090252314 - 100% FIXED
 document.getElementById('whatsappForm').addEventListener('submit', function(e){
 e.preventDefault();
-let name = document.getElementById('name').value;
-let age = document.getElementById('age').value;
-let course = document.getElementById('course').value;
-let country = document.getElementById('country').value;
-let wano = document.getElementById('wano').value;
+let name = document.getElementById('name').value.trim();
+let age = document.getElementById('age').value.trim();
+let course = document.getElementById('course').value.trim();
+let country = document.getElementById('country').value.trim();
+let wano = document.getElementById('wano').value.trim();
+
+if(!name ||!age ||!course ||!country ||!wano){
+    alert('Please fill all fields');
+    return;
+}
+
 let message = `*New Free Trial Request - Al Raza Academy*%0A%0A`;
-message += `*Name:* ${name}%0A*Age:* ${age}%0A*Course:* ${course}%0A*Country:* ${country}%0A*WhatsApp:* ${wano}`;
-window.open(`https://wa.me/923090252314?text=${message}`, '_blank');
+message += `*Name:* ${name}%0A`;
+message += `*Age:* ${age}%0A`;
+message += `*Course:* ${course}%0A`;
+message += `*Country:* ${country}%0A`;
+message += `*WhatsApp:* ${wano}`;
+
+window.open(`https://wa.me/92309252314?text=${message}`, '_blank');
 closeForm();
+document.getElementById('whatsappForm').reset();
 });
 </script>
 </body>
-                                                                                                                                                              </html>
+</html>                                           

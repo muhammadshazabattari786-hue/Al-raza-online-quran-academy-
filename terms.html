@@ -1,299 +1,234 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Terms & Conditions - Al Raza Online Quran Academy</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #f0f8f5 0%, #e0f2e9 100%);
-            line-height: 1.8;
-            color: #2e7d32;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-        }
-        
-        /* Header + Menu */
-        .navbar {
-            background: linear-gradient(135deg, #2e7d32 0%, #1b5e20 100%);
-            padding: 15px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            color: white;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-        
-        .logo {
-            font-size: 1.3em;
-            font-weight: 700;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        
-        .menu-icon {
-            font-size: 1.8em;
-            cursor: pointer;
-            padding: 5px 10px;
-        }
-        
-        /* Dropdown Menu - Ye naya add kiya */
-        .dropdown {
-            display: none;
-            position: absolute;
-            top: 60px;
-            right: 20px;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
-            min-width: 180px;
-            overflow: hidden;
-        }
-        
-        .dropdown.show {
-            display: block;
-            animation: slideDown 0.3s ease;
-        }
-        
-        @keyframes slideDown {
-            from { opacity: 0; transform: translateY(-10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        
-        .dropdown a {
-            display: block;
-            padding: 14px 20px;
-            color: #2e7d32;
-            text-decoration: none;
-            font-weight: 600;
-            border-bottom: 1px solid #e0e0e0;
-            transition: 0.2s;
-        }
-        
-        .dropdown a:hover {
-            background: #e8f5e9;
-        }
-        
-        .dropdown a:last-child {
-            border-bottom: none;
-        }
-        
-        /* Main Content with side margin */
-        .container {
-            max-width: 900px;
-            width: 95%;
-            margin: 30px auto;
-            background: white;
-            border-radius: 20px;
-            box-shadow: 0 10px 40px rgba(46, 125, 50, 0.15);
-            overflow: hidden;
-            flex: 1;
-        }
-        
-        .header {
-            background: linear-gradient(135deg, #2e7d32 0%, #1b5e20 100%);
-            color: white;
-            padding: 40px 30px;
-            text-align: center;
-        }
-        
-        .header h1 {
-            font-size: 2.5em;
-            margin-bottom: 10px;
-            font-weight: 700;
-        }
-        
-        /* Section background changed - Halka blue */
-        .section {
-            padding: 35px 40px;
-            border-bottom: 1px solid #e0e0e0;
-            background: #f8fbfd; /* Halka blue background */
-            opacity: 0;
-            transform: translateX(-50px);
-            transition: all 0.6s ease;
-        }
-        
-        /* Scroll animation - kabhi left kabhi right */
-        .section.show {
-            opacity: 1;
-            transform: translateX(0);
-        }
-        
-        .section:nth-child(even) {
-            transform: translateX(50px);
-            background: #f5fbf8; /* Halka green background */
-        }
-        
-        .section:last-child {
-            border-bottom: none;
-        }
-        
-        .section h2 {
-            color: #1b5e20;
-            font-size: 1.6em;
-            margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-        
-        .section .icon {
-            font-size: 1.3em;
-        }
-        
-        .section p {
-            font-size: 1.05em;
-            margin-bottom: 12px;
-            color: #424242;
-        }
-        
-        .section strong {
-            color: #2e7d32;
-            font-weight: 600;
-        }
-        
-        /* Footer with date */
-        .footer {
-            background: #1b5e20;
-            color: white;
-            text-align: center;
-            padding: 20px;
-            margin-top: auto;
-        }
-        
-        .footer p {
-            margin: 5px 0;
-            font-size: 0.95em;
-        }
-        
-        @media (max-width: 768px) {
-            .section {
-                padding: 25px 20px;
-            }
-            .header h1 {
-                font-size: 1.8em;
-            }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Terms & Condition - Al Raza Online Quran Academy</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Noto+Nastaliq+Urdu&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--primary:#0F766E;--secondary:#D4AF37;--bg:#FFFFFF;--bg-light:#F8FAFC;--text:#1F2937;--border:#E5E7EB;--dark-footer:#0F172A;}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Poppins', sans-serif;background:var(--bg);color:var(--text);line-height:1.8;font-size:16px;min-height:100vh;display:flex;flex-direction:column}
+body.urdu{font-family:'Noto Nastaliq Urdu', serif;direction:rtl;text-align:right}
+body.arabic{font-family:'Amiri', serif;direction:rtl;text-align:right}
+h1, h2, h3{font-weight:700}
+.container{max-width:1200px;margin:auto;padding:0 4%}
+.terms-container{max-width:1000px;margin:auto;padding:0 4%}
+
+header.sticky-nav{background:rgba(255,255,255,0.95);backdrop-filter:blur(10px);height:80px;position:sticky;top:0;z-index:1000;border-bottom:1px solid var(--border);display:flex;align-items:center}
+.nav-container{max-width:1200px;margin:auto;padding:0 4%;width:100%;display:flex;justify-content:space-between;align-items:center}
+.logo-text{color:var(--primary);font-weight:800;font-size:15px;line-height:1.3;max-width:220px}
+.lang-switch-group{display:flex;gap:8px}
+.lang-switch{background:var(--bg-light);border:1px solid var(--border);color:var(--primary);padding:8px 14px;border-radius:8px;font-weight:700;cursor:pointer;font-size:13px;transition:0.3s}
+.lang-switch.active{background:var(--secondary);border-color:var(--secondary);color:#000}
+.hamburger{display:flex;flex-direction:column;cursor:pointer;gap:5px;padding:8px}
+.hamburger span{width:28px;height:3px;background:var(--primary);border-radius:2px}
+.dropdown{display:none;position:absolute;top:80px;right:4%;background:var(--bg);border:1px solid var(--border);border-radius:16px;min-width:240px;box-shadow:0 20px 50px rgba(15,118,110,0.15);z-index:2000}
+.dropdown.show{display:block;animation:slideDown 0.3s ease}
+@keyframes slideDown{from{opacity:0;transform:translateY(-10px)}to{opacity:1;transform:translateY(0)}}
+.dropdown a{display:block;padding:14px 20px;color:var(--text);text-decoration:none;font-weight:600;border-bottom:1px solid #f1f1f1;transition:0.3s}
+.dropdown a:hover{background:var(--bg-light);color:var(--primary)}
+
+.hero-terms{background:linear-gradient(135deg, var(--bg-light) 0%, #fff 100%);padding:100px 0 60px;text-align:center;border-bottom:1px solid var(--border)}
+.hero-terms h1{font-size:48px;color:var(--primary);font-weight:800;margin-bottom:15px}
+.breadcrumb{font-size:14px;color:var(--text);opacity:0.7}
+.breadcrumb a{color:var(--primary);text-decoration:none}
+.intro-card{background:var(--bg);border-radius:24px;padding:40px;border:1px solid var(--border);box-shadow:0 10px 30px rgba(15,118,110,0.08);margin:-40px auto 60px;max-width:900px;text-align:center;position:relative;z-index:2}
+</style>
 </head>
 <body>
-    <!-- Top Menu with Logo + 3 Lines + Dropdown -->
-    <nav class="navbar">
-        <div class="logo">📖 Al Raza Academy</div>
-        <div class="menu-icon" onclick="toggleMenu()">☰</div>
-        <div class="dropdown" id="menuDropdown">
-            <a href="index.html">🏠 Home</a>
-            <a href="fees.html">💰 Fees</a>
-            <a href="terms.html">📜 Terms</a>
-            <a href="register.html">📝 Register</a>
-        </div>
-    </nav>
 
-    <!-- Main Content -->
-    <div class="container">
-        <div class="header">
-            <h1>📜 Terms & Conditions</h1>
-            <p class="subtitle">Al Raza Online Quran Academy</p>
-        </div>
-
-        <div class="section">
-            <h2><span class="icon">🔒</span>Privacy Policy</h2>
-            <p>We'd like to assure and guarantee that all students' information is totally secured and secret with <strong>NO share of a third party.</strong></p>
-            <br>
-            <p>Any info we require from students is just for your study program success and to improve our services to match the best with your requirements and expectations.</p>
-            <br>
-            <p>The students data will be only used for <strong>educational purposes.</strong></p>
-        </div>
-
-        <div class="section">
-            <h2><span class="icon">📚</span>Your Classes</h2>
-            <p>1. Your classes will start on the day of your choice according to your suitable timing.</p>
-            <br>
-            <p>2. Each week we will have <strong>5 classes</strong> from Sunday to Thursday.</p>
-            <br>
-            <p>3. Each session will last <strong>20 to 30 minutes</strong>.</p>
-        </div>
-
-        <div class="section">
-            <h2><span class="icon">⏰</span>Attendance & Absence Rules</h2>
-            <p>1. To maintain the weekly schedule and to complete your goals, you should attend classes at your specified times.</p>
-            <br>
-            <p>2. If you will not attend classes at your schedule time, <strong>please notify us 4 hours before the session</strong> to reschedule it.</p>
-            <br>
-            <p>3. If you are absent from the session without notifying us, you will lose the session.</p>
-        </div>
-
-        <div class="section">
-            <h2><span class="icon">🔄</span>Rescheduling</h2>
-            <p>1. Your time is very important and valuable to us. So <strong>please be committed</strong> to your scheduled time.</p>
-            <br>
-            <p>2. In case you need to reschedule your class, <strong>please inform us 4 hours before</strong> your session.</p>
-        </div>
-
-        <div class="section">
-            <h2><span class="icon">💳</span>Payment & Charges</h2>
-            <p>1. The class schedule will be fixed when you pay for the month in advance.</p>
-            <br>
-            <p>2. Please inform us if you have any changes in your time or payment method.</p>
-        </div>
-
-        <div class="section">
-            <h2><span class="icon">💻</span>Technology Requirements</h2>
-            <p>1. Please ensure you have a <strong>strong and reliable internet connection</strong>.</p>
-            <br>
-            <p>2. You will need a laptop, tablet, or smartphone with a camera and microphone for your online sessions.</p>
-        </div>
+<!-- HEADER + 9 PAGES MENU EXACT + 3 LANGUAGES -->
+<header class="sticky-nav">
+  <div class="nav-container">
+    <div class="logo-text">Al Raza Online<br>Quran Academy</div>
+    <div style="display:flex;gap:12px;align-items:center">
+      <div class="lang-switch-group">
+        <button class="lang-switch active" onclick="setLang('en')">EN</button>
+        <button class="lang-switch" onclick="setLang('ar')">العربية</button>
+        <button class="lang-switch" onclick="setLang('ur')">اردو</button>
+      </div>
+      <div class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
     </div>
+  </div>
+  <div class="dropdown" id="menuDropdown">
+    <a href="index.html" data-en="1. Home" data-ur="1. ہوم" data-ar="1. الرئيسية">1. Home</a>
+    <a href="about.html" data-en="2. About Us" data-ur="2. ہمارے بارے میں" data-ar="2. من نحن">2. About Us</a>
+    <a href="teachers.html" data-en="3. Our Teacher's" data-ur="3. ہمارے اساتذہ" data-ar="3. معلمونا">3. Our Teacher's</a>
+    <a href="how-it-works.html" data-en="4. How it Works" data-ur="4. یہ کیسے کام کرتا ہے" data-ar="4. كيف يعمل">4. How it Works</a>
+    <a href="terms.html" data-en="5. Terms & Condition" data-ur="5. شرائط و ضوابط" data-ar="5. الشروط والأحكام">5. Terms & Condition</a>
+    <a href="contact.html" data-en="6. Contact Us" data-ur="6. رابطہ کریں" data-ar="6. اتصل بنا">6. Contact Us</a>
+    <a href="courses.html" data-en="7. Courses" data-ur="7. کورسز" data-ar="7. الدورات">7. Courses</a>
+    <a href="fees.html" data-en="8. Study Plan & Fees" data-ur="8. پلان و فیس" data-ar="8. خطة الدراسة والرسوم">8. Study Plan & Fees</a>
+    <a href="blog.html" data-en="9. Blogs" data-ur="9. بلاگز" data-ar="9. المدونات">9. Blogs</a>
+  </div>
+</header>
 
-    <!-- Footer with Date -->
-    <footer class="footer">
-        <p>© 2026 Al Raza Online Quran Academy. All Rights Reserved.</p>
-        <p>Last Updated: 08 April 2026</p>
-    </footer>
+<!-- HERO BANNER -->
+<section class="hero-terms">
+  <div class="terms-container">
+    <div class="breadcrumb"><a href="index.html" data-en="Home" data-ur="ہوم" data-ar="الرئيسية">Home</a> / Terms</div>
+    <h1 data-en="Terms & Condition" data-ur="شرائط و ضوابط" data-ar="الشروط والأحكام">Terms & Condition</h1>
+  </div>
+</section>
 
-    <!-- JavaScript for Menu + Scroll Animation -->
-    <script>
-        // 1. Menu toggle function
-        function toggleMenu() {
-            document.getElementById('menuDropdown').classList.toggle('show');
-        }
-        
-        // Menu bahar click karein to band ho jaye
-        window.onclick = function(event) {
-            if (!event.target.matches('.menu-icon')) {
-                var dropdown = document.getElementById('menuDropdown');
-                if (dropdown.classList.contains('show')) {
-                    dropdown.classList.remove('show');
-                }
-            }
-        }
-        
-        // 3. Scroll animation - sections left/right se aayein
-        const sections = document.querySelectorAll('.section');
-        
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('show');
-                }
-            });
-        }, { threshold: 0.2 });
-        
-        sections.forEach(section => {
-            observer.observe(section);
-        });
-    </script>
+<!-- INTRO CARD -->
+<section><div class="terms-container"><div class="intro-card"><p data-en="Please read these Terms & Condition carefully before using our services. By accessing our academy, you agree to be bound by these terms." data-ur="براہ کرم ہماری خدمات استعمال کرنے سے پہلے ان شرائط و ضوابط کو بغور پڑھیں۔" data-ar="يرجى قراءة هذه الشروط والأحكام بعناية قبل استخدام خدماتنا.">Please read these Terms & Condition carefully before using our services.</p></div></div></section><style>
+.terms-section{background:var(--bg-light);padding:80px 0;flex:1}
+.section-block{background:var(--bg);border-radius:20px;padding:35px 40px;margin-bottom:40px;border:1px solid var(--border);box-shadow:0 4px 20px rgba(15,118,110,0.05);transition:all 0.6s ease;opacity:0;transform:translateX(-50px)}
+.section-block.show{opacity:1;transform:translateX(0)}
+.section-block:nth-child(even){transform:translateX(50px)}
+.section-block:nth-child(even).show{transform:translateX(0)}
+.section-header{display:flex;align-items:center;gap:15px;margin-bottom:20px;padding-bottom:15px;border-bottom:1px solid var(--border)}
+.section-number{width:45px;height:45px;background:var(--primary);color:#fff;border-radius:12px;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:18px}
+.section-block h2{color:var(--primary);font-size:22px;font-weight:700;margin:0}
+.section-content p{font-size:16px;color:var(--text);margin-bottom:15px;line-height:1.8}
+.section-content strong{color:var(--primary);font-weight:600}
+.icon-emoji{font-size:24px}
+</style>
+
+<!-- 10 TERMS SECTIONS - AAP KA 6 DATA + MERE 4 SOFT -->
+<section class="terms-section">
+  <div class="terms-container">
+    <!-- 1. AAP KA DATA -->
+    <div class="section-block"><div class="section-header"><div class="section-number">1</div><h2><span class="icon-emoji">🔒</span> <span data-en="Privacy Policy" data-ur="پرائیویسی پالیسی" data-ar="سياسة الخصوصية">Privacy Policy</span></h2></div><div class="section-content"><p data-en="We'd like to assure and guarantee that all students' information is totally secured and secret with <strong>NO share of a third party.</strong>" data-ur="ہم اس بات کی مکمل ضمانت دیتے ہیں کہ تمام طلباء کی معلومات مکمل طور پر محفوظ ہیں اور <strong>کسی تیسرے فریق کے ساتھ شیئر نہیں کی جائیں گی۔</strong>" data-ar="نؤكد ونضمن أن جميع معلومات الطلاب آمنة تمامًا وسرية مع <strong>عدم مشاركتها مع أي طرف ثالث.</strong>">We'd like to assure and guarantee that all students' information is totally secured and secret with <strong>NO share of a third party.</strong></p><p data-en="Any info we require from students is just for your study program success and to improve our services to match the best with your requirements and expectations." data-ur="طلباء سے ہم جو بھی معلومات لیتے ہیں وہ صرف آپ کے تعلیمی پروگرام کی کامیابی اور ہماری خدمات کو آپ کی ضروریات کے مطابق بہتر بنانے کے لیے ہے۔" data-ar="أي معلومات نطلبها من الطلاب هي فقط لنجاح برنامج الدراسة وتحسين خدماتنا.">Any info we require from students is just for your study program success.</p><p data-en="The students data will be only used for <strong>educational purposes.</strong>" data-ur="طلباء کا ڈیٹا صرف <strong>تعلیمی مقاصد</strong> کے لیے استعمال کیا جائے گا۔" data-ar="سيتم استخدام بيانات الطلاب <strong>للأغراض التعليمية فقط.</strong>">The students data will be only used for <strong>educational purposes.</strong></p></div></div>
+    <!-- 2. AAP KA DATA -->
+    <div class="section-block"><div class="section-header"><div class="section-number">2</div><h2><span class="icon-emoji">📚</span> <span data-en="Your Classes" data-ur="آپ کی کلاسز" data-ar="حصصك">Your Classes</span></h2></div><div class="section-content"><p data-en="1. Your classes will start on the day of your choice according to your suitable timing." data-ur="1. آپ کی کلاسز آپ کے منتخب کردہ دن اور مناسب وقت کے مطابق شروع ہوں گی۔" data-ar="1. ستبدأ حصصك في اليوم الذي تختاره حسب الوقت المناسب لك.">1. Your classes will start on the day of your choice.</p><p data-en="2. Each week we will have <strong>5 classes</strong> from Sunday to Thursday." data-ur="2. ہر ہفتے اتوار سے جمعرات تک <strong>5 کلاسز</strong> ہوں گی۔" data-ar="2. سيكون لدينا <strong>5 حصص</strong> كل أسبوع من الأحد إلى الخميس.">2. Each week we will have <strong>5 classes</strong> from Sunday to Thursday.</p><p data-en="3. Each session will last <strong>20 to 30 minutes</strong>." data-ur="3. ہر سیشن کا دورانیہ <strong>20 سے 30 منٹ</strong> ہوگا۔" data-ar="3. ستستغرق كل جلسة <strong>20 إلى 30 دقيقة</strong>.">3. Each session will last <strong>20 to 30 minutes</strong>.</p></div></div>
+    <!-- 3. AAP KA DATA -->
+    <div class="section-block"><div class="section-header"><div class="section-number">3</div><h2><span class="icon-emoji">⏰</span> <span data-en="Attendance & Absence Rules" data-ur="حاضری اور غیر حاضری کے قواعد" data-ar="قواعد الحضور والغياب">Attendance & Absence Rules</span></h2></div><div class="section-content"><p data-en="1. To maintain the weekly schedule, you should attend classes at your specified times." data-ur="1. ہفتہ وار شیڈول کو برقرار رکھنے کے لیے، آپ کو مقررہ وقت پر کلاسز میں شرکت کرنی چاہیے۔" data-ar="1. للحفاظ على الجدول الأسبوعي، يجب عليك حضور الحص في الأوقات المحددة لك.">1. To maintain the weekly schedule, you should attend classes at your specified times.</p><p data-en="2. If you cannot attend, <strong>please notify us 4 hours before the session</strong> to reschedule." data-ur="2. اگر آپ نہیں آ سکتے تو <strong>سیشن سے 4 گھنٹے پہلے ہمیں مطلع کریں</strong>۔" data-ar="2. إذا لم تتمكن من الحضور، <strong>يرجى إخطارنا قبل 4 ساعات من الجلسة</strong>۔">2. If you cannot attend, <strong>please notify us 4 hours before the session</strong>.</p><p data-en="3. If you are absent without notice, you will lose the session." data-ur="3. اگر بغیر اطلاع کے غیر حاضر ہوں تو سیشن ضائع ہو جائے گا۔" data-ar="3. إذا تغيبت دون إخطار، فستفقد الجلسة.">3. If you are absent without notice, you will lose the session.</p></div></div>
+    <!-- 4. AAP KA DATA -->
+    <div class="section-block"><div class="section-header"><div class="section-number">4</div><h2><span class="icon-emoji">🔄</span> <span data-en="Rescheduling" data-ur="ری شیڈولنگ" data-ar="إعادة الجدولة">Rescheduling</span></h2></div><div class="section-content"><p data-en="1. Your time is very important to us. So <strong>please be committed</strong> to your scheduled time." data-ur="1. آپ کا وقت ہمارے لیے بہت اہم ہے۔ اس لیے <strong>پابند رہیں</strong>۔" data-ar="1. وقتك مهم جدًا بالنسبة لنا. لذا <strong>يرجى الالتزام</strong> بوقتك المحدد.">1. Your time is very important to us. So <strong>please be committed</strong>.</p><p data-en="2. To reschedule, <strong>please inform us 4 hours before</strong> your session." data-ur="2. ری شیڈول کے لیے <strong>سیشن سے 4 گھنٹے پہلے</strong> مطلع کریں۔" data-ar="2. لإعادة الجدولة، <strong>يرجى إبلاغنا قبل 4 ساعات</strong>۔">2. To reschedule, <strong>please inform us 4 hours before</strong>.</p></div></div>
+    <!-- 5. AAP KA DATA -->
+    <div class="section-block"><div class="section-header"><div class="section-number">5</div><h2><span class="icon-emoji">💳</span> <span data-en="Payment & Charges" data-ur="ادائیگی اور فیس" data-ar="الدفع والرسوم">Payment & Charges</span></h2></div><div class="section-content"><p data-en="1. The class schedule will be fixed when you pay for the month in advance." data-ur="1. کلاس کا شیڈول مہینے کی فیس ایڈوانس ادا کرنے پر فکس ہوگا۔" data-ar="1. سيتم تثبيت جدول الحص عند دفع رسوم الشهر مقدمًا.">1. The class schedule will be fixed when you pay for the month in advance.</p><p data-en="2. Please inform us if you have any changes in your time or payment method." data-ur="2. وقت یا ادائیگی میں تبدیلی ہو تو ہمیں مطلع کریں۔" data-ar="2. يرجى إبلاغنا بأي تغيير في الوقت أو طريقة الدفع.">2. Please inform us if you have any changes.</p></div></div>
+    <!-- 6. AAP KA DATA -->
+    <div class="section-block"><div class="section-header"><div class="section-number">6</div><h2><span class="icon-emoji">💻</span> <span data-en="Technology Requirements" data-ur="ٹیکنالوجی کی ضروریات" data-ar="متطلبات التكنولوجيا">Technology Requirements</span></h2></div><div class="section-content"><p data-en="1. Please ensure you have a <strong>strong and reliable internet connection</strong>." data-ur="1. براہ کرم <strong>مضبوط انٹرنیٹ</strong> یقینی بنائیں۔" data-ar="1. يرجى التأكد من <strong>اتصال إنترنت قوي</strong>.">1. Please ensure you have a <strong>strong and reliable internet connection</strong>.</p><p data-en="2. You will need a device with camera and microphone for online sessions." data-ur="2. آن لائن سیشن کے لیے کیمرہ اور مائیک والا ڈیوائس چاہیے۔" data-ar="2. ستحتاج إلى جهاز مزود بكاميرا وميكروفون.">2. You will need a device with camera and microphone.</p></div></div>
+    <!-- 7. MERA SOFT DATA -->
+    <div class="section-block"><div class="section-header"><div class="section-number">7</div><h2><span class="icon-emoji">👍</span> <span data-en="Acceptance of Terms" data-ur="شرائط کی قبولیت" data-ar="قبول الشروط">Acceptance of Terms</span></h2></div><div class="section-content"><p data-en="By enrolling with us, you welcome our guidelines. We are here to make your Quran learning journey smooth and respectful." data-ur="ہمارے ساتھ انرول کر کے آپ ہماری گائیڈ لائنز کو قبول کرتے ہیں۔" data-ar="من خلال التسجيل معنا، فإنك ترحب بإرشاداتنا.">By enrolling with us, you welcome our guidelines.</p></div></div>
+    <!-- 8. MERA SOFT DATA -->
+    <div class="section-block"><div class="section-header"><div class="section-number">8</div><h2><span class="icon-emoji">👤</span> <span data-en="Student Responsibilities" data-ur="طالب علم کی ذمہ داریاں" data-ar="مسؤوليات الطالب">Student Responsibilities</span></h2></div><div class="section-content"><p data-en="We request you to join classes on time and maintain good communication with your teacher." data-ur="ہم آپ سے درخواست کرتے ہیں کہ وقت پر کلاس میں شامل ہوں۔" data-ar="نطلب منك الانضمام إلى الحص في الوقت المحدد.">We request you to join classes on time.</p></div></div>
+    <!-- 9. MERA SOFT DATA -->
+    <div class="section-block"><div class="section-header"><div class="section-number">9</div><h2><span class="icon-emoji">💰</span> <span data-en="Refund Policy" data-ur="ریفنڈ پالیسی" data-ar="سياسة الاسترداد">Refund Policy</span></h2></div><div class="section-content"><p data-en="Fees are for the current month. However, we are always flexible to reschedule your classes as per your need." data-ur="فیس موجودہ ماہ کے لیے ہے۔ تاہم ہم ری شیڈول میں لچکدار ہیں۔" data-ar="الرسوم للشهر الحالي. ومع ذلك، نحن مرنون لإعادة الجدولة.">Fees are for the current month.</p></div></div>
+    <!-- 10. MERA SOFT DATA -->
+    <div class="section-block"><div class="section-header"><div class="section-number">10</div><h2><span class="icon-emoji">🔔</span> <span data-en="Updates to Terms" data-ur="شرائط میں تبدیلیاں" data-ar="تحديثات الشروط">Updates to Terms</span></h2></div><div class="section-content"><p data-en="We may update these terms. Any important changes will be shared via WhatsApp or Email." data-ur="ہم شرائط اپ ڈیٹ کر سکتے ہیں۔ تبدیلی واٹس ایپ پر شیئر ہوگی۔" data-ar="قد نقوم بتحديث هذه الشروط. سيتم مشاركة التغييرات عبر الواتساب.">We may update these terms.</p></div></div>
+  </div>
+                                                                                                                                                                                                                                                                                        </section> <style>
+.contact-card{background:var(--bg);border-radius:24px;padding:40px;border:1px solid var(--border);box-shadow:0 10px 30px rgba(15,118,110,0.08);text-align:center;max-width:700px;margin:0 auto 60px}
+.btn-primary{background:var(--primary);color:#fff;padding:14px 32px;border:none;border-radius:12px;font-size:16px;font-weight:700;cursor:pointer;transition:0.3s;text-decoration:none;display:inline-block}
+.btn-primary:hover{background:#0D5F59;transform:translateY(-2px)}
+.cta-section{background:var(--primary);padding:80px 0;text-align:center}
+.cta-section h2{color:#fff;font-size:36px;font-weight:800;margin-bottom:20px}
+.btn-gold{background:var(--secondary);color:#000;padding:16px 36px;border:none;border-radius:12px;font-size:17px;font-weight:800;cursor:pointer;transition:0.3s}
+footer{background:var(--dark-footer);color:#fff;padding:50px 0 20px}
+.footer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:40px;margin-bottom:30px}
+.footer-col h4{color:#fff;font-size:18px;margin-bottom:15px;font-weight:700}
+.footer-col a{color:rgba(255,255,255,0.7);font-size:14px;text-decoration:none;display:block;margin-bottom:10px}
+.footer-bottom{border-top:1px solid rgba(255,255,255,0.1);padding-top:20px;text-align:center;color:rgba(255,255,255,0.6);font-size:14px}
+.popup-overlay{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.6);z-index:3000;align-items:center;justify-content:center}
+.popup-overlay.show{display:flex;animation:fadeIn 0.3s}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+.popup-form{background:#fff;border-radius:20px;padding:30px;max-width:450px;width:90%;box-shadow:0 20px 60px rgba(0,0,0,0.3);position:relative}
+.popup-form h3{color:var(--primary);font-size:24px;margin-bottom:20px;text-align:center}
+.popup-form input, .popup-form select, .popup-form textarea{width:100%;padding:12px 15px;margin-bottom:15px;border:1px solid var(--border);border-radius:10px;font-family:'Poppins';font-size:15px}
+.popup-form button{width:100%;background:var(--primary);color:#fff;border:none;padding:14px;border-radius:10px;font-size:16px;font-weight:700;cursor:pointer}
+.popup-close{position:absolute;top:15px;right:20px;font-size:28px;color:var(--text);cursor:pointer;font-weight:300}
+@media(max-width:768px){.hero-terms h1{font-size:36px}.section-block{padding:25px 20px}}
+</style>
+
+<!-- CONTACT SUPPORT CARD -->
+<section style="background:var(--bg-light);padding:60px 0 0">
+  <div class="terms-container">
+    <div class="contact-card">
+      <h3 data-en="Need Help?" data-ur="کیا آپ کو مدد چاہیے؟" data-ar="هل تحتاج إلى مساعدة؟">Need Help?</h3>
+      <p data-en="If you have any questions about our Terms & Condition, our support team is here to help you 24/7." data-ur="اگر آپ کے شرائط و ضوابط کے بارے میں کوئی سوالات ہیں تو ہماری سپورٹ ٹیم 24/7 آپ کی مدد کے لیے حاضر ہے۔" data-ar="إذا كان لديك أي أسئلة حول شروطنا وأحكامنا، فإن فريق الدعم لدينا هنا لمساعدتك.">If you have any questions about our Terms & Condition, our support team is here to help you 24/7.</p>
+      <button onclick="openWhatsAppDirect()" class="btn-primary" data-en="Contact Support" data-ur="سپورٹ سے رابطہ کریں" data-ar="اتصل بالدعم">Contact Support</button>
+    </div>
+  </div>
+</section>
+
+<!-- CTA SECTION -->
+<section class="cta-section">
+  <div class="terms-container">
+    <h2 data-en="Ready to Start Your Quran Journey?" data-ur="کیا آپ قرآن کا سفر شروع کرنے کے لیے تیار ہیں؟" data-ar="هل أنت مستعد لبدء رحلتك مع القرآن؟">Ready to Start Your Quran Journey?</h2>
+    <p data-en="Join Al Raza Online Quran Academy today and learn with qualified teachers from the comfort of your home." data-ur="آج ہی الرضا آن لائن قرآن اکیڈمی میں شامل ہوں۔" data-ar="انضم إلى أكاديمية الرضا لتعليم القرآن عبر الإنترنت اليوم.">Join Al Raza Online Quran Academy today.</p>
+    <button onclick="openWhatsAppForm()" class="btn-gold" data-en="Register Now" data-ur="ابھی رجسٹر کریں" data-ar="سجل الآن">Register Now</button>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col"><h4 data-en="Al Raza Academy" data-ur="الرضا اکیڈمی" data-ar="أكاديمية الرضا">Al Raza Academy</h4><p data-en="Learn Quran Online with Tajweed from qualified teachers. Flexible timing, one-on-one classes." data-ur="مستند اساتذہ سے تجوید کے ساتھ آن لائن قرآن سیکھیں۔" data-ar="تعلم القرآن عبر الإنترنت مع التجويد من معلمين مؤهلين.">Learn Quran Online with Tajweed.</p></div>
+      <div class="footer-col"><h4 data-en="Quick Links" data-ur="فوری لنکس" data-ar="روابط سريعة">Quick Links</h4><a href="index.html" data-en="Home" data-ur="ہوم" data-ar="الرئيسية">Home</a><a href="courses.html" data-en="Courses" data-ur="کورسز" data-ar="الدورات">Courses</a><a href="fees.html" data-en="Study Plan & Fees" data-ur="پلان و فیس" data-ar="خطة الدراسة">Study Plan & Fees</a><a href="contact.html" data-en="Contact Us" data-ur="رابطہ" data-ar="اتصل بنا">Contact Us</a></div>
+      <div class="footer-col"><h4 data-en="Contact" data-ur="رابطہ" data-ar="اتصل بنا">Contact</h4><p>WhatsApp: +92 309 0252314</p><p>Email: info@alrazaacademy.com</p></div>
+    </div>
+    <div class="footer-bottom"><p>© 2026 Al Raza Online Quran Academy. <span data-en="All Rights Reserved." data-ur="جملہ حقوق محفوظ ہیں۔" data-ar="جميع الحقوق محفوظة.">All Rights Reserved.</span></p></div>
+  </div>
+</footer>
+
+<!-- WHATSAPP FORM POPUP - 10 COURSES -->
+<div class="popup-overlay" id="whatsappPopup">
+  <div class="popup-form">
+    <span class="popup-close" onclick="closeWhatsAppForm()">&times;</span>
+    <h3 data-en="Register via WhatsApp" data-ur="واٹس ایپ پر رجسٹر کریں" data-ar="التسجيل عبر الواتساب">Register via WhatsApp</h3>
+    <input type="text" id="wa_name" placeholder="Full Name / پورا نام / الاسم الكامل" required>
+    <input type="text" id="wa_country" placeholder="Country / ملک / الدولة" required>
+    <input type="number" id="wa_age" placeholder="Age / عمر / العمر">
+    <select id="wa_course">
+      <option value="" data-en="Select Course" data-ur="کورس منتخب کریں" data-ar="اختر الدورة">Select Course</option>
+      <option value="1. Noorani Qaida" data-en="1. Noorani Qaida" data-ur="1. نورانی قاعدہ" data-ar="1. نوراني قاعدة">1. Noorani Qaida</option>
+      <option value="2. Nazra Quran" data-en="2. Nazra Quran" data-ur="2. ناظرہ قرآن" data-ar="2. ناظرة القرآن">2. Nazra Quran</option>
+      <option value="3. Tajweed Course" data-en="3. Tajweed Course" data-ur="3. تجويد کورس" data-ar="3. دورة التجويد">3. Tajweed Course</option>
+      <option value="4. Hifz Program" data-en="4. Hifz Program" data-ur="4. حفظ پروگرام" data-ar="4. برنامج الحفظ">4. Hifz Program</option>
+      <option value="5. Quran Translation" data-en="5. Quran Translation" data-ur="5. ترجمہ قرآن" data-ar="5. ترجمة القرآن">5. Quran Translation</option>
+      <option value="6. Tafseer Course" data-en="6. Tafseer Course" data-ur="6. تفسیر کورس" data-ar="6. دورة التفسير">6. Tafseer Course</option>
+      <option value="7. Arabic Language" data-en="7. Arabic Language" data-ur="7. عربی زبان" data-ar="7. اللغة العربية">7. Arabic Language</option>
+      <option value="8. Kalima & Duas" data-en="8. Kalima & Duas" data-ur="8. کلمہ و دعائیں" data-ar="8. الكلمات والدعاء">8. Kalima & Duas</option>
+      <option value="9. Islamic Studies" data-en="9. Islamic Studies" data-ur="9. اسلامیات" data-ar="9. الدراسات الإسلامية">9. Islamic Studies</option>
+      <option value="10. Adult Quran Course" data-en="10. Adult Quran Course" data-ur="10. بالغ قرآن کورس" data-ar="10. دورة القرآن للكبار">10. Adult Quran Course</option>
+    </select>
+    <textarea id="wa_message" rows="3" placeholder="Message / پیغام / الرسالة"></textarea>
+    <button onclick="sendWhatsApp()" data-en="Send to WhatsApp" data-ur="واٹس ایپ پر بھیجیں" data-ar="إرسال إلى الواتساب">Send to WhatsApp</button>
+  </div>
+</div>
+
+<script>
+// AAP KA WHATSAPP NUMBER 92 KE SAATH BINA 0 KE
+const WHATSAPP_NUMBER = "923090252314"; 
+
+function toggleMenu(){document.getElementById('menuDropdown').classList.toggle('show');}
+window.onclick = function(event){if(!event.target.matches('.hamburger') && !event.target.closest('.hamburger')){document.getElementById('menuDropdown').classList.remove('show');}}
+
+const sections = document.querySelectorAll('.section-block');
+const observer = new IntersectionObserver((entries)=>{entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('show');}});},{threshold:0.2});
+sections.forEach(section=>{observer.observe(section);});
+
+function setLang(lang){
+  document.body.className = lang === 'ur' ? 'urdu' : lang === 'ar' ? 'arabic' : '';
+  document.querySelectorAll('.lang-switch').forEach(btn=>btn.classList.remove('active'));
+  event.target.classList.add('active');
+  document.querySelectorAll('[data-en]').forEach(el=>{
+    if(el.tagName === 'INPUT' || el.tagName === 'TEXTAREA'){el.placeholder = el.getAttribute('data-'+lang);} 
+    else{el.textContent = el.getAttribute('data-'+lang);}
+  });
+}
+
+function openWhatsAppForm(){document.getElementById('whatsappPopup').classList.add('show');}
+function closeWhatsAppForm(){document.getElementById('whatsappPopup').classList.remove('show');}
+function openWhatsAppDirect(){window.open(`https://wa.me/${WHATSAPP_NUMBER}`,'_blank');}
+
+function sendWhatsApp(){
+  let name=document.getElementById('wa_name').value;
+  let country=document.getElementById('wa_country').value;
+  let age=document.getElementById('wa_age').value;
+  let course=document.getElementById('wa_course').value;
+  let msg=document.getElementById('wa_message').value;
+  if(!name||!country||!course){alert('Please fill Name, Country & Select Course');return;}
+  let text=`*Registration - Al Raza Academy*%0A*Name:* ${name}%0A*Country:* ${country}%0A*Age:* ${age}%0A*Course:* ${course}%0A*Message:* ${msg}`;
+  window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${text}`,'_blank');
+  closeWhatsAppForm();
+}
+</script>
 </body>
-  </html>
+</html>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    </section>

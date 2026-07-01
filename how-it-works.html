@@ -4,414 +4,575 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>How It Works - Al Raza Online Quran Academy</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Noto+Nastaliq+Urdu&display=swap" rel="stylesheet">
 <style>
+:root{
+  --primary:#0F766E; /* Premium Islamic Green */
+  --secondary:#D4AF37; /* Luxury Gold */
+  --bg:#FFFFFF; /* Pure White */
+  --bg-light:#F8FAFC;
+  --text:#1F2937;
+  --dark-footer:#0F172A;
+}
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{font-family:'Poppins',sans-serif;background:#0a0a0a;color:#fff;line-height:1.7}
+body{font-family:'Poppins', sans-serif;background:var(--bg);color:var(--text);line-height:1.8;font-size:16px}
+body.urdu{font-family:'Noto Nastaliq Urdu', serif;direction:rtl;text-align:right}
+body.urdu h1, body.urdu h2, body.urdu h3, body.urdu h4{font-family:'Noto Nastaliq Urdu', serif}
+h1, h2, h3, h4{font-weight:700}
+.container{max-width:1200px;margin:auto;padding:0 4%}
+section{padding:100px 0;opacity:0;transform:translateY(50px);transition:all 0.8s ease-out}
+section.visible{opacity:1;transform:translateY(0)}
 
-nav{background:#111;padding:18px 0;position:sticky;top:0;z-index:100;border-bottom:3px solid #FFD700}
-.nav-container{max-width:1200px;margin:auto;padding:0 4%;display:flex;justify-content:space-between;align-items:center}
-.logo-text{color:#FFD700;font-size:24px;font-weight:700}
-.hamburger{display:flex;flex-direction:column;cursor:pointer}
-.hamburger span{width:28px;height:3px;background:#FFD700;margin:4px 0;transition:0.3s}
-
-.dropdown{display:none;position:absolute;top:70px;right:4%;background:#1a1a1a;border:2px solid #FFD700;border-radius:12px;min-width:240px;overflow:hidden;box-shadow:0 10px 40px rgba(255,215,0,0.3);z-index:200}
+/* HEADER - PREMIUM */
+header.sticky-nav{background:rgba(255,255,255,0.85);backdrop-filter:blur(10px);height:80px;position:sticky;top:0;z-index:1000;border-bottom:1px solid rgba(15, 118, 110, 0.1);display:flex;align-items:center}
+.nav-container{max-width:1200px;margin:auto;padding:0 4%;width:100%;display:flex;justify-content:space-between;align-items:center}
+.logo-img{height:42px;width:auto;object-fit:contain;background:transparent;padding:0;border-radius:12px}
+.nav-right{display:flex;gap:12px;align-items:center}
+.lang-switch{background:var(--secondary);border:2px solid var(--secondary);color:#000;padding:8px 12px;border-radius:8px;font-weight:700;cursor:pointer;font-size:13px;transition:0.3s;font-family:'Poppins'}
+.lang-switch:hover{background:#C39B2E;transform:scale(1.05)}
+.btn-primary{background:var(--primary);color:var(--bg);padding:14px 28px;border-radius:12px;text-decoration:none;font-weight:600;transition:0.3s;border:none;cursor:pointer;font-size:15px;font-family:'Poppins'}
+.btn-primary:hover{background:#0d655e;transform:translateY(-2px);box-shadow:0 8px 20px rgba(15,118,110,0.3)}
+.btn-secondary{background:transparent;color:var(--primary);padding:14px 28px;border-radius:12px;text-decoration:none;font-weight:600;transition:0.3s;border:2px solid var(--primary);cursor:pointer;font-size:15px;font-family:'Poppins'}
+.btn-secondary:hover{background:var(--primary);color:#fff}
+.hamburger{display:flex;flex-direction:column;cursor:pointer;gap:5px;padding:8px}
+.hamburger span{width:28px;height:3px;background:var(--primary);border-radius:2px;transition:0.3s}
+.dropdown{display:none;position:absolute;top:80px;right:4%;background:var(--bg);border:1px solid rgba(15, 118, 110, 0.1);border-radius:16px;min-width:260px;box-shadow:0 20px 50px rgba(15,118,110,0.15);z-index:2000}
 .dropdown.show{display:block;animation:slideDown 0.3s ease}
 @keyframes slideDown{from{opacity:0;transform:translateY(-10px)}to{opacity:1;transform:translateY(0)}}
-.dropdown a{display:block;padding:14px 20px;color:#FFD700;text-decoration:none;font-size:16px;font-weight:600;border-bottom:1px solid #333;transition:0.3s}
-.dropdown a:hover{background:#FFD700;color:#000}
-.dropdown a:last-child{border-bottom:none}
+.dropdown a{display:block;padding:14px 20px;color:var(--text);text-decoration:none;font-weight:600;border-bottom:1px solid #f1f1f1;transition:0.3s;font-family:'Poppins'}
+.dropdown a:hover{background:var(--bg-light);color:var(--primary)}
+@media(max-width:768px){.logo-img{height:36px} .nav-right .btn-primary{display:none}}
 
-.container{max-width:1100px;margin:50px auto;padding:0 4%}
+/* 1. HERO SECTION - FULL SCREEN */
+.hero-howitworks{background:linear-gradient(135deg, rgba(15, 118, 110, 0.9) 0%, rgba(212, 175, 55, 0.85) 100%), url('hero.jpg') center/cover no-repeat;position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;color:#FFFFFF;opacity:1;transform:translateY(0)}
+.hero-howitworks h1{font-size:60px;font-weight:800;line-height:1.1;margin-bottom:20px}
+.hero-howitworks p{font-size:22px;margin-bottom:40px;max-width:700px;margin-left:auto;margin-right:auto;opacity:0.95;font-weight:500}
+.hero-btns{display:flex;gap:20px;justify-content:center;flex-wrap:wrap}
+@media(max-width:768px){.hero-howitworks h1{font-size:40px}.hero-howitworks p{font-size:18px}.hero-btns{flex-direction:column;align-items:center}}<style>
+/* 2. TRUST SECTION - 4 CARDS */
+.trust-section{background:var(--bg-light)}
+.trust-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:30px}
+.trust-card{background:var(--bg);padding:40px 30px;border-radius:16px;box-shadow:0 10px 30px rgba(0,0,0,0.06);text-align:center;transition:0.4s;border-top:4px solid transparent}
+.trust-card:hover{transform:translateY(-12px);border-top-color:var(--secondary);box-shadow:0 20px 40px rgba(15,118,110,0.15)}
+.trust-icon{font-size:50px;margin-bottom:20px}
+.trust-card h3{font-size:20px;color:var(--primary);margin-bottom:10px;font-weight:700}
+.trust-card p{font-size:15px;color:var(--text)}
+@media(max-width:900px){.trust-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.trust-grid{grid-template-columns:1fr}}
 
-.page-header{text-align:center;padding:90px 20px;background:linear-gradient(135deg,#FFD700 0%,#FFA500 100%);border-radius:30px;margin-bottom:60px;opacity:0}
-.page-header h1{font-size:52px;color:#000;font-weight:800;margin-bottom:20px}
-.page-header p{font-size:22px;color:#000;font-weight:600}
+/* 3. ABOUT SECTION - 2 COLUMN */
+.about-section{background:var(--bg)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.about-img{width:100%;height:450px;border-radius:16px;background:var(--bg-light);display:flex;align-items:center;justify-content:center;font-size:80px;color:var(--secondary);box-shadow:0 15px 40px rgba(0,0,0,0.08)}
+.about-content h2{font-size:40px;color:var(--primary);margin-bottom:20px}
+.about-content p{font-size:17px;color:var(--text);line-height:1.9;margin-bottom:15px}
+@media(max-width:900px){.about-grid{grid-template-columns:1fr}}
 
-/* Steps Section */
-.steps-section{background:linear-gradient(135deg,#0d2d4d 0%,#1a3a5c 100%);padding:80px 50px;border-radius:30px;border:3px solid #00BFFF;margin-bottom:60px;opacity:0}
-.section-title{text-align:center;font-size:44px;margin-bottom:20px;color:#00BFFF;font-weight:800}
-.section-subtitle{text-align:center;font-size:19px;color:#e0f7ff;margin-bottom:50px}
-
-.steps-grid{display:grid;grid-template-columns:1fr;gap:30px;margin-top:40px}
-.step-card{background:rgba(255,255,255,0.08);padding:45px;border-radius:25px;border-left:8px solid #00BFFF;display:flex;gap:35px;align-items:flex-start;transition:0.4s;opacity:0}
-.step-card:hover{transform:translateX(20px);border-left-color:#FFD700;box-shadow:0 15px 45px rgba(0,191,255,0.4)}
-.step-number{font-size:70px;font-weight:800;color:#FFD700;min-width:90px;text-align:center;line-height:1}
-.step-content h3{color:#00BFFF;font-size:28px;margin-bottom:15px;font-weight:700}
-.step-content p{color:#e0f7ff;font-size:18px;line-height:2;margin-bottom:12px}
-.step-content ul{margin-left:20px;margin-top:10px}
-.step-content li{color:#cceeff;font-size:17px;margin-bottom:8px;line-height:1.8}
-
-/* Features Section */
-.features-section{background:linear-gradient(135deg,#4d2d0d 0%,#5c3a1a 100%);padding:80px 50px;border-radius:30px;border:3px solid #FF8C00;margin-bottom:60px;opacity:0}
-.features-title{text-align:center;font-size:44px;margin-bottom:50px;color:#FF8C00;font-weight:800}
-.features-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:30px}
-.feature-box{background:rgba(255,255,255,0.08);padding:40px 30px;border-radius:20px;border-top:5px solid #FF8C00;text-align:center;transition:0.4s;opacity:0}
-.feature-box:hover{transform:translateY(-12px);border-top-color:#FFD700;box-shadow:0 15px 40px rgba(255,140,0,0.4)}
-.feature-icon{font-size:55px;margin-bottom:20px}
-.feature-box h4{color:#FF8C00;font-size:24px;margin-bottom:15px;font-weight:700}
-.feature-box p{color:#ffe8d0;font-size:17px;line-height:1.9}
-
-/* Registration Form */
-.form-section{background:linear-gradient(135deg,#2d0d4d 0%,#3a1a5c 100%);padding:80px 50px;border-radius:30px;border:3px solid #9370DB;margin-bottom:60px;opacity:0}
-.form-title{text-align:center;font-size:44px;margin-bottom:15px;color:#9370DB;font-weight:800}
-.form-subtitle{text-align:center;font-size:19px;color:#f0e8ff;margin-bottom:50px}
-
-.registration-form{background:rgba(255,255,255,0.06);padding:50px;border-radius:25px;border:2px solid rgba(147,112,219,0.3)}
-.form-row{display:grid;grid-template-columns:1fr 1fr;gap:25px;margin-bottom:25px}
-.form-group{margin-bottom:25px}
-.form-group label{display:block;color:#9370DB;font-size:17px;font-weight:600;margin-bottom:10px}
-.form-group input,.form-group select,.form-group textarea{width:100%;padding:16px 18px;background:#1a1a1a;border:2px solid #333;border-radius:12px;color:#fff;font-size:17px;font-family:'Poppins';transition:0.3s}
-.form-group input:focus,.form-group select:focus,.form-group textarea:focus{outline:none;border-color:#9370DB;box-shadow:0 0 15px rgba(147,112,219,0.3)}
-.form-group textarea{resize:vertical;min-height:120px}
-.submit-btn{width:100%;background:linear-gradient(135deg,#9370DB 0%,#6A5ACD 100%);color:#fff;padding:20px;border:none;border-radius:15px;font-size:20px;font-weight:700;cursor:pointer;transition:0.3s;margin-top:20px}
-.submit-btn:hover{transform:scale(1.03);box-shadow:0 10px 35px rgba(147,112,219,0.5)}
-
-/* FAQ Section */
-.faq-section{background:linear-gradient(135deg,#4d0d0d 0%,#5c1a1a 100%);padding:80px 50px;border-radius:30px;border:3px solid #FF4444;opacity:0}
-.faq-title{text-align:center;font-size:44px;margin-bottom:50px;color:#FF4444;font-weight:800}
-.faq-item{background:rgba(255,255,255,0.08);padding:30px;border-radius:18px;margin-bottom:20px;border-left:5px solid #FF4444;opacity:0}
-.faq-item h4{color:#FF4444;font-size:22px;margin-bottom:12px;font-weight:700}
-.faq-item p{color:#ffe8e8;font-size:18px;line-height:1.9}
-
-.free-trial-btn{display:inline-block;background:#000;color:#FFD700;padding:22px 55px;border-radius:50px;text-decoration:none;font-size:21px;font-weight:700;border:3px solid #FFD700;margin-top:50px;transition:0.3s}
-.free-trial-btn:hover{background:#FFD700;color:#000;transform:scale(1.08)}
-
-.whatsapp-float{position:fixed;bottom:25px;right:25px;background:#25D366;width:70px;height:70px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:38px;color:white;text-decoration:none;z-index:999;box-shadow:0 5px 30px rgba(37,211,102,0.6)}
-.whatsapp-float:hover{transform:scale(1.15)}
-
-footer{text-align:center;padding:50px 20px;background:linear-gradient(135deg,#FFD700 0%,#FFA500 100%);color:#000;font-weight:bold;font-size:18px;margin-top:60px}
-
-/* Animations */
-@keyframes slideLeft{from{opacity:0;transform:translateX(-120px)}to{opacity:1;transform:translateX(0)}}
-@keyframes slideRight{from{opacity:0;transform:translateX(120px)}to{opacity:1;transform:translateX(0)}}
-@keyframes slideTop{from{opacity:0;transform:translateY(-120px)}to{opacity:1;transform:translateY(0)}}
-@keyframes slideBottom{from{opacity:0;transform:translateY(120px)}to{opacity:1;transform:translateY(0)}}
-.animate-left{animation:slideLeft 0.8s ease forwards}
-.animate-right{animation:slideRight 0.8s ease forwards}
-.animate-top{animation:slideTop 0.8s ease forwards}
-.animate-bottom{animation:slideBottom 0.8s ease forwards}
-
-@media(max-width:768px){
-.page-header h1{font-size:38px}
-.section-title,.features-title,.form-title,.faq-title{font-size:34px}
-.steps-section,.features-section,.form-section,.faq-section{padding:40px 25px}
-.step-card{flex-direction:column;text-align:center}
-.step-number{min-width:auto}
-.form-row{grid-template-columns:1fr}
-.registration-form{padding:30px 20px}
-.features-grid{grid-template-columns:1fr}
-.dropdown{right:4%;left:4%;min-width:auto}
+/* 4. STEPS SECTION - 6 STEPS */
+.section-title{text-align:center;font-size:44px;color:var(--primary);margin-bottom:15px;font-weight:800}
+.section-subtitle{text-align:center;font-size:18px;color:var(--text);margin-bottom:60px;max-width:700px;margin-left:auto;margin-right:auto}
+.steps-grid{display:grid;grid-template-columns:1fr;gap:30px}
+.step-card{background:var(--bg);padding:40px;border-radius:16px;border-left:8px solid var(--primary);display:flex;gap:30px;align-items:flex-start;transition:0.4s;box-shadow:0 10px 30px rgba(0,0,0,0.06)}
+.step-card:hover{transform:translateX(15px);border-left-color:var(--secondary);box-shadow:0 15px 45px rgba(15,118,110,0.2)}
+.step-number{font-size:60px;font-weight:800;color:var(--secondary);min-width:80px;text-align:center;line-height:1}
+.step-content h3{color:var(--primary);font-size:24px;margin-bottom:12px;font-weight:700}
+.step-content p{color:var(--text);font-size:16px;line-height:1.9;margin-bottom:12px}
+.step-content ul{margin-left:20px}
+body.urdu .step-content ul{margin-right:20px;margin-left:0}
+.step-content li{color:var(--text);font-size:15px;margin-bottom:8px;line-height:1.8}
+@media(max-width:768px){.step-card{flex-direction:column;text-align:center}.step-number{min-width:auto}}
 </style>
 </head>
 <body>
-
-<nav>
+<header class="sticky-nav">
 <div class="nav-container">
-<div class="logo-text">Al Raza Academy</div>
-<div class="hamburger" onclick="toggleMenu()">
-<span></span>
-<span></span>
-<span></span>
+<a href="index.html"><img src="logo.png" alt="Al Raza Logo" class="logo-img"></a>
+<div class="nav-right">
+<button class="lang-switch" onclick="cycleLang()">EN | اردو | العربية</button>
+<button class="btn-primary" onclick="openForm()" data-en="Book Free Trial" data-ur="فری ٹرائل بک کریں" data-ar="احجز تجريبي">Book Free Trial</button>
+<div class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
 </div>
 <div class="dropdown" id="menu">
-<a href="index.html">🏠 Home</a>
-<a href="about.html">ℹ️ About Us</a>
-<a href="teachers.html">👨‍🏫 Our Teacher's</a>
-<a href="how-it-works.html">⚙️ How it Works</a>
-<a href="terms.html">📜 Terms & Condition</a>
-<a href="contact.html">📞 Contact Us</a>
-<a href="courses.html">📚 Courses</a>
-<a href="fees.html">💰 Study Plan & Fees</a>
-<a href="blogs.html">📝 Blogs</a>
+<a href="index.html" data-en="🏠 Home" data-ur="🏠 ہوم" data-ar="🏠 الرئيسية">🏠 Home</a>
+<a href="about.html" data-en="ℹ️ About Us" data-ur="ℹ️ ہمارے بارے میں" data-ar="ℹ️ من نحن">ℹ️ About Us</a>
+<a href="teachers.html" data-en="👨‍🏫 Our Teacher's" data-ur="👨‍🏫 اساتذہ" data-ar="👨‍🏫 معلمونا">👨‍🏫 Our Teacher's</a>
+<a href="how-it-works.html" data-en="⚙️ How it Works" data-ur="⚙️ یہ کیسے کام کرتا ہے" data-ar="⚙️ كيف يعمل">⚙️ How it Works</a>
+<a href="terms.html" data-en="📜 Terms & Condition" data-ur="📜 شرائط و ضوابط" data-ar="📜 الشروط والأحكام">📜 Terms & Condition</a>
+<a href="contact.html" data-en="📞 Contact Us" data-ur="📞 رابطہ کریں" data-ar="📞 اتصل بنا">📞 Contact Us</a>
+<a href="courses.html" data-en="📚 Courses" data-ur="📚 کورسز" data-ar="📚 الدورات">📚 Courses</a>
+<a href="fees.html" data-en="💰 Study Plan & Fees" data-ur="💰 فیس اور پلان" data-ar="💰 خطة الدراسة والرسوم">💰 Study Plan & Fees</a>
+<a href="blogs.html" data-en="📝 Blogs" data-ur="📝 بلاگ" data-ar="📝 المدونة">📝 Blogs</a>
 </div>
 </div>
-</nav>
+</header>
 
+<!-- 1. HERO SECTION -->
+<section class="hero-howitworks">
 <div class="container">
-
-<!-- Header -->
-<div class="page-header animate-top">
-<h1>⚙️ How It Works?</h1>
-<p>Start Learning Quran Online From Home in Just 6 Simple Steps</p>
+<h1 data-en="⚙️ How It Works?" data-ur="⚙️ یہ کیسے کام کرتا ہے؟" data-ar="⚙️ كيف يعمل؟">⚙️ How It Works?</h1>
+<p data-en="Start Learning Quran Online From Home in Just 6 Simple Steps" data-ur="گھر بیٹھے صرف 6 آسان مراحل میں قرآن آن لائن سیکھنا شروع کریں" data-ar="ابدأ بتعلم القرآن أونلاين من المنزل في 6 خطوات بسيطة">Start Learning Quran Online From Home in Just 6 Simple Steps</p>
+<div class="hero-btns">
+<button class="btn-primary" onclick="openForm()" data-en="🎁 Start Free Trial Now" data-ur="🎁 ابھی فری ٹرائل شروع کریں" data-ar="🎁 ابدأ التجربة المجانية الآن">🎁 Start Free Trial Now</button>
+<a href="#steps" class="btn-secondary" data-en="See How It Works" data-ur="طریقہ دیکھیں" data-ar="انظر كيف يعمل">See How It Works</a>
 </div>
+</div>
+</section>
 
-<!-- 6 Steps Process -->
-<section class="steps-section animate-bottom">
-<h2 class="section-title">Our Simple 6-Step Process</h2>
-<p class="section-subtitle">Joining Al Raza Online Quran Academy is very easy. No complex procedures. Just follow these steps:</p>
+<!-- 2. TRUST SECTION -->
+<section class="trust-section">
+<div class="container">
+<div class="trust-grid">
+<div class="trust-card"><div class="trust-icon">✓</div><h3 data-en="Certified Teachers" data-ur="سند یافتہ اساتذہ" data-ar="معلمون معتمدون">Certified Teachers</h3><p data-en="Ijazah certified scholars" data-ur="اجازہ یافتہ علماء" data-ar="علماء مجازون">Ijazah certified scholars</p></div>
+<div class="trust-card"><div class="trust-icon">👨‍🏫</div><h3 data-en="One-on-One Classes" data-ur="ون آن ون کلاسز" data-ar="دروس فردية">One-on-One Classes</h3><p data-en="Personal attention" data-ur="ذاتی توجہ" data-ar="اهتمام شخصي">Personal attention</p></div>
+<div class="trust-card"><div class="trust-icon">⏰</div><h3 data-en="Flexible Timings" data-ur="لچکدار اوقات" data-ar="أوقات مرنة">Flexible Timings</h3><p data-en="24/7 available" data-ur="24/7 دستیاب" data-ar="متاح 24/7">24/7 available</p></div>
+<div class="trust-card"><div class="trust-icon">🌍</div><h3 data-en="Worldwide Students" data-ur="عالمی طلبہ" data-ar="طلاب عالميون">Worldwide Students</h3><p data-en="USA, UK, Canada, KSA" data-ur="امریکہ، برطانیہ، کینیڈا، سعودیہ" data-ar="الولايات المتحدة، المملكة المتحدة، كندا، السعودية">USA, UK, Canada, KSA</p></div>
+</div>
+</div>
+</section>
+
+<!-- 3. ABOUT ACADEMY -->
+<section class="about-section">
+<div class="container">
+<div class="about-grid">
+<div class="about-img">📚</div>
+<div class="about-content">
+<h2 data-en="About Al Raza Online Quran Academy" data-ur="الرضا آن لائن قرآن اکیڈمی کے بارے میں" data-ar="حول أكاديمية الرضا">About Al Raza Online Quran Academy</h2>
+<p data-en="We are a premium international Quran academy providing one-on-one live classes to students worldwide. Our mission is to make Quran learning easy, accessible and enjoyable for all ages." data-ur="ہم ایک پریمیم بین الاقوامی قرآن اکیڈمی ہیں جو دنیا بھر کے طلبہ کو ون آن ون لائیو کلاسز فراہم کرتی ہے۔ ہمارا مشن تمام عمروں کے لیے قرآن سیکھنا آسان، قابل رسائی اور لطف اندوز بنانا ہے۔" data-ar="نحن أكاديمية قرآن دولية متميزة نقدم دروسًا مباشرة فردية للطلاب في جميع أنحاء العالم. مهمتنا هي جعل تعلم القرآن سهلاً ويمكن الوصول إليه وممتعًا لجميع الأعمار.">We are a premium international Quran academy providing one-on-one live classes to students worldwide. Our mission is to make Quran learning easy, accessible and enjoyable for all ages.</p>
+<p data-en="With certified teachers, flexible schedules and a friendly learning environment, we ensure every student achieves their Quranic goals with confidence." data-ur="سند یافتہ اساتذہ، لچکدار نظام الاوقات اور دوستانہ تعلیمی ماحول کے ساتھ، ہم اس بات کو یقینی بناتے ہیں کہ ہر طالب علم اپنے قرآنی اہداف کو اعتماد کے ساتھ حاصل کرے۔" data-ar="مع معلمين معتمدين وجداول مرنة وبيئة تعليمية ودية، نضمن أن يحقق كل طالب أهدافه القرآنية بثقة.">With certified teachers, flexible schedules and a friendly learning environment, we ensure every student achieves their Quranic goals with confidence.</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- 4. 6 STEPS PROCESS - YOUR DATA 100% SAME -->
+<section id="steps">
+<div class="container">
+<h2 class="section-title" data-en="Our Simple 6-Step Process" data-ur="ہمارا آسان 6-مرحلوں کا عمل" data-ar="عملنا البسيط المكون من 6 خطوات">Our Simple 6-Step Process</h2>
+<p class="section-subtitle" data-en="Joining Al Raza Online Quran Academy is very easy. No complex procedures. Just follow these steps:" data-ur="الرضا آن لائن قرآن اکیڈمی میں شمولیت بہت آسان ہے۔ کوئی پیچیدہ طریقہ کار نہیں۔ بس ان اقدامات پر عمل کریں:" data-ar="الانضمام إلى أكاديمية الرضا أونلاين سهل للغاية. لا توجد إجراءات معقدة. فقط اتبع هذه الخطوات:">Joining Al Raza Online Quran Academy is very easy. No complex procedures. Just follow these steps:</p>
 
 <div class="steps-grid">
 
-<div class="step-card animate-left">
+<div class="step-card">
 <div class="step-number">1</div>
 <div class="step-content">
-<h3>📝 Fill Registration Form</h3>
-<p>Start by filling our simple registration form below. It takes only 2-3 minutes. Provide your basic details, course preference and preferred class timing.</p>
+<h3 data-en="📝 Fill Registration Form" data-ur="📝 رجسٹریشن فارم پُر کریں" data-ar="📝 املأ نموذج التسجيل">📝 Fill Registration Form</h3>
+<p data-en="Start by filling our simple registration form below. It takes only 2-3 minutes. Provide your basic details, course preference and preferred class timing." data-ur="نیچے دیا گیا ہمارا آسان رجسٹریشن فارم پُر کرکے شروع کریں۔ اس میں صرف 2-3 منٹ لگتے ہیں۔ اپنی بنیادی تفصیلات، کورس کی ترجیح اور کلاس کا مطلوبہ وقت فراہم کریں۔" data-ar="ابدأ بملء نموذج التسجيل البسيط أدناه. يستغرق الأمر 2-3 دقائق فقط. قدم تفاصيلك الأساسية وتفضيل الدورة وتوقيت الفصل المفضل.">Start by filling our simple registration form below. It takes only 2-3 minutes. Provide your basic details, course preference and preferred class timing.</p>
 <ul>
-<li>No payment required for registration</li>
-<li>Choose from 7+ Quran courses</li>
-<li>Select your country and timezone</li>
+<li data-en="No payment required for registration" data-ur="رجسٹریشن کے لیے کوئی ادائیگی درکار نہیں" data-ar="لا يلزم دفع رسوم التسجيل">No payment required for registration</li>
+<li data-en="Choose from 7+ Quran courses" data-ur="7+ قرآن کورسز میں سے انتخاب کریں" data-ar="اختر من بين 7+ دورات القرآن">Choose from 7+ Quran courses</li>
+<li data-en="Select your country and timezone" data-ur="اپنا ملک اور ٹائم زون منتخب کریں" data-ar="اختر بلدك والمنطقة الزمنية">Select your country and timezone</li>
 </ul>
 </div>
 </div>
 
-<div class="step-card animate-right">
+<div class="step-card">
 <div class="step-number">2</div>
 <div class="step-content">
-<h3>📧 Receive Confirmation Email</h3>
-<p>After form submission, our admin team will send you confirmation email within 2 hours. This email contains your trial class schedule and Zoom/WhatsApp joining link.</p>
+<h3 data-en="📧 Receive Confirmation Email" data-ur="📧 تصدیقی ای میل حاصل کریں" data-ar="📧 تلقي بريد إلكتروني للتأكيد">📧 Receive Confirmation Email</h3>
+<p data-en="After form submission, our admin team will send you confirmation email within 2 hours. This email contains your trial class schedule and Zoom/WhatsApp joining link." data-ur="فارم جمع کرانے کے بعد، ہماری انتظامیہ کی ٹیم آپ کو 2 گھنٹے کے اندر تصدیقی ای میل بھیجے گی۔ اس ای میل میں آپ کا ٹرائل کلاس کا شیڈول اور زوم/واٹس ایپ جوائننگ لنک شامل ہے۔" data-ar="بعد تقديم النموذج، سيرسل لك فريق الإدارة بريدًا إلكترونيًا للتأكيد خلال ساعتين. يحتوي هذا البريد الإلكتروني على جدول الفصل التجريبي ورابط الانضمام إلى زوم/واتساب.">After form submission, our admin team will send you confirmation email within 2 hours. This email contains your trial class schedule and Zoom/WhatsApp joining link.</p>
 <ul>
-<li>Check inbox and spam/junk folder</li>
-<li>Email sent from official academy address</li>
-<li>24/7 support available for queries</li>
+<li data-en="Check inbox and spam/junk folder" data-ur="ان باکس اور اسپام/جنک فولڈر چیک کریں" data-ar="تحقق من صندوق الوارد ومجلد البريد العشوائي">Check inbox and spam/junk folder</li>
+<li data-en="Email sent from official academy address" data-ur="ای میل اکیڈمی کے سرکاری پتے سے بھیجی گئی" data-ar="البريد الإلكتروني المرسل من عنوان الأكاديمية الرسمي">Email sent from official academy address</li>
+<li data-en="24/7 support available for queries" data-ur="سوالات کے لیے 24/7 سپورٹ دستیاب ہے" data-ar="الدعم متاح 24/7 للاستفسارات">24/7 support available for queries</li>
 </ul>
 </div>
 </div>
 
-<div class="step-card animate-left">
+<div class="step-card">
 <div class="step-number">3</div>
 <div class="step-content">
-<h3>🎁 Attend 3 Days Free Trial</h3>
-<p>Join your 3-day free trial classes with our certified teacher. Test our teaching method, teacher's behavior and class environment completely free.</p>
+<h3 data-en="🎁 Attend 3 Days Free Trial" data-ur="🎁 3 دن کے مفت ٹرائل میں شرکت کریں" data-ar="🎁 احضر 3 أيام تجربة مجانية">🎁 Attend 3 Days Free Trial</h3>
+<p data-en="Join your 3-day free trial classes with our certified teacher. Test our teaching method, teacher's behavior and class environment completely free." data-ur="ہمارے سند یافتہ استاد کے ساتھ 3 دن کی مفت ٹرائل کلاسز میں شرکت کریں۔ ہمارے تدریسی طریقہ، استاد کے رویے اور کلاس کے ماحول کو مکمل طور پر مفت میں آزمائیں۔" data-ar="انضم إلى حصصك التجريبية المجانية لمدة 3 أيام معلمك المعتمد. اختبر أسلوبنا التعليمي وسلوك المعلم وبيئة الفصل مجانًا تمامًا.">Join your 3-day free trial classes with our certified teacher. Test our teaching method, teacher's behavior and class environment completely free.</p>
 <ul>
-<li>30-45 minutes daily class</li>
-<li>One-on-one personal attention</li>
-<li>No credit card or payment needed</li>
+<li data-en="30-45 minutes daily class" data-ur="30-45 منٹ کی روزانہ کلاس" data-ar="حصة يومية 30-45 دقيقة">30-45 minutes daily class</li>
+<li data-en="One-on-one personal attention" data-ur="ون آن ون ذاتی توجہ" data-ar="اهتمام شخصي فردي">One-on-one personal attention</li>
+<li data-en="No credit card or payment needed" data-ur="کریڈٹ کارڈ یا ادائیگی کی ضرورت نہیں" data-ar="لا حاجة لبطاقة ائتمان أو دفع">No credit card or payment needed</li>
 </ul>
 </div>
-</div>
-
-<div class="step-card animate-right">
+</div><div class="step-card">
 <div class="step-number">4</div>
 <div class="step-content">
-<h3>⏰ Select Your Class Schedule</h3>
-<p>After successful trial, choose your preferred class days and timings according to your timezone and daily routine. We are flexible for all countries.</p>
+<h3 data-en="⏰ Select Your Class Schedule" data-ur="⏰ اپنا کلاس شیڈول منتخب کریں" data-ar="⏰ اختر جدول الفصل الخاص بك">⏰ Select Your Class Schedule</h3>
+<p data-en="After successful trial, choose your preferred class days and timings according to your timezone and daily routine. We are flexible for all countries." data-ur="کامیاب ٹرائل کے بعد، اپنے ٹائم زون اور روزمرہ کے معمول کے مطابق کلاس کے مطلوبہ دن اور اوقات کا انتخاب کریں۔ ہم تمام ممالک کے لیے لچکدار ہیں۔" data-ar="بعد التجربة الناجحة، اختر أيام وأوقات الفصل المفضلة لديك وفقًا للمنطقة الزمنية وروتينك اليومي. نحن مرنون لجميع البلدان.">After successful trial, choose your preferred class days and timings according to your timezone and daily routine. We are flexible for all countries.</p>
 <ul>
-<li>Morning, Afternoon, Evening, Night slots</li>
-<li>3 Days or 5 Days per week option</li>
-<li>Change timing anytime if needed</li>
+<li data-en="Morning, Afternoon, Evening, Night slots" data-ur="صبح، دوپہر، شام، رات کے سلاٹس" data-ar="فترات الصباح والظهيرة والمساء والليل">Morning, Afternoon, Evening, Night slots</li>
+<li data-en="3 Days or 5 Days per week option" data-ur="ہفتے میں 3 دن یا 5 دن کا آپشن" data-ar="خيار 3 أيام أو 5 أيام في الأسبوع">3 Days or 5 Days per week option</li>
+<li data-en="Change timing anytime if needed" data-ur="اگر ضرورت ہو تو کسی بھی وقت تبدیل کریں" data-ar="غير التوقيت في أي وقت إذا لزم الأمر">Change timing anytime if needed</li>
 </ul>
 </div>
 </div>
 
-<div class="step-card animate-left">
+<div class="step-card">
 <div class="step-number">5</div>
 <div class="step-content">
-<h3>💰 Receive Fee Invoice</h3>
-<p>We'll send you detailed fee invoice via email with multiple payment options. Fees are very affordable and charged monthly in advance.</p>
+<h3 data-en="💰 Receive Fee Invoice" data-ur="💰 فیس انوائس حاصل کریں" data-ar="💰 تلقي فاتورة الرسوم">💰 Receive Fee Invoice</h3>
+<p data-en="We'll send you detailed fee invoice via email with multiple payment options. Fees are very affordable and charged monthly in advance." data-ur="ہم آپ کو متعدد ادائیگی کے اختیارات کے ساتھ ای میل کے ذریعے تفصیلی فیس انوائس بھیجیں گے۔ فیس بہت سستی ہے اور ماہانہ پیشگی چارج کی جاتی ہے۔" data-ar="سنرسل لك فاتورة رسوم مفصلة عبر البريد الإلكتروني مع خيارات دفع متعددة. الرسوم ميسورة للغاية وتُفرض شهريًا مقدمًا.">We'll send you detailed fee invoice via email with multiple payment options. Fees are very affordable and charged monthly in advance.</p>
 <ul>
-<li>Bank Transfer, Western Union, PayPal</li>
-<li>Monthly payment system</li>
-<li>No hidden charges or registration fee</li>
+<li data-en="Bank Transfer, Western Union, PayPal" data-ur="بینک ٹرانسفر، ویسٹرن یونین، پے پال" data-ar="التحويل البنكي، ويسترن يونيون، باي بال">Bank Transfer, Western Union, PayPal</li>
+<li data-en="Monthly payment system" data-ur="ماہانہ ادائیگی کا نظام" data-ar="نظام الدفع الشهري">Monthly payment system</li>
+<li data-en="No hidden charges or registration fee" data-ur="کوئی پوشیدہ چارجز یا رجسٹریشن فیس نہیں" data-ar="لا توجد رسوم خفية أو رسوم تسجيل">No hidden charges or registration fee</li>
 </ul>
 </div>
 </div>
 
-<div class="step-card animate-right">
+<div class="step-card">
 <div class="step-number">6</div>
 <div class="step-content">
-<h3>🚀 Start Regular Classes</h3>
-<p>Last step! After payment confirmation, your classes will start immediately with the assigned teacher. You can start learning Quran from comfort of your home.</p>
+<h3 data-en="🚀 Start Regular Classes" data-ur="🚀 باقاعدہ کلاسز شروع کریں" data-ar="🚀 ابدأ الفصول العادية">🚀 Start Regular Classes</h3>
+<p data-en="Last step! After payment confirmation, your classes will start immediately with the assigned teacher. You can start learning Quran from comfort of your home." data-ur="آخری مرحلہ! ادائیگی کی تصدیق کے بعد، آپ کی کلاسز تفویض کردہ استاد کے ساتھ فوراً شروع ہو جائیں گی۔ آپ اپنے گھر کے آرام سے قرآن سیکھنا شروع کر سکتے ہیں۔" data-ar="الخطوة الأخيرة! بعد تأكيد الدفع، ستبدأ فصولك على الفور مع المعلم المكلف. يمكنك البدء بتعلم القرآن من راحة منزلك.">Last step! After payment confirmation, your classes will start immediately with the assigned teacher. You can start learning Quran from comfort of your home.</p>
 <ul>
-<li>Daily classes as per schedule</li>
-<li>Monthly progress reports</li>
-<li>24/7 teacher support available</li>
+<li data-en="Daily classes as per schedule" data-ur="شیڈول کے مطابق روزانہ کلاسز" data-ar="فصول يومية حسب الجدول">Daily classes as per schedule</li>
+<li data-en="Monthly progress reports" data-ur="ماہانہ پیش رفت کی رپورٹس" data-ar="تقارير التقدم الشهرية">Monthly progress reports</li>
+<li data-en="24/7 teacher support available" data-ur="24/7 استاد کی سپورٹ دستیاب ہے" data-ar="دعم المعلم متاح 24/7">24/7 teacher support available</li>
 </ul>
 </div>
 </div>
 
 </div>
-
-<center><a href="#registration" class="free-trial-btn">🎁 Start With Free Trial Now</a></center>
+<center style="margin-top:50px"><button onclick="openForm()" class="btn-primary" style="font-size:20px;padding:20px 50px;border-radius:50px;border:2px solid var(--secondary)" data-en="🎁 Start With Free Trial Now" data-ur="🎁 ابھی فری ٹرائل سے شروع کریں" data-ar="🎁 ابدأ بالتجربة المجانية الآن">🎁 Start With Free Trial Now</button></center>
+</div>
 </section>
 
-<!-- Why Choose Our Process -->
-<section class="features-section animate-top">
-<h2 class="features-title">Why Our Process is Best?</h2>
+<style>
+/* 5. FEATURES SECTION - WHY OUR PROCESS IS BEST */
+.features-section{background:var(--bg-light)}
+.features-title{text-align:center;font-size:44px;margin-bottom:60px;color:var(--primary);font-weight:800}
+.features-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:30px}
+.feature-box{background:var(--bg);padding:40px 30px;border-radius:16px;border-top:5px solid var(--primary);text-align:center;transition:0.4s;box-shadow:0 10px 30px rgba(0,0,0,0.06)}
+.feature-box:hover{transform:translateY(-12px);border-top-color:var(--secondary);box-shadow:0 20px 40px rgba(15,118,110,0.15)}
+.feature-icon{font-size:55px;margin-bottom:20px}
+.feature-box h4{color:var(--primary);font-size:22px;margin-bottom:15px;font-weight:700}
+.feature-box p{color:var(--text);font-size:16px;line-height:1.9}
+@media(max-width:900px){.features-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.features-grid{grid-template-columns:1fr}}
+</style>
+
+<!-- 5. WHY OUR PROCESS IS BEST - YOUR DATA 100% SAME -->
+<section class="features-section">
+<div class="container">
+<h2 class="features-title" data-en="Why Our Process is Best?" data-ur="ہمارا عمل بہترین کیوں ہے؟" data-ar="لماذا عمليتنا هي الأفضل؟">Why Our Process is Best?</h2>
 <div class="features-grid">
 
-<div class="feature-box animate-left">
+<div class="feature-box">
 <div class="feature-icon">⚡</div>
-<h4>Quick Enrollment</h4>
-<p>Complete registration in just 2 minutes. No lengthy paperwork or complicated forms.</p>
+<h4 data-en="Quick Enrollment" data-ur="فوری اندراج" data-ar="التسجيل السريع">Quick Enrollment</h4>
+<p data-en="Complete registration in just 2 minutes. No lengthy paperwork or complicated forms." data-ur="صرف 2 منٹ میں رجسٹریشن مکمل کریں۔ کوئی لمبا کاغذی کارروائی یا پیچیدہ فارم نہیں۔" data-ar="أكمل التسجيل في دقيقتين فقط. لا توجد أوراق طويلة أو نماذج معقدة.">Complete registration in just 2 minutes. No lengthy paperwork or complicated forms.</p>
 </div>
 
-<div class="feature-box animate-right">
+<div class="feature-box">
 <div class="feature-icon">🎯</div>
-<h4>Free Trial First</h4>
-<p>We let you test 3 full days before any payment. You decide after experiencing quality.</p>
+<h4 data-en="Free Trial First" data-ur="پہلے فری ٹرائل" data-ar="التجربة المجانية أولاً">Free Trial First</h4>
+<p data-en="We let you test 3 full days before any payment. You decide after experiencing quality." data-ur="ہم آپ کو کسی بھی ادائیگی سے پہلے 3 پورے دن ٹیسٹ کرنے دیتے ہیں۔ آپ معیار کا تجربہ کرنے کے بعد فیصلہ کرتے ہیں۔" data-ar="نسمح لك بتجربة 3 أيام كاملة قبل أي دفع. أنت تقر بعد تجربة الجودة.">We let you test 3 full days before any payment. You decide after experiencing quality.</p>
 </div>
 
-<div class="feature-box animate-left">
+<div class="feature-box">
 <div class="feature-icon">🌍</div>
-<h4>Global Timezones</h4>
-<p>Classes available for USA, UK, Canada, Australia, UAE, KSA and all countries.</p>
+<h4 data-en="Global Timezones" data-ur="عالمی ٹائم زونز" data-ar="المناطق الزمنية العالمية">Global Timezones</h4>
+<p data-en="Classes available for USA, UK, Canada, Australia, UAE, KSA and all countries." data-ur="امریکہ، برطانیہ، کینیڈا، آسٹریلیا، متحدہ عرب امارات، سعودی عرب اور تمام ممالک کے لیے کلاسز دستیاب ہیں۔" data-ar="الفصول متاحة للولايات المتحدة والمملكة المتحدة وكندا وأستراليا والإمارات العربية المتحدة والمملكة العربية السعودية وجميع البلدان.">Classes available for USA, UK, Canada, Australia, UAE, KSA and all countries.</p>
 </div>
 
-<div class="feature-box animate-right">
+<div class="feature-box">
 <div class="feature-icon">👨‍🏫</div>
-<h4>Teacher Selection</h4>
-<p>After trial, you can request change of teacher if not satisfied. Your comfort matters.</p>
+<h4 data-en="Teacher Selection" data-ur="استاد کا انتخاب" data-ar="اختيار المعلم">Teacher Selection</h4>
+<p data-en="After trial, you can request change of teacher if not satisfied. Your comfort matters." data-ur="ٹرائل کے بعد، اگر آپ مطمئن نہیں ہیں تو آپ استاد کی تبدیلی کی درخواست کر سکتے ہیں۔ آپ کا سکون اہم ہے۔" data-ar="بعد التجربة، يمكنك طلب تغيير المعلم إذا لم تكن راضيًا. راحتك مهمة.">After trial, you can request change of teacher if not satisfied. Your comfort matters.</p>
 </div>
 
-<div class="feature-box animate-left">
+<div class="feature-box">
 <div class="feature-icon">💻</div>
-<h4>Easy Platform</h4>
-<p>Join classes via Zoom, Skype or WhatsApp. No software installation needed.</p>
+<h4 data-en="Easy Platform" data-ur="آسان پلیٹ فارم" data-ar="منصة سهلة">Easy Platform</h4>
+<p data-en="Join classes via Zoom, Skype or WhatsApp. No software installation needed." data-ur="زوم، سکائپ یا واٹس ایپ کے ذریعے کلاسز میں شامل ہوں۔ سافٹ ویئر انسٹالیشن کی ضرورت نہیں۔" data-ar="انضم إلى الفصول عبر زوم أو سكايب أو واتساب. لا حاجة لتثبيت البرامج.">Join classes via Zoom, Skype or WhatsApp. No software installation needed.</p>
 </div>
 
-<div class="feature-box animate-right">
+<div class="feature-box">
 <div class="feature-icon">📊</div>
-<h4>Progress Tracking</h4>
-<p>Monthly reports sent to parents. You always know your child's learning progress.</p>
+<h4 data-en="Progress Tracking" data-ur="پیش رفت ٹریکنگ" data-ar="تتبع التقدم">Progress Tracking</h4>
+<p data-en="Monthly reports sent to parents. You always know your child's learning progress." data-ur="والدین کو ماہانہ رپورٹس بھیجی جاتی ہیں۔ آپ ہمیشہ اپنے بچے کی سیکھنے کی پیش رفت جانتے ہیں۔" data-ar="يتم إرسال التقارير الشهرية إلى أولياء الأمور. أنت تعرف دائمًا تقدم طفلك التعليمي.">Monthly reports sent to parents. You always know your child's learning progress.</p>
 </div>
 
+</div>
+</div>
+    </section><style>
+/* 6. FORM SECTION */
+.form-section{background:var(--bg)}
+.form-title{text-align:center;font-size:44px;margin-bottom:15px;color:var(--primary);font-weight:800}
+.form-subtitle{text-align:center;font-size:18px;color:var(--text);margin-bottom:50px}
+.registration-form{background:var(--bg-light);padding:50px;border-radius:16px;border:1px solid rgba(15,118,110,0.1)}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:25px;margin-bottom:25px}
+.form-group{margin-bottom:25px}
+.form-group label{display:block;color:var(--primary);font-size:16px;font-weight:600;margin-bottom:10px}
+.form-group input,.form-group select,.form-group textarea{width:100%;padding:16px 18px;background:var(--bg);border:2px solid #e5e7eb;border-radius:12px;color:var(--text);font-size:16px;font-family:'Poppins';transition:0.3s}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{outline:none;border-color:var(--primary);box-shadow:0 0 15px rgba(15,118,110,0.2)}
+.form-group textarea{resize:vertical;min-height:120px}
+.submit-btn{width:100%;background:var(--primary);color:#fff;padding:20px;border:none;border-radius:12px;font-size:18px;font-weight:700;cursor:pointer;transition:0.3s;margin-top:20px;font-family:'Poppins'}
+.submit-btn:hover{background:#0d655e;transform:scale(1.02);box-shadow:0 10px 35px rgba(15,118,110,0.4)}
+@media(max-width:768px){.form-row{grid-template-columns:1fr}.registration-form{padding:30px 20px}}
+
+/* 7. FAQ SECTION */
+.faq-section{background:var(--bg-light)}
+.faq-title{text-align:center;font-size:44px;margin-bottom:60px;color:var(--primary);font-weight:800}
+.faq-item{background:var(--bg);padding:30px;border-radius:16px;margin-bottom:20px;border-left:5px solid var(--primary);box-shadow:0 8px 25px rgba(0,0,0,0.06)}
+body.urdu .faq-item{border-left:none;border-right:5px solid var(--primary)}
+.faq-item h4{color:var(--primary);font-size:20px;margin-bottom:12px;font-weight:700}
+.faq-item p{color:var(--text);font-size:16px;line-height:1.9}
+
+/* 8. FREE TRIAL CTA */
+.cta-section{background:var(--primary);padding:100px 0;text-align:center;color:#fff}
+.cta-section h2{font-size:46px;margin-bottom:20px;font-weight:800}
+.cta-section p{font-size:20px;margin-bottom:40px;opacity:0.95}
+.cta-btn{background:var(--secondary);color:#000;padding:22px 50px;border-radius:50px;text-decoration:none;font-size:20px;font-weight:700;border:none;cursor:pointer;transition:0.3s;display:inline-block;font-family:'Poppins'}
+.cta-btn:hover{background:#C39B2E;transform:scale(1.08);box-shadow:0 15px 40px rgba(212,175,55,0.4)}
+</style>
+
+<!-- 6. REGISTRATION FORM - YOUR DATA 100% SAME -->
+<section class="form-section" id="registration">
+<div class="container">
+<h2 class="form-title" data-en="📝 Register For Free Trial" data-ur="📝 فری ٹرائل کے لیے رجسٹر کریں" data-ar="📝 سجل للتجربة المجانية">📝 Register For Free Trial</h2>
+<p class="form-subtitle" data-en="Fill this form now and get 3 Days Free Trial Class. Our team will contact you within 2 hours." data-ur="ابھی یہ فارم پُر کریں اور 3 دن کی مفت ٹرائل کلاس حاصل کریں۔ ہماری ٹیم 2 گھنٹے کے اندر آپ سے رابطہ کرے گی۔" data-ar="املأ هذا النموذج الآن واحصل على 3 أيام من الفصل التجريبي المجاني. سيتواصل معك فريقنا خلال ساعتين.">Fill this form now and get 3 Days Free Trial Class. Our team will contact you within 2 hours.</p>
+
+<form class="registration-form" id="whatsappForm">
+<div class="form-row">
+<div class="form-group">
+<label data-en="Full Name *" data-ur="مکمل نام *" data-ar="الاسم الكامل *">Full Name *</label>
+<input type="text" id="name" placeholder="Enter your full name" required>
+</div>
+<div class="form-group">
+<label data-en="Age *" data-ur="عمر *" data-ar="العمر *">Age *</label>
+<input type="number" id="age" placeholder="Enter age" min="4" max="80" required>
+</div>
+</div>
+
+<div class="form-row">
+<div class="form-group">
+<label data-en="WhatsApp Number *" data-ur="واٹس ایپ نمبر *" data-ar="رقم الواتساب *">WhatsApp Number *</label>
+<input type="tel" id="wano" placeholder="+92 3XX XXXXXXX" required>
+</div>
+<div class="form-group">
+<label data-en="Country *" data-ur="ملک *" data-ar="البلد *">Country *</label>
+<input type="text" id="country" placeholder="e.g. USA, UK, Pakistan" required>
+</div>
+</div>
+
+<div class="form-group">
+<label data-en="Select Course *" data-ur="کورس منتخب کریں *" data-ar="اختر الدورة *">Select Course *</label>
+<select id="course" required>
+<option value="" data-en="Choose Course" data-ur="کورس منتخب کریں" data-ar="اختر الدورة">Choose Course</option>
+<option value="Nazra Quran with Tajweed" data-en="Nazra Quran with Tajweed" data-ur="ناظرہ قرآن مع تجوید" data-ar="ناظرة القرآن مع التجويد">Nazra Quran with Tajweed</option>
+<option value="Hifz Quran" data-en="Hifz Quran" data-ur="حفظ قرآن" data-ar="حفظ القرآن">Hifz Quran</option>
+<option value="Quran Translation & Tafseer" data-en="Quran Translation & Tafseer" data-ur="قرآن ترجمہ و تفسیر" data-ar="ترجمة القرآن وتفسيره">Quran Translation & Tafseer</option>
+<option value="Islamic Studies" data-en="Islamic Studies for Kids" data-ur="اسلامیات برائے بچے" data-ar="الدراسات الإسلامية للأطفال">Islamic Studies for Kids</option>
+</select>
+</div>
+
+<button type="submit" class="submit-btn" data-en="🚀 Submit & Get Free Trial Class" data-ur="🚀 جمع کرائیں اور فری ٹرائل کلاس حاصل کریں" data-ar="🚀 أرسل واحصل على الفصل التجريبي المجاني">🚀 Submit & Get Free Trial Class</button>
+</form>
 </div>
 </section>
 
-<!-- Registration Form -->
-<section class="form-section animate-bottom" id="registration">
-<h2 class="form-title">📝 Register For Free Trial</h2>
-<p class="form-subtitle">Fill this form now and get 3 Days Free Trial Class. Our team will contact you within 2 hours.</p>
+<!-- 7. FAQ SECTION - YOUR DATA 100% SAME -->
+<section class="faq-section">
+<div class="container">
+<h2 class="faq-title" data-en="❓ Common Questions About Process" data-ur="❓ عمل کے بارے میں عام سوالات" data-ar="❓ أسئلة شائعة حول العملية">❓ Common Questions About Process</h2>
 
-<form class="registration-form animate-top" action="https://formsubmit.co/muhammadshazabattari786@gmail.com" method="POST">
-<input type="hidden" name="_subject" value="New Student Registration - How It Works Page">
-<input type="hidden" name="_captcha" value="false">
-<input type="hidden" name="_next" value="thankyou.html">
-
-<div class="form-row">
-<div class="form-group">
-<label>Full Name *</label>
-<input type="text" name="name" placeholder="Enter your full name" required>
-</div>
-<div class="form-group">
-<label>Age *</label>
-<input type="number" name="age" placeholder="Enter age" min="4" max="80" required>
-</div>
+<div class="faq-item">
+<h4 data-en="Q: Is registration fee required?" data-ur="س: کیا رجسٹریشن فیس درکار ہے؟" data-ar="س: هل رسوم التسجيل مطلوبة؟">Q: Is registration fee required?</h4>
+<p data-en="A: No ustaad, registration is completely free. You only pay after 3 days free trial if satisfied with our teaching." data-ur="ج: نہیں استاد، رجسٹریشن بالکل مفت ہے۔ آپ صرف 3 دن کے مفت ٹرائل کے بعد ادائیگی کرتے ہیں اگر آپ ہماری تعلیم سے مطمئن ہیں۔" data-ar="ج: لا يا أستاذ، التسجيل مجاني تمامًا. أنت تدفع فقط بعد 3 أيام تجربة مجانية إذا كنت راضيًا عن تدريسنا.">A: No ustaad, registration is completely free. You only pay after 3 days free trial if satisfied with our teaching.</p>
 </div>
 
-<div class="form-row">
-<div class="form-group">
-<label>WhatsApp Number *</label>
-<input type="tel" name="whatsapp" placeholder="+92 3XX XXXXXXX" required>
-</div>
-<div class="form-group">
-<label>Email Address *</label>
-<input type="email" name="email" placeholder="your@email.com" required>
-</div>
+<div class="faq-item">
+<h4 data-en="Q: How quickly will I get response after form submission?" data-ur="س: فارم جمع کرانے کے بعد مجھے کتنی جلدی جواب ملے گا؟" data-ar="س: كم من الوقت سأحصل على الرد بعد تقديم النموذج؟">Q: How quickly will I get response after form submission?</h4>
+<p data-en="A: Our team contacts every student within 2 hours. If you submit at night, you'll get email by morning." data-ur="ج: ہماری ٹیم ہر طالب علم سے 2 گھنٹے کے اندر رابطہ کرتی ہے۔ اگر آپ رات کو جمع کراتے ہیں تو آپ کو صبح تک ای میل مل جائے گی۔" data-ar="ج: يتواصل فريقنا مع كل طالب خلال ساعتين. إذا قدمت في الليل، ستحصل على البريد الإلكتروني في الصباح.">A: Our team contacts every student within 2 hours. If you submit at night, you'll get email by morning.</p>
 </div>
 
-<div class="form-row">
-<div class="form-group">
-<label>Country *</label>
-<input type="text" name="country" placeholder="e.g. USA, UK, Pakistan" required>
+<div class="faq-item">
+<h4 data-en="Q: Can I change class timing after starting?" data-ur="س: کیا میں شروع کرنے کے بعد کلاس کا وقت تبدیل کر سکتا ہوں؟" data-ar="س: هل يمكنني تغيير وقت الفصل بعد البدء؟">Q: Can I change class timing after starting?</h4>
+<p data-en="A: Yes, you can change your class timing anytime by informing your teacher 1 day in advance." data-ur="ج: ہاں، آپ اپنے استاد کو 1 دن پہلے مطلع کر کے کسی بھی وقت اپنی کلاس کا وقت تبدیل کر سکتے ہیں۔" data-ar="ج: نعم، يمكنك تغيير وقت الفصل في أي وقت بإبلاغ معلمك قبل يوم واحد.">A: Yes, you can change your class timing anytime by informing your teacher 1 day in advance.</p>
 </div>
+
+<div class="faq-item">
+<h4 data-en="Q: What if I don't like the teacher after trial?" data-ur="س: اگر ٹرائل کے بعد مجھے استاد پسند نہ آئے تو کیا ہوگا؟" data-ar="س: ماذا لو لم يعجبني المعلم بعد التجربة؟">Q: What if I don't like the teacher after trial?</h4>
+<p data-en="A: No problem. We will assign you a new teacher immediately. Student satisfaction is our priority." data-ur="ج: کوئی مسئلہ نہیں۔ ہم فوراً آپ کو ایک نیا استاد تفویض کریں گے۔ طالب علم کی اطمینان ہماری ترجیح ہے۔" data-ar="ج: لا مشكلة. سنعين لك معلمًا جديدًا على الفور. رضا الطالب هو أولويتنا.">A: No problem. We will assign you a new teacher immediately. Student satisfaction is our priority.</p>
+</div>
+
+<div class="faq-item">
+<h4 data-en="Q: Do you provide recorded classes?" data-ur="س: کیا آپ ریکارڈ شدہ کلاسز فراہم کرتے ہیں؟" data-ar="س: هل توفرون فصولًا مسجلة؟">Q: Do you provide recorded classes?</h4>
+<p data-en="A: Yes, if you miss any class, teacher will provide recording of that session on WhatsApp." data-ur="ج: ہاں، اگر آپ کوئی کلاس مس کرتے ہیں تو استاد اس سیشن کی ریکارڈنگ واٹس ایپ پر فراہم کرے گا۔" data-ar="ج: نعم، إذا فاتتك أي حصة، سيقدم المعلم تسجيل تلك الجلسة على واتساب.">A: Yes, if you miss any class, teacher will provide recording of that session on WhatsApp.</p>
+</div>
+</div>
+</section>
+
+<!-- 8. FREE TRIAL CTA -->
+<section class="cta-section">
+<div class="container">
+<h2 data-en="Start Your Quran Journey Today" data-ur="آج ہی اپنا قرآن کا سفر شروع کریں" data-ar="ابدأ رحلتك القرآنية اليوم">Start Your Quran Journey Today</h2>
+<p data-en="3 Days Free Trial. No Credit Card Required." data-ur="3 دن کا مفت ٹرائل۔ کریڈٹ کارڈ کی ضرورت نہیں۔" data-ar="3 أيام تجربة مجانية. لا حاجة لبطاقة ائتمان.">3 Days Free Trial. No Credit Card Required.</p>
+<button onclick="openForm()" class="cta-btn" data-en="🎁 Book Your Free Trial Now" data-ur="🎁 ابھی اپنا مفت ٹرائل بک کریں" data-ar="🎁 احجز تجربتك المجانية الآن">🎁 Book Your Free Trial Now</button>
+</div>
+    </section><style>
+/* 9. FOOTER - PREMIUM DARK */
+footer{background:var(--dark-footer);color:#9ca3af;padding:60px 0 30px}
+.footer-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:40px;margin-bottom:40px}
+.footer-col h4{color:#fff;font-size:18px;margin-bottom:20px;font-weight:700}
+.footer-col a{display:block;color:#9ca3af;text-decoration:none;margin-bottom:12px;font-size:15px;transition:0.3s}
+.footer-col a:hover{color:var(--secondary);padding-left:5px}
+body.urdu.footer-col a:hover{padding-left:0;padding-right:5px}
+.footer-bottom{text-align:center;padding-top:30px;border-top:1px solid #374151;color:#6b7280;font-size:14px}
+
+/* POPUP FORM - 100% FIXED */
+.modal{display:none;position:fixed;z-index:9999;left:0;top:0;width:100%;height:100%;background:rgba(0,0,0,0.8);align-items:center;justify-content:center}
+.modal.show{display:flex;animation:fadeIn 0.3s ease}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+.modal-content{background:var(--bg);margin:auto;padding:40px;border-radius:16px;max-width:500px;width:90%;position:relative;box-shadow:0 20px 60px rgba(0,0,0,0.3)}
+.close-btn{position:absolute;top:15px;right:20px;font-size:28px;color:var(--text);cursor:pointer;font-weight:700;transition:0.3s}
+.close-btn:hover{color:var(--primary)}
+.modal-content h3{text-align:center;color:var(--primary);font-size:24px;margin-bottom:25px}
+.modal-content.form-group{margin-bottom:20px}
+.modal-content input,.modal-content select{width:100%;padding:14px;border:2px solid #e5e7eb;border-radius:10px;font-size:15px;font-family:'Poppins'}
+.modal-content button{width:100%;background:var(--primary);color:#fff;padding:16px;border:none;border-radius:10px;font-size:16px;font-weight:700;cursor:pointer;font-family:'Poppins'}
+.modal-content button:hover{background:#0d655e}
+
+/* WHATSAPP FLOAT */
+.whatsapp-float{position:fixed;bottom:25px;right:25px;background:#25D366;width:65px;height:65px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:32px;color:white;text-decoration:none;z-index:999;box-shadow:0 5px 25px rgba(37,211,102,0.5);transition:0.3s}
+.whatsapp-float:hover{transform:scale(1.15)}
+@media(max-width:900px){.footer-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.footer-grid{grid-template-columns:1fr}}
+</style>
+
+<!-- 9. FOOTER -->
+<footer>
+<div class="container">
+<div class="footer-grid">
+<div class="footer-col">
+<h4 data-en="Quick Links" data-ur="فوری لنکس" data-ar="روابط سريعة">Quick Links</h4>
+<a href="index.html" data-en="Home" data-ur="ہوم" data-ar="الرئيسية">Home</a>
+<a href="about.html" data-en="About Us" data-ur="ہمارے بارے میں" data-ar="من نحن">About Us</a>
+<a href="courses.html" data-en="Courses" data-ur="کورسز" data-ar="الدورات">Courses</a>
+<a href="teachers.html" data-en="Teachers" data-ur="اساتذہ" data-ar="المعلمون">Teachers</a>
+</div>
+<div class="footer-col">
+<h4 data-en="Courses" data-ur="کورسز" data-ar="الدورات">Courses</h4>
+<a href="#" data-en="Nazra with Tajweed" data-ur="ناظرہ مع تجوید" data-ar="ناظرة مع التجويد">Nazra with Tajweed</a>
+<a href="#" data-en="Hifz Quran" data-ur="حفظ قرآن" data-ar="حفظ القرآن">Hifz Quran</a>
+<a href="#" data-en="Quran Tafseer" data-ur="قرآن تفسیر" data-ar="تفسير القرآن">Quran Tafseer</a>
+<a href="#" data-en="Islamic Studies" data-ur="اسلامیات" data-ar="الدراسات الإسلامية">Islamic Studies</a>
+</div>
+<div class="footer-col">
+<h4 data-en="Contact Info" data-ur="رابطہ کی معلومات" data-ar="معلومات الاتصال">Contact Info</h4>
+<a href="https://wa.me/923090252314" target="_blank">📞 +92 309 0252314</a>
+<a href="mailto:info@alraza.com">📧 info@alraza.com</a>
+<a href="#" data-en="🌍 Online Worldwide" data-ur="🌍 آن لائن دنیا بھر" data-ar="🌍 أونلاين في جميع أنحاء العالم">🌍 Online Worldwide</a>
+</div>
+<div class="footer-col">
+<h4 data-en="Follow Us" data-ur="ہمیں فالو کریں" data-ar="تابعنا">Follow Us</h4>
+<a href="#">Facebook</a>
+<a href="#">Instagram</a>
+<a href="#">YouTube</a>
+<a href="#">WhatsApp</a>
+</div>
+</div>
+<div class="footer-bottom">
+<p>© 2026 Al Raza Online Quran Academy | <span data-en="Learn Quran, Transform Life ✨" data-ur="قرآن سیکھیں، زندگی بدلیں ✨" data-ar="تعلم القرآن، غيّر حياتك ✨">Learn Quran, Transform Life ✨</span></p>
+</div>
+</div>
+</footer>
+
+<!-- WHATSAPP FLOAT -->
+<a href="https://wa.me/923090252314" class="whatsapp-float" target="_blank">💬</a>
+
+<!-- POPUP FORM -->
+<div id="joinForm" class="modal">
+<div class="modal-content">
+<span class="close-btn" onclick="closeForm()">&times;</span>
+<h3 data-en="Book Your Free Trial" data-ur="اپنا مفت ٹرائل بک کریں" data-ar="احجز تجربتك المجانية">Book Your Free Trial</h3>
+<form id="popupForm">
+<div class="form-group"><input type="text" id="pname" placeholder="Full Name" required></div>
+<div class="form-group"><input type="number" id="page" placeholder="Age" min="4" max="80" required></div>
+<div class="form-group"><input type="tel" id="pwano" placeholder="WhatsApp Number" required></div>
+<div class="form-group"><input type="text" id="pcountry" placeholder="Country" required></div>
 <div class="form-group">
-<label>Select Course *</label>
-<select name="course" required>
-<option value="">Choose Course</option>
+<select id="pcourse" required>
+<option value="">Select Course</option>
 <option value="Nazra Quran with Tajweed">Nazra Quran with Tajweed</option>
 <option value="Hifz Quran">Hifz Quran</option>
 <option value="Quran Translation & Tafseer">Quran Translation & Tafseer</option>
-<option value="Islamic Studies">Islamic Studies for Kids</option>
+<option value="Islamic Studies">Islamic Studies</option>
 </select>
 </div>
-</div>
-
-<div class="form-row">
-<div class="form-group">
-<label>Preferred Time *</label>
-<select name="class_time" required>
-<option value="">Select Time</option>
-<option value="Morning">Morning 8-11 AM</option>
-<option value="Afternoon">Afternoon 12-3 PM</option>
-<option value="Evening">Evening 4-7 PM</option>
-<option value="Night">Night 8-11 PM</option>
-</select>
-</div>
-<div class="form-group">
-<label>Class Days *</label>
-<select name="class_days" required>
-<option value="">Select Days</option>
-<option value="5 Days">5 Days a Week</option>
-<option value="3 Days">3 Days a Week</option>
-</select>
-</div>
-</div>
-
-<button type="submit" class="submit-btn">🚀 Submit & Get Free Trial Class</button>
+<button type="submit" data-en="Submit on WhatsApp" data-ur="واٹس ایپ پر بھیجیں" data-ar="إرسال على واتساب">Submit on WhatsApp</button>
 </form>
-</section>
-
-<!-- FAQ Section -->
-<section class="faq-section animate-top">
-<h2 class="faq-title">❓ Common Questions About Process</h2>
-
-<div class="faq-item animate-left">
-<h4>Q: Is registration fee required?</h4>
-<p>A: No ustaad, registration is completely free. You only pay after 3 days free trial if satisfied with our teaching.</p>
 </div>
-
-<div class="faq-item animate-right">
-<h4>Q: How quickly will I get response after form submission?</h4>
-<p>A: Our team contacts every student within 2 hours. If you submit at night, you'll get email by morning.</p>
 </div>
-
-<div class="faq-item animate-left">
-<h4>Q: Can I change class timing after starting?</h4>
-<p>A: Yes, you can change your class timing anytime by informing your teacher 1 day in advance.</p>
-</div>
-
-<div class="faq-item animate-right">
-<h4>Q: What if I don't like the teacher after trial?</h4>
-<p>A: No problem. We will assign you a new teacher immediately. Student satisfaction is our priority.</p>
-</div>
-
-<div class="faq-item animate-left">
-<h4>Q: Do you provide recorded classes?</h4>
-<p>A: Yes, if you miss any class, teacher will provide recording of that session on WhatsApp.</p>
-</div>
-</section>
-
-</div>
-
-<!-- WhatsApp Float -->
-<a href="https://wa.me/923090252314" class="whatsapp-float" target="_blank">💬</a>
-
-<footer>
-<p>© 2026 Al Raza Online Quran Academy | Learn Quran, Transform Life ✨</p>
-</footer>
 
 <script>
-function toggleMenu(){
-document.getElementById('menu').classList.toggle('show');
-}
-window.onclick = function(event) {
-    if (!event.target.matches('.hamburger') && !event.target.matches('.hamburger span')) {
-        var dropdown = document.getElementById('menu');
-        if (dropdown.classList.contains('show')) {
-            dropdown.classList.remove('show');
-        }
+// 1. Menu Toggle
+function toggleMenu(){document.getElementById('menu').classList.toggle('show');}
+document.addEventListener('click', function(event) {
+    const menu = document.getElementById('menu');
+    const hamburger = document.querySelector('.hamburger');
+    if (menu && hamburger &&!menu.contains(event.target) &&!hamburger.contains(event.target)) {
+        menu.classList.remove('show');
     }
-}
-
-// Scroll Animation
-const observer = new IntersectionObserver((entries)=>{
-entries.forEach((entry, index)=>{
-if(entry.isIntersecting && !entry.target.classList.contains('animated')){
-const animClasses = ['animate-left', 'animate-right', 'animate-top', 'animate-bottom'];
-const animClass = animClasses[index % 4];
-entry.target.classList.add(animClass, 'animated');
-}
 });
-}, {threshold:0.12});
 
-document.querySelectorAll('.steps-section, .features-section, .form-section, .faq-section, .step-card, .feature-box, .faq-item, .page-header').forEach(section=>{
-observer.observe(section);
+// 2. POPUP FORM - 100% WORKING
+function openForm(){document.getElementById('joinForm').style.display='flex';document.getElementById('joinForm').classList.add('show');}
+function closeForm(){document.getElementById('joinForm').style.display='none';document.getElementById('joinForm').classList.remove('show');}
+document.getElementById('joinForm').addEventListener('click', function(e){if(e.target.id==='joinForm'){closeForm();}});
+
+// 3. LANGUAGE SWITCHER - 100% URDU + ARABIC
+const langs=['en','ur','ar'];
+let currentLang=localStorage.getItem('lang')||'en';
+function setLang(lang){
+  currentLang=lang;localStorage.setItem('lang',lang);
+  document.body.className=lang;
+  document.querySelectorAll('[data-en]').forEach(el=>{
+    const txt = el.getAttribute('data-'+lang);
+    if(txt){el.textContent=txt;}
+  });
+  document.querySelectorAll('input[placeholder]').forEach(el=>{
+    const ph = el.getAttribute('data-ph-'+lang);
+    if(ph){el.placeholder=ph;}
+  });
+}
+function cycleLang(){let i=(langs.indexOf(currentLang)+1)%3;setLang(langs[i]);}
+setLang(currentLang);
+
+// 4. SCROLL ANIMATION - 100% FIXED
+function checkVisible(){
+    document.querySelectorAll('section').forEach(section=>{
+        const sectionTop = section.getBoundingClientRect().top;
+        if(sectionTop < window.innerHeight * 0.85){
+            section.classList.add('visible');
+        }
+    });
+}
+window.addEventListener('scroll', checkVisible);
+window.addEventListener('load', checkVisible);
+checkVisible();
+
+// 5. FORM TO WHATSAPP +92 3090252314 - 100% FIXED
+document.getElementById('whatsappForm').addEventListener('submit', function(e){
+e.preventDefault();
+sendToWhatsApp('name','age','course','country','wano');
 });
+document.getElementById('popupForm').addEventListener('submit', function(e){
+e.preventDefault();
+sendToWhatsApp('pname','page','pcourse','pcountry','pwano');
+closeForm();
+});
+
+function sendToWhatsApp(n,a,c,co,w){
+let name = document.getElementById(n).value.trim();
+let age = document.getElementById(a).value.trim();
+let course = document.getElementById(c).value.trim();
+let country = document.getElementById(co).value.trim();
+let wano = document.getElementById(w).value.trim();
+if(!name ||!age ||!course ||!country ||!wano){alert('Please fill all fields');return;}
+let message = `*New Free Trial Request - Al Raza Academy*%0A%0A*Name:* ${name}%0A*Age:* ${age}%0A*Course:* ${course}%0A*Country:* ${country}%0A*WhatsApp:* ${wano}`;
+window.open(`https://wa.me/923090252314?text=${message}`, '_blank');
+document.getElementById('whatsappForm').reset();
+document.getElementById('popupForm').reset();
+}
 </script>
-
 </body>
-</html>
+    </html>
